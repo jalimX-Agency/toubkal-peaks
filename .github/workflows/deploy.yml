@@ -1,0 +1,40 @@
+name: Deploy API to cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, intl, zip, bcmath, pdo_mysql
+
+      - name: Install dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction
+
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./backend/
+          server-dir: ./
+          exclude: |
+            .git/**
+            .github/**
+            .env
+            node_modules/**
+            tests/**
+            storage/logs/**
