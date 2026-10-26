@@ -64,6 +64,21 @@ class BookingApiTest extends TestCase
         Mail::assertSent(NewBookingNotification::class, fn ($m) => $m->hasTo('team@toubkal-peaks.com') && $m->hasReplyTo('ana@example.com'));
     }
 
+    public function test_the_customer_confirmation_is_answered_at_the_reservations_inbox(): void
+    {
+        Mail::fake();
+
+        $this->postJson('/api/v1/bookings', $this->payload())->assertCreated();
+
+        Mail::assertSent(BookingReceived::class, fn ($m) => $m->hasTo('ana@example.com')
+            && $m->hasReplyTo('reservations@toubkal-peaks.com') && ! $m->hasReplyTo('ana@example.com'));
+
+        config(['mail.booking_reply_to' => 'sales@example.com']);                  // configurable
+        Mail::fake();
+        $this->postJson('/api/v1/bookings', $this->payload(['email' => 'bob@example.com']))->assertCreated();
+        Mail::assertSent(BookingReceived::class, fn ($m) => $m->hasTo('bob@example.com') && $m->hasReplyTo('sales@example.com'));
+    }
+
     public function test_the_team_alert_can_go_to_several_inboxes(): void
     {
         Mail::fake();

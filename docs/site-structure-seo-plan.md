@@ -156,7 +156,7 @@ Base: `https://api.toubkal-peaks.com/api/v1`. All GET endpoints send `Cache-Cont
 | `GET /tours/{slug}?locale=` | Full tour: itinerary, included/excluded, packing, pricing tiers, images, reviews, 3 related tours, `seo` (generated `<title> \| Toubkal Peaks` fallback), `alternates` for hreflang. Untranslated locales return English with `locale` (actual) vs `requested_locale` |
 | `GET /reviews?tour=&featured=1&per_page=` | Published reviews from every source + `summary` {count, average} |
 | `GET /redirects` | Active 301 map (old WordPress URL → new path), 5 min server cache |
-| `POST /bookings` | Reservation request: stores a `pending` booking (reference `TP-YYYY-XXXXXX`), returns an estimated total from the per-person tier, emails the customer and the team (`BOOKING_NOTIFY_EMAIL`: one or several addresses separated by commas). Rate limit 3/min and 20/day per IP; hidden `website` honeypot field; mail failures never lose the booking |
+| `POST /bookings` | Reservation request: stores a `pending` booking (reference `TP-YYYY-XXXXXX`), returns an estimated total from the per-person tier, emails the customer (replies go to `reservations@toubkal-peaks.com`, set by `BOOKING_REPLY_TO_EMAIL`) and the team (`BOOKING_NOTIFY_EMAIL`: one or several addresses separated by commas). Rate limit 3/min and 20/day per IP; hidden `website` honeypot field; mail failures never lose the booking |
 
 Email goes through Resend SMTP (see `.env.production.example`); templates are English for now (the booking stores the visitor's `locale` for later translation).
 Legacy WordPress SEO titles are not imported; a migration clears the ones from the first import.

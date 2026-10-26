@@ -14,7 +14,10 @@ class BookingReceived extends Mailable
 
     public function envelope(): Envelope
     {
-        return new Envelope(subject: "We received your request {$this->booking->reference} - Toubkal Peaks");
+        return new Envelope(
+            subject: "We received your request {$this->booking->reference} - Toubkal Peaks",
+            replyTo: array_filter([config('mail.booking_reply_to')]),   // replies reach the reservations inbox
+        );
     }
 
     public function content(): Content

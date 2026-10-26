@@ -118,4 +118,7 @@ return [
     // Team inbox that receives an alert for every new booking request (falls back to the From address).
     'booking_notify' => env('BOOKING_NOTIFY_EMAIL'),
 
+    // Where customers' replies to the booking confirmation go (the From address is a no-reply sender).
+    'booking_reply_to' => env('BOOKING_REPLY_TO_EMAIL', 'reservations@toubkal-peaks.com'),
+
 ];
