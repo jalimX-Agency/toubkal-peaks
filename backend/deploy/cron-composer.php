@@ -19,8 +19,6 @@ set_time_limit(0);
 ini_set('memory_limit', '-1');
 
 $backend = dirname(__DIR__);
-$repo = dirname($backend);
-$home = dirname($repo);
 
 $stateDir = $backend . '/storage/framework';
 $logFile = $backend . '/storage/logs/deploy.log';
@@ -52,16 +50,19 @@ $needsInstall = ! is_file($backend . '/vendor/autoload.php') || $currentHash !==
 
 if ($needsInstall) {
     $phar = null;
-    foreach ([$home . '/composer.phar', $repo . '/composer.phar', $backend . '/composer.phar'] as $candidate) {
-        if (is_file($candidate)) {
-            $phar = $candidate;
+    // Works whether this folder is the app root (FTP deploy) or backend/ inside a git clone
+    $searchDirs = [dirname($backend), dirname($backend, 2), $backend];
+    foreach ($searchDirs as $dir) {
+        if (is_file($dir . '/composer.phar')) {
+            $phar = $dir . '/composer.phar';
             break;
         }
     }
     if ($phar === null) {
-        logLine('ERROR: composer.phar not found (looked in ' . $home . ', ' . $repo . ', ' . $backend . ').');
+        logLine('ERROR: composer.phar not found (looked in ' . implode(', ', $searchDirs) . ').');
         exit(1);
     }
+    $home = dirname($phar);
 
     logLine('composer install started');
     putenv('COMPOSER_HOME=' . $home . '/.composer');
