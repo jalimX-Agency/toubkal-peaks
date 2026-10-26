@@ -93,7 +93,10 @@ if ($needsInstall) {
         exit(1);
     }
     file_put_contents($hashFile, $currentHash);
-    logLine('composer install finished');
+    logLine('composer install finished; Artisan steps run on the next cron tick');
+    // composer.phar bundles its own symfony/console, which clashes with vendor/'s copy
+    // if both load in one process, so the Artisan phase happens on the next run.
+    exit(0);
 }
 
 // ── 2. Artisan (in-process) ────────────────────────────────────────────
@@ -110,7 +113,7 @@ $run = function (string $command, array $args = []) use ($kernel): void {
     }
 };
 
-if ($needsInstall) {
+if (! is_file($backend . '/bootstrap/cache/packages.php')) {
     $run('package:discover');
 }
 
