@@ -1,0 +1,95 @@
+const en = {
+  meta: {
+    homeTitle: "Morocco Treks & Tours | Toubkal Peaks Travel",
+    homeDescription:
+      "Private, fully escorted treks, Sahara journeys and day trips from Marrakech. Climb Mount Toubkal with experienced local guides.",
+  },
+  nav: {
+    treks: "Treks",
+    sahara: "Sahara",
+    morocco: "Morocco tours",
+    dayTrips: "Day trips",
+    contact: "Contact",
+    plan: "Plan your trip",
+    menu: "Menu",
+    close: "Close",
+    language: "Language",
+    skip: "Skip to content",
+  },
+  hero: {
+    eyebrow: "Marrakech · High Atlas · Sahara",
+    line1: "Walk the",
+    line2: "High",
+    line3: "Atlas.",
+    lead: "Private, fully escorted and tailor-made: Toubkal treks, Sahara journeys and day trips from Marrakech, led by experienced local guides.",
+    primary: "Explore the treks",
+    secondary: "Day trips from Marrakech",
+    photoAlt: "Terracotta houses of Aroumd village climbing the hillside below the High Atlas peaks",
+    caption: "Aroumd village, above Imlil",
+    badges: ["Private & small groups", "Experienced local guides", "Based in Marrakech"],
+  },
+  categories: {
+    eyebrow: "Four ways in",
+    title: "Choose your terrain",
+    routes: "routes",
+    items: {
+      treks: { name: "Treks", text: "Toubkal summits, Berber valleys and the wilder ranges beyond." },
+      sahara: { name: "Sahara tours", text: "Merzouga and Erg Chegaga dunes, camel treks and desert camps." },
+      morocco: { name: "Morocco tours", text: "Imperial cities, kasbahs, coast and mountains in one private journey." },
+      dayTrips: { name: "Day trips from Marrakech", text: "Ourika, Imlil, Ouzoud or Essaouira, and back in Marrakech the same day." },
+    },
+  },
+  rail: {
+    eyebrow: "Mount Toubkal",
+    title: "Toubkal, step by step",
+    lead: "From a two-day summit push to a week through Berber valleys.",
+    all: "All Toubkal treks",
+    from: "from",
+    perPerson: "per person",
+    onRequest: "Price on request",
+    days: "days",
+    day: "day",
+    difficulty: { easy: "Easy", moderate: "Moderate", difficult: "Difficult", challenging: "Challenging", strenuous: "Strenuous" },
+  },
+  dayTrips: {
+    eyebrow: "From Marrakech",
+    title: "Out in the morning, back by evening",
+    all: "All day trips",
+  },
+  riad: {
+    eyebrow: "Imlil · 1,740 m",
+    title: "Sleep where the trail starts",
+    text: "Riad Berber Towers sits at the foot of Mount Toubkal: traditional Moroccan architecture, mountain views and Berber cooking on the rooftop terrace. It is our base before and after the climb.",
+    cta: "Visit Riad Berber Towers",
+    photoAlt: "Rooftop terrace in Imlil with a tagine on the table and the snowy Toubkal massif behind",
+  },
+  team: {
+    eyebrow: "On the trail",
+    title: "Guide, muleteer and cook. Nothing to carry but a daypack.",
+    text: "Our treks are led by an experienced local mountain guide. Mules carry the luggage, and meals are prepared along the way, in Berber villages and mountain refuges.",
+    photoAlt: "Muleteers leading loaded mules up a rocky trail in the Toubkal valley while trekkers follow",
+  },
+  cta: {
+    title: "Tell us when, and how many.",
+    text: "We will design the rest around you: dates, pace, comfort level and the people travelling with you.",
+    primary: "Plan your trip",
+    whatsapp: "Chat on WhatsApp",
+  },
+  footer: {
+    tagline: "Treks, Sahara journeys and tailor-made tours in Morocco.",
+    explore: "Explore",
+    contact: "Contact",
+    legal: "Legal",
+    privacy: "Privacy policy",
+    rights: "All rights reserved.",
+    basedIn: "Marrakech, Morocco",
+  },
+  ruler: {
+    label: "Altitude",
+    unit: "m",
+    camps: { marrakech: "Marrakech", imlil: "Imlil", azib: "Azib Tamsoult", refuge: "Toubkal Refuge", summit: "Summit" },
+  },
+};
+
+export type Dictionary = typeof en;
+export default en;

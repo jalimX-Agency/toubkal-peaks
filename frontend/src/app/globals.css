@@ -1,127 +1,116 @@
 @import "tailwindcss";
 
-/* Brand palette (OKLch). Tune per the final Toubkal Peaks identity. */
+/*
+ * Concept: "Ascent". The page is the climb: terracotta villages below, snow above,
+ * an altitude ruler that follows the scroll from Marrakech (466 m) to the summit (4,167 m).
+ * One loud face (Big Shoulders, set like trail-sign lettering), one quiet face (Instrument Sans),
+ * mono for every measurement.
+ */
 :root {
-  --amber: oklch(0.68 0.15 75);
-  --amber-light: oklch(0.78 0.14 80);
-  --amber-dark: oklch(0.55 0.14 70);
-  --terracotta: oklch(0.62 0.1 30);
-  --bronze: oklch(0.5 0.08 55);
-  --sage: oklch(0.55 0.06 140);
-  --cream: oklch(0.92 0.015 75);
-  --warm-black: oklch(0.12 0.01 55);
-
-  --background: oklch(0.08 0.008 55);
-  --foreground: oklch(0.94 0.01 75);
-  --card: oklch(0.11 0.008 55);
-  --border: oklch(0.22 0.012 55);
-  --primary: oklch(0.68 0.15 75);
-  --radius: 16px;
+  --paper: #f3ece0;
+  --paper-2: #e9dfcd;
+  --ink: #21170f;
+  --ink-soft: #5b4a3c;
+  --terracotta: #b4472a;
+  --terracotta-deep: #8e3519;
+  --snow: #e3edf1;
+  --night: #1d2a30;
+  --ochre: #d8a03d;
 }
 
 @theme inline {
-  --color-amber: var(--amber);
-  --color-amber-light: var(--amber-light);
-  --color-amber-dark: var(--amber-dark);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
   --color-terracotta: var(--terracotta);
-  --color-bronze: var(--bronze);
-  --color-sage: var(--sage);
-  --color-cream: var(--cream);
-  --color-warm-black: var(--warm-black);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-border: var(--border);
-  --color-primary: var(--primary);
-  --font-serif: var(--font-cinzel), serif;
-  --font-sans: var(--font-josefin), sans-serif;
+  --color-terracotta-deep: var(--terracotta-deep);
+  --color-snow: var(--snow);
+  --color-night: var(--night);
+  --color-ochre: var(--ochre);
+
+  --font-display: var(--f-display), "Arial Narrow", Impact, sans-serif;
+  --font-sans: var(--f-body), system-ui, sans-serif;
+  --font-mono: var(--f-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--paper);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Typography */
-.heading-display {
-  font-family: var(--font-cinzel), serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+/* paper grain: a quiet tactile layer instead of a gradient blob */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.045;           /* plain opacity, no blend mode: cheap to composite while scrolling */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.heading-editorial {
-  font-family: var(--font-cinzel), serif;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+
+::selection {
+  background: var(--terracotta);
+  color: var(--paper);
 }
-.luxury-label {
-  font-family: var(--font-josefin), sans-serif;
-  font-size: 0.7rem;
+
+:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 3px;
+}
+
+/* headline lettering */
+.display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  line-height: 0.88;
+}
+
+/* every measurement, label and counter */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.body-editorial {
-  font-family: var(--font-josefin), sans-serif;
-  font-weight: 300;
-  line-height: 1.7;
+
+/* skyline cut used on photos: peaks along the top edge */
+.ridge-top {
+  clip-path: polygon(
+    0 14%, 6% 8%, 11% 13%, 19% 3%, 26% 11%, 33% 6%, 41% 15%, 48% 7%, 56% 14%,
+    63% 4%, 71% 12%, 79% 5%, 87% 13%, 94% 7%, 100% 12%, 100% 100%, 0 100%
+  );
+}
+.ridge-bottom {
+  clip-path: polygon(
+    0 0, 100% 0, 100% 90%, 94% 95%, 87% 88%, 79% 96%, 71% 89%, 63% 97%, 56% 90%,
+    48% 98%, 41% 91%, 33% 97%, 26% 90%, 19% 98%, 11% 92%, 6% 97%, 0 91%
+  );
 }
 
-/* Glass */
-.glass-card {
-  background: color-mix(in oklch, var(--foreground) 3%, transparent);
-  backdrop-filter: blur(12px);
-  border: 1px solid color-mix(in oklch, var(--foreground) 8%, transparent);
-}
-.glass-premium {
-  background: color-mix(in oklch, var(--background) 80%, transparent);
-  backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid color-mix(in oklch, var(--foreground) 10%, transparent);
-}
-
-/* Buttons */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--amber);
-  color: oklch(0.1 0.01 55);
-  font-family: var(--font-josefin), sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-}
-.btn-primary:hover {
-  background: var(--amber-light);
-  transform: translateY(-1px);
-}
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid color-mix(in oklch, var(--foreground) 20%, transparent);
-  color: var(--foreground);
-  font-family: var(--font-josefin), sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-}
-.btn-outline:hover {
-  border-color: var(--amber);
-  color: var(--amber);
-}
-
-.img-luxury {
-  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.img-luxury:hover {
-  transform: scale(1.05);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

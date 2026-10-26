@@ -160,3 +160,13 @@ Base: `https://api.toubkal-peaks.com/api/v1`. All GET endpoints send `Cache-Cont
 
 Email goes through Resend SMTP (see `.env.production.example`); templates are English for now (the booking stores the visitor's `locale` for later translation).
 Legacy WordPress SEO titles are not imported; a migration clears the ones from the first import.
+
+## 9. Frontend (Next.js 16, deployed on Vercel) — concept and build log
+**Concept "Ascent":** the page is the climb. A slim altitude ruler follows the scroll from Marrakech (466 m) through Imlil (1,740 m), Azib Tamsoult (2,250 m) and the Toubkal refuge (3,200 m) to the summit (4,167 m); the label names the camp you are passing (altitudes come from the real itineraries). Type: Big Shoulders (trail-sign lettering) for headlines, Instrument Sans for text, JetBrains Mono for every measurement. Palette: sand paper, walnut ink, terracotta (the Aroumd houses), snow-blue, night slate. Photos are the client's own guest photos (hero: Aroumd village), cut along a mountain skyline. No stock imagery, no gradient blobs.
+- Routing: `app/[lang]` with `proxy.ts`. English has no prefix (`/treks`), others do (`/fr`, `/es`, `/de`); `/en/...` 308-redirects to the unprefixed URL; no redirects by browser language (SEO). Canonical + hreflang on every page. Unbuilt URLs answer 404.
+- Data: `lib/api.ts` reads the Laravel API with `"use cache"` (minutes); an API outage returns empty lists for a few seconds instead of breaking the build.
+- UI strings: `src/i18n/dictionaries/{en,fr,es,de}.ts` (FR/ES/DE are first-draft translations to be proofread by a native speaker).
+- Images: Next image optimizer from `cdn.toubkal-peaks.com` (R2). Home photos were resized to ≤2000 px (hero 730 KB) because the optimizer times out after ~7 s on large originals.
+- Business facts on the site come from the client's old pages (Marrakech base, private/tailor-made, local guides, Riad Berber Towers in Imlil, contact details). The "2025 logo" of the old site is a watermarked stock template and is NOT used; the header uses a drawn mark + wordmark until a real logo exists.
+
+Pages built: **Home**. Next: tour hub pages, tour detail, contact/booking form, then About/FAQ/guides.
