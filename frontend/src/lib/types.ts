@@ -43,6 +43,20 @@ export interface Paginated<T> {
   meta?: { total: number; current_page: number; last_page: number };
 }
 
+export interface Review {
+  id: number;
+  source: string;
+  author: string;
+  country: string | null;
+  rating: number;
+  title: string | null;
+  body: string;
+  language: string | null;
+  date: string | null;
+  url: string | null;
+  tour_id: number | null;
+}
+
 export interface ReviewSummary {
   count: number;
   average: number | null;

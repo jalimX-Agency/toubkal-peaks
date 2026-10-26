@@ -1,105 +1,152 @@
 @import "tailwindcss";
 
 /*
- * Concept: "Ascent". The page is the climb: terracotta villages below, snow above,
- * an altitude ruler that follows the scroll from Marrakech (466 m) to the summit (4,167 m).
- * One loud face (Big Shoulders, set like trail-sign lettering), one quiet face (Instrument Sans),
- * mono for every measurement.
+ * Brand system taken from the Toubkal Peaks Travel logo:
+ * navy (TOUBKAL), gold (PEAKS), and the three service colours (Atlas green, Sahara orange, imperial blue).
+ * Headlines in Cinzel (close to the logo lettering), text and UI in Montserrat.
  */
 :root {
-  --paper: #f3ece0;
-  --paper-2: #e9dfcd;
-  --ink: #21170f;
-  --ink-soft: #5b4a3c;
-  --terracotta: #b4472a;
-  --terracotta-deep: #8e3519;
-  --snow: #e3edf1;
-  --night: #1d2a30;
-  --ochre: #d8a03d;
+  --navy: #022e55;
+  --navy-deep: #011d38;
+  --gold: #bc7625;
+  --gold-light: #d9a04f;
+  --cream: #fbf8f3;
+  --sand: #f2e8da;
+  --sky: #e6f0f7;
+  --ink: #16263b;
+  --muted: #5b6779;
+  --line: #e3dccf;
+  --atlas: #1f5a3a;
+  --sahara: #b04e25;
+  --imperial: #13497b;
 }
 
 @theme inline {
-  --color-paper: var(--paper);
-  --color-paper-2: var(--paper-2);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-sky: var(--sky);
   --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-deep: var(--terracotta-deep);
-  --color-snow: var(--snow);
-  --color-night: var(--night);
-  --color-ochre: var(--ochre);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-atlas: var(--atlas);
+  --color-sahara: var(--sahara);
+  --color-imperial: var(--imperial);
 
-  --font-display: var(--f-display), "Arial Narrow", Impact, sans-serif;
+  --font-display: var(--f-display), Georgia, serif;
   --font-sans: var(--f-body), system-ui, sans-serif;
-  --font-mono: var(--f-mono), ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
-  background: var(--paper);
+  scroll-padding-top: 5rem;
+  background: var(--cream);
 }
 
 body {
-  background: var(--paper);
+  background: var(--cream);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* paper grain: a quiet tactile layer instead of a gradient blob */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.045;           /* plain opacity, no blend mode: cheap to composite while scrolling */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
 ::selection {
-  background: var(--terracotta);
-  color: var(--paper);
+  background: var(--gold);
+  color: #fff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--terracotta);
+  outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
 
-/* headline lettering */
-.display {
+/* headings: Cinzel, like the logo lettering */
+.heading {
   font-family: var(--font-display);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -0.005em;
-  line-height: 0.88;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--navy);
 }
 
-/* every measurement, label and counter */
-.mono {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+/* small spaced labels, like "PEAKS TRAVEL" in the logo */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--gold);
 }
 
-/* skyline cut used on photos: peaks along the top edge */
-.ridge-top {
-  clip-path: polygon(
-    0 14%, 6% 8%, 11% 13%, 19% 3%, 26% 11%, 33% 6%, 41% 15%, 48% 7%, 56% 14%,
-    63% 4%, 71% 12%, 79% 5%, 87% 13%, 94% 7%, 100% 12%, 100% 100%, 0 100%
-  );
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  background: var(--gold);
+  padding: 0.95rem 1.7rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.ridge-bottom {
-  clip-path: polygon(
-    0 0, 100% 0, 100% 90%, 94% 95%, 87% 88%, 79% 96%, 71% 89%, 63% 97%, 56% 90%,
-    48% 98%, 41% 91%, 33% 97%, 26% 90%, 19% 98%, 11% 92%, 6% 97%, 0 91%
-  );
+.btn-gold:hover {
+  background: #a5661d;
+  transform: translateY(-1px);
+}
+
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  padding: 0.9rem 1.6rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--navy);
+}
+
+.btn-outline-navy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--navy);
+  padding: 0.85rem 1.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-outline-navy:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

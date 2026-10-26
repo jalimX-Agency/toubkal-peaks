@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CategoryIndex } from "@/components/home/CategoryIndex";
+import { TourCard } from "@/components/TourCard";
 import { CtaBand } from "@/components/home/CtaBand";
-import { DayTripBoard } from "@/components/home/DayTripBoard";
-import { Hero } from "@/components/home/Hero";
+import { HeroSlider } from "@/components/home/HeroSlider";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { Pillars, type PillarKey } from "@/components/home/Pillars";
 import { RiadBand } from "@/components/home/RiadBand";
-import { TeamBand } from "@/components/home/TeamBand";
-import { TourRail } from "@/components/home/TourRail";
+import { Testimonials } from "@/components/home/Testimonials";
+import { TourExplorer } from "@/components/home/TourExplorer";
+import { TrustStrip } from "@/components/home/TrustStrip";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { getCategories, getTours } from "@/lib/api";
+import { getReviews, getTours } from "@/lib/api";
 import { site } from "@/lib/site";
+import type { TourCard as Tour } from "@/lib/types";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
   const { lang } = await params;
@@ -28,16 +31,24 @@ export async function generateMetadata({ params }: PageProps<"/[lang]">): Promis
   };
 }
 
+function pillarOf(tour: Tour): PillarKey {
+  const key = tour.category.key;
+  if (key.startsWith("treks")) return "treks";
+  if (key === "sahara-desert-tours") return "sahara";
+  if (key === "day-trips-from-marrakech") return "dayTrips";
+  return "cities";
+}
+
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const [dict, categories, toubkal, dayTrips] = await Promise.all([
-    getDictionary(lang),
-    getCategories(lang),
-    getTours({ locale: lang, category: "treks.toubkal", perPage: 8 }),
-    getTours({ locale: lang, category: "day-trips-from-marrakech", perPage: 6 }),
-  ]);
+  const [dict, tours, reviews] = await Promise.all([getDictionary(lang), getTours({ locale: lang, perPage: 60 }), getReviews(6)]);
+
+  const counts: Record<PillarKey, number> = { treks: 0, sahara: 0, cities: 0, dayTrips: 0 };
+  for (const tour of tours.data) counts[pillarOf(tour)]++;
+
+  const cards = Object.fromEntries(tours.data.map((tour) => [tour.id, <TourCard key={tour.id} tour={tour} lang={lang} dict={dict.tours} />]));
 
   const organization = {
     "@context": "https://schema.org",
@@ -45,24 +56,35 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     name: site.name,
     alternateName: site.shortName,
     url: site.url,
+    logo: `${site.url}/brand/icon-512.png`,
+    image: `${site.url}/brand/og-default.jpg`,
     email: site.email,
     telephone: site.phones[0],
     description: dict.meta.homeDescription,
     address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: site.country },
     areaServed: "Morocco",
     knowsLanguage: locales,
+    ...(reviews.summary.count > 0 && reviews.summary.average
+      ? { aggregateRating: { "@type": "AggregateRating", ratingValue: reviews.summary.average, reviewCount: reviews.summary.count } }
+      : {}),
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
-      <Hero lang={lang} dict={dict.hero} />
-      <CategoryIndex lang={lang} dict={dict.categories} categories={categories} />
-      <TourRail lang={lang} dict={dict.rail} tours={toubkal.data} />
-      <TeamBand dict={dict.team} />
+      <HeroSlider lang={lang} dict={dict.hero} />
+      <TrustStrip dict={dict.trust} />
+      <Pillars lang={lang} dict={dict.pillars} counts={counts} />
+      <TourExplorer
+        lang={lang}
+        dict={dict.tours}
+        tours={tours.data.map(({ id, category, is_featured }) => ({ id, category, is_featured }))}
+        cards={cards}
+      />
+      <HowItWorks dict={dict.steps} />
       <RiadBand dict={dict.riad} />
-      <DayTripBoard lang={lang} dict={dict.dayTrips} rail={dict.rail} tours={dayTrips.data} />
-      <CtaBand lang={lang} dict={dict.cta} />
+      <Testimonials dict={dict.reviews} reviews={reviews.data} summary={reviews.summary} />
+      <CtaBand lang={lang} dict={dict.cta} message={dict.whatsapp.message} />
     </>
   );
 }

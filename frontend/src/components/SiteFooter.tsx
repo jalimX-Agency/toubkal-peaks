@@ -1,7 +1,7 @@
 import { cacheLife } from "next/cache";
+import Image from "next/image";
 import Link from "next/link";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
-import { Mark } from "@/components/ui/Mark";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { site, whatsappLink } from "@/lib/site";
@@ -16,31 +16,29 @@ async function currentYear() {
 export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const year = await currentYear();
   const href = (path: string) => localePath(lang, path);
-  const links = [
-    { label: dict.nav.treks, path: "/treks" },
-    { label: dict.nav.sahara, path: "/sahara-desert-tours" },
-    { label: dict.nav.morocco, path: "/morocco-tours" },
-    { label: dict.nav.dayTrips, path: "/day-trips-from-marrakech" },
+  const trips = [
+    { label: dict.pillars.items.treks.name, path: "/treks" },
+    { label: dict.pillars.items.sahara.name, path: "/sahara-desert-tours" },
+    { label: dict.pillars.items.cities.name, path: "/morocco-tours" },
+    { label: dict.pillars.items.dayTrips.name, path: "/day-trips-from-marrakech" },
   ];
+  const linkClass = "text-white/75 transition-colors hover:text-gold-light";
 
   return (
-    <footer className="bg-night text-paper">
-      <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 md:grid-cols-12 md:px-10 md:py-20">
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-2.5">
-            <Mark className="h-7 w-7 text-terracotta" />
-            <span className="display text-4xl leading-none">Toubkal Peaks</span>
-          </div>
-          <p className="mt-5 max-w-sm text-paper/70">{dict.footer.tagline}</p>
-          <LocaleSwitcher current={lang} label={dict.nav.language} className="mt-8 [&_a]:text-paper/60 [&_a[aria-current]]:text-paper" />
+    <footer className="bg-navy-deep text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 md:px-8 md:py-16 lg:grid-cols-12">
+        <div className="sm:col-span-2 lg:col-span-4">
+          <Image src="/brand/logo-horizontal-on-dark.png" alt={site.name} width={595} height={128} className="h-12 w-auto" />
+          <p className="mt-5 max-w-xs text-white/70">{dict.footer.tagline}</p>
+          <LocaleSwitcher current={lang} label={dict.nav.language} tone="light" className="mt-6 -ml-1.5" />
         </div>
 
-        <nav aria-label={dict.footer.explore} className="md:col-span-3 md:col-start-7">
-          <p className="mono text-paper/50">{dict.footer.explore}</p>
-          <ul className="mt-4 space-y-2">
-            {links.map((l) => (
+        <nav aria-label={dict.footer.trips} className="lg:col-span-3 lg:col-start-6">
+          <p className="eyebrow !text-gold-light">{dict.footer.trips}</p>
+          <ul className="mt-4 space-y-2.5">
+            {trips.map((l) => (
               <li key={l.path}>
-                <Link href={href(l.path)} className="transition-colors hover:text-ochre">
+                <Link href={href(l.path)} className={linkClass}>
                   {l.label}
                 </Link>
               </li>
@@ -48,30 +46,39 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
           </ul>
         </nav>
 
-        <div className="md:col-span-3">
-          <p className="mono text-paper/50">{dict.footer.contact}</p>
-          <ul className="mt-4 space-y-2">
+        <div className="lg:col-span-4">
+          <p className="eyebrow !text-gold-light">{dict.footer.contact}</p>
+          <ul className="mt-4 space-y-3">
             <li>
-              <a href={`mailto:${site.email}`} className="transition-colors hover:text-ochre">
+              <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.phone}</span>
+              {site.phones.map((phone) => (
+                <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`} className={`${linkClass} block`}>
+                  {phone}
+                </a>
+              ))}
+            </li>
+            <li>
+              <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.email}</span>
+              <a href={`mailto:${site.email}`} className={linkClass}>
                 {site.email}
               </a>
             </li>
             <li>
-              <a href={whatsappLink()} className="transition-colors hover:text-ochre" rel="noopener noreferrer" target="_blank">
+              <a href={whatsappLink(dict.whatsapp.message)} target="_blank" rel="noopener noreferrer" className={linkClass}>
                 WhatsApp {site.whatsappDisplay}
               </a>
             </li>
-            <li className="text-paper/70">{dict.footer.basedIn}</li>
+            <li className="text-white/60">{dict.footer.basedIn}</li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-paper/15">
-        <div className="mono mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3 px-5 py-5 text-paper/50 md:px-10">
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-5 text-sm text-white/55 md:px-8">
           <span>
             © {year} {site.name}. {dict.footer.rights}
           </span>
-          <Link href={href("/privacy-policy")} className="transition-colors hover:text-paper">
+          <Link href={href("/privacy-policy")} className="transition-colors hover:text-white">
             {dict.footer.privacy}
           </Link>
         </div>
