@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Montserrat } from "next/font/google";
+import { Cinzel, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -10,7 +11,18 @@ import { site } from "@/lib/site";
 import "../globals.css";
 
 const display = Cinzel({ subsets: ["latin"], variable: "--f-display", display: "swap" });
-const body = Montserrat({ subsets: ["latin"], variable: "--f-body", display: "swap" });
+// General Sans (Fontshare, free for commercial use), self-hosted
+const body = localFont({
+  src: [
+    { path: "../fonts/GeneralSans-Regular.woff2", weight: "400" },
+    { path: "../fonts/GeneralSans-Medium.woff2", weight: "500" },
+    { path: "../fonts/GeneralSans-Semibold.woff2", weight: "600" },
+  ],
+  variable: "--f-body",
+  display: "swap",
+});
+// third voice: altitudes, coordinates, durations
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--f-mono", display: "swap" });
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -37,7 +49,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${display.variable} ${body.variable}`}>
+    <html lang={lang} className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="min-h-screen">
         <a
           href="#main"

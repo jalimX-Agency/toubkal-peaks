@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Arrow } from "@/components/ui/Arrow";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
-import { photos } from "@/lib/site";
+import { photos, stock } from "@/lib/site";
 
 export type PillarKey = "treks" | "sahara" | "cities" | "dayTrips";
 
-const PILLARS: { key: PillarKey; path: string; photo: (typeof photos)[keyof typeof photos]; accent: string; position: string }[] = [
+const PILLARS: { key: PillarKey; path: string; photo: { src: string }; accent: string; position: string }[] = [
   { key: "treks", path: "/treks", photo: photos.hikers, accent: "bg-atlas", position: "50% 50%" },
-  { key: "sahara", path: "/sahara-desert-tours", photo: photos.dunes, accent: "bg-sahara", position: "45% 50%" },
-  { key: "cities", path: "/morocco-tours", photo: photos.souk, accent: "bg-imperial", position: "50% 50%" },
+  { key: "sahara", path: "/sahara-desert-tours", photo: stock.saharaDunes, accent: "bg-sahara", position: "50% 60%" },
+  { key: "cities", path: "/morocco-tours", photo: stock.fesSkyline, accent: "bg-imperial", position: "50% 55%" },
   { key: "dayTrips", path: "/day-trips-from-marrakech", photo: photos.camel, accent: "bg-gold", position: "50% 50%" },
 ];
 

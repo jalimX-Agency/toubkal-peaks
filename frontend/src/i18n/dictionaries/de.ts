@@ -24,16 +24,11 @@ const de: Dictionary = {
     lead: "Private, voll begleitete und maßgeschneiderte Reisen ab Marrakesch mit erfahrenen einheimischen Guides: der Toubkal, die Dünen der Sahara und die Königsstädte.",
     primary: "Unsere Reisen entdecken",
     secondary: "Reise planen",
-    view: "Reisen ansehen",
-    previous: "Vorherige Folie",
-    next: "Nächste Folie",
-    pause: "Diashow anhalten",
-    play: "Diashow starten",
-    slides: {
-      atlas: { label: "Treks im Atlas", alt: "Terrakottafarbene Häuser des Dorfes Aroumd unter den Gipfeln des Hohen Atlas, nahe Imlil" },
-      sahara: { label: "Sahara-Reisen", alt: "Reisende sitzen bei Sonnenuntergang auf einer orangefarbenen Sanddüne in der Sahara" },
-      cities: { label: "Königsstädte", alt: "Laternen und Lederwaren in einem überdachten Souk der Medina von Marrakesch" },
-    },
+    pause: "Video anhalten",
+    play: "Video abspielen",
+    video: "Echte Aufnahmen einer Toubkal-Besteigung: der Weg ab Imlil, Maultiere, die Hütte und der Sonnenaufgang über den Wolken",
+    caption: "Auf dem Weg gefilmt · Toubkal-Besteigung",
+    profile: "Von Marrakesch auf den Gipfel des Toubkal",
   },
   trust: {
     items: [

@@ -24,16 +24,11 @@ const es: Dictionary = {
     lead: "Viajes privados, con acompañamiento completo y a medida desde Marrakech, con guías locales con experiencia: el Toubkal, las dunas del Sahara y las ciudades imperiales.",
     primary: "Descubre nuestros viajes",
     secondary: "Planifica tu viaje",
-    view: "Ver viajes",
-    previous: "Diapositiva anterior",
-    next: "Diapositiva siguiente",
-    pause: "Pausar la presentación",
-    play: "Reproducir la presentación",
-    slides: {
-      atlas: { label: "Treks en el Atlas", alt: "Casas de color terracota del pueblo de Aroumd bajo las cumbres del Alto Atlas, cerca de Imlil" },
-      sahara: { label: "Viajes por el Sahara", alt: "Viajeros sentados en una duna de arena naranja en el Sahara al atardecer" },
-      cities: { label: "Ciudades imperiales", alt: "Faroles y artículos de cuero en un zoco cubierto de la medina de Marrakech" },
-    },
+    pause: "Pausar el vídeo",
+    play: "Reproducir el vídeo",
+    video: "Imágenes reales de una ascensión al Toubkal: el sendero desde Imlil, las mulas, el refugio y el amanecer sobre las nubes",
+    caption: "Grabado en el sendero · Ascensión al Toubkal",
+    profile: "De Marrakech a la cumbre del Toubkal",
   },
   trust: {
     items: [

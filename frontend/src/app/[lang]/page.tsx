@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TourCard } from "@/components/TourCard";
 import { CtaBand } from "@/components/home/CtaBand";
-import { HeroSlider } from "@/components/home/HeroSlider";
+import { TopoHero } from "@/components/home/TopoHero";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { Pillars, type PillarKey } from "@/components/home/Pillars";
 import { RiadBand } from "@/components/home/RiadBand";
@@ -72,7 +72,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
-      <HeroSlider lang={lang} dict={dict.hero} />
+      <TopoHero lang={lang} dict={dict.hero} camps={dict.ruler.camps} />
       <TrustStrip dict={dict.trust} />
       <Pillars lang={lang} dict={dict.pillars} counts={counts} />
       <TourExplorer

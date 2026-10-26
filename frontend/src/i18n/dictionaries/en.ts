@@ -22,16 +22,11 @@ const en = {
     lead: "Private, fully escorted and tailor-made journeys from Marrakech, led by experienced local guides: Mount Toubkal, the Sahara dunes and the imperial cities.",
     primary: "Explore our trips",
     secondary: "Plan your trip",
-    view: "View trips",
-    previous: "Previous slide",
-    next: "Next slide",
-    pause: "Pause slideshow",
-    play: "Play slideshow",
-    slides: {
-      atlas: { label: "Atlas Mountains Treks", alt: "Terracotta houses of Aroumd village below the High Atlas peaks, near Imlil" },
-      sahara: { label: "Sahara Desert Trips", alt: "Travellers sitting on an orange sand dune in the Sahara at sunset" },
-      cities: { label: "Imperial City Tours", alt: "Lanterns and leather goods in a covered souk of the Marrakech medina" },
-    },
+    pause: "Pause video",
+    play: "Play video",
+    video: "Real footage from a Mount Toubkal ascent: the trail from Imlil, mules, the refuge and sunrise above the clouds",
+    caption: "Filmed on the trail · Toubkal ascent",
+    profile: "From Marrakech to the summit of Toubkal",
   },
   trust: {
     items: [

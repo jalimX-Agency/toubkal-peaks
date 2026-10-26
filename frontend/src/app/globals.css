@@ -38,6 +38,7 @@
 
   --font-display: var(--f-display), Georgia, serif;
   --font-sans: var(--f-body), system-ui, sans-serif;
+  --font-mono: var(--f-mono), ui-monospace, monospace;
 }
 
 html {
@@ -83,6 +84,15 @@ body {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+/* map-legend voice: altitudes, coordinates, durations */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .btn-gold {
@@ -140,13 +150,34 @@ body {
   color: #fff;
 }
 
-@keyframes slide-progress {
+/* route lines drawn like a pen on a map: give the path pathLength="1" */
+@keyframes draw-route {
   from {
-    transform: scaleX(0);
+    stroke-dashoffset: 1;
   }
   to {
-    transform: scaleX(1);
+    stroke-dashoffset: 0;
   }
+}
+.draw-route {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-route 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0.4s forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  opacity: 0;
+  animation: fade-up 0.6s ease-out forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
