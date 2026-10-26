@@ -16,7 +16,8 @@ return [
     'default' => env('FILESYSTEM_DISK', 'local'),
 
     // Disk that holds tour images ("public" locally, "r2" in production).
-    'media_disk' => env('MEDIA_DISK', 'public'),
+    // Defaults to "r2" whenever an R2 bucket is configured, so no extra setting is needed on the server.
+    'media_disk' => env('MEDIA_DISK', env('R2_BUCKET') ? 'r2' : 'public'),
 
     /*
     |--------------------------------------------------------------------------

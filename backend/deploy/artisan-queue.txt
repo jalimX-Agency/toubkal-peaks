@@ -1,0 +1,10 @@
+# One-time Artisan commands for the server (no terminal needed).
+# The cron job runs every line below ONCE after a successful migration, writes the result to
+# storage/logs/deploy.log ("queue [ok|failed|rejected] ...") and removes the line from this file.
+# This file is deployed with the code and is only re-uploaded when its content changes in Git.
+# Allowed: toubkal:import, db:seed, cache:clear (plain --options only). Anything else is rejected.
+# Lines starting with # are comments.
+#
+# First import of the 59 tours + 72 redirects from the old site. Tours are created as DRAFTS;
+# tours that already exist are never overwritten (that needs --update).
+toubkal:import

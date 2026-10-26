@@ -131,11 +131,14 @@ $migrated = $run('migrate', ['--force' => true]) === 0;
 // One-time commands from storage/app/artisan-queue.txt (allow-listed, see App\Support\ArtisanQueue).
 // They run only after a successful migration and are removed from the file whatever the result.
 if ($migrated) {
-    $queue = new App\Support\ArtisanQueue($backend . '/storage/app/artisan-queue.txt');
-    foreach ($queue->process($kernel) as $result) {
-        logLine(sprintf('queue [%s] %s', $result['status'], $result['line']));
-        if ($result['output'] !== '') {
-            logLine(mb_substr($result['output'], 0, 4000));
+    // deploy/artisan-queue.txt ships with the code (a push triggers it once: the file is only
+    // re-uploaded when its content changes); storage/app/artisan-queue.txt is for manual use.
+    foreach (['/deploy/artisan-queue.txt', '/storage/app/artisan-queue.txt'] as $queueFile) {
+        foreach ((new App\Support\ArtisanQueue($backend . $queueFile))->process($kernel) as $result) {
+            logLine(sprintf('queue [%s] %s', $result['status'], $result['line']));
+            if ($result['output'] !== '') {
+                logLine(mb_substr($result['output'], 0, 4000));
+            }
         }
     }
 } else {
