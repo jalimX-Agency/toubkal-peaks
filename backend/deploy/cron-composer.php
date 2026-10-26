@@ -104,13 +104,15 @@ require $backend . '/vendor/autoload.php';
 $app = require $backend . '/bootstrap/app.php';
 $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 
-$run = function (string $command, array $args = []) use ($kernel): void {
+$run = function (string $command, array $args = []) use ($kernel): int {
     $code = $kernel->call($command, $args);
     logLine("artisan $command => $code");
     $output = trim($kernel->output());
     if ($output !== '') {
         logLine($output);
     }
+
+    return $code;
 };
 
 if (! is_file($backend . '/bootstrap/cache/packages.php')) {
@@ -124,6 +126,21 @@ if (! preg_match('/^APP_KEY=base64:\S+/m', $env)) {
 }
 
 $run('config:clear');
-$run('migrate', ['--force' => true]);
+$migrated = $run('migrate', ['--force' => true]) === 0;
+
+// One-time commands from storage/app/artisan-queue.txt (allow-listed, see App\Support\ArtisanQueue).
+// They run only after a successful migration and are removed from the file whatever the result.
+if ($migrated) {
+    $queue = new App\Support\ArtisanQueue($backend . '/storage/app/artisan-queue.txt');
+    foreach ($queue->process($kernel) as $result) {
+        logLine(sprintf('queue [%s] %s', $result['status'], $result['line']));
+        if ($result['output'] !== '') {
+            logLine(mb_substr($result['output'], 0, 4000));
+        }
+    }
+} else {
+    logLine('Skipping artisan queue: migrate failed.');
+}
+
 $run('config:cache');
 logLine('done');

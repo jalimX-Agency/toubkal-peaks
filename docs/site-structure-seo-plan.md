@@ -139,3 +139,8 @@ Tables (all get the `tp_` prefix in production through `DB_PREFIX`): `categories
 - Public URL: `https://cdn.toubkal-peaks.com/<path>` (path = `media.path`, e.g. `2019/09/ourika-valley.jpg`); objects carry `Cache-Control: public, max-age=31536000, immutable`.
 - `MEDIA_DISK=r2` in production. `php artisan media:upload --source=<images folder> [--force] [--dry-run]` uploads every file listed in the `media` table (idempotent, retries transient network errors). 72 tour images are in the bucket; the other 138 files of the old media library belong to the home/hub pages and will be uploaded when those pages are built.
 - Never run `migrate`/`toubkal:import` from a local `.env` that points at the production database: use a local DB or `DB_CONNECTION=sqlite DB_DATABASE=<file>`.
+
+### 7b. Running one-time commands on the server (no terminal)
+`backend/deploy/cron-composer.php` now processes `api/storage/app/artisan-queue.txt` (create it in cPanel File Manager; template: `backend/deploy/artisan-queue.example.txt`). One command per line; allowed: `toubkal:import`, `db:seed`, `cache:clear` (plain `--options` only). After a successful migration the cron runs each line once, logs the result in `storage/logs/deploy.log` (`queue [ok|failed|rejected] ...`) and removes the line even when it failed, so nothing retries in a loop. Destructive commands (`migrate:fresh`, `db:wipe`...) are rejected by design.
+
+First production import: set `MEDIA_DISK=r2` in the server `.env`, then queue `toubkal:import`. Tours arrive as drafts (existing ones are never overwritten without `--update`); images are already in R2.
