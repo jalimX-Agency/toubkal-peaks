@@ -50,17 +50,21 @@ export function TourExplorer({
   const [active, setActive] = useState<(typeof TABS)[number]["key"]>("all");
   const tab = TABS.find((t) => t.key === active)!;
 
+  const total = tab.category ? tours.filter((t) => t.category.key === tab.category).length : tours.length;
   const tabs = TABS.filter((t) => !t.category || tours.some((tour) => tour.category.key === t.category));
   const shown = (tab.category ? tours.filter((t) => t.category.key === tab.category) : mixed(tours)).slice(0, VISIBLE);
 
   return (
-    <section className="bg-sand/60">
+    <section className="bg-cream">
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="eyebrow">{dict.eyebrow}</p>
-            <h2 className="heading mt-2 text-[clamp(1.6rem,3vw,2.3rem)]">{dict.title}</h2>
+            <h2 className="heading mt-2 text-[clamp(1.8rem,3.4vw,2.8rem)]">{dict.title}</h2>
           </div>
+          <p className="mono text-muted">
+            <span className="text-navy">{String(shown.length).padStart(2, "0")}</span> / {String(total).padStart(2, "0")}
+          </p>
         </div>
 
         <div role="tablist" aria-label={dict.title} className="-mx-4 mt-6 flex gap-2 overflow-x-auto px-4 pb-2 md:mx-0 md:flex-wrap md:px-0">
@@ -81,9 +85,12 @@ export function TourExplorer({
         </div>
 
         {shown.length > 0 ? (
+          // the first trip gets a double cell: one deliberate break in the grid
           <ul role="tabpanel" className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {shown.map((tour) => (
-              <li key={tour.id}>{cards[tour.id]}</li>
+            {shown.map((tour, i) => (
+              <li key={tour.id} className={i === 0 ? "sm:col-span-2 lg:row-span-2" : ""}>
+                {cards[tour.id]}
+              </li>
             ))}
           </ul>
         ) : (

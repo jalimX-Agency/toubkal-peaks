@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { site } from "@/lib/site";
+import { media, site } from "@/lib/site";
 import "../globals.css";
 
 const display = Cinzel({ subsets: ["latin"], variable: "--f-display", display: "swap" });
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    images: [{ url: "/brand/og-default.jpg", width: 1200, height: 630, alt: site.name }],
+    images: [{ url: media.ogImage, width: 1200, height: 630, alt: site.name }],
   },
-  twitter: { card: "summary_large_image", images: ["/brand/og-default.jpg"] },
+  twitter: { card: "summary_large_image", images: [media.ogImage] },
 };
 
 export const viewport: Viewport = { themeColor: "#022e55" };

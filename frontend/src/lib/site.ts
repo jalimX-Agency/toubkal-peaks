@@ -25,8 +25,20 @@ export const photos = {
   camel: { src: `${CDN}/site/atlas-camel-ride.jpg`, width: 1600, height: 650 },
 };
 
-/** Free Pexels photos (public/images/pexels, sources in SOURCES.txt) for what the client has no photos of yet. */
-const STOCK = "/images/pexels";
+/** Brand files, hero footage and the contour texture, all on R2 (site/ prefix). */
+export const media = {
+  logo: { src: `${CDN}/site/brand/logo-horizontal.png`, width: 595, height: 128 },
+  logoOnDark: { src: `${CDN}/site/brand/logo-horizontal-on-dark.png`, width: 595, height: 128 },
+  ogImage: `${CDN}/site/brand/og-default.jpg`,
+  icon: (size: 192 | 512) => `${CDN}/site/brand/icon-${size}.png`,
+  iconMaskable: `${CDN}/site/brand/icon-maskable-512.png`,
+  heroVideo: `${CDN}/site/video/hero-toubkal.mp4`,
+  heroPoster: `${CDN}/site/video/hero-toubkal-poster.jpg`,
+  topo: `${CDN}/site/textures/topo.svg`,
+};
+
+/** Free Pexels photos for what the client has no photos of yet (sources: media/pexels/sources.txt in the client folder). */
+const STOCK = `${CDN}/site/stock`;
 export const stock = {
   saharaDunes: { src: `${STOCK}/sahara-dunes.jpg`, width: 1800, height: 1200 },
   saharaCaravan: { src: `${STOCK}/sahara-caravan-dusk.jpg`, width: 1200, height: 1767 },
@@ -38,6 +50,7 @@ export const stock = {
   atlasValley: { src: `${STOCK}/atlas-valley-peaks.jpg`, width: 1800, height: 1350 },
   atlasSnow: { src: `${STOCK}/atlas-snow-peaks.jpg`, width: 1800, height: 1200 },
   imlilValley: { src: `${STOCK}/imlil-valley.jpg`, width: 1200, height: 1600 },
+  atlasFoothills: { src: `${STOCK}/atlas-foothills-village.jpg`, width: 1800, height: 1175 },
   aitBenhaddou: { src: `${STOCK}/ait-benhaddou-kasbah.jpg`, width: 1800, height: 1200 },
 };
 

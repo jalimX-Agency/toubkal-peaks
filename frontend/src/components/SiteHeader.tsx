@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
-import { site } from "@/lib/site";
+import { media, site } from "@/lib/site";
 
 const LINKS = [
   { key: "treks", path: "/treks" },
@@ -46,7 +46,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
         <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-6 px-4 md:h-20 md:px-8">
           <Link href={href("/")} className="shrink-0" onClick={() => setOpen(false)}>
             <Image
-              src="/brand/logo-horizontal.png"
+              src={media.logo.src}
               alt={site.name}
               width={595}
               height={128}

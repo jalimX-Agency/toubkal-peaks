@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { media } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -10,9 +11,9 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#fbf8f3",
     theme_color: "#022e55",
     icons: [
-      { src: "/brand/icon-192.png", sizes: "192x192", type: "image/png" },
-      { src: "/brand/icon-512.png", sizes: "512x512", type: "image/png" },
-      { src: "/brand/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: media.icon(192), sizes: "192x192", type: "image/png" },
+      { src: media.icon(512), sizes: "512x512", type: "image/png" },
+      { src: media.iconMaskable, sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }

@@ -29,18 +29,24 @@ const de: Dictionary = {
     video: "Echte Aufnahmen einer Toubkal-Besteigung: der Weg ab Imlil, Maultiere, die Hütte und der Sonnenaufgang über den Wolken",
     caption: "Auf dem Weg gefilmt · Toubkal-Besteigung",
     profile: "Von Marrakesch auf den Gipfel des Toubkal",
+    slides: {
+      atlas: { place: "Aroumd, Hoher Atlas", alt: "Terrakottafarbene Häuser des Dorfes Aroumd unter den Gipfeln des Hohen Atlas, nahe Imlil" },
+      sahara: { place: "Erg Chebbi, Merzouga", alt: "Orangefarbene Sanddünen des Erg Chebbi unter blauem Himmel in der Sahara" },
+      kasbah: { place: "Aït Benhaddou", alt: "Der Lehm-Ksar von Aït Benhaddou über dem Palmenhain" },
+      cities: { place: "Fès el-Bali", alt: "Färbebecken einer Gerberei in der Medina von Fès, von oben gesehen" },
+    },
   },
   trust: {
-    items: [
-      { title: "Privat & maßgeschneidert", text: "Jede Reise ist privat und an Ihre Termine und Ihr Tempo angepasst." },
-      { title: "Einheimische Bergführer", text: "Erfahrene Guides, Maultiertreiber und Köche auf jedem Trek." },
-      { title: "1 bis 12 Reisende", text: "Alleinreisende, Paare, Familien und Gruppen, Preis pro Person." },
-      { title: "Unsere Basis in Imlil", text: "Das Riad Berber Towers am Fuß des Toubkal." },
-    ],
+    title: "Warum mit uns reisen",
+    summit: "Der Toubkal, der höchste Gipfel Nordafrikas, ist unser Hausberg",
+    reply: "bis zu Ihrer maßgeschneiderten Route mit klarem Preis",
+    group: "Reisende pro privater Gruppe, von Alleinreisenden bis zu Familien",
+    trips: "Reisen in Marokko: Atlas, Sahara und Königsstädte",
   },
   pillars: {
     eyebrow: "Unsere Reisen",
     title: "Vier Wege, Marokko zu entdecken",
+    hint: "Scrollen Sie, um zu reisen",
     trips: "Reisen",
     view: "Reisen ansehen",
     items: {
@@ -64,6 +70,7 @@ const de: Dictionary = {
     },
     from: "Ab",
     perPerson: "pro Person",
+    maxAlt: "Max. Höhe",
     onRequest: "Preis auf Anfrage",
     days: "Tage",
     day: "Tag",
@@ -75,6 +82,7 @@ const de: Dictionary = {
   steps: {
     eyebrow: "So funktioniert es",
     title: "Ihre Reise in vier Schritten",
+    meta: ["Heute", "Innerhalb von 24 h", "Wenn Sie bereit sind", "Tag 1"],
     items: [
       { title: "Erzählen Sie uns Ihre Pläne", text: "Termine, Anzahl der Reisenden und Wünsche, per Formular oder WhatsApp." },
       { title: "Erhalten Sie Ihre Route", text: "Wir antworten innerhalb von 24 Stunden mit einem maßgeschneiderten Programm und einem klaren Preis." },

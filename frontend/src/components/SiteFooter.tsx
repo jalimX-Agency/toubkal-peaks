@@ -4,7 +4,7 @@ import Link from "next/link";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
-import { site, whatsappLink } from "@/lib/site";
+import { media, site, whatsappLink } from "@/lib/site";
 
 /** The current year, cached: reading the clock directly would make the whole footer dynamic. */
 async function currentYear() {
@@ -25,10 +25,11 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
   const linkClass = "text-white/75 transition-colors hover:text-gold-light";
 
   return (
-    <footer className="bg-navy-deep text-white">
+    <footer className="relative isolate overflow-hidden bg-navy-deep text-white">
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: `url(${media.topo})` }} />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 md:px-8 md:py-16 lg:grid-cols-12">
         <div className="sm:col-span-2 lg:col-span-4">
-          <Image src="/brand/logo-horizontal-on-dark.png" alt={site.name} width={595} height={128} className="h-12 w-auto" />
+          <Image src={media.logoOnDark.src} alt={site.name} width={595} height={128} className="h-12 w-auto" />
           <p className="mt-5 max-w-xs text-white/70">{dict.footer.tagline}</p>
           <LocaleSwitcher current={lang} label={dict.nav.language} tone="light" className="mt-6 -ml-1.5" />
         </div>
@@ -68,7 +69,10 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
                 WhatsApp {site.whatsappDisplay}
               </a>
             </li>
-            <li className="text-white/60">{dict.footer.basedIn}</li>
+            <li className="text-white/60">
+              {dict.footer.basedIn}
+              <span className="mono mt-1 block text-gold-light/80">31.63°N · 8.01°W ▲ 466 m</span>
+            </li>
           </ul>
         </div>
       </div>

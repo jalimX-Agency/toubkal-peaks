@@ -27,18 +27,24 @@ const en = {
     video: "Real footage from a Mount Toubkal ascent: the trail from Imlil, mules, the refuge and sunrise above the clouds",
     caption: "Filmed on the trail · Toubkal ascent",
     profile: "From Marrakech to the summit of Toubkal",
+    slides: {
+      atlas: { place: "Aroumd, High Atlas", alt: "Terracotta houses of Aroumd village below the High Atlas peaks, near Imlil" },
+      sahara: { place: "Erg Chebbi, Merzouga", alt: "Orange sand dunes of Erg Chebbi under a blue sky in the Sahara" },
+      kasbah: { place: "Aït Benhaddou", alt: "The earthen ksar of Aït Benhaddou above the palm grove" },
+      cities: { place: "Fès el-Bali", alt: "Leather dyeing vats of a tannery in the medina of Fès, seen from above" },
+    },
   },
   trust: {
-    items: [
-      { title: "Private & tailor-made", text: "Every trip is private and adapted to your dates and pace." },
-      { title: "Local mountain guides", text: "Experienced guides, muleteers and cooks on every trek." },
-      { title: "From 1 to 12 travellers", text: "Solo, couples, families and groups, priced per person." },
-      { title: "Our base in Imlil", text: "Riad Berber Towers, at the foot of Mount Toubkal." },
-    ],
+    title: "Why travel with us",
+    summit: "Mount Toubkal, the highest summit in North Africa, is our home mountain",
+    reply: "to receive a tailor-made itinerary and a clear price",
+    group: "travellers per private group, from solo trips to families",
+    trips: "trips across Morocco: Atlas, Sahara and imperial cities",
   },
   pillars: {
     eyebrow: "Our journeys",
     title: "Four ways to discover Morocco",
+    hint: "Scroll to travel",
     trips: "trips",
     view: "View trips",
     items: {
@@ -62,6 +68,7 @@ const en = {
     },
     from: "From",
     perPerson: "per person",
+    maxAlt: "Max. altitude",
     onRequest: "Price on request",
     days: "days",
     day: "day",
@@ -73,6 +80,7 @@ const en = {
   steps: {
     eyebrow: "How it works",
     title: "Your trip in four steps",
+    meta: ["Today", "Within 24 h", "When you are ready", "Day 1"],
     items: [
       { title: "Tell us your plans", text: "Dates, number of travellers and what you would like to see, by form or WhatsApp." },
       { title: "Receive your itinerary", text: "We reply within 24 hours with a tailor-made programme and a clear price." },

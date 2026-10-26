@@ -12,7 +12,7 @@ import { TrustStrip } from "@/components/home/TrustStrip";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { getReviews, getTours } from "@/lib/api";
-import { site } from "@/lib/site";
+import { media, site } from "@/lib/site";
 import type { TourCard as Tour } from "@/lib/types";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
@@ -56,8 +56,8 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     name: site.name,
     alternateName: site.shortName,
     url: site.url,
-    logo: `${site.url}/brand/icon-512.png`,
-    image: `${site.url}/brand/og-default.jpg`,
+    logo: media.icon(512),
+    image: media.ogImage,
     email: site.email,
     telephone: site.phones[0],
     description: dict.meta.homeDescription,
@@ -73,7 +73,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
       <TopoHero lang={lang} dict={dict.hero} camps={dict.ruler.camps} />
-      <TrustStrip dict={dict.trust} />
+      <TrustStrip dict={dict.trust} tripCount={tours.data.length} />
       <Pillars lang={lang} dict={dict.pillars} counts={counts} />
       <TourExplorer
         lang={lang}

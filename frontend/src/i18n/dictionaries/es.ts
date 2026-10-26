@@ -29,18 +29,24 @@ const es: Dictionary = {
     video: "Imágenes reales de una ascensión al Toubkal: el sendero desde Imlil, las mulas, el refugio y el amanecer sobre las nubes",
     caption: "Grabado en el sendero · Ascensión al Toubkal",
     profile: "De Marrakech a la cumbre del Toubkal",
+    slides: {
+      atlas: { place: "Aroumd, Alto Atlas", alt: "Casas de color terracota del pueblo de Aroumd bajo las cumbres del Alto Atlas, cerca de Imlil" },
+      sahara: { place: "Erg Chebbi, Merzouga", alt: "Dunas de arena naranja del Erg Chebbi bajo un cielo azul en el Sahara" },
+      kasbah: { place: "Aït Benhaddou", alt: "El ksar de adobe de Aït Benhaddou sobre el palmeral" },
+      cities: { place: "Fès el-Bali", alt: "Tinas de tinte de una curtiduría en la medina de Fez, vistas desde arriba" },
+    },
   },
   trust: {
-    items: [
-      { title: "Privado y a medida", text: "Cada viaje es privado y se adapta a tus fechas y a tu ritmo." },
-      { title: "Guías de montaña locales", text: "Guías, arrieros y cocineros con experiencia en cada trek." },
-      { title: "De 1 a 12 viajeros", text: "Solos, parejas, familias y grupos, con precio por persona." },
-      { title: "Nuestra base en Imlil", text: "El Riad Berber Towers, al pie del Toubkal." },
-    ],
+    title: "Por qué viajar con nosotros",
+    summit: "El Toubkal, la cumbre más alta del norte de África, es nuestra montaña",
+    reply: "para recibir un itinerario a medida y un precio claro",
+    group: "viajeros por grupo privado, desde viajes en solitario hasta familias",
+    trips: "viajes por Marruecos: Atlas, Sahara y ciudades imperiales",
   },
   pillars: {
     eyebrow: "Nuestros viajes",
     title: "Cuatro formas de descubrir Marruecos",
+    hint: "Desplázate para viajar",
     trips: "viajes",
     view: "Ver viajes",
     items: {
@@ -64,6 +70,7 @@ const es: Dictionary = {
     },
     from: "Desde",
     perPerson: "por persona",
+    maxAlt: "Altitud máx.",
     onRequest: "Precio bajo petición",
     days: "días",
     day: "día",
@@ -75,6 +82,7 @@ const es: Dictionary = {
   steps: {
     eyebrow: "Cómo funciona",
     title: "Tu viaje en cuatro pasos",
+    meta: ["Hoy", "En 24 h", "Cuando quieras", "Día 1"],
     items: [
       { title: "Cuéntanos tu plan", text: "Fechas, número de viajeros y lo que te gustaría ver, por formulario o WhatsApp." },
       { title: "Recibe tu itinerario", text: "Respondemos en 24 horas con un programa a medida y un precio claro." },
