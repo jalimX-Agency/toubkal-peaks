@@ -64,6 +64,29 @@ class BookingApiTest extends TestCase
         Mail::assertSent(NewBookingNotification::class, fn ($m) => $m->hasTo('team@toubkal-peaks.com') && $m->hasReplyTo('ana@example.com'));
     }
 
+    public function test_the_team_alert_can_go_to_several_inboxes(): void
+    {
+        Mail::fake();
+        config(['mail.booking_notify' => 'info@toubkal-peaks.com, Boss@Example.com;  ops@example.com   INFO@toubkal-peaks.com not-an-email']);
+
+        $this->postJson('/api/v1/bookings', $this->payload())->assertCreated();
+
+        Mail::assertSent(NewBookingNotification::class, 1);                       // one message, several recipients
+        Mail::assertSent(NewBookingNotification::class, fn ($m) => $m->hasTo('info@toubkal-peaks.com')
+            && $m->hasTo('Boss@Example.com') && $m->hasTo('ops@example.com') && count($m->to) === 3);
+        Mail::assertSent(BookingReceived::class, fn ($m) => $m->hasTo('ana@example.com') && count($m->to) === 1);
+    }
+
+    public function test_without_a_valid_team_address_the_from_address_is_used(): void
+    {
+        Mail::fake();
+        config(['mail.booking_notify' => 'garbage, also garbage', 'mail.from.address' => 'noreply@mail.toubkal-peaks.com']);
+
+        $this->postJson('/api/v1/bookings', $this->payload())->assertCreated();
+
+        Mail::assertSent(NewBookingNotification::class, fn ($m) => $m->hasTo('noreply@mail.toubkal-peaks.com') && count($m->to) === 1);
+    }
+
     public function test_on_request_and_custom_trips_get_no_estimate(): void
     {
         Mail::fake();

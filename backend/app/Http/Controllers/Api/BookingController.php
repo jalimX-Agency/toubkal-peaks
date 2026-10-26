@@ -71,9 +71,28 @@ class BookingController extends Controller
     {
         try {
             Mail::to($booking->email)->send(new BookingReceived($booking));
-            Mail::to(config('mail.booking_notify') ?: config('mail.from.address'))->send(new NewBookingNotification($booking));
+            Mail::to(static::teamRecipients())->send(new NewBookingNotification($booking));
         } catch (Throwable $e) {
             report($e);
         }
+    }
+
+    /**
+     * Team inboxes from BOOKING_NOTIFY_EMAIL: one or several addresses separated by comma, semicolon
+     * or space. Invalid and duplicate entries are ignored; falls back to the From address.
+     *
+     * @return list<string>
+     */
+    public static function teamRecipients(): array
+    {
+        $list = preg_split('/[\s,;]+/', (string) config('mail.booking_notify'), -1, PREG_SPLIT_NO_EMPTY) ?: [];
+        $valid = [];
+        foreach ($list as $address) {
+            if (filter_var($address, FILTER_VALIDATE_EMAIL)) {
+                $valid[strtolower($address)] ??= $address;   // keep the first spelling of a duplicate
+            }
+        }
+
+        return $valid ? array_values($valid) : [config('mail.from.address')];
     }
 }
