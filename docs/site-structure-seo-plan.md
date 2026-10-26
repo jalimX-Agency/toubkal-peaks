@@ -145,3 +145,18 @@ Tables (all get the `tp_` prefix in production through `DB_PREFIX`): `categories
 Allowed: `toubkal:import`, `db:seed`, `cache:clear` with plain `--options`. Destructive commands (`migrate:fresh`, `db:wipe`...) are rejected by design.
 
 First production import = the `toubkal:import` line already in `artisan-queue.txt`. Tours arrive as drafts; existing tours are never overwritten without `--update`; images are already in R2 (`MEDIA_DISK` defaults to `r2` when `R2_BUCKET` is set).
+
+## 8. Public API v1 (Laravel, consumed by Next.js)
+Base: `https://api.toubkal-peaks.com/api/v1`. All GET endpoints send `Cache-Control: public, max-age=60, stale-while-revalidate=300`. Only **published** tours are visible (`php artisan toubkal:publish --all|--category=<key>`, also usable from the cron queue).
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /categories?locale=` | Hub tree: key, translated slug/name/intro, URL `path`, published `tours_count`, children |
+| `GET /tours?locale=&category=&featured=1&per_page=` | Tour cards (title, `path`, summary, duration, difficulty, `from_price`, hero image). `category=treks` includes its children |
+| `GET /tours/{slug}?locale=` | Full tour: itinerary, included/excluded, packing, pricing tiers, images, reviews, 3 related tours, `seo` (generated `<title> \| Toubkal Peaks` fallback), `alternates` for hreflang. Untranslated locales return English with `locale` (actual) vs `requested_locale` |
+| `GET /reviews?tour=&featured=1&per_page=` | Published reviews from every source + `summary` {count, average} |
+| `GET /redirects` | Active 301 map (old WordPress URL → new path), 5 min server cache |
+| `POST /bookings` | Reservation request: stores a `pending` booking (reference `TP-YYYY-XXXXXX`), returns an estimated total from the per-person tier, emails the customer and the team (`BOOKING_NOTIFY_EMAIL`). Rate limit 3/min and 20/day per IP; hidden `website` honeypot field; mail failures never lose the booking |
+
+Email goes through Resend SMTP (see `.env.production.example`); templates are English for now (the booking stores the visitor's `locale` for later translation).
+Legacy WordPress SEO titles are not imported; a migration clears the ones from the first import.

@@ -115,4 +115,7 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    // Team inbox that receives an alert for every new booking request (falls back to the From address).
+    'booking_notify' => env('BOOKING_NOTIFY_EMAIL'),
+
 ];

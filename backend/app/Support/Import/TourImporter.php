@@ -116,7 +116,9 @@ class TourImporter
                         'packing' => $data['packing'] ?: null,
                         'upgrades' => $data['upgrades'] ?: null,
                         'extra' => $data['other_tabs'] ?: null,
-                        'seo_title' => $data['seo']['title'] ?: null,
+                        // Old Yoast titles ("... | Toubkal Peaks Travel Tours", often 90+ chars) are not imported:
+                        // the API generates "<title> | Toubkal Peaks" until a proper title is written.
+                        'seo_title' => null,
                         'seo_description' => $data['seo']['description'] ?: null,
                         'translation_status' => 'source',
                     ],
