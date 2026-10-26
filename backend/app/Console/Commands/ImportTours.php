@@ -12,7 +12,7 @@ class ImportTours extends Command
         {--redirects= : Path to redirects.json (default: database/data/redirects.json)}
         {--publish : Publish imported tours (default: draft)}
         {--update : Overwrite tours that already exist (default: leave them untouched)}
-        {--disk=public : Filesystem disk that holds the images}';
+        {--disk= : Filesystem disk that holds the images (default: MEDIA_DISK)}';
 
     protected $description = 'Import tours, categories, images and redirects extracted from the old WordPress site';
 
@@ -32,7 +32,7 @@ class ImportTours extends Command
         $tours = json_decode(file_get_contents($toursFile), true, 512, JSON_THROW_ON_ERROR)['tours'];
         $redirects = json_decode(file_get_contents($redirectsFile), true, 512, JSON_THROW_ON_ERROR);
 
-        $stats = $importer->importTours($tours, (bool) $this->option('publish'), (bool) $this->option('update'), $this->option('disk'));
+        $stats = $importer->importTours($tours, (bool) $this->option('publish'), (bool) $this->option('update'), $this->option('disk') ?: config('filesystems.media_disk'));
         $this->table(['created', 'updated', 'skipped', 'price rows', 'images linked'], [[
             $stats['created'], $stats['updated'], $stats['skipped'], $stats['prices'], $stats['media'],
         ]]);

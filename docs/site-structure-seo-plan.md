@@ -133,3 +133,9 @@ Tables (all get the `tp_` prefix in production through `DB_PREFIX`): `categories
 - Prices: `tours.price_mode` (`tiers` | `on_request`) + `tour_prices` rows per group size (null price = not available). `price_reviewed_at` stays null until a person has checked an imported price.
 - Bookings: reference `TP-YYYY-XXXXXX`, status workflow pending → confirmed → paid → completed (or cancelled), every change written to `booking_status_logs`.
 - Importer: `php artisan toubkal:import [--publish] [--update]` reads `backend/database/data/tours_structured.json` and `redirects.json` (the canonical copies). Existing tours are skipped unless `--update`, so admin edits are never overwritten.
+
+### 7a. Images on Cloudflare R2
+- Disk `r2` (`config/filesystems.php`) uses a small own adapter (`app/Support/R2`, SigV4 over Laravel's HTTP client) instead of aws-sdk-php, which would add thousands of files to the shared host's vendor folder. Verified against the official AWS signature test vector and against the real bucket.
+- Public URL: `https://cdn.toubkal-peaks.com/<path>` (path = `media.path`, e.g. `2019/09/ourika-valley.jpg`); objects carry `Cache-Control: public, max-age=31536000, immutable`.
+- `MEDIA_DISK=r2` in production. `php artisan media:upload --source=<images folder> [--force] [--dry-run]` uploads every file listed in the `media` table (idempotent, retries transient network errors). 72 tour images are in the bucket; the other 138 files of the old media library belong to the home/hub pages and will be uploaded when those pages are built.
+- Never run `migrate`/`toubkal:import` from a local `.env` that points at the production database: use a local DB or `DB_CONNECTION=sqlite DB_DATABASE=<file>`.
