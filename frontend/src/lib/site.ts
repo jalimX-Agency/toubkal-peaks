@@ -10,6 +10,13 @@ export const site = {
   city: "Marrakech",
   country: "MA",
   riadUrl: "https://www.riad-berber-towers.com/en",
+  /** Moroccan company registration, as published on the current site's footer. */
+  registration: [
+    { label: "RC", value: "6987" },
+    { label: "CNSS", value: "2440072" },
+    { label: "TP", value: "67010545" },
+    { label: "IF", value: "6500145" },
+  ],
 };
 
 const CDN = "https://cdn.toubkal-peaks.com";

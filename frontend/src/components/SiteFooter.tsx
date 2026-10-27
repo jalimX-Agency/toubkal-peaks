@@ -79,6 +79,13 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
           <span>
             © {year} {site.name}. {dict.footer.rights}
           </span>
+          <p className="mono flex flex-wrap gap-x-4 gap-y-1 text-white/45" aria-label={dict.footer.company}>
+            {site.registration.map((r) => (
+              <span key={r.label}>
+                {r.label} <span className="text-white/70">{r.value}</span>
+              </span>
+            ))}
+          </p>
           <Link href={href("/privacy-policy")} className="transition-colors hover:text-white">
             {dict.footer.privacy}
           </Link>
