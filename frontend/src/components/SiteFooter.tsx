@@ -86,9 +86,14 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
               </span>
             ))}
           </p>
-          <Link href={href("/privacy-policy")} className="transition-colors hover:text-white">
-            {dict.footer.privacy}
-          </Link>
+          <span className="flex gap-5">
+            <Link href={href("/legal-notice")} className="transition-colors hover:text-white">
+              {dict.footer.legal}
+            </Link>
+            <Link href={href("/privacy-policy")} className="transition-colors hover:text-white">
+              {dict.footer.privacy}
+            </Link>
+          </span>
         </div>
       </div>
     </footer>

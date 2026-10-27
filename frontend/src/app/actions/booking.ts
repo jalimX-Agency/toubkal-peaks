@@ -28,7 +28,7 @@ export async function submitBooking(_prev: BookingState, form: FormData): Promis
   try {
     const res = await fetch(`${API_URL}/bookings`, {
       method: "POST",
-      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      headers: { Accept: "application/json", "Content-Type": "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)" },
       body: JSON.stringify(payload),
       cache: "no-store",
     });

@@ -16,7 +16,8 @@ export class ApiError extends Error {
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${API_URL}${path}`, {
     ...init,
-    headers: { Accept: "application/json", ...(init?.headers ?? {}) },
+    // a clear user agent: the host's firewall blocks some generic ones, and this one can be allow-listed
+    headers: { Accept: "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)", ...(init?.headers ?? {}) },
   });
   if (!res.ok) {
     const body = await res.json().catch(() => undefined);
