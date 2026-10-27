@@ -75,12 +75,15 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <TopoHero lang={lang} dict={dict.hero} camps={dict.ruler.camps} />
       <TrustStrip dict={dict.trust} tripCount={tours.data.length} />
       <Pillars lang={lang} dict={dict.pillars} counts={counts} />
-      <TourExplorer
-        lang={lang}
-        dict={dict.tours}
-        tours={tours.data.map(({ id, category, is_featured }) => ({ id, category, is_featured }))}
-        cards={cards}
-      />
+      {/* hidden rather than empty if the API cannot be reached */}
+      {tours.data.length > 0 && (
+        <TourExplorer
+          lang={lang}
+          dict={dict.tours}
+          tours={tours.data.map(({ id, category, is_featured }) => ({ id, category, is_featured }))}
+          cards={cards}
+        />
+      )}
       <HowItWorks dict={dict.steps} />
       <RiadBand dict={dict.riad} />
       <Testimonials dict={dict.reviews} reviews={reviews.data} summary={reviews.summary} />

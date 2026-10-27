@@ -21,13 +21,16 @@ function mediaQuery(query: string) {
 const reducedMotionQuery = mediaQuery("(prefers-reduced-motion: reduce)");
 const desktopQuery = mediaQuery("(min-width: 1024px)");
 
-/** Desktop slides: each photo carries the real coordinates and altitude of the place it shows. */
-const SLIDES = [
-  { key: "atlas", photo: photos.village, coords: "31.12°N · 7.92°W", alt: 1900, position: "50% 55%" },
-  { key: "sahara", photo: stock.saharaDunes, coords: "31.15°N · 3.98°W", alt: 700, position: "50% 60%" },
-  { key: "kasbah", photo: stock.aitBenhaddou, coords: "31.05°N · 7.13°W", alt: 1300, position: "50% 50%" },
-  { key: "cities", photo: stock.fesTanneries, coords: "34.07°N · 4.97°W", alt: 410, position: "50% 50%" },
-] as const;
+/** Desktop slides, mountains first: each photo is labelled with its place and, when known, its altitude. */
+const SLIDES: { key: keyof Dictionary["hero"]["slides"]; photo: { src: string }; alt: number | null; position: string }[] = [
+  { key: "atlas", photo: photos.village, alt: 1900, position: "50% 55%" },
+  { key: "oukaimeden", photo: stock.oukaimeden, alt: 2600, position: "50% 45%" },
+  { key: "sahara", photo: stock.saharaDunes, alt: 700, position: "50% 60%" },
+  { key: "highAtlas", photo: stock.atlasSnow, alt: null, position: "50% 50%" },
+  { key: "kasbah", photo: stock.aitBenhaddou, alt: 1300, position: "50% 50%" },
+  { key: "valleys", photo: stock.atlasValley, alt: null, position: "50% 50%" },
+  { key: "cities", photo: stock.fesTanneries, alt: 410, position: "50% 50%" },
+];
 const INTERVAL = 6500;
 
 /** Elevation profile, Marrakech to the summit. x in viewBox units (0-1000), altitude in metres. */
@@ -139,12 +142,11 @@ export function TopoHero({ lang, dict, camps }: { lang: Locale; dict: Dictionary
         <div className="max-w-2xl lg:self-center">
           {/* phones: where the footage was filmed; desktop: the place in the current photo */}
           <p className="mono fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-gold-light">
-            <span className="lg:hidden">31.06°N · 7.91°W</span>
-            <span className="hidden lg:inline">{slide.coords}</span>
             <span aria-hidden="true" className="h-px w-8 bg-gold-light/60" />
             <span className="lg:hidden">Jbel Toubkal ▲ 4167 m</span>
             <span className="hidden lg:inline">
-              {dict.slides[slide.key].place} ▲ {slide.alt} m
+              {dict.slides[slide.key].place}
+              {slide.alt && ` ▲ ${slide.alt} m`}
             </span>
           </p>
           <h1 className="font-display mt-5 max-w-[16ch] text-[clamp(2.1rem,4.4vw,3.7rem)] font-semibold leading-[1.08] text-white">
@@ -166,7 +168,7 @@ export function TopoHero({ lang, dict, camps }: { lang: Locale; dict: Dictionary
           <div className="mono flex items-center gap-3 text-white/60">
             <PlayPause playing={playing} dict={dict} onToggle={() => setPaused(playing)} />
             <span className="lg:hidden">{dict.caption}</span>
-            <ol className="hidden flex-1 grid-cols-4 gap-4 lg:grid">
+            <ol className="hidden flex-1 grid-cols-7 gap-3 lg:grid">
               {SLIDES.map((s, i) => (
                 <li key={s.key}>
                   <button type="button" onClick={() => go(i)} aria-current={i === index ? "true" : undefined} className="group w-full text-left">
@@ -179,7 +181,7 @@ export function TopoHero({ lang, dict, camps }: { lang: Locale; dict: Dictionary
                         />
                       )}
                     </span>
-                    <span className={`mt-2 block transition-colors ${i === index ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>
+                    <span className={`mt-2 block truncate transition-colors ${i === index ? "text-white" : "text-white/50 group-hover:text-white/80"}`}>
                       {dict.slides[s.key].place}
                     </span>
                   </button>

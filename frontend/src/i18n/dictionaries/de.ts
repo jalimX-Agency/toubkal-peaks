@@ -31,6 +31,9 @@ const de: Dictionary = {
     profile: "Von Marrakesch auf den Gipfel des Toubkal",
     slides: {
       atlas: { place: "Aroumd, Hoher Atlas", alt: "Terrakottafarbene Häuser des Dorfes Aroumd unter den Gipfeln des Hohen Atlas, nahe Imlil" },
+      oukaimeden: { place: "Oukaïmeden, Hoher Atlas", alt: "Schneebedeckte Gipfel über den Steinhäusern von Oukaïmeden im Hohen Atlas" },
+      highAtlas: { place: "Hoher Atlas", alt: "Schneebedeckte Gipfel des Hohen Atlas unter blauem Himmel" },
+      valleys: { place: "Atlas-Täler", alt: "Grünes Terrassental unter den verschneiten Gipfeln des Atlas" },
       sahara: { place: "Erg Chebbi, Merzouga", alt: "Orangefarbene Sanddünen des Erg Chebbi unter blauem Himmel in der Sahara" },
       kasbah: { place: "Aït Benhaddou", alt: "Der Lehm-Ksar von Aït Benhaddou über dem Palmenhain" },
       cities: { place: "Fès el-Bali", alt: "Färbebecken einer Gerberei in der Medina von Fès, von oben gesehen" },

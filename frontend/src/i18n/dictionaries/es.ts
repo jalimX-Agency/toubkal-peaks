@@ -31,6 +31,9 @@ const es: Dictionary = {
     profile: "De Marrakech a la cumbre del Toubkal",
     slides: {
       atlas: { place: "Aroumd, Alto Atlas", alt: "Casas de color terracota del pueblo de Aroumd bajo las cumbres del Alto Atlas, cerca de Imlil" },
+      oukaimeden: { place: "Oukaïmeden, Alto Atlas", alt: "Cumbres nevadas sobre las casas de piedra de Oukaïmeden, en el Alto Atlas" },
+      highAtlas: { place: "Alto Atlas", alt: "Cumbres nevadas del Alto Atlas bajo un cielo azul" },
+      valleys: { place: "Valles del Atlas", alt: "Valle verde en terrazas bajo las cumbres nevadas del Atlas" },
       sahara: { place: "Erg Chebbi, Merzouga", alt: "Dunas de arena naranja del Erg Chebbi bajo un cielo azul en el Sahara" },
       kasbah: { place: "Aït Benhaddou", alt: "El ksar de adobe de Aït Benhaddou sobre el palmeral" },
       cities: { place: "Fès el-Bali", alt: "Tinas de tinte de una curtiduría en la medina de Fez, vistas desde arriba" },

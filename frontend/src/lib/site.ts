@@ -50,6 +50,7 @@ export const stock = {
   atlasValley: { src: `${STOCK}/atlas-valley-peaks.jpg`, width: 1800, height: 1350 },
   atlasSnow: { src: `${STOCK}/atlas-snow-peaks.jpg`, width: 1800, height: 1200 },
   imlilValley: { src: `${STOCK}/imlil-valley.jpg`, width: 1200, height: 1600 },
+  oukaimeden: { src: `${STOCK}/oukaimeden-snow.jpg`, width: 2000, height: 1333 },
   atlasFoothills: { src: `${STOCK}/atlas-foothills-village.jpg`, width: 1800, height: 1175 },
   aitBenhaddou: { src: `${STOCK}/ait-benhaddou-kasbah.jpg`, width: 1800, height: 1200 },
 };

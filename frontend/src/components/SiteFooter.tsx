@@ -69,10 +69,7 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
                 WhatsApp {site.whatsappDisplay}
               </a>
             </li>
-            <li className="text-white/60">
-              {dict.footer.basedIn}
-              <span className="mono mt-1 block text-gold-light/80">31.63°N · 8.01°W ▲ 466 m</span>
-            </li>
+            <li className="text-white/60">{dict.footer.basedIn}</li>
           </ul>
         </div>
       </div>

@@ -15,7 +15,7 @@ export function RiadBand({ dict }: { dict: Dictionary["riad"] }) {
           </div>
           <span aria-hidden="true" className="absolute -left-3 -top-3 h-6 w-6 border-l border-t border-gold-light/70" />
           <span aria-hidden="true" className="absolute -bottom-3 -right-3 h-6 w-6 border-b border-r border-gold-light/70" />
-          <p className="mono absolute bottom-4 left-4 rounded-sm bg-navy-deep/80 px-3 py-1.5 text-gold-light">31.14°N · 7.92°W ▲ 1740 m</p>
+          <p className="mono absolute bottom-4 left-4 rounded-sm bg-navy-deep/80 px-3 py-1.5 text-gold-light">Imlil ▲ 1740 m</p>
         </div>
         <div className="lg:col-span-5">
           <p className="eyebrow !text-gold-light">{dict.eyebrow}</p>

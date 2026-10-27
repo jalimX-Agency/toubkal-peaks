@@ -86,6 +86,14 @@ body {
   color: var(--gold);
 }
 
+/* horizontal swipers: keep scrolling, hide the bar */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* map-legend voice: altitudes, coordinates, durations */
 .mono {
   font-family: var(--font-mono);

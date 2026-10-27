@@ -29,6 +29,9 @@ const en = {
     profile: "From Marrakech to the summit of Toubkal",
     slides: {
       atlas: { place: "Aroumd, High Atlas", alt: "Terracotta houses of Aroumd village below the High Atlas peaks, near Imlil" },
+      oukaimeden: { place: "Oukaïmeden, High Atlas", alt: "Snow-covered peaks above the stone houses of Oukaïmeden in the High Atlas" },
+      highAtlas: { place: "High Atlas", alt: "Snow-capped summits of the High Atlas under a blue sky" },
+      valleys: { place: "Atlas valleys", alt: "Green terraced valley below the snowy peaks of the Atlas" },
       sahara: { place: "Erg Chebbi, Merzouga", alt: "Orange sand dunes of Erg Chebbi under a blue sky in the Sahara" },
       kasbah: { place: "Aït Benhaddou", alt: "The earthen ksar of Aït Benhaddou above the palm grove" },
       cities: { place: "Fès el-Bali", alt: "Leather dyeing vats of a tannery in the medina of Fès, seen from above" },

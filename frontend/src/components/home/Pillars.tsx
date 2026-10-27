@@ -12,9 +12,9 @@ import { stock } from "@/lib/site";
 export type PillarKey = "treks" | "sahara" | "cities" | "dayTrips";
 
 const PILLARS: { key: PillarKey; path: string; photo: { src: string }; accent: string; position: string; legend: string }[] = [
-  { key: "treks", path: "/treks", photo: stock.atlasValley, accent: "bg-atlas", position: "50% 50%", legend: "31.06°N · 7.91°W ▲ 4167 m" },
-  { key: "sahara", path: "/sahara-desert-tours", photo: stock.saharaCaravan, accent: "bg-sahara", position: "50% 62%", legend: "31.10°N · 4.01°W ▲ 700 m" },
-  { key: "cities", path: "/morocco-tours", photo: stock.koutoubia, accent: "bg-imperial", position: "50% 30%", legend: "31.62°N · 7.99°W ▲ 466 m" },
+  { key: "treks", path: "/treks", photo: stock.atlasValley, accent: "bg-atlas", position: "50% 50%", legend: "Toubkal ▲ 4167 m" },
+  { key: "sahara", path: "/sahara-desert-tours", photo: stock.saharaCaravan, accent: "bg-sahara", position: "50% 62%", legend: "Merzouga ▲ 700 m" },
+  { key: "cities", path: "/morocco-tours", photo: stock.koutoubia, accent: "bg-imperial", position: "50% 30%", legend: "Marrakech ▲ 466 m" },
   { key: "dayTrips", path: "/day-trips-from-marrakech", photo: stock.atlasFoothills, accent: "bg-gold", position: "50% 50%", legend: "Marrakech ↔ 0–200 km" },
 ];
 
@@ -81,7 +81,7 @@ export function Pillars({ lang, dict, counts }: { lang: Locale; dict: Dictionary
     <div className="max-w-sm shrink-0">
       <p className="eyebrow">{dict.eyebrow}</p>
       <h2 className="heading mt-3 text-[clamp(1.8rem,3.4vw,2.8rem)]">{dict.title}</h2>
-      <p className="mono mt-6 hidden items-center gap-3 text-muted lg:flex">
+      <p className="mono mt-6 flex items-center gap-3 text-muted">
         {dict.hint}
         <span aria-hidden="true" className="h-px w-12 bg-gold" />
       </p>
@@ -90,12 +90,12 @@ export function Pillars({ lang, dict, counts }: { lang: Locale; dict: Dictionary
 
   return (
     <>
-      {/* phones (and reduced motion): stacked */}
+      {/* phones: swipe sideways, one panel at a time with the next one peeking; tablets (and reduced motion): grid */}
       <section className={`mx-auto max-w-7xl px-4 py-16 md:px-8 ${reduce ? "" : "lg:hidden"}`}>
         {header}
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0">
           {PILLARS.map((p, i) => (
-            <Panel key={p.key} p={p} i={i} lang={lang} dict={dict} count={counts[p.key]} className="min-h-[26rem]" />
+            <Panel key={p.key} p={p} i={i} lang={lang} dict={dict} count={counts[p.key]} className="min-h-[28rem] w-[84%] shrink-0 snap-start md:w-auto" />
           ))}
         </div>
       </section>
