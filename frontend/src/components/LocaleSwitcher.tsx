@@ -2,21 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 import { localeNames, locales, localePath, stripLocale, type Locale } from "@/i18n/config";
 
-/** Same page in the other languages: EN FR ES DE. */
-export function LocaleSwitcher({
-  current,
-  label,
-  className = "",
-  tone = "dark",
-}: {
-  current: Locale;
-  label: string;
-  className?: string;
-  tone?: "dark" | "light";
-}) {
-  const pathname = stripLocale(usePathname() || "/");
+type Props = { current: Locale; label: string; className?: string; tone?: "dark" | "light" };
+
+function Links({ current, label, className = "", tone = "dark", pathname }: Props & { pathname: string }) {
   const idle = tone === "dark" ? "text-muted hover:text-navy" : "text-white/60 hover:text-white";
   const active = tone === "dark" ? "text-navy border-gold" : "text-white border-gold";
 
@@ -36,5 +27,21 @@ export function LocaleSwitcher({
         </Link>
       ))}
     </nav>
+  );
+}
+
+function CurrentPageLinks(props: Props) {
+  return <Links {...props} pathname={stripLocale(usePathname() || "/")} />;
+}
+
+/**
+ * Same page in the other languages: EN FR ES DE. The current URL is only known at request time, so the
+ * prerendered shell links to each language's home page and the real links stream in right after.
+ */
+export function LocaleSwitcher(props: Props) {
+  return (
+    <Suspense fallback={<Links {...props} pathname="/" />}>
+      <CurrentPageLinks {...props} />
+    </Suspense>
   );
 }

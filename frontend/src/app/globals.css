@@ -86,6 +86,13 @@ body {
   color: var(--gold);
 }
 
+/* phones: lift the WhatsApp button above a page's bottom booking bar */
+@media (max-width: 1023px) {
+  body:has([data-mobile-bar]) .wa-fab {
+    bottom: 5.5rem;
+  }
+}
+
 /* horizontal swipers: keep scrolling, hide the bar */
 .no-scrollbar {
   scrollbar-width: none;

@@ -1,5 +1,5 @@
 import { cacheLife, cacheTag } from "next/cache";
-import type { Category, Paginated, Review, ReviewSummary, TourCard } from "@/lib/types";
+import type { Category, Paginated, Review, ReviewSummary, TourCard, TourDetail } from "@/lib/types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
 
@@ -59,4 +59,19 @@ export async function getReviews(perPage = 6): Promise<{ data: Review[]; summary
   "use cache";
   const res = await cachedRead<{ data?: Review[]; summary?: ReviewSummary }>("reviews", `/reviews?per_page=${perPage}`, {});
   return { data: res.data ?? [], summary: res.summary ?? { count: 0, average: null } };
+}
+
+/** One tour by its URL slug, or null when it does not exist (or the API cannot be reached). */
+export async function getTour(slug: string, locale: string): Promise<TourDetail | null> {
+  "use cache";
+  cacheTag(`tour:${slug}`);
+  const res = await cachedRead<{ data?: TourDetail }>("tours", `/tours/${encodeURIComponent(slug)}?locale=${locale}`, {});
+  return res.data ?? null;
+}
+
+/** Paths of every published tour, used to prerender the tour pages. */
+export async function getTourPaths(locale: string): Promise<string[]> {
+  "use cache";
+  const res = await getTours({ locale, perPage: 60 });
+  return res.data.map((t) => t.path);
 }
