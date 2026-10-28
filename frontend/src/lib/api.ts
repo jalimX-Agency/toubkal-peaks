@@ -13,12 +13,38 @@ export class ApiError extends Error {
   }
 }
 
+/**
+ * The host's firewall blocks an IP for a while after a burst of requests ("Access denied"), which
+ * is exactly what a build does. Keep at most two requests in flight, started 150 ms apart.
+ */
+const MAX_IN_FLIGHT = 2;
+const SPACING_MS = 150;
+let inFlight = 0;
+let lastStart = 0;
+const waiting: (() => void)[] = [];
+
+async function throttled<T>(run: () => Promise<T>): Promise<T> {
+  if (inFlight >= MAX_IN_FLIGHT) await new Promise<void>((resolve) => waiting.push(resolve));
+  inFlight++;
+  const wait = lastStart + SPACING_MS - Date.now();
+  lastStart = Math.max(Date.now(), lastStart + SPACING_MS);
+  if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+  try {
+    return await run();
+  } finally {
+    inFlight--;
+    waiting.shift()?.();
+  }
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
-    ...init,
-    // a clear user agent: the host's firewall blocks some generic ones, and this one can be allow-listed
-    headers: { Accept: "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)", ...(init?.headers ?? {}) },
-  });
+  const res = await throttled(() =>
+    fetch(`${API_URL}${path}`, {
+      ...init,
+      // a clear user agent: the host's firewall blocks some generic ones, and this one can be allow-listed
+      headers: { Accept: "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)", ...(init?.headers ?? {}) },
+    }),
+  );
   if (!res.ok) {
     const body = await res.json().catch(() => undefined);
     throw new ApiError(res.status, (body as { message?: string })?.message ?? res.statusText, body);
@@ -28,7 +54,8 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 /**
  * Cached read helpers. A failing API must not break the build or a page: they return an empty
- * result and keep it for only a few seconds so the next request tries again.
+ * result that is refreshed a minute later. (Next.js leaves caches expiring in under five minutes
+ * out of the prerender, which would turn one failed request into a failed build.)
  */
 async function cachedRead<T>(tag: string, path: string, empty: T): Promise<T> {
   cacheTag(tag);
@@ -37,10 +64,17 @@ async function cachedRead<T>(tag: string, path: string, empty: T): Promise<T> {
     cacheLife("minutes");
     return data;
   } catch (error) {
-    console.error(`[api] ${path} failed:`, error instanceof Error ? error.message : error);
-    cacheLife("seconds");
+    console.error(`[api] ${path} failed:`, describe(error));
+    cacheLife({ stale: 30, revalidate: 60, expire: 3600 });
     return empty;
   }
+}
+
+/** "fetch failed" alone hides the reason (DNS, refused, timeout, TLS...): add the cause. */
+function describe(error: unknown): string {
+  if (!(error instanceof Error)) return String(error);
+  const cause = error.cause as { code?: string; message?: string } | undefined;
+  return cause ? `${error.message} (${cause.code ?? cause.message})` : error.message;
 }
 
 export async function getCategories(locale: string): Promise<Category[]> {
