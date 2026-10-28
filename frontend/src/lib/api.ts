@@ -67,7 +67,25 @@ export async function getTour(slug: string, locale: string): Promise<TourDetail 
   "use cache";
   cacheTag(`tour:${slug}`);
   const res = await cachedRead<{ data?: TourDetail }>("tours", `/tours/${encodeURIComponent(slug)}?locale=${locale}`, {});
-  return res.data ?? null;
+  return res.data ? withoutFillers(res.data) : null;
+}
+
+/** The imported content keeps "-", "." and empty strings as placeholders; they are never shown. */
+const isFiller = (s: string) => /^[\s\-–—.·]*$/.test(s);
+const clean = (list: string[]) => list.filter((s) => !isFiller(s));
+
+function withoutFillers(tour: TourDetail): TourDetail {
+  return {
+    ...tour,
+    highlights: clean(tour.highlights),
+    included: clean(tour.included),
+    excluded: clean(tour.excluded),
+    upgrades: clean(tour.upgrades),
+    itinerary: tour.itinerary.map((day) => ({ ...day, body: clean(day.body) })),
+    packing: tour.packing
+      .map((group) => ({ ...group, items: clean(group.items) }))
+      .filter((group) => group.items.length > 0),
+  };
 }
 
 /** Paths of every published tour, used to prerender the tour pages. */

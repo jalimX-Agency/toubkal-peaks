@@ -178,8 +178,8 @@ export function Highlights({ tour, trip }: { tour: TourDetail; trip: TripDict })
     <section>
       <h2 className="heading text-2xl">{trip.highlights}</h2>
       <ul lang={tour.locale} className="mt-5 grid gap-3 sm:grid-cols-2">
-        {tour.highlights.map((h) => (
-          <li key={h} className="flex gap-3 text-ink">
+        {tour.highlights.map((h, k) => (
+          <li key={`${k}-${h}`} className="flex gap-3 text-ink">
             <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-gold" />
             {h}
           </li>
@@ -222,7 +222,7 @@ export function AltitudeProfile({ tour, trip, camps }: { tour: TourDetail; trip:
         </svg>
         {stops.map((s, i) => (
           <div
-            key={s.label}
+            key={`${i}-${s.label}`}
             className={`absolute flex -translate-y-full flex-col pb-2 ${i === 0 ? "items-start" : i === stops.length - 1 ? "-translate-x-full items-end" : "-translate-x-1/2 items-center"}`}
             style={{ left: `${x(i) / 10}%`, top: `${(y(s.alt) / 120) * 100}%` }}
           >
@@ -259,7 +259,7 @@ export function Itinerary({ tour, trip }: { tour: TourDetail; trip: TripDict }) 
       <ol lang={tour.locale} className="relative mt-6">
         <span aria-hidden="true" className="absolute bottom-6 left-[1.15rem] top-6 border-l-2 border-dashed border-gold/40" />
         {tour.itinerary.map((day, i) => (
-          <li key={day.day} className="relative pb-6 pl-14 last:pb-0">
+          <li key={`${day.day}-${i}`} className="relative pb-6 pl-14 last:pb-0">
             <span className="font-display absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-navy text-sm font-semibold text-white shadow-[0_0_0_1px_var(--line)]">
               {String(day.day).padStart(2, "0")}
             </span>
@@ -301,8 +301,8 @@ export function IncludedExcluded({ tour, trip }: { tour: TourDetail; trip: TripD
       <div className="rounded-sm border border-line bg-white p-6">
         <h3 className="heading text-xl">{title}</h3>
         <ul lang={tour.locale} className="mt-4 space-y-3 text-sm leading-relaxed text-ink">
-          {items.map((item) => (
-            <li key={item} className="flex gap-3">
+          {items.map((item, k) => (
+            <li key={`${k}-${item}`} className="flex gap-3">
               <span aria-hidden="true" className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[0.7rem] font-bold text-white ${ok ? "bg-atlas" : "bg-sahara"}`}>
                 {ok ? "✓" : "✕"}
               </span>
@@ -335,8 +335,8 @@ export function Packing({ tour, trip }: { tour: TourDetail; trip: TripDict }) {
               <span aria-hidden="true" className="text-xl leading-none text-gold transition-transform group-open:rotate-45">+</span>
             </summary>
             <ul className="space-y-2 pb-5 text-sm leading-relaxed text-ink">
-              {group.items.map((item) => (
-                <li key={item} className="flex gap-3">
+              {group.items.map((item, k) => (
+                <li key={`${k}-${item}`} className="flex gap-3">
                   <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                   {item}
                 </li>
@@ -355,8 +355,8 @@ export function Upgrades({ tour, trip }: { tour: TourDetail; trip: TripDict }) {
     <section>
       <h2 className="heading text-2xl">{trip.upgrades}</h2>
       <ul lang={tour.locale} className="mt-5 space-y-3 text-ink">
-        {tour.upgrades.map((u) => (
-          <li key={u} className="flex gap-3">
+        {tour.upgrades.map((u, k) => (
+          <li key={`${k}-${u}`} className="flex gap-3">
             <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-gold" />
             <span>
               <LabelledItem text={u} />
@@ -375,7 +375,7 @@ export function Gallery({ tour, trip }: { tour: TourDetail; trip: TripDict }) {
       <h2 className="heading text-2xl">{trip.gallery}</h2>
       <ul className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3">
         {tour.images.gallery.map((img, i) => (
-          <li key={img.url} className={`relative overflow-hidden rounded-sm bg-sand ${i === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-[4/3]"}`}>
+          <li key={`${i}-${img.url}`} className={`relative overflow-hidden rounded-sm bg-sand ${i === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-[4/3]"}`}>
             <Image src={img.url} alt={img.alt || tour.title} fill sizes="(min-width: 768px) 33vw, 50vw" className="object-cover" />
           </li>
         ))}
