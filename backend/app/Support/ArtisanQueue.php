@@ -19,7 +19,7 @@ use Throwable;
 class ArtisanQueue
 {
     /** Commands that may be queued. Destructive ones (migrate:fresh, db:wipe...) are deliberately absent. */
-    public const ALLOWED = ['toubkal:import', 'toubkal:publish', 'db:seed', 'cache:clear'];
+    public const ALLOWED = ['toubkal:import', 'toubkal:import-translations', 'toubkal:publish', 'db:seed', 'cache:clear'];
 
     /** @param list<string> $allowed */
     public function __construct(
