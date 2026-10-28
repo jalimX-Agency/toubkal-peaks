@@ -115,7 +115,6 @@ const es: Dictionary = {
   footer: {
     tagline: "Explora Marruecos de otra manera.",
     trips: "Viajes",
-    company: "Empresa",
     contact: "Contacto",
     privacy: "Política de privacidad",
     legal: "Aviso legal",

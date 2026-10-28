@@ -115,7 +115,6 @@ const de: Dictionary = {
   footer: {
     tagline: "Marokko anders entdecken.",
     trips: "Reisen",
-    company: "Unternehmen",
     contact: "Kontakt",
     privacy: "Datenschutz",
     legal: "Impressum",

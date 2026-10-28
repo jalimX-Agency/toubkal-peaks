@@ -65,7 +65,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
           <h2 className="heading text-2xl">{contact.reach}</h2>
           <ul className="mt-6 divide-y divide-line border-y border-line">
             {channels.map((c) => (
-              <li key={c.value} className="py-4">
+              <li key={c.href} className="py-4">
                 <p className="mono text-gold">{c.label}</p>
                 <a
                   href={c.href}

@@ -113,7 +113,6 @@ const en = {
   footer: {
     tagline: "Explore Morocco differently.",
     trips: "Trips",
-    company: "Company",
     contact: "Contact",
     privacy: "Privacy policy",
     legal: "Legal notice",

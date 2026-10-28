@@ -115,7 +115,6 @@ const fr: Dictionary = {
   footer: {
     tagline: "Explorez le Maroc autrement.",
     trips: "Voyages",
-    company: "Société",
     contact: "Contact",
     privacy: "Politique de confidentialité",
     legal: "Mentions légales",
