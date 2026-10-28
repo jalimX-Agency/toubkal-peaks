@@ -2,10 +2,15 @@
 # The cron job runs every line below ONCE after a successful migration, writes the result to
 # storage/logs/deploy.log ("queue [ok|failed|rejected] ...") and removes the line from this file.
 # This file is deployed with the code and is only re-uploaded when its content changes in Git.
-# Allowed: toubkal:import, toubkal:publish, db:seed, cache:clear (plain --options only).
+# Allowed: toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish,
+# db:seed, cache:clear (plain --options only).
 # Anything else is rejected. Lines starting with # are comments.
 #
 # Import the 59 tours + 72 redirects from the old site (safe to repeat: existing tours are skipped).
 toubkal:import
 # Publish every imported tour so the public API and the website show them.
 toubkal:publish --all
+# Load the French, Spanish and German content (machine translations; reviewed ones are kept).
+toubkal:import-translations
+# Fix known errors in the English content (fields edited in the admin since the import are kept).
+toubkal:apply-corrections

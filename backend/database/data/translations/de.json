@@ -1930,7 +1930,7 @@
    "highlights": [],
    "facts": {
     "best_time_to_travel": "Ganzjährig",
-    "departs_from": "Marrakesch",
+    "departs_from": "Casablanca",
     "departure_times": "Flexibel / variabel (je nach Ankunft)",
     "duration": "8 Tage / 7 Nächte",
     "languages_available": "Englisch, Französisch, Spanisch, Arabisch, Berberisch"
@@ -2976,7 +2976,6 @@
      "stats": {},
      "accommodation": "",
      "body": [
-      "",
       "Frühstück in der Herberge, dann Rückweg zu Fuß nach Chefchaouen über das Dorf Kella, bekannt für seine alten Speicher und seine sehr alte, schiefe Moschee. Nach 7 Stunden erreichen wir Chefchaouen. Übernachtung mit Halbpension im charmanten Gästehaus Casa Hassan."
      ]
     },
@@ -3499,7 +3498,7 @@
    "id": 1085,
    "slug": "11-tage-marokko-entdecken",
    "title": "11 Tage Marokko entdecken",
-   "summary": "– Einzelzimmerzuschlag: Bei Gruppen mit ungerader Personenzahl ist im Hotel ein Einzelzimmer nötig, für das ein Einzelzimmerzuschlag berechnet wird.",
+   "summary": "Eine 11-tägige Rundreise durch Südmarokko: Essaouira und die Atlantikküste, Sidi Ifni, die bemalten Felsen von Tafraoute, Taroudant, die Dünen des Erg Chegaga, das Draatal und Aït Ben Haddou, zum Abschluss Marrakesch und das Atlasgebirge.",
    "seo_description": null,
    "highlights": [],
    "facts": {},
@@ -3669,7 +3668,7 @@
      "stats": {},
      "accommodation": "",
      "body": [
-      "Transport (5 Std.), Frühstück, Strecke: 261 km",
+      "Transport (2,5 Std.), Frühstück, Strecke: 115 km",
       "Fahrt von Tanger nach Chefchaouen im Privatfahrzeug mit englischsprachigem Fahrer, um diese Stadt zu entdecken. Im Rifgebirge unweit des Mittelmeers gelegen, ist Chefchaouen weltweit bekannt für seine Medina mit schattigen Gassen, weiß getünchten Häusern mit türkisblauen Türen, schmiedeeisernen Fenstern und bunt gefliesten Dächern. In den Souks begegnen Ihnen Einheimische in traditioneller Kleidung mit ihren Strohhüten. Übernachtung in Chefchaouen.",
       "Unterkunft: traditionelles Hotel im marokkanischen Stil (Standard)."
      ]
@@ -4313,9 +4312,9 @@
      "stats": {},
      "accommodation": "Traditionelles Hotel im marokkanischen Stil (Standard)",
      "body": [
-      "Nach dem Frühstück fahren Sie von Aït Ben Haddou nach Osten durch das zerklüftete Saghro-Gebirge. Die Landschaft wechselt dramatisch vom grünen Hohen Atlas zu zackigen Vulkangipfeln und tiefen Schluchten, durchsetzt von verlassenen Kasbahs, stillen Zeugen der reichen Geschichte Marokkos.",
-      "Am Draatal, dem längsten Flusstal Marokkos, wird die Landschaft sanfter: fruchtbare grüne Streifen mit Palmenhainen, Lehmdörfern und traditionellen Bewässerungssystemen, den Khettaras. Halt in Berberdörfern, Begegnungen mit Familien und Einblicke in den ländlichen Alltag. Das Tal bietet großartige Fotomotive, besonders bei Sonnenuntergang, wenn goldenes Licht Palmenhaine und Kasbahs erhellt.",
-      "Ankunft in Zagora zur Übernachtung, dem Tor zur Sahara.",
+      "Nach dem Frühstück Fahrt von Aït Ben Haddou nach Osten nach Ouarzazate, dem „Hollywood Afrikas“, dann durch die Palmenoase Skoura mit alten Kasbahs wie der Kasbah Amridil.",
+      "Weiter über die Straße der tausend Kasbahs nach Kelaat M'Gouna, dem Rosental, wo lokale Kooperativen Rosenwasser und Rosenöl herstellen. Halt in Berberdörfern, mit dem Hohen Atlas im Norden und dem Saghro im Süden.",
+      "Ankunft im Dadestal am Nachmittag, zwischen roten Felswänden und ungewöhnlichen Felsformationen, ideal für Fotos im Abendlicht.",
       "Mahlzeiten: Frühstück und Abendessen"
      ]
     },
@@ -4327,7 +4326,7 @@
      "body": [
       "Der Morgen beginnt mit der Todra-Schlucht, einer der eindrucksvollsten Naturformationen Marokkos. Fast 300 Meter hohe Sandsteinwände bilden enge Canyonwege, ideal für kurze Spaziergänge und Fotos.",
       "Weiter nach Nkob, einem traditionellen Berberort mit alten Kasbahs, lokalen Märkten und Lehmarchitektur. Bummeln Sie durch den Ort, kommen Sie mit Einheimischen ins Gespräch und sehen Sie traditionelles Handwerk.",
-      "Die Rückfahrt durch das Draatal bietet weitere Aussichtspunkte auf Palmenhaine, Kasbahs und kleine Dörfer im Talgrund, mit dem Kontrast von Wüste und grünen Oasen. Ankunft in Zagora am späten Nachmittag, um die ruhige Atmosphäre dieses Wüstentors zu genießen.",
+      "Die Weiterfahrt durch das Draatal bietet weitere Aussichtspunkte auf Palmenhaine, Kasbahs und kleine Dörfer im Talgrund, mit dem Kontrast von Wüste und grünen Oasen. Ankunft in Zagora am späten Nachmittag, um die ruhige Atmosphäre dieses Wüstentors zu genießen.",
       "Mahlzeiten: Frühstück und Abendessen",
       "Unterkunft: traditionelles Hotel im marokkanischen Stil (Standard)."
      ]
@@ -4336,7 +4335,7 @@
      "day": 4,
      "title": "Zagora → M'Hamid → Erg Chigaga (≈160 km / 5 Std.)",
      "stats": {},
-     "accommodation": "Traditionelles Hotel im marokkanischen Stil (Standard)",
+     "accommodation": "Wüstencamp im Erg Chigaga (Standard)",
      "body": [
       "Heute geht es tiefer an den Rand der Sahara. Erster Halt in Tamegroute, bekannt für seine grüne Keramik, wo Berberhandwerker grün glasierte Schalen, Töpfe und Dekorationsstücke nach traditionellen Techniken fertigen. Nicht verpassen: die Koranbibliothek aus dem 13. Jahrhundert mit alten Handschriften, Zeugnis jahrhundertelanger islamischer Gelehrsamkeit in Marokko.",
       "Weiter nach M'Hamid, dem letzten Ort vor der weiten Wüste. Erkunden Sie Palmenhaine und Lehmhäuser bei einem Mittagessen und einem Einblick in das lokale Leben.",
@@ -4349,7 +4348,7 @@
      "day": 5,
      "title": "Erg Chigaga → Marrakesch (≈421 km / 9 Std.)",
      "stats": {},
-     "accommodation": "Traditionelles Hotel im marokkanischen Stil (Standard)",
+     "accommodation": "",
      "body": [
       "Früh aufstehen für den Sonnenaufgang in der Wüste, wenn das sanfte Morgenlicht die Dünen in goldene Wellen verwandelt. Nach dem Frühstück Rückfahrt nach Marrakesch im 4×4 über die alte Paris-Dakar-Route, bekannt für anspruchsvolle Dünen und steinige Pisten.",
       "Halt in Taznakht, bekannt für handgeknüpfte Berberteppiche. Sehen Sie den Weberinnen zu und kaufen Sie einzigartige Souvenirs.",
@@ -4647,21 +4646,12 @@
      ]
     },
     {
-     "day": 7,
-     "title": "Vormittag in Marrakesch",
-     "stats": {},
-     "accommodation": "",
-     "body": [
-      "Je nach Flugzeit entspannter Vormittag in Marrakesch vor dem Flughafentransfer. Ende der Leistungen und Abschied von Marokko."
-     ]
-    },
-    {
      "day": 8,
      "title": "Abreise",
      "stats": {},
      "accommodation": "",
      "body": [
-      "Transfer zum Flughafen. Und wenn Sie wieder zu Hause sind, erzählen Sie Ihren Freunden von Ihrer Marokkoreise!"
+      "Je nach Flugzeit entspannter Vormittag in Marrakesch vor dem Flughafentransfer. Ende der Leistungen und Abschied von Marokko."
      ]
     }
    ],

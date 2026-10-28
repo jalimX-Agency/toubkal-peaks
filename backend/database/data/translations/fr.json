@@ -1930,7 +1930,7 @@
    "highlights": [],
    "facts": {
     "best_time_to_travel": "Toute l'année",
-    "departs_from": "Marrakech",
+    "departs_from": "Casablanca",
     "departure_times": "Flexibles / variables (selon votre arrivée)",
     "duration": "8 jours / 7 nuits",
     "languages_available": "Anglais, français, espagnol, arabe, berbère"
@@ -2976,7 +2976,6 @@
      "stats": {},
      "accommodation": "",
      "body": [
-      "",
       "Petit-déjeuner au gîte, puis retour à pied vers Chefchaouen par le village de Kella, connu pour ses anciens greniers et sa très vieille mosquée penchée. Après 7 heures de marche, arrivée à Chefchaouen. Nuit en demi-pension à la Casa Hassan, charmante maison d'hôtes."
      ]
     },
@@ -3499,7 +3498,7 @@
    "id": 1085,
    "slug": "11-jours-decouverte-du-maroc",
    "title": "11 jours à la découverte du Maroc",
-   "summary": "– Supplément single : pour les groupes en nombre impair, une chambre individuelle sera nécessaire à l'hôtel et un supplément single sera facturé.",
+   "summary": "Une boucle de 11 jours dans le Sud marocain : Essaouira et la côte atlantique, Sidi Ifni, les rochers peints de Tafraoute, Taroudant, les dunes de l'Erg Chegaga, la vallée du Drâa et Aït Ben Haddou, avant de finir à Marrakech et dans l'Atlas.",
    "seo_description": null,
    "highlights": [],
    "facts": {},
@@ -3669,7 +3668,7 @@
      "stats": {},
      "accommodation": "",
      "body": [
-      "Transport (5 h), petit-déjeuner, distance : 261 km",
+      "Transport (2 h 30), petit-déjeuner, distance : 115 km",
       "Trajet de Tanger à Chefchaouen en véhicule privé avec chauffeur parlant anglais, pour découvrir cette ville. Nichée dans les montagnes du Rif, non loin de la Méditerranée, Chefchaouen est connue dans le monde entier pour sa médina aux ruelles ombragées, ses maisons blanchies aux portes bleu turquoise, ses fenêtres en fer forgé et ses toits de tuiles colorées. Dans les souks, on croise des habitants en tenue traditionnelle coiffés de leurs chapeaux de paille. Nuit à Chefchaouen.",
       "Hébergement : hôtel de style marocain traditionnel (standard)."
      ]
@@ -4313,9 +4312,9 @@
      "stats": {},
      "accommodation": "Hôtel de style marocain traditionnel (standard)",
      "body": [
-      "Après le petit-déjeuner, départ d'Aït Ben Haddou vers l'est, à travers les montagnes sauvages du Saghro. Le paysage change radicalement : du Haut Atlas verdoyant aux pics volcaniques déchiquetés et aux gorges profondes, ponctués de kasbahs abandonnées, témoins silencieux de la riche histoire du Maroc.",
-      "À l'approche de la vallée du Drâa, la plus longue vallée fluviale du Maroc, le décor s'adoucit : bandes vertes fertiles, palmeraies, villages en pisé et systèmes d'irrigation traditionnels appelés khettaras. Arrêts dans des villages berbères, rencontres avec des familles et aperçu de la vie rurale. La vallée offre de superbes occasions de photos, surtout au coucher du soleil quand la lumière dorée illumine palmeraies et kasbahs.",
-      "Arrivée à Zagora pour la nuit, porte du désert du Sahara.",
+      "Après le petit-déjeuner, départ d'Aït Ben Haddou vers l'est jusqu'à Ouarzazate, le « Hollywood de l'Afrique », puis traversée de l'oasis de Skoura et de ses anciennes kasbahs, comme la kasbah Amridil.",
+      "Continuation par la route des Mille Kasbahs jusqu'à Kelaat M'Gouna, la vallée des Roses, où les coopératives locales fabriquent eau de rose et huiles. Arrêts dans des villages berbères, entre le Haut Atlas au nord et le Saghro au sud.",
+      "Arrivée dans la vallée du Dadès dans l'après-midi, au milieu de ses falaises rouges et de ses formations rocheuses étonnantes, idéales pour les photos en fin de journée.",
       "Repas : petit-déjeuner et dîner"
      ]
     },
@@ -4327,7 +4326,7 @@
      "body": [
       "La matinée commence par la visite des gorges du Todra, l'une des formations naturelles les plus impressionnantes du Maroc. Des falaises de grès hautes de près de 300 mètres forment d'étroits canyons, parfaits pour de courtes balades et des photos.",
       "Continuation vers Nkob, bourg berbère traditionnel aux anciennes kasbahs, aux marchés locaux et à l'architecture en pisé. Balade dans le village, échanges avec les habitants et découverte de l'artisanat traditionnel.",
-      "La route du retour par la vallée du Drâa offre d'autres points de vue sur les palmeraies, les kasbahs et les petits villages nichés au fond de la vallée, avec le contraste saisissant entre désert et oasis verdoyantes. Arrivée à Zagora en fin d'après-midi, pour profiter du calme de cette porte du désert.",
+      "La suite de la route par la vallée du Drâa offre d'autres points de vue sur les palmeraies, les kasbahs et les petits villages nichés au fond de la vallée, avec le contraste saisissant entre désert et oasis verdoyantes. Arrivée à Zagora en fin d'après-midi, pour profiter du calme de cette porte du désert.",
       "Repas : petit-déjeuner et dîner",
       "Hébergement : hôtel de style marocain traditionnel (standard)."
      ]
@@ -4336,7 +4335,7 @@
      "day": 4,
      "title": "Zagora → M'Hamid → Erg Chigaga (≈160 km / 5 h)",
      "stats": {},
-     "accommodation": "Hôtel de style marocain traditionnel (standard)",
+     "accommodation": "Camp dans le désert, Erg Chigaga (standard)",
      "body": [
       "Aujourd'hui, nous nous enfonçons aux portes du Sahara. Premier arrêt à Tamegroute, village réputé pour sa poterie verte, où les artisans berbères façonnent bols, pots et objets décoratifs à l'émail vert selon des techniques ancestrales. Ne manquez pas la bibliothèque coranique du XIIIe siècle et ses manuscrits anciens, témoins de siècles de savoir islamique au Maroc.",
       "Continuation vers M'Hamid, dernière ville avant l'immensité du désert. Découverte des palmeraies et des maisons en pisé, avec déjeuner et aperçu de la vie locale.",
@@ -4349,7 +4348,7 @@
      "day": 5,
      "title": "Erg Chigaga → Marrakech (≈421 km / 9 h)",
      "stats": {},
-     "accommodation": "Hôtel de style marocain traditionnel (standard)",
+     "accommodation": "",
      "body": [
       "Lever matinal pour admirer le soleil se lever sur le désert, quand la douce lumière du matin transforme les dunes en vagues dorées. Après le petit-déjeuner, retour vers Marrakech en 4×4 par l'ancienne piste du Paris-Dakar, célèbre pour ses dunes exigeantes et ses pistes rocailleuses.",
       "Arrêt à Taznakht, village réputé pour ses tapis berbères faits main. Découverte du travail des tisserandes et achats de souvenirs uniques.",
@@ -4647,21 +4646,12 @@
      ]
     },
     {
-     "day": 7,
-     "title": "Matinée à Marrakech",
-     "stats": {},
-     "accommodation": "",
-     "body": [
-      "Selon l'heure de votre vol, matinée tranquille à Marrakech avant le transfert à l'aéroport. Fin de nos services et au revoir au Maroc."
-     ]
-    },
-    {
      "day": 8,
      "title": "Départ",
      "stats": {},
      "accommodation": "",
      "body": [
-      "Transfert à l'aéroport. Et une fois rentré, n'oubliez pas de parler de votre voyage au Maroc à vos amis !"
+      "Selon l'heure de votre vol, matinée tranquille à Marrakech avant le transfert à l'aéroport. Fin de nos services et au revoir au Maroc."
      ]
     }
    ],

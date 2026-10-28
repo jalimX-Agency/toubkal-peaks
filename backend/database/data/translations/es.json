@@ -1930,7 +1930,7 @@
    "highlights": [],
    "facts": {
     "best_time_to_travel": "Todo el año",
-    "departs_from": "Marrakech",
+    "departs_from": "Casablanca",
     "departure_times": "Flexibles / variables (según tu llegada)",
     "duration": "8 días / 7 noches",
     "languages_available": "Inglés, francés, español, árabe, bereber"
@@ -2976,7 +2976,6 @@
      "stats": {},
      "accommodation": "",
      "body": [
-      "",
       "Desayuno en el albergue y regreso a pie a Chefchaouen por el pueblo de Kella, conocido por sus antiguos graneros y su viejísima mezquita inclinada. Tras 7 horas llegamos a Chefchaouen. Noche en media pensión en la Casa Hassan, una casa de huéspedes con encanto."
      ]
     },
@@ -3499,7 +3498,7 @@
    "id": 1085,
    "slug": "11-dias-descubriendo-marruecos",
    "title": "11 días descubriendo Marruecos",
-   "summary": "– Suplemento individual: en grupos con un número impar de personas será necesaria una habitación individual en los hoteles y se cobrará un suplemento individual.",
+   "summary": "Un circuito de 11 días por el sur de Marruecos: Esauira y la costa atlántica, Sidi Ifni, las rocas pintadas de Tafraoute, Taroudant, las dunas de Erg Chegaga, el valle del Draa y Aït Ben Haddou, para terminar en Marrakech y el Atlas.",
    "seo_description": null,
    "highlights": [],
    "facts": {},
@@ -3669,7 +3668,7 @@
      "stats": {},
      "accommodation": "",
      "body": [
-      "Transporte (5 h), desayuno, distancia: 261 km",
+      "Transporte (2 h 30), desayuno, distancia: 115 km",
       "Trayecto de Tánger a Chefchaouen en vehículo privado con conductor de habla inglesa para descubrir esta ciudad. Situada en las montañas del Rif, no lejos del Mediterráneo, Chefchaouen es conocida en todo el mundo por su medina de callejuelas a la sombra, casas encaladas con puertas azul turquesa, ventanas de hierro forjado y tejados de azulejos de colores. En los zocos se ven vecinos con ropa tradicional y sus sombreros de paja. Noche en Chefchaouen.",
       "Alojamiento: hotel de estilo marroquí tradicional (estándar)."
      ]
@@ -4313,9 +4312,9 @@
      "stats": {},
      "accommodation": "Hotel de estilo marroquí tradicional (estándar)",
      "body": [
-      "Después del desayuno salimos de Aït Ben Haddou hacia el este, cruzando las agrestes montañas del Saghro. El paisaje cambia por completo: del verde Alto Atlas a picos volcánicos afilados y gargantas profundas, con kasbahs abandonadas como testigos silenciosos de la rica historia de Marruecos.",
-      "Al acercarnos al valle del Draa, el valle fluvial más largo de Marruecos, el paisaje se suaviza con franjas verdes y fértiles, palmerales, pueblos de adobe y sistemas de riego tradicionales llamados khettaras. Paradas en pueblos bereberes para conocer a familias locales y ver la vida rural. El valle ofrece fotos increíbles, sobre todo al atardecer, cuando la luz dorada ilumina palmerales y kasbahs.",
-      "Llegada a Zagora para pasar la noche, puerta del desierto del Sáhara.",
+      "Después del desayuno, salida de Aït Ben Haddou hacia el este hasta Ouarzazate, el «Hollywood de África», y paso por el oasis de Skoura y sus antiguas kasbahs, como la kasbah Amridil.",
+      "Continuamos por la ruta de las Mil Kasbahs hasta Kelaat M'Gouna, el valle de las Rosas, donde las cooperativas locales elaboran agua de rosas y aceites. Paradas en pueblos bereberes, con el Alto Atlas al norte y el Saghro al sur.",
+      "Llegada al valle del Dades por la tarde, entre acantilados rojos y curiosas formaciones rocosas, perfectas para fotografiar con la luz del atardecer.",
       "Comidas: desayuno y cena"
      ]
     },
@@ -4327,7 +4326,7 @@
      "body": [
       "La mañana empieza con la visita a las gargantas del Todra, una de las formaciones naturales más impresionantes de Marruecos. Paredes de arenisca de casi 300 metros forman estrechos cañones, ideales para paseos cortos y fotos.",
       "Seguimos hacia Nkob, pueblo bereber tradicional con antiguas kasbahs, mercados locales y arquitectura de adobe. Pasea por el pueblo, charla con los vecinos y observa la artesanía tradicional.",
-      "El regreso por el valle del Draa ofrece más miradores sobre palmerales, kasbahs y pequeños pueblos en el fondo del valle, con el contraste entre desierto y oasis verdes. Llegada a Zagora a última hora de la tarde para disfrutar de la tranquilidad de esta puerta del desierto.",
+      "La continuación por el valle del Draa ofrece más miradores sobre palmerales, kasbahs y pequeños pueblos en el fondo del valle, con el contraste entre desierto y oasis verdes. Llegada a Zagora a última hora de la tarde para disfrutar de la tranquilidad de esta puerta del desierto.",
       "Comidas: desayuno y cena",
       "Alojamiento: hotel de estilo marroquí tradicional (estándar)."
      ]
@@ -4336,7 +4335,7 @@
      "day": 4,
      "title": "Zagora → M'Hamid → Erg Chigaga (≈160 km / 5 h)",
      "stats": {},
-     "accommodation": "Hotel de estilo marroquí tradicional (estándar)",
+     "accommodation": "Campamento en el desierto, Erg Chigaga (estándar)",
      "body": [
       "Hoy nos adentramos en el borde del Sáhara. Primera parada en Tamegroute, pueblo famoso por su cerámica verde, donde artesanos bereberes crean cuencos, vasijas y objetos decorativos de esmalte verde con técnicas tradicionales. No te pierdas la biblioteca coránica del siglo XIII, con manuscritos antiguos que muestran siglos de saber islámico en Marruecos.",
       "Continuamos a M'Hamid, el último pueblo antes del gran desierto. Recorre sus palmerales y casas de adobe mientras comes y conoces la vida local.",
@@ -4349,7 +4348,7 @@
      "day": 5,
      "title": "Erg Chigaga → Marrakech (≈421 km / 9 h)",
      "stats": {},
-     "accommodation": "Hotel de estilo marroquí tradicional (estándar)",
+     "accommodation": "",
      "body": [
       "Madruga para ver el amanecer en el desierto, cuando la luz suave convierte las dunas en olas doradas. Después del desayuno, regreso a Marrakech en 4×4 por la antigua ruta del París-Dakar, famosa por sus dunas exigentes y pistas pedregosas.",
       "Parada en Taznakht, pueblo famoso por sus alfombras bereberes hechas a mano. Observa a las tejedoras y compra recuerdos únicos.",
@@ -4647,21 +4646,12 @@
      ]
     },
     {
-     "day": 7,
-     "title": "Mañana en Marrakech",
-     "stats": {},
-     "accommodation": "",
-     "body": [
-      "Según el horario de tu vuelo, mañana tranquila en Marrakech antes del traslado al aeropuerto. Fin de nuestros servicios y despedida de Marruecos."
-     ]
-    },
-    {
      "day": 8,
      "title": "Salida",
      "stats": {},
      "accommodation": "",
      "body": [
-      "Traslado al aeropuerto. Y cuando vuelvas a casa, ¡no olvides contar a tus amigos tu viaje por Marruecos!"
+      "Según el horario de tu vuelo, mañana tranquila en Marrakech antes del traslado al aeropuerto. Fin de nuestros servicios y despedida de Marruecos."
      ]
     }
    ],
