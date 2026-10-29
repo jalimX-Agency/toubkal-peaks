@@ -2,7 +2,7 @@
 # The cron job runs every line below ONCE after a successful migration, writes the result to
 # storage/logs/deploy.log ("queue [ok|failed|rejected] ...") and removes the line from this file.
 # This file is deployed with the code and is only re-uploaded when its content changes in Git.
-# Allowed: toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish,
+# Allowed: toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish, toubkal:revalidate, toubkal:create-admin,
 # db:seed, cache:clear (plain --options only).
 # Anything else is rejected. Lines starting with # are comments.
 #
@@ -14,3 +14,5 @@ toubkal:publish --all
 toubkal:import-translations
 # Fix known errors in the English content (fields edited in the admin since the import are kept).
 toubkal:apply-corrections
+# First administrator: emails a temporary password to this address (resends one if it exists).
+toubkal:create-admin --email=admin@toubkal-peaks.com --role=admin
