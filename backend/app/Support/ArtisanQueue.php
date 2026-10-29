@@ -19,7 +19,7 @@ use Throwable;
 class ArtisanQueue
 {
     /** Commands that may be queued. Destructive ones (migrate:fresh, db:wipe...) are deliberately absent. */
-    public const ALLOWED = ['toubkal:import', 'toubkal:import-translations', 'toubkal:apply-corrections', 'toubkal:publish', 'toubkal:revalidate', 'db:seed', 'cache:clear'];
+    public const ALLOWED = ['toubkal:import', 'toubkal:import-translations', 'toubkal:apply-corrections', 'toubkal:publish', 'toubkal:revalidate', 'toubkal:create-admin', 'db:seed', 'cache:clear'];
 
     /** @param list<string> $allowed */
     public function __construct(
@@ -32,7 +32,7 @@ class ArtisanQueue
      */
     public function parse(string $line): ?array
     {
-        if (! preg_match('/^([a-z]+:[a-z-]+)((?:\s+--[a-z-]+(?:=[A-Za-z0-9_\-.\/:]+)?)*)$/', trim($line), $m)) {
+        if (! preg_match('/^([a-z]+:[a-z-]+)((?:\s+--[a-z-]+(?:=[A-Za-z0-9_\-.\/:@+]+)?)*)$/', trim($line), $m)) {
             return null;
         }
         if (! in_array($m[1], $this->allowed, true)) {
