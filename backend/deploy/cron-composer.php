@@ -125,7 +125,9 @@ if (! preg_match('/^APP_KEY=base64:\S+/m', $env)) {
     exit(0);
 }
 
-$run('config:clear');
+// Rebuild the config cache from the current .env at once (config:clear here left the site without a
+// cache for the whole run, and requests arriving meanwhile failed on the missing bootstrap/cache/config.php).
+$run('config:cache');
 $migrated = $run('migrate', ['--force' => true]) === 0;
 
 // One-time commands from storage/app/artisan-queue.txt (allow-listed, see App\Support\ArtisanQueue).

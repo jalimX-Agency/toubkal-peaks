@@ -4,24 +4,22 @@ import { HubPage } from "@/components/hub/HubPage";
 import { TripPage } from "@/components/trip/TripPage";
 import { hasLocale, localePath, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { getTour, getTourPaths, getTours } from "@/lib/api";
+import { getTour, getTours } from "@/lib/api";
 import { HUBS, hubByPath } from "@/lib/hubs";
 
-// Prerendered from generateStaticParams; a trip added later renders on its first request instead.
+// Hubs are prerendered; each trip renders on its first request, then stays cached.
 export const instant = false;
 
 /**
  * Every page below the language root that comes from the catalogue: category hubs (/treks, /treks/toubkal, ...)
  * and trips (/treks/toubkal/2-days-mount-toubkal-trek). Anything else answers 404 inside the site layout.
- * The hubs are always listed, so the list is never empty even if the API is down at build time.
+ *
+ * Only the hubs are built ahead: prerendering the ~240 trip pages in every language made a build send hundreds
+ * of API requests in a minute, and the host answers bursts with 429. A trip page is built by its first visitor
+ * (one or two API calls) and then served from the cache like the others.
  */
 export async function generateStaticParams() {
-  const params: { lang: string; rest: string[] }[] = [];
-  for (const lang of locales) {
-    const paths = new Set<string>([...HUBS.map((h) => h.path), ...(await getTourPaths(lang))]);
-    for (const path of paths) params.push({ lang, rest: path.split("/") });
-  }
-  return params;
+  return locales.flatMap((lang) => HUBS.map((h) => ({ lang, rest: h.path.split("/") })));
 }
 
 async function resolve(lang: Locale, rest: string[]) {

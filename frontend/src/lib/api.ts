@@ -37,14 +37,24 @@ async function throttled<T>(run: () => Promise<T>): Promise<T> {
   }
 }
 
+/** "Too many requests" from the host: wait (as long as it asks, within reason) and try again, twice. */
+const RETRY_STATUSES = [429, 503];
+const RETRY_DELAYS_MS = [2000, 5000];
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await throttled(() =>
-    fetch(`${API_URL}${path}`, {
-      ...init,
-      // a clear user agent: the host's firewall blocks some generic ones, and this one can be allow-listed
-      headers: { Accept: "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)", ...(init?.headers ?? {}) },
-    }),
-  );
+  let res: Response;
+  for (let attempt = 0; ; attempt++) {
+    res = await throttled(() =>
+      fetch(`${API_URL}${path}`, {
+        ...init,
+        // a clear user agent: the host's firewall blocks some generic ones, and this one can be allow-listed
+        headers: { Accept: "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)", ...(init?.headers ?? {}) },
+      }),
+    );
+    if (!RETRY_STATUSES.includes(res.status) || attempt >= RETRY_DELAYS_MS.length) break;
+    const asked = Number(res.headers.get("retry-after")) * 1000;
+    await new Promise((resolve) => setTimeout(resolve, Math.min(asked > 0 ? asked : RETRY_DELAYS_MS[attempt], 10000)));
+  }
   if (!res.ok) {
     const body = await res.json().catch(() => undefined);
     throw new ApiError(res.status, (body as { message?: string })?.message ?? res.statusText, body);
@@ -122,9 +132,3 @@ function withoutFillers(tour: TourDetail): TourDetail {
   };
 }
 
-/** Paths of every published tour, used to prerender the tour pages. */
-export async function getTourPaths(locale: string): Promise<string[]> {
-  "use cache";
-  const res = await getTours({ locale, perPage: 60 });
-  return res.data.map((t) => t.path);
-}
