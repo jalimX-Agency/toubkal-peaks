@@ -20,7 +20,7 @@ export function CtaBand({ lang, dict, message }: { lang: Locale; dict: Dictionar
         <h2 className="font-display mt-4 max-w-3xl text-[clamp(2rem,4.2vw,3.4rem)] font-semibold leading-[1.1]">{dict.title}</h2>
         <p className="mt-5 max-w-xl leading-relaxed text-white/80">{dict.text}</p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <Link href={localePath(lang, "/contact")} className="btn-gold">
+          <Link href={localePath(lang, "/book")} className="btn-gold">
             {dict.primary}
             <Arrow />
           </Link>

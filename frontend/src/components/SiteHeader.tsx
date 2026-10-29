@@ -69,7 +69,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
 
           <div className="hidden items-center gap-5 xl:flex">
             <LocaleSwitcher current={lang} label={dict.language} />
-            <Link href={href("/contact")} className="btn-gold !px-5 !py-3">
+            <Link href={href("/book")} className="btn-gold !px-5 !py-3">
               {dict.plan}
             </Link>
           </div>
@@ -109,7 +109,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
             ))}
           </nav>
           <div className="mt-8 flex flex-col items-center gap-6">
-            <Link href={href("/contact")} onClick={() => setOpen(false)} className="btn-gold w-full">
+            <Link href={href("/book")} onClick={() => setOpen(false)} className="btn-gold w-full">
               {dict.plan}
             </Link>
             <LocaleSwitcher current={lang} label={dict.language} className="text-base" />

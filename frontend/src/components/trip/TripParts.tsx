@@ -13,6 +13,9 @@ type TripDict = Dictionary["trip"];
 const humanise = (key: string) => key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase());
 const entries = (value: Record<string, string> | []) => (Array.isArray(value) ? [] : Object.entries(value).filter(([, v]) => v));
 
+/** The reservation wizard with this trip already chosen. */
+export const bookHref = (tour: TourDetail, lang: Locale) => `${localePath(lang, "/book")}?trip=${tour.slug}`;
+
 /** "Label: text" items from the old site become a bold label and the text. */
 function LabelledItem({ text }: { text: string }) {
   const i = text.indexOf(":");
@@ -60,10 +63,10 @@ export function TripHero({ tour, lang, trip, tours, homeLabel, categoryLabel }: 
           )}
           {tour.locale !== lang && <p className="mono mt-4 normal-case tracking-normal text-white/50">{trip.englishOnly}</p>}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#book" className="btn-gold">
+            <Link href={bookHref(tour, lang)} className="btn-gold">
               {trip.request}
               <Arrow />
-            </a>
+            </Link>
             <a href={whatsappLink(`${tour.title}: ${trip.whatsapp}`)} target="_blank" rel="noopener noreferrer" className="btn-outline-light">
               {trip.whatsapp}
             </a>
@@ -125,9 +128,9 @@ export function PriceCard({ tour, lang, trip }: { tour: TourDetail; lang: Locale
         </table>
       )}
       <p className="mt-4 text-xs leading-relaxed text-muted">{trip.priceNote}</p>
-      <a href="#book" className="btn-gold mt-5 w-full">
+      <Link href={bookHref(tour, lang)} className="btn-gold mt-5 w-full">
         {trip.request}
-      </a>
+      </Link>
       <a href={whatsappLink(`${tour.title}: ${trip.whatsapp}`)} target="_blank" rel="noopener noreferrer" className="btn-outline-navy mt-3 w-full">
         {trip.whatsapp}
       </a>
@@ -150,9 +153,9 @@ export function MobileBookBar({ tour, lang, trip }: { tour: TourDetail; lang: Lo
           <span className="text-sm font-semibold text-navy">{trip.onRequest}</span>
         )}
       </p>
-      <a href="#book" className="btn-gold !px-5 !py-3">
+      <Link href={bookHref(tour, lang)} className="btn-gold !px-5 !py-3">
         {trip.request}
-      </a>
+      </Link>
     </div>
   );
 }

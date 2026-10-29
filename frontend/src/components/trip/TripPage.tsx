@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { TourCard } from "@/components/TourCard";
-import { BookingForm } from "@/components/trip/BookingForm";
 import {
   AltitudeProfile,
+  bookHref,
   Facts,
   Gallery,
   Highlights,
@@ -13,6 +14,7 @@ import {
   TripHero,
   Upgrades,
 } from "@/components/trip/TripParts";
+import { Arrow } from "@/components/ui/Arrow";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { hubTitle } from "@/lib/hubs";
@@ -50,7 +52,7 @@ function structuredData(tour: TourDetail, lang: Locale, dict: Dictionary, catego
   return JSON.stringify([trip, breadcrumbs]).replace(/</g, "\\u003c");
 }
 
-/** One trip: hero, content with a sticky price card, booking request form and similar trips. */
+/** One trip: hero, content with a sticky price card, a link to the reservation wizard and similar trips. */
 export function TripPage({ tour, lang, dict }: { tour: TourDetail; lang: Locale; dict: Dictionary }) {
   const categoryLabel = hubTitle(tour.category.key, dict, tour.category.name);
 
@@ -78,14 +80,17 @@ export function TripPage({ tour, lang, dict }: { tour: TourDetail; lang: Locale;
       </div>
 
       <section id="book" className="scroll-mt-24 bg-sand/60">
-        <div className="mx-auto max-w-4xl px-4 py-14 md:px-8 md:py-20">
-          <p className="eyebrow">{dict.booking.eyebrow}</p>
-          <h2 className="heading mt-2 text-[clamp(1.8rem,3.4vw,2.6rem)]">{dict.booking.title}</h2>
-          <p lang={tour.locale} className="mono mt-3 normal-case tracking-normal text-navy">{tour.title}</p>
-          <p className="mt-3 max-w-2xl text-muted">{dict.booking.text}</p>
-          <div className="mt-8">
-            <BookingForm lang={lang} dict={dict.booking} tourId={tour.id} tiers={tour.pricing.tiers} currency={tour.pricing.currency} />
+        <div className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-14 md:flex-row md:items-end md:justify-between md:px-8 md:py-16">
+          <div>
+            <p className="eyebrow">{dict.booking.eyebrow}</p>
+            <h2 className="heading mt-2 text-[clamp(1.8rem,3.4vw,2.6rem)]">{dict.booking.title}</h2>
+            <p lang={tour.locale} className="mono mt-3 normal-case tracking-normal text-navy">{tour.title}</p>
+            <p className="mt-3 max-w-xl text-muted">{dict.booking.text}</p>
           </div>
+          <Link href={bookHref(tour, lang)} className="btn-gold shrink-0">
+            {dict.trip.request}
+            <Arrow />
+          </Link>
         </div>
       </section>
 

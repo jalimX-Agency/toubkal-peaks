@@ -158,7 +158,7 @@ export function TopoHero({ lang, dict, camps }: { lang: Locale; dict: Dictionary
               {dict.primary}
               <Arrow />
             </Link>
-            <Link href={localePath(lang, "/contact")} className="btn-outline-light">
+            <Link href={localePath(lang, "/book")} className="btn-outline-light">
               {dict.secondary}
             </Link>
           </div>
