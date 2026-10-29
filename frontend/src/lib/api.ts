@@ -106,12 +106,26 @@ export async function getReviews(perPage = 6): Promise<{ data: Review[]; summary
   return { data: res.data ?? [], summary: res.summary ?? { count: 0, average: null } };
 }
 
-/** One tour by its URL slug, or null when it does not exist (or the API cannot be reached). */
+/**
+ * One tour by its URL slug, or null when the API says it does not exist. Any other failure (rate
+ * limit, host security check, timeout) throws instead: the page then fails for this request and is
+ * retried on the next one, rather than being cached and served as a "not found" page.
+ */
 export async function getTour(slug: string, locale: string): Promise<TourDetail | null> {
   "use cache";
-  cacheTag(`tour:${slug}`);
-  const res = await cachedRead<{ data?: TourDetail }>("tours", `/tours/${encodeURIComponent(slug)}?locale=${locale}`, {});
-  return res.data ? withoutFillers(res.data) : null;
+  cacheTag("tours", `tour:${slug}`);
+  try {
+    const res = await request<{ data?: TourDetail }>(`/tours/${encodeURIComponent(slug)}?locale=${locale}`);
+    cacheLife("minutes");
+    return res.data ? withoutFillers(res.data) : null;
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404) {
+      cacheLife("minutes");
+      return null;
+    }
+    console.error(`[api] /tours/${slug} failed:`, describe(error));
+    throw error;
+  }
 }
 
 /** The imported content keeps "-", "." and empty strings as placeholders; they are never shown. */

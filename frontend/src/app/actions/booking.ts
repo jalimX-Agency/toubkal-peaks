@@ -7,7 +7,11 @@ import type { TourDetail } from "@/lib/types";
 /** Price tiers of one trip for the reservation wizard's estimate (served from the site's cache). */
 export async function getTripPricing(slug: string, locale: string): Promise<TourDetail["pricing"] | null> {
   if (!hasLocale(locale) || !/^[a-z0-9-]{1,200}$/.test(slug)) return null;
-  return (await getTour(slug, locale))?.pricing ?? null;
+  try {
+    return (await getTour(slug, locale))?.pricing ?? null;
+  } catch {
+    return null; // no estimate this time; the wizard still works
+  }
 }
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
