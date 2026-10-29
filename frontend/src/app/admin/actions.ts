@@ -1,0 +1,206 @@
+"use server";
+
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
+import { AdminApiError, SESSION_COOKIE, SESSION_DAYS, adminApi, adminLogin } from "@/lib/admin/api";
+import type { ActionState, AdminLocale, TourContent } from "@/lib/admin/types";
+
+/** Runs an admin API write and turns its errors into a form state (field errors included). */
+async function attempt(run: () => Promise<unknown>, okMessage = "Saved"): Promise<ActionState> {
+  try {
+    await run();
+    return { status: "ok", message: okMessage };
+  } catch (error) {
+    if (error instanceof AdminApiError) return { status: "error", message: error.message, errors: error.errors };
+    // redirect() from an expired session must pass through
+    throw error;
+  }
+}
+
+const text = (form: FormData, key: string) => {
+  const v = form.get(key);
+  return typeof v === "string" ? v.trim() : "";
+};
+const nullable = (form: FormData, key: string) => text(form, key) || null;
+const number = (form: FormData, key: string) => (text(form, key) === "" ? null : Number(text(form, key)));
+
+// --- session -----------------------------------------------------------------
+
+export async function login(_prev: ActionState, form: FormData): Promise<ActionState> {
+  let mustChange = false;
+  try {
+    const { token, user } = await adminLogin(text(form, "email"), String(form.get("password") ?? ""));
+    mustChange = user.must_change_password;
+    (await cookies()).set(SESSION_COOKIE, token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/admin",
+      maxAge: SESSION_DAYS * 24 * 3600,
+    });
+  } catch (error) {
+    if (error instanceof AdminApiError) return { status: "error", message: error.errors.email?.[0] ?? error.message };
+    return { status: "error", message: "The admin is unreachable. Try again in a moment." };
+  }
+  const next = text(form, "next");
+  redirect(mustChange ? "/admin/account?first=1" : next.startsWith("/admin") ? next : "/admin");
+}
+
+export async function logout(): Promise<void> {
+  await adminApi("/auth/logout", { method: "POST" }).catch(() => undefined);
+  (await cookies()).delete({ name: SESSION_COOKIE, path: "/admin" });
+  redirect("/admin/login");
+}
+
+export async function changePassword(_prev: ActionState, form: FormData): Promise<ActionState> {
+  const result = await attempt(
+    () => adminApi("/auth/password", {
+      method: "PUT",
+      body: JSON.stringify({
+        current_password: form.get("current_password"),
+        password: form.get("password"),
+        password_confirmation: form.get("password_confirmation"),
+      }),
+    }),
+    "Password changed",
+  );
+  if (result.status === "ok") revalidatePath("/admin", "layout");
+  return result;
+}
+
+// --- bookings ----------------------------------------------------------------
+
+export async function updateBooking(reference: string, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const result = await attempt(() =>
+    adminApi(`/bookings/${encodeURIComponent(reference)}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        first_name: text(form, "first_name"),
+        last_name: text(form, "last_name"),
+        email: text(form, "email"),
+        phone: nullable(form, "phone"),
+        country: nullable(form, "country"),
+        start_date: nullable(form, "start_date"),
+        end_date: nullable(form, "end_date"),
+        adults: number(form, "adults"),
+        children: number(form, "children") ?? 0,
+        price_per_person: number(form, "price_per_person"),
+        total_price: number(form, "total_price"),
+        deposit_amount: number(form, "deposit_amount"),
+        paid_amount: number(form, "paid_amount") ?? 0,
+      }),
+    }),
+  );
+  if (result.status === "ok") revalidatePath(`/admin/bookings/${reference}`);
+  return result;
+}
+
+export async function saveBookingNotes(reference: string, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const result = await attempt(() =>
+    adminApi(`/bookings/${encodeURIComponent(reference)}`, { method: "PATCH", body: JSON.stringify({ admin_notes: nullable(form, "admin_notes") }) }),
+    "Notes saved",
+  );
+  if (result.status === "ok") revalidatePath(`/admin/bookings/${reference}`);
+  return result;
+}
+
+export async function changeBookingStatus(reference: string, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const result = await attempt(() =>
+    adminApi(`/bookings/${encodeURIComponent(reference)}/status`, {
+      method: "POST",
+      body: JSON.stringify({ status: text(form, "status"), note: nullable(form, "note") }),
+    }),
+    "Status updated",
+  );
+  if (result.status === "ok") revalidatePath(`/admin/bookings/${reference}`);
+  return result;
+}
+
+// --- trips -------------------------------------------------------------------
+
+export async function updateTourSettings(id: number, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const result = await attempt(() =>
+    adminApi(`/tours/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        status: text(form, "status"),
+        duration_days: number(form, "duration_days"),
+        duration_nights: number(form, "duration_nights"),
+        difficulty: nullable(form, "difficulty"),
+        max_altitude_m: number(form, "max_altitude_m"),
+        group_min: number(form, "group_min"),
+        group_max: number(form, "group_max"),
+        price_mode: text(form, "price_mode"),
+        currency: text(form, "currency"),
+        is_featured: form.get("is_featured") === "on",
+        sort_order: number(form, "sort_order") ?? 0,
+      }),
+    }),
+  );
+  if (result.status === "ok") revalidatePath(`/admin/trips/${id}`);
+  return result;
+}
+
+export async function saveTourPrices(id: number, tiers: { min_pax: number; max_pax: number | null; price_per_person: number | null }[]): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/tours/${id}/prices`, { method: "PUT", body: JSON.stringify({ tiers }) }), "Prices saved");
+  if (result.status === "ok") revalidatePath(`/admin/trips/${id}`);
+  return result;
+}
+
+export async function saveTourContent(id: number, locale: AdminLocale, content: Omit<TourContent, "updated_at">): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/tours/${id}/translations/${locale}`, { method: "PUT", body: JSON.stringify(content) }), "Content saved");
+  if (result.status === "ok") revalidatePath(`/admin/trips/${id}`);
+  return result;
+}
+
+// --- reviews -----------------------------------------------------------------
+
+export async function setReviewStatus(id: number, status: "published" | "hidden"): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/reviews/${id}`, { method: "PATCH", body: JSON.stringify({ status }) }));
+  revalidatePath("/admin/reviews");
+  return result;
+}
+
+export async function deleteReview(id: number): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/reviews/${id}`, { method: "DELETE" }), "Deleted");
+  revalidatePath("/admin/reviews");
+  return result;
+}
+
+export async function saveReview(id: number | null, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const payload = {
+    source: text(form, "source"),
+    author_name: text(form, "author_name"),
+    author_country: nullable(form, "author_country"),
+    rating: number(form, "rating"),
+    title: nullable(form, "title"),
+    body: text(form, "body"),
+    language: nullable(form, "language"),
+    reviewed_at: nullable(form, "reviewed_at"),
+    url: nullable(form, "url"),
+    tour_id: number(form, "tour_id"),
+    status: text(form, "status") || "published",
+    is_featured: form.get("is_featured") === "on",
+  };
+  const result = await attempt(() => adminApi(id ? `/reviews/${id}` : "/reviews", { method: id ? "PATCH" : "POST", body: JSON.stringify(payload) }));
+  revalidatePath("/admin/reviews");
+  return result;
+}
+
+// --- team --------------------------------------------------------------------
+
+export async function inviteMember(_prev: ActionState, form: FormData): Promise<ActionState> {
+  const result = await attempt(
+    () => adminApi("/users", { method: "POST", body: JSON.stringify({ name: text(form, "name"), email: text(form, "email"), role: text(form, "role") }) }),
+    "Invitation sent",
+  );
+  revalidatePath("/admin/team");
+  return result;
+}
+
+export async function updateMember(id: number, changes: { role?: string; is_active?: boolean; reset_password?: boolean }): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/users/${id}`, { method: "PATCH", body: JSON.stringify(changes) }), changes.reset_password ? "New password sent" : "Saved");
+  revalidatePath("/admin/team");
+  return result;
+}
