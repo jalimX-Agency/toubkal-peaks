@@ -28,6 +28,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // Next.js website: its cache is refreshed when content changes (App\Support\FrontendCache).
+    'frontend' => [
+        'url' => env('FRONTEND_URL'),
+        'revalidate_secret' => env('REVALIDATE_SECRET'),
+    ],
+
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),

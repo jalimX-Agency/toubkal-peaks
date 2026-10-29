@@ -141,6 +141,10 @@ if ($migrated) {
             }
         }
     }
+    // Content changed by the queued commands: tell the website (this script never "terminates" Laravel).
+    foreach ($app->make(App\Support\FrontendCache::class)->flush() as $tag => $ok) {
+        logLine(sprintf('website cache [%s] %s', $ok ? 'refreshed' : 'failed', $tag));
+    }
 } else {
     logLine('Skipping artisan queue: migrate failed.');
 }
