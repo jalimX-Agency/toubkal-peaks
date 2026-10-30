@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class TourController extends Controller
 {
-    private const CARD_RELATIONS = ['translations', 'category.translations', 'category.parent.translations', 'hero', 'prices'];
+    private const CARD_RELATIONS = ['translations', 'category.translations', 'category.parent.translations', 'hero', 'prices', 'media'];
 
     /**
      * Published tours as cards.
@@ -45,7 +45,7 @@ class TourController extends Controller
             ->first();
 
         $tour = $translation
-            ? Tour::published()->with([...self::CARD_RELATIONS, 'media'])->find($translation->tour_id)
+            ? Tour::published()->with(self::CARD_RELATIONS)->find($translation->tour_id)
             : null;
 
         abort_if($tour === null, 404, 'Tour not found.');

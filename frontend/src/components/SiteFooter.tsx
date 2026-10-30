@@ -17,7 +17,11 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
   const year = await currentYear();
   const href = (path: string) => localePath(lang, path);
   const trips = [
+    { label: dict.nav.trips, path: "/trips" },
     { label: dict.pillars.items.treks.name, path: "/treks" },
+    { label: dict.hubs["treks.toubkal"].title, path: "/treks/toubkal" },
+    { label: dict.hubs["treks.atlas-valleys-villages"].title, path: "/treks/atlas-valleys-villages" },
+    { label: dict.hubs["treks.regional-treks"].title, path: "/treks/regional-treks" },
     { label: dict.pillars.items.sahara.name, path: "/sahara-desert-tours" },
     { label: dict.pillars.items.cities.name, path: "/morocco-tours" },
     { label: dict.pillars.items.dayTrips.name, path: "/day-trips-from-marrakech" },
@@ -60,8 +64,16 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
             </li>
             <li>
               <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.email}</span>
-              <a href={`mailto:${site.email}`} className={linkClass}>
-                {site.email}
+              {[site.email, site.contactEmail].map((email) => (
+                <a key={email} href={`mailto:${email}`} className={`${linkClass} block`}>
+                  {email}
+                </a>
+              ))}
+            </li>
+            <li>
+              <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.reservations}</span>
+              <a href={`mailto:${site.reservationsEmail}`} className={linkClass}>
+                {site.reservationsEmail}
               </a>
             </li>
             <li>

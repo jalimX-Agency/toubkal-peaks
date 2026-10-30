@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\BookingController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\RedirectController;
 use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\TeamController;
 use App\Http\Controllers\Api\TourController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/tours', [TourController::class, 'index']);
         Route::get('/tours/{slug}', [TourController::class, 'show']);
         Route::get('/reviews', [ReviewController::class, 'index']);
+        Route::get('/team', [TeamController::class, 'index']);
         Route::get('/redirects', [RedirectController::class, 'index']);
     });
 
@@ -54,6 +56,13 @@ Route::prefix('v1')->group(function () {
             Route::post('/reviews', [Admin\ReviewController::class, 'store']);
             Route::patch('/reviews/{review}', [Admin\ReviewController::class, 'update']);
             Route::delete('/reviews/{review}', [Admin\ReviewController::class, 'destroy']);
+
+            Route::get('/team-members', [Admin\TeamMemberController::class, 'index']);
+            Route::post('/team-members', [Admin\TeamMemberController::class, 'store']);
+            Route::put('/team-members/order', [Admin\TeamMemberController::class, 'reorder']);
+            Route::patch('/team-members/{member}', [Admin\TeamMemberController::class, 'update']);
+            Route::delete('/team-members/{member}', [Admin\TeamMemberController::class, 'destroy']);
+            Route::post('/team-members/{member}/photo', [Admin\TeamMemberController::class, 'photo']);
 
             Route::middleware('admin.access:admin')->group(function () {
                 Route::get('/users', [Admin\UserController::class, 'index']);

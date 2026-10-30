@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { CardPhotos } from "@/components/CardPhotos";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { formatDifficulty, formatDuration, formatPrice } from "@/lib/format";
@@ -24,22 +24,17 @@ export function TourCard({ tour, lang, dict }: { tour: Tour; lang: Locale; dict:
   const duration = formatDuration(tour, dict);
   const difficulty = formatDifficulty(tour.difficulty, dict);
 
+  const href = localePath(lang, tour.path);
+  const images = [tour.hero, ...(tour.photos ?? [])].filter((i) => i !== null);
+
   return (
-    <Link
-      href={localePath(lang, tour.path)}
-      className="group flex h-full flex-col overflow-hidden rounded-sm border border-line bg-white transition-shadow hover:shadow-[0_12px_32px_rgba(2,46,85,0.12)]"
-    >
-      <div className="relative aspect-[3/2] w-full flex-1 overflow-hidden bg-sand">
-        {tour.hero && (
-          <Image
-            src={tour.hero.url}
-            alt={tour.hero.alt || tour.title}
-            fill
-            sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        )}
-      </div>
+    // the title link stretches over the whole card; the photo carousel sits above it with its own controls
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-sm border border-line bg-white transition-shadow hover:shadow-[0_12px_32px_rgba(2,46,85,0.12)]">
+      {images.length > 0 ? (
+        <CardPhotos href={href} title={tour.title} images={images} labels={{ prev: dict.photoPrev, next: dict.photoNext, photo: dict.photoOf }} />
+      ) : (
+        <div className="aspect-[3/2] w-full flex-1 bg-sand" />
+      )}
       <div className="flex flex-col p-4">
         <p className="mono flex flex-wrap items-center gap-x-2 gap-y-1 text-muted">
           {duration && <span className="text-navy">{duration}</span>}
@@ -56,7 +51,11 @@ export function TourCard({ tour, lang, dict }: { tour: Tour; lang: Locale; dict:
             </span>
           )}
         </p>
-        <h3 className="mb-4 mt-2 line-clamp-2 font-semibold leading-snug text-navy">{tour.title}</h3>
+        <h3 className="mb-4 mt-2 line-clamp-2 font-semibold leading-snug text-navy">
+          <Link href={href} className="after:absolute after:inset-0">
+            {tour.title}
+          </Link>
+        </h3>
         <div className="flex items-end justify-between gap-3 border-t border-line pt-3">
           {tour.price_mode === "tiers" && tour.from_price ? (
             <p className="text-sm text-muted">
@@ -70,6 +69,6 @@ export function TourCard({ tour, lang, dict }: { tour: Tour; lang: Locale; dict:
           <span className="shrink-0 text-sm font-semibold text-gold group-hover:underline">{dict.view}</span>
         </div>
       </div>
-    </Link>
+    </article>
   );
 }

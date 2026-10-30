@@ -1,5 +1,5 @@
 import { cacheLife, cacheTag } from "next/cache";
-import type { Category, Paginated, Review, ReviewSummary, TourCard, TourDetail } from "@/lib/types";
+import type { Category, Paginated, Review, ReviewSummary, TeamMember, TourCard, TourDetail } from "@/lib/types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
 
@@ -98,6 +98,13 @@ export async function getTours(params: { locale: string; category?: string; perP
   const query = new URLSearchParams({ locale: params.locale, per_page: String(params.perPage ?? 24) });
   if (params.category) query.set("category", params.category);
   return cachedRead<Paginated<TourCard>>("tours", `/tours?${query}`, { data: [] });
+}
+
+/** The people on the About page, in the order set in the admin. */
+export async function getTeam(locale: string): Promise<TeamMember[]> {
+  "use cache";
+  const res = await cachedRead<{ data: TeamMember[] }>("team", `/team?locale=${locale}`, { data: [] });
+  return res.data;
 }
 
 export async function getReviews(perPage = 6): Promise<{ data: Review[]; summary: ReviewSummary }> {

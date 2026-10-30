@@ -8,12 +8,9 @@ import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { media, site } from "@/lib/site";
 
+// the categories are listed in the footer and on /trips: the bar keeps only what fits on one line
 const LINKS = [
   { key: "trips", path: "/trips" },
-  { key: "treks", path: "/treks" },
-  { key: "sahara", path: "/sahara-desert-tours" },
-  { key: "morocco", path: "/morocco-tours" },
-  { key: "dayTrips", path: "/day-trips-from-marrakech" },
   { key: "about", path: "/about" },
   { key: "contact", path: "/contact" },
 ] as const;

@@ -216,3 +216,22 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Public site: discourage copying (see CopyGuard). Form fields stay selectable. */
+.no-copy {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.no-copy :is(input, textarea, select, [contenteditable]) {
+  -webkit-user-select: text;
+  user-select: text;
+}
+.no-copy img {
+  -webkit-user-drag: none;
+}
+@media print {
+  .no-copy > * {
+    display: none !important;
+  }
+}

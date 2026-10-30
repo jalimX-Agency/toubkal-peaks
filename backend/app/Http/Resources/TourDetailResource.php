@@ -26,7 +26,7 @@ class TourDetailResource extends JsonResource
 
         $related = Tour::published()
             ->where('category_id', $this->category_id)->where('id', '!=', $this->id)
-            ->with(['translations', 'category.translations', 'category.parent.translations', 'hero', 'prices'])
+            ->with(['translations', 'category.translations', 'category.parent.translations', 'hero', 'prices', 'media'])
             ->orderBy('sort_order')->orderBy('id')->limit(3)->get();
 
         return [

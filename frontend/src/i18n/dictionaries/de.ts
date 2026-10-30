@@ -62,6 +62,9 @@ const de: Dictionary = {
     },
   },
   tours: {
+    photoPrev: "Vorheriges Foto",
+    photoNext: "Nächstes Foto",
+    photoOf: "Foto {n} von {total}",
     eyebrow: "Beliebte Reisen",
     title: "Finden Sie Ihre Reise",
     tabs: {
@@ -115,6 +118,10 @@ const de: Dictionary = {
     email: "E-Mail schreiben",
   },
   trips: {
+    prev: "Zurück",
+    next: "Weiter",
+    page: "Seite {page} von {total}",
+    pages: "Seiten",
     metaTitle: "Alle Reisen und Touren in Marokko",
     metaDescription: "Vergleichen Sie alle Trekkingtouren, Sahara-Reisen, Königsstädte-Rundreisen und Tagesausflüge ab Marrakesch. Filtern nach Art, Dauer, Budget und Schwierigkeit.",
     eyebrow: "Alle Reisen",
@@ -163,46 +170,9 @@ const de: Dictionary = {
     title: "Die Menschen hinter Ihrer Reise",
     lead: "Toubkal Peaks Travel ist ein Reiseveranstalter in Marrakesch, der von einheimischen Guides geführt wird. Wir planen jede Trekkingtour, Wüstenreise und Rundreise selbst: Wer Ihre Route entwirft, kennt die Berge, Dörfer und Pfade aus eigener Erfahrung.",
     team: "Unser Team",
-    members: [
-      {
-        name: "Omar Jellah",
-        role: "Mitgründer und Leiter der Reiseplanung",
-        photoAlt: "Omar Jellah, Mitgründer von Toubkal Peaks Travel, vor den Bergen des Atlas",
-        bio: ["Mit über 25 Jahren Erfahrung im Tourismus ist Omar Jellah Mitgründer und Leiter der Reiseplanung von Toubkal Peaks Travel. Er begann seine Laufbahn im Jahr 2000 als Reise- und Bergführer und arbeitete für internationale Reiseunternehmen, Reiseveranstalter und Individualreisende.", "Im Jahr 2006 gründete er, getrieben von seiner Leidenschaft fürs Reisen und seiner Liebe zu Marokko, sein eigenes Reiseunternehmen, um die authentische Schönheit des Landes mit Besuchern aus aller Welt zu teilen.", "Im Laufe der Jahre hat Omar unzählige Reisen durch Marokko geführt und organisiert, vom Atlas und der Sahara bis zu den Königsstädten, historischen Stätten und traditionellen Berberdörfern. Heute verbindet er seine große Felderfahrung und sein Wissen vor Ort, um maßgeschneiderte Rundreisen, Trekkingtouren und Kulturerlebnisse zu planen.", "Seine Philosophie ist einfach: bedeutungsvolle Reisen, echte Begegnungen und unvergessliche Erinnerungen schaffen."],
-      },
-      {
-        name: "Mohamed",
-        role: "Leitender Reiseleiter, Spezialist für große Marokko-Rundreisen",
-        photoAlt: "Mohamed, leitender Reiseleiter, lächelnd in einem herbstlichen Park",
-        bio: ["Mohamed ist einer der leitenden Reiseleiter von Toubkal Peaks Travel und auf private, maßgeschneiderte Rundreisen durch Marokko spezialisiert. Seit er 2016 zu unserem Team kam, hat er viel Erfahrung mit internationalen Reiseagenturen, Individualreisenden und privaten Gruppen aus aller Welt gesammelt.", "Im Hohen Atlas geboren und aufgewachsen, ist Mohamed eng mit seinem amazighischen Erbe, den lokalen Traditionen und der Natur seiner Heimat verbunden. Er teilt mit Leidenschaft Marokkos reiche Geschichte, seine vielfältigen Kulturen, atemberaubenden Landschaften und das authentische Dorfleben.", "Sein Ziel sind bedeutungsvolle, unvergessliche Reisen, die Reisende den Menschen vor Ort näherbringen. Mit seiner Herzlichkeit, seinem Ortswissen und seiner Gastfreundschaft macht er jede Reise zu einem besonderen Erlebnis."],
-      },
-      {
-        name: "Rachid",
-        role: "Trekking- und Wüstenführer",
-        photoAlt: "Rachid, Berg- und Wüstenführer, über einem türkisfarbenen See im Atlas",
-        bio: ["Rachid ist ein erfahrener marokkanischer Guide mit tiefer Kenntnis des Hohen Atlas und der Sahara. Spezialisiert auf Besteigungen des Toubkal, Bergtrekking und Wüstenreisen, verbindet er Ortskenntnis, Wissen über die Berberkultur und echte Leidenschaft dafür, Marokko zu zeigen.", "Eng mit seiner Heimatregion und ihren Traditionen verbunden, bietet Rachid sichere, authentische und persönliche Reisen. Er möchte Reisenden die spektakulären Landschaften Marokkos, sein reiches kulturelles Erbe und seine traditionelle Lebensweise näherbringen und Reisen schaffen, an die man sich gern erinnert."],
-      },
-      {
-        name: "Brahim",
-        role: "Mehrsprachiger Guide und Kulturkenner",
-        photoAlt: "Brahim, Guide, sitzt an einem Berghang vor den verschneiten Gipfeln des Atlas",
-        bio: ["Mit langjähriger Erfahrung im Tourismus bringt Brahim viel Wissen, Neugier und kulturelles Verständnis in jede Reise ein. Seit 2022 gehört er zum Team von Toubkal Peaks und führt vor allem unsere Touren durch den Hohen Atlas und die Landschaften der Sahara.", "Brahim spricht fließend fünf Sprachen: Arabisch, Tamazight (Berberisch), Englisch, Französisch und Spanisch. Durch acht Jahre in Spanien hat er eine echte Wertschätzung für andere Kulturen, Traditionen und Lebensweisen entwickelt.", "Besonders macht Brahim seine Leidenschaft für Geschichte und seine Freude am Erzählen. Ob er die Traditionen der Berberdörfer erklärt, Reisende mit Einheimischen bekannt macht oder die Geschichte der alten Städte Marokkos erzählt – er erweckt Orte und ihre Geschichten immer zum Leben."],
-      },
-      {
-        name: "Mohamed",
-        role: "Berg- und Kulturführer",
-        photoAlt: "Mohamed, Guide, lächelnd an einem Bergfluss im Atlas",
-        bio: ["Im Herzen des Hohen Atlas geboren und aufgewachsen, ist Mohamed eng mit den Landschaften, Traditionen und Menschen verbunden, die Marokko so besonders machen.", "Seit er 2019 zu unserem Team kam, ist er einer unserer erfahrensten und zuverlässigsten Guides geworden. Seine Leidenschaft geht weit über das Führen hinaus: Er teilt sein Wissen, seine Geschichten und die lokale Kultur gern mit jedem Reisenden, dem er begegnet.", "Ob auf einer Tour durch den Hohen Atlas, in der Sahara oder bei der Entdeckung der Geschichte und verborgenen Schätze der Königsstädte – Mohamed erweckt jede Reise mit seiner Erfahrung, Herzlichkeit und Freundlichkeit zum Leben. Für ihn ist das Führen nicht nur ein Beruf, sondern die Gelegenheit, seine Heimat mit der Welt zu teilen."],
-      },
-      {
-        name: "Hamid",
-        role: "Professioneller Fahrer",
-        photoAlt: "Hamid, Fahrer, vor einem Geländewagen in den Ausläufern des Atlas",
-        bio: ["Hamid ist seit fünf Jahren ein wichtiges Mitglied des Teams von Toubkal Peaks Travel. Mit seiner großen Erfahrung auf Marokkos Straßen hat er zahlreiche Rundreisen im ganzen Land begleitet und Reisenden geholfen, die Landschaften, Städte und Kulturschätze des Landes zu entdecken.", "Als professioneller, zuverlässiger und herzlicher Fahrer ist Hamid für seine freundliche Art, seine Offenheit und sein ständiges Lächeln bekannt. Er teilt gern Geschichten, Ortswissen und eigene Erlebnisse mit seinen Fahrgästen – so wird jede Fahrt mehr als nur ein Transfer."],
-      },
-    ],
   },
   footer: {
+    reservations: "Buchungen",
     tagline: "Marokko anders entdecken.",
     trips: "Reisen",
     contact: "Kontakt",
@@ -425,6 +395,7 @@ const de: Dictionary = {
     invalid: "Einige Angaben müssen geprüft werden.",
   },
   contact: {
+    reservations: "Buchungen",
     metaTitle: "Kontakt und Reiseplanung",
     metaDescription: "Planen Sie Ihren privaten Trek, Ihre Wüstenreise oder Rundreise in Marokko mit Toubkal Peaks Travel. Senden Sie Termine und Wünsche: maßgeschneiderte Route mit Preis innerhalb von 24 Stunden.",
     eyebrow: "Kontakt",

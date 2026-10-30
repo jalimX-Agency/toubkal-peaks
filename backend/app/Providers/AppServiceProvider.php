@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\CategoryTranslation;
 use App\Models\Media;
 use App\Models\Review;
+use App\Models\TeamMember;
 use App\Models\Tour;
 use App\Models\TourPrice;
 use App\Models\TourTranslation;
@@ -49,6 +50,7 @@ class AppServiceProvider extends ServiceProvider
             Category::class => ['categories', 'tours'],
             CategoryTranslation::class => ['categories', 'tours'],
             Review::class => ['reviews'],
+            TeamMember::class => ['team'],
         ];
         foreach ($affects as $model => $tags) {
             $refresh = fn () => app(FrontendCache::class)->revalidate(...$tags);

@@ -6,9 +6,8 @@
 # db:seed, cache:clear (plain --options only).
 # Anything else is rejected. Lines starting with # are comments.
 #
-# First administrator: emails a temporary password to this address (resends one if it exists).
-toubkal:create-admin --email=admin@toubkal-peaks.com --role=admin
-# Already run on the server, kept for reference: toubkal:import, toubkal:publish --all,
+# Already run on the server, kept for reference: toubkal:import, toubkal:publish --all, toubkal:create-admin
+# (removed: re-running it resets the administrator's password),
 # toubkal:import-translations, toubkal:apply-corrections. Do not re-add publish --all:
 # it would put back online any trip the team has set to draft in the admin.
 # New programmes for the 5-day Ait Bougmez and 7-day M'Goun treks, and the M'Goun prices (EN corrections, then FR/ES/DE; hand-edited content is kept).
@@ -16,3 +15,5 @@ toubkal:apply-corrections
 toubkal:import-translations
 # New trip photos (6 to 10 per trip; files already on R2 under site/trips/).
 toubkal:sync-images
+# About page team, now managed in the admin (only fills an empty table).
+toubkal:import-team

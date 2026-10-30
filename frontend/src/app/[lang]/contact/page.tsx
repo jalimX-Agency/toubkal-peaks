@@ -32,7 +32,8 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
   const channels = [
     { label: contact.whatsapp, value: site.whatsappDisplay, href: whatsappLink(dict.whatsapp.message), external: true },
     ...site.phones.map((p) => ({ label: contact.phone, value: p, href: `tel:${p.replace(/\s/g, "")}`, external: false })),
-    { label: contact.email, value: site.email, href: `mailto:${site.email}`, external: false },
+    ...[site.email, site.contactEmail].map((e) => ({ label: contact.email, value: e, href: `mailto:${e}`, external: false })),
+    { label: contact.reservations, value: site.reservationsEmail, href: `mailto:${site.reservationsEmail}`, external: false },
   ];
 
   const jsonLd = JSON.stringify({
@@ -43,7 +44,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
     mainEntity: {
       "@type": "TravelAgency",
       name: site.name,
-      email: site.email,
+      email: [site.email, site.contactEmail, site.reservationsEmail],
       telephone: site.phones,
       address: { "@type": "PostalAddress", streetAddress: site.address.street, addressLocality: site.city, addressRegion: site.address.region, postalCode: site.address.postalCode, addressCountry: site.country },
     },

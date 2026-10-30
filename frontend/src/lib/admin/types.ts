@@ -167,6 +167,19 @@ export interface DashboardRow {
   created_at: string | null;
 }
 
+/** A person on the website's About page; texts per language (en is required). */
+export interface AdminTeamMember {
+  id: number;
+  name: string;
+  role: Partial<Record<AdminLocale, string>>;
+  bio: Partial<Record<AdminLocale, string[]>>;
+  photo_alt: Partial<Record<AdminLocale, string>>;
+  photo: { url: string; width: number | null; height: number | null } | null;
+  sort_order: number;
+  is_active: boolean;
+  updated_at: string | null;
+}
+
 /** Result of a form's server action. */
 export type ActionState =
   | { status: "idle" }

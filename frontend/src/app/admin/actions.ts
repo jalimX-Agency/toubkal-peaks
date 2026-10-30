@@ -204,3 +204,51 @@ export async function updateMember(id: number, changes: { role?: string; is_acti
   revalidatePath("/admin/team");
   return result;
 }
+
+// --- team page (people on the website's About page) -----------------------------
+
+const LOCALES: AdminLocale[] = ["en", "fr", "es", "de"];
+
+/** Biography fields hold paragraphs separated by an empty line. */
+const paragraphs = (value: string) => value.split(/\n\s*\n/).map((p) => p.replace(/\s+/g, " ").trim()).filter(Boolean);
+
+export async function savePerson(id: number | null, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const payload = {
+    name: text(form, "name"),
+    role: Object.fromEntries(LOCALES.map((l) => [l, text(form, `role_${l}`)])),
+    bio: Object.fromEntries(LOCALES.map((l) => [l, paragraphs(text(form, `bio_${l}`))])),
+    photo_alt: Object.fromEntries(LOCALES.map((l) => [l, text(form, `alt_${l}`)])),
+    is_active: form.get("is_active") === "on",
+  };
+  const result = await attempt(() => adminApi(id ? `/team-members/${id}` : "/team-members", { method: id ? "PATCH" : "POST", body: JSON.stringify(payload) }), id ? "Saved" : "Added");
+  revalidatePath("/admin/people");
+  return result;
+}
+
+export async function uploadPersonPhoto(id: number, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const file = form.get("photo");
+  if (!(file instanceof File) || file.size === 0) return { status: "error", message: "Choose a photo first." };
+  const body = new FormData();
+  body.append("photo", file);
+  const result = await attempt(() => adminApi(`/team-members/${id}/photo`, { method: "POST", body }), "Photo updated");
+  revalidatePath("/admin/people");
+  return result;
+}
+
+export async function setPersonVisible(id: number, is_active: boolean): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/team-members/${id}`, { method: "PATCH", body: JSON.stringify({ is_active }) }), is_active ? "Shown on the website" : "Hidden");
+  revalidatePath("/admin/people");
+  return result;
+}
+
+export async function orderPeople(ids: number[]): Promise<ActionState> {
+  const result = await attempt(() => adminApi("/team-members/order", { method: "PUT", body: JSON.stringify({ ids }) }), "Order saved");
+  revalidatePath("/admin/people");
+  return result;
+}
+
+export async function deletePerson(id: number): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/team-members/${id}`, { method: "DELETE" }), "Removed");
+  revalidatePath("/admin/people");
+  return result;
+}

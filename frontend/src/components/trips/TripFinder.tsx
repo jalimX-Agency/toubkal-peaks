@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Pager } from "@/components/ui/Pager";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { TourCard as Tour } from "@/lib/types";
@@ -44,6 +45,8 @@ type Sort = (typeof SORTS)[number];
 type Group = "type" | "duration" | "price" | "difficulty";
 type Filters = Record<Group, string[]>;
 const GROUPS: Group[] = ["type", "duration", "price", "difficulty"];
+
+const PER_PAGE = 12;
 
 const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
@@ -95,6 +98,8 @@ export function TripFinder({
     return (SORTS as readonly string[]).includes(s ?? "") ? (s as Sort) : "recommended";
   });
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [page, setPage] = useState(() => Math.max(1, Number(params.get("page")) || 1));
+  const listTop = useRef<HTMLElement>(null);
 
   // keep the URL in step with the filters (replaceState: no new history entry per click)
   useEffect(() => {
@@ -102,9 +107,10 @@ export function TripFinder({
     if (query.trim()) next.set("q", query.trim());
     for (const g of GROUPS) if (filters[g].length) next.set(g, filters[g].join(","));
     if (sort !== "recommended") next.set("sort", sort);
+    if (page > 1) next.set("page", String(page));
     const qs = next.toString();
     window.history.replaceState(null, "", qs ? `${pathname}?${qs}` : pathname);
-  }, [filters, query, sort, pathname]);
+  }, [filters, query, sort, page, pathname]);
 
   useEffect(() => {
     document.body.style.overflow = sheetOpen ? "hidden" : "";
@@ -139,13 +145,23 @@ export function TripFinder({
   const countFor = (group: Group, value: string) =>
     searched.filter((t) => GROUPS.every((g) => (g === group ? matches(t, g, [value]) : matches(t, g, filters[g])))).length;
 
-  const toggle = (group: Group, value: string) =>
+  // any change to the filters, search or order starts again from the first page
+  const toggle = (group: Group, value: string) => {
     setFilters((f) => ({ ...f, [group]: f[group].includes(value) ? f[group].filter((v) => v !== value) : [...f[group], value] }));
+    setPage(1);
+  };
+  const pages = Math.max(1, Math.ceil(results.length / PER_PAGE));
+  const current = Math.min(page, pages);
+  const goTo = (p: number) => {
+    setPage(p);
+    listTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const active = GROUPS.reduce((n, g) => n + filters[g].length, 0);
   const clearAll = () => {
     setFilters({ type: [], duration: [], price: [], difficulty: [] });
     setQuery("");
+    setPage(1);
   };
   const countLabel = (n: number) => (n === 1 ? dict.result : dict.results.replace("{count}", String(n)));
 
@@ -193,7 +209,10 @@ export function TripFinder({
       <select
         id={id}
         value={sort}
-        onChange={(e) => setSort(e.target.value as Sort)}
+        onChange={(e) => {
+          setSort(e.target.value as Sort);
+          setPage(1);
+        }}
         className="min-h-11 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy"
       >
         {SORTS.map((s) => (
@@ -219,7 +238,10 @@ export function TripFinder({
             <input
               type="search"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setPage(1);
+              }}
               placeholder={dict.search}
               className="min-h-11 w-full rounded-full border border-line bg-white py-2 pl-10 pr-4 text-base text-navy placeholder:text-muted focus:border-navy focus:outline-none"
             />
@@ -252,18 +274,21 @@ export function TripFinder({
         </div>
       </aside>
 
-      <section aria-live="polite" className="mt-6 lg:col-span-9 lg:mt-8">
+      <section ref={listTop} aria-live="polite" className="mt-6 scroll-mt-36 lg:col-span-9 lg:mt-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="mono text-navy">{countLabel(results.length)}</p>
           {sortSelect("sort-trips")}
         </div>
 
         {results.length > 0 ? (
-          <ul className="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {results.map((t) => (
-              <li key={t.id}>{cards[t.id]}</li>
-            ))}
-          </ul>
+          <>
+            <ul className="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {results.slice((current - 1) * PER_PAGE, current * PER_PAGE).map((t) => (
+                <li key={t.id}>{cards[t.id]}</li>
+              ))}
+            </ul>
+            <Pager page={current} total={pages} onChange={goTo} dict={dict} />
+          </>
         ) : (
           <div className="mt-8 rounded-sm border border-dashed border-line bg-white p-8 text-center">
             <p className="heading text-xl">{dict.none}</p>

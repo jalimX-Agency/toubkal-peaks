@@ -26,7 +26,8 @@ async function call(path: string, init: RequestInit & { token?: string | null } 
     cache: "no-store",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json",
+      // a FormData body (file upload) sets its own multipart content type
+      ...(rest.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
       "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)",
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...(rest.headers ?? {}),

@@ -25,6 +25,17 @@ export interface TourCard {
   price_basis: string;
   is_featured: boolean;
   hero: ApiImage | null;
+  /** a few more photos for the card carousel (not sent everywhere) */
+  photos?: ApiImage[];
+}
+
+/** A person on the About page (managed in the admin). */
+export interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  bio: string[];
+  photo: ApiImage | null;
 }
 
 export interface Category {

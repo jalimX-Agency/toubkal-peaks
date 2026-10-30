@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   experimental: {
     cpus: 1,
     staticGenerationMaxConcurrency: 2,
+    // team photos (up to 2 MB) go through a server action on their way to the API
+    serverActions: { bodySizeLimit: "3mb" },
   },
   partialPrefetching: true,
   turbopack: {

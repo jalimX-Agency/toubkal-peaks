@@ -5,12 +5,11 @@ import { CtaBand } from "@/components/home/CtaBand";
 import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { getTeam } from "@/lib/api";
 import { site, pageHeroes } from "@/lib/site";
 
 const PATH = "/about";
 
-/** Team photos live in public/team, in the same order as dict.about.members (the owner first). */
-const PHOTOS = ["/team/omar-jellah.jpg", "/team/mohamed-lead-guide.jpg", "/team/rachid.jpg", "/team/brahim.jpg", "/team/mohamed.jpg", "/team/hamid.jpg"];
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about">): Promise<Metadata> {
   const { lang } = await params;
@@ -26,13 +25,13 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/about">): 
   };
 }
 
-/** Who is behind the company: a short introduction, the owner, then the guides and drivers. */
+/** Who is behind the company: a short introduction, the owner, then the guides and drivers (all managed in the admin). */
 export default async function AboutPage({ params }: PageProps<"/[lang]/about">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = await getDictionary(lang);
+  const [dict, members] = await Promise.all([getDictionary(lang), getTeam(lang)]);
   const { about } = dict;
-  const [owner, ...team] = about.members;
+  const [owner, ...team] = members;
 
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
@@ -43,7 +42,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
       "@type": "TravelAgency",
       name: site.name,
       url: site.url,
-      employee: about.members.map((m) => ({ "@type": "Person", name: m.name, jobTitle: m.role })),
+      employee: members.map((m) => ({ "@type": "Person", name: m.name, jobTitle: m.role })),
     },
   }).replace(/</g, "\u003c");
 
@@ -62,26 +61,28 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
       <section className="bg-cream">
         <div className="mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-20">
           <h2 className="heading text-2xl md:text-3xl">{about.team}</h2>
-          <div className="mt-10 grid items-start gap-6 md:grid-cols-12 md:gap-12">
-            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm bg-line md:col-span-4">
-              <Image src={PHOTOS[0]} alt={owner.photoAlt} fill sizes="(min-width: 768px) 30vw, 90vw" className="object-cover" />
-            </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <p className="mono text-gold">{owner.role}</p>
-              <h3 className="font-display mt-2 text-[clamp(1.7rem,3vw,2.4rem)] font-semibold leading-tight text-navy">{owner.name}</h3>
-              <div className="mt-5 space-y-4 leading-relaxed text-ink">
-                {owner.bio.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
+          {owner && (
+            <div className="mt-10 grid items-start gap-6 md:grid-cols-12 md:gap-12">
+              <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm bg-line md:col-span-4">
+                {owner.photo && <Image src={owner.photo.url} alt={owner.photo.alt} fill sizes="(min-width: 768px) 30vw, 90vw" className="object-cover" />}
+              </div>
+              <div className="md:col-span-7 md:col-start-6">
+                <p className="mono text-gold">{owner.role}</p>
+                <h3 className="font-display mt-2 text-[clamp(1.7rem,3vw,2.4rem)] font-semibold leading-tight text-navy">{owner.name}</h3>
+                <div className="mt-5 space-y-4 leading-relaxed text-ink">
+                  {owner.bio.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <ul className="mt-16 grid gap-12 sm:grid-cols-2 md:mt-24 lg:gap-x-12 lg:gap-y-16">
-            {team.map((member, i) => (
-              <li key={PHOTOS[i + 1]}>
+            {team.map((member) => (
+              <li key={member.id}>
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-line">
-                  <Image src={PHOTOS[i + 1]} alt={member.photoAlt} fill sizes="(min-width: 1280px) 600px, (min-width: 640px) 45vw, 90vw" className="object-cover" />
+                  {member.photo && <Image src={member.photo.url} alt={member.photo.alt} fill sizes="(min-width: 1280px) 600px, (min-width: 640px) 45vw, 90vw" className="object-cover" />}
                 </div>
                 <p className="mono mt-5 text-gold">{member.role}</p>
                 <h3 className="font-display mt-1 text-2xl font-semibold text-navy">{member.name}</h3>

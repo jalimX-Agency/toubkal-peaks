@@ -62,6 +62,9 @@ const es: Dictionary = {
     },
   },
   tours: {
+    photoPrev: "Foto anterior",
+    photoNext: "Foto siguiente",
+    photoOf: "Foto {n} de {total}",
     eyebrow: "Viajes populares",
     title: "Encuentra tu viaje",
     tabs: {
@@ -115,6 +118,10 @@ const es: Dictionary = {
     email: "Escríbenos",
   },
   trips: {
+    prev: "Anterior",
+    next: "Siguiente",
+    page: "Página {page} de {total}",
+    pages: "Páginas",
     metaTitle: "Todos nuestros viajes y circuitos por Marruecos",
     metaDescription: "Compara todos nuestros trekkings, viajes al Sáhara, circuitos por las ciudades imperiales y excursiones desde Marrakech. Filtra por tipo, duración, presupuesto y dificultad.",
     eyebrow: "Todos los viajes",
@@ -163,46 +170,9 @@ const es: Dictionary = {
     title: "Las personas detrás de tu viaje",
     lead: "Toubkal Peaks Travel es una agencia de viajes de Marrakech dirigida por guías locales. Organizamos nosotros mismos cada trekking, viaje por el desierto y circuito: quien diseña tu itinerario conoce las montañas, los pueblos y los senderos por experiencia propia.",
     team: "Nuestro equipo",
-    members: [
-      {
-        name: "Omar Jellah",
-        role: "Cofundador y responsable de planificación",
-        photoAlt: "Omar Jellah, cofundador de Toubkal Peaks Travel, con las montañas del Atlas detrás",
-        bio: ["Con más de 25 años de experiencia en el turismo, Omar Jellah es cofundador y responsable de planificación de Toubkal Peaks Travel. Empezó su carrera en 2000 como guía de viajes y de montaña, trabajando con empresas de viajes internacionales, operadores turísticos y viajeros independientes.", "En 2006, movido por su pasión por viajar y su amor por Marruecos, fundó su propia agencia para compartir la belleza auténtica del país con visitantes de todo el mundo.", "A lo largo de los años, Omar ha guiado y organizado innumerables viajes por Marruecos, desde el Atlas y el Sáhara hasta las ciudades imperiales, los sitios históricos y los pueblos bereberes tradicionales. Hoy combina su amplia experiencia sobre el terreno y su conocimiento local para planificar circuitos a medida, aventuras de trekking y experiencias culturales.", "Su filosofía es sencilla: crear viajes con sentido, conexiones genuinas y recuerdos inolvidables."],
-      },
-      {
-        name: "Mohamed",
-        role: "Guía principal, especialista en grandes circuitos por Marruecos",
-        photoAlt: "Mohamed, guía principal, sonriendo en un parque en otoño",
-        bio: ["Mohamed es uno de los guías principales de Toubkal Peaks Travel, especializado en circuitos privados y a medida por Marruecos. Desde que se unió al equipo en 2016, ha adquirido una amplia experiencia con agencias de viajes internacionales, viajeros independientes y grupos privados de todo el mundo.", "Nacido y criado en el Alto Atlas, Mohamed tiene una conexión profunda con su herencia amazigh, las tradiciones locales y la belleza natural de su tierra. Le apasiona compartir la rica historia de Marruecos, la diversidad de sus culturas, sus paisajes impresionantes y la vida auténtica de los pueblos.", "Su objetivo es crear viajes con sentido y que se recuerden, acercando a los viajeros a las comunidades locales. Con su calidez, su conocimiento local y su pasión por la hospitalidad, convierte cada viaje en una experiencia única."],
-      },
-      {
-        name: "Rachid",
-        role: "Guía de trekking de montaña y de desierto",
-        photoAlt: "Rachid, guía de montaña y de desierto, sobre un lago turquesa del Atlas",
-        bio: ["Rachid es un guía marroquí con experiencia y un profundo conocimiento del Alto Atlas y del desierto del Sáhara. Especializado en ascensiones al Toubkal, trekking de montaña y viajes por el desierto, une su conocimiento local, su cercanía a la cultura bereber y una pasión sincera por mostrar Marruecos.", "Muy unido a su región y a sus tradiciones, Rachid se dedica a ofrecer viajes seguros, auténticos y personalizados. Su objetivo es dar a conocer a los viajeros los espectaculares paisajes de Marruecos, su rico patrimonio cultural y su forma de vida tradicional, con viajes que se recuerdan."],
-      },
-      {
-        name: "Brahim",
-        role: "Guía multilingüe y apasionado de la cultura",
-        photoAlt: "Brahim, guía, sentado en una ladera con las cumbres nevadas del Atlas detrás",
-        bio: ["Con muchos años de experiencia en el turismo, Brahim aporta a cada viaje conocimiento, curiosidad y comprensión cultural. Forma parte del equipo de Toubkal Peaks desde 2022 y guía sobre todo nuestras aventuras por el Alto Atlas y los paisajes del desierto del Sáhara.", "Brahim habla con fluidez cinco idiomas: árabe, tamazight (bereber), inglés, francés y español. Tras vivir ocho años en España, ha desarrollado un aprecio sincero por otras culturas, tradiciones y formas de vida.", "Lo que hace especial a Brahim es su pasión por la historia y su gusto por contar historias. Ya sea explicando las tradiciones de los pueblos bereberes, presentando a los viajeros a las comunidades locales o contando la historia de las antiguas ciudades de Marruecos, siempre da vida a los lugares y a sus historias."],
-      },
-      {
-        name: "Mohamed",
-        role: "Guía de montaña y de cultura",
-        photoAlt: "Mohamed, guía, sonriendo junto a un río de montaña en el Atlas",
-        bio: ["Nacido y criado en el corazón del Alto Atlas marroquí, Mohamed tiene una conexión profunda con los paisajes, las tradiciones y la gente que hacen de Marruecos un lugar tan especial.", "Desde que se unió al equipo en 2019, se ha convertido en uno de nuestros guías más experimentados y de confianza. Su pasión va mucho más allá de guiar: disfruta de verdad compartiendo sus conocimientos, sus historias y la cultura local con cada viajero que conoce.", "Ya sea al frente de una aventura por el Alto Atlas, explorando el desierto del Sáhara o descubriendo la historia y los rincones ocultos de las ciudades imperiales, Mohamed da vida a cada viaje con su experiencia, su calidez y su simpatía. Para él, guiar no es solo una profesión: es la oportunidad de compartir su tierra con el mundo."],
-      },
-      {
-        name: "Hamid",
-        role: "Conductor profesional",
-        photoAlt: "Hamid, conductor, delante de un todoterreno en las estribaciones del Atlas",
-        bio: ["Hamid es un miembro importante del equipo de Toubkal Peaks Travel desde hace cinco años. Con una amplia experiencia conduciendo por Marruecos, ha acompañado numerosos circuitos por todo el país, ayudando a los viajeros a descubrir sus paisajes, ciudades y tesoros culturales.", "Conductor profesional, fiable y acogedor, Hamid es conocido por su simpatía, su mentalidad abierta y su sonrisa constante. Le gusta compartir historias, conocimientos locales y experiencias personales con sus pasajeros, para que cada trayecto sea mucho más que un simple traslado."],
-      },
-    ],
   },
   footer: {
+    reservations: "Reservas",
     tagline: "Explora Marruecos de otra manera.",
     trips: "Viajes",
     contact: "Contacto",
@@ -425,6 +395,7 @@ const es: Dictionary = {
     invalid: "Hay datos que revisar.",
   },
   contact: {
+    reservations: "Reservas",
     metaTitle: "Contacto y planificación del viaje",
     metaDescription: "Planifica tu trekking, viaje al desierto o circuito privado en Marruecos con Toubkal Peaks Travel. Envía tus fechas y deseos: itinerario a medida y precio en 24 horas.",
     eyebrow: "Contacto",

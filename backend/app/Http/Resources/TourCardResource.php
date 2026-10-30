@@ -14,6 +14,8 @@ class TourCardResource extends JsonResource
 {
     use FormatsMedia;
 
+    private const CARD_PHOTOS = 4;
+
     public function toArray(Request $request): array
     {
         $locale = Locales::fromRequest($request);
@@ -37,6 +39,12 @@ class TourCardResource extends JsonResource
             'price_basis' => $this->price_basis,
             'is_featured' => $this->is_featured,
             'hero' => $this->media($this->hero, $locale),
+            // a few more photos for the card's small carousel (the website loads them only when needed)
+            'photos' => $this->whenLoaded('media', fn () => $this->media
+                ->where('id', '!=', $this->hero_media_id)
+                ->take(self::CARD_PHOTOS)
+                ->map(fn ($m) => $this->media($m, $locale))
+                ->values()),
         ];
     }
 }

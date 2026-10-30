@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { TourCard } from "@/components/TourCard";
 import { CtaBand } from "@/components/home/CtaBand";
+import { PagedGrid } from "@/components/ui/Pager";
 import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
@@ -87,13 +88,16 @@ export function HubPage({ hub, lang, dict, tours }: { hub: Hub; lang: Locale; di
 
       <section className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
         {tours.length > 0 ? (
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {tours.map((t) => (
+          <PagedGrid
+            perPage={12}
+            dict={dict.trips}
+            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            items={tours.map((t) => (
               <li key={t.id}>
                 <TourCard tour={t} lang={lang} dict={dict.tours} />
               </li>
             ))}
-          </ul>
+          />
         ) : (
           <p className="text-muted">{dict.tours.empty}</p>
         )}

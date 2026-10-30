@@ -60,6 +60,9 @@ const en = {
     },
   },
   tours: {
+    photoPrev: "Previous photo",
+    photoNext: "Next photo",
+    photoOf: "Photo {n} of {total}",
     eyebrow: "Popular trips",
     title: "Find your trip",
     tabs: {
@@ -113,6 +116,10 @@ const en = {
     email: "Email us",
   },
   trips: {
+    prev: "Previous",
+    next: "Next",
+    page: "Page {page} of {total}",
+    pages: "Pages",
     metaTitle: "All trips & tours in Morocco",
     metaDescription: "Compare every trek, Sahara trip, imperial cities tour and day trip from Marrakech. Filter by type, duration, budget and difficulty.",
     eyebrow: "All trips",
@@ -161,46 +168,9 @@ const en = {
     title: "The people behind your trip",
     lead: "Toubkal Peaks Travel is a Marrakech-based travel company run by local guides. We plan every trek, desert trip and tour ourselves, so the person who designs your itinerary knows the mountains, the villages and the tracks first-hand.",
     team: "Our team",
-    members: [
-      {
-        name: "Omar Jellah",
-        role: "Co-Founder & Planning Manager",
-        photoAlt: "Omar Jellah, co-founder of Toubkal Peaks Travel, with the Atlas Mountains behind him",
-        bio: ["With over 25 years of experience in tourism, Omar Jellah is the Co-Founder and Planning Manager of Toubkal Peaks Travel. He began his career in 2000 as a tour and mountain guide, working with international travel companies, tour operators and independent travellers.", "In 2006, driven by his passion for travel and his love for Morocco, he established his own travel company to share the country’s authentic beauty with visitors from around the world.", "Over the years, Omar has led and organised countless journeys across Morocco, from the Atlas Mountains and Sahara Desert to the Imperial Cities, historic sites and traditional Berber villages. Today, he combines his extensive field experience and local knowledge to plan and coordinate tailor-made tours, trekking adventures and cultural experiences.", "His philosophy is simple: creating meaningful journeys, genuine connections and unforgettable memories."],
-      },
-      {
-        name: "Mohamed",
-        role: "Lead Tour Guide & Morocco Grand Tours Specialist",
-        photoAlt: "Mohamed, lead tour guide, smiling in a park in autumn",
-        bio: ["Mohamed is one of the leading tour guides at Toubkal Peaks Travel, specialising in private and tailor-made tours across Morocco. Since joining our team in 2016, he has gained extensive experience working with international travel agencies, independent travellers and private groups from around the world.", "Born and raised in the High Atlas Mountains, Mohamed has a deep connection to his Amazigh heritage, local traditions and the natural beauty of his homeland. He is passionate about sharing Morocco’s rich history, diverse cultures, breathtaking landscapes and authentic village life.", "His goal is to create meaningful and memorable journeys, bringing travellers closer to local communities. With his warm personality, local knowledge and passion for hospitality, he makes every journey a unique experience."],
-      },
-      {
-        name: "Rachid",
-        role: "Mountain Trekking & Desert Guide",
-        photoAlt: "Rachid, mountain and desert guide, above a turquoise lake in the Atlas",
-        bio: ["Rachid is an experienced Moroccan guide with a deep knowledge of the High Atlas Mountains and the Sahara Desert. Specialising in Mount Toubkal expeditions, mountain trekking and desert tours, he combines local expertise, knowledge of Berber culture and a genuine passion for showcasing Morocco.", "With a strong connection to the region and its traditions, Rachid is dedicated to delivering safe, authentic and personalised travel experiences. His aim is to introduce visitors to Morocco’s spectacular landscapes, rich cultural heritage and traditional way of life, creating memorable journeys for travellers from around the world."],
-      },
-      {
-        name: "Brahim",
-        role: "Multilingual Guide & Cultural Explorer",
-        photoAlt: "Brahim, guide, sitting on a mountainside with snowy Atlas peaks behind him",
-        bio: ["With many years of experience in the tourism industry, Brahim brings a wealth of knowledge, curiosity and cultural understanding to every journey. He has been part of the Toubkal Peaks team since 2022, mainly guiding our adventures through the High Atlas Mountains and the landscapes of the Sahara Desert.", "Brahim is fluent in five languages: Arabic, Tamazight (Berber), English, French and Spanish. Having lived in Spain for eight years, he has developed a genuine appreciation for different cultures, traditions and ways of life.", "What makes Brahim particularly special is his passion for history and his love of sharing stories. Whether explaining the traditions of Berber villages, introducing travellers to local communities or sharing the history of Morocco’s ancient cities, he always brings places and their stories to life."],
-      },
-      {
-        name: "Mohamed",
-        role: "Mountain & Cultural Guide",
-        photoAlt: "Mohamed, guide, smiling beside a mountain river in the Atlas",
-        bio: ["Born and raised in the heart of Morocco’s High Atlas Mountains, Mohamed has a deep connection to the landscapes, traditions and people that make Morocco so special.", "Since joining our team in 2019, he has become one of our most trusted and experienced guides. His passion for his work goes far beyond guiding: he genuinely enjoys sharing his knowledge, stories and local culture with every traveller he meets.", "Whether leading an adventure through the High Atlas, exploring the Sahara Desert or discovering the history and hidden gems of Morocco’s imperial cities, Mohamed brings every journey to life with his experience, warmth and friendly personality. For him, guiding is not just a profession: it is an opportunity to share his homeland with the world."],
-      },
-      {
-        name: "Hamid",
-        role: "Professional Driver",
-        photoAlt: "Hamid, driver, standing in front of a four-wheel drive in the Atlas foothills",
-        bio: ["Hamid has been an important member of the Toubkal Peaks Travel team for the past five years. With extensive experience driving across Morocco, he has accompanied numerous tours throughout the country, helping travellers discover its diverse landscapes, cities and cultural treasures.", "A professional, reliable and welcoming driver, Hamid is known for his friendly personality, open-minded nature and constant smile. He enjoys sharing stories, local knowledge and personal experiences with his passengers, making every journey more than just a transfer."],
-      },
-    ],
   },
   footer: {
+    reservations: "Reservations",
     tagline: "Explore Morocco differently.",
     trips: "Trips",
     contact: "Contact",
@@ -423,6 +393,7 @@ const en = {
     invalid: "Some details need checking.",
   },
   contact: {
+    reservations: "Reservations",
     metaTitle: "Contact & trip planning",
     metaDescription: "Plan your private trek, desert trip or tour in Morocco with Toubkal Peaks Travel. Send your dates and wishes: tailor-made itinerary and price within 24 hours.",
     eyebrow: "Contact",

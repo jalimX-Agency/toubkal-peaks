@@ -4,6 +4,8 @@ export const site = {
   shortName: "Toubkal Peaks",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   email: "info@toubkal-peaks.com",
+  contactEmail: "contact@toubkal-peaks.com",
+  reservationsEmail: "reservations@toubkal-peaks.com",
   whatsapp: "+212661283086",
   whatsappDisplay: "+212 661 283 086",
   phones: ["+212 661 283 086", "+212 670 414 623"],
