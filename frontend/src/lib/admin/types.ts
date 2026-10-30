@@ -116,10 +116,22 @@ export interface TourDetail {
   price_reviewed_at: string | null;
   published_at: string | null;
   hero: string | null;
+  images: TripImage[];
   paths: Record<AdminLocale, string | null>;
   prices: { min_pax: number; max_pax: number | null; price_per_person: number | null }[];
   translations: Record<AdminLocale, TourContent | null>;
   updated_at: string | null;
+}
+
+/** A trip photo (or a library photo when is_main is absent). */
+export interface TripImage {
+  id: number;
+  url: string;
+  width: number | null;
+  height: number | null;
+  size: number | null;
+  alt: Partial<Record<AdminLocale, string>>;
+  is_main?: boolean;
 }
 
 export interface AdminReview {

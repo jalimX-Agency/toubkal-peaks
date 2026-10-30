@@ -3,19 +3,21 @@
 import { useActionState, useEffect, useState, useTransition } from "react";
 import { saveTourContent, saveTourPrices, updateTourSettings } from "@/app/admin/actions";
 import { Field, FormMessage, Select, Submit, inputClass } from "@/components/admin/form";
+import { TripPhotos } from "@/components/admin/TripPhotos";
 import { TranslationDot } from "@/components/admin/ui";
 import type { ActionState, AdminLocale, ItineraryDayInput, TourContent, TourDetail } from "@/lib/admin/types";
 
 const LOCALES: AdminLocale[] = ["en", "fr", "es", "de"];
 const LANGUAGE: Record<AdminLocale, string> = { en: "English", fr: "Français", es: "Español", de: "Deutsch" };
-type Tab = "settings" | "prices" | AdminLocale;
+type Tab = "settings" | "prices" | "photos" | AdminLocale;
 
-/** Trip editing: settings, price tiers and the content of each language, one tab at a time. */
+/** Trip editing: settings, price tiers, photos and the content of each language, one tab at a time. */
 export function TripEditor({ tour }: { tour: TourDetail }) {
   const [tab, setTab] = useState<Tab>("settings");
   const tabs: { value: Tab; label: React.ReactNode }[] = [
     { value: "settings", label: "Settings" },
     { value: "prices", label: "Prices" },
+    { value: "photos", label: `Photos (${tour.images.length})` },
     ...LOCALES.map((l) => ({ value: l as Tab, label: <span className="flex items-center gap-1.5"><TranslationDot locale={l} status={tour.translations[l]?.translation_status ?? null} /><span className="hidden sm:inline">{LANGUAGE[l]}</span></span> })),
   ];
 
@@ -32,6 +34,7 @@ export function TripEditor({ tour }: { tour: TourDetail }) {
       <div className="mt-5">
         {tab === "settings" && <Settings tour={tour} />}
         {tab === "prices" && <Prices tour={tour} />}
+        {tab === "photos" && <TripPhotos tour={tour} />}
         {LOCALES.map((l) => tab === l && <ContentEditor key={l} tour={tour} locale={l} />)}
       </div>
     </div>

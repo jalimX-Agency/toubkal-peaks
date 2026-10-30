@@ -181,6 +181,7 @@ class TourController extends Controller
             'price_reviewed_at' => $tour->price_reviewed_at?->toIso8601String(),
             'published_at' => $tour->published_at?->toIso8601String(),
             'hero' => $tour->hero?->url(),
+            'images' => app(TourImageController::class)->images($tour),
             'paths' => collect(config('locales.supported'))->mapWithKeys(function ($l) use ($tour) {
                 $t = $tour->translations->firstWhere('locale', $l);
                 $category = trim((string) $tour->category?->path($l), '/');

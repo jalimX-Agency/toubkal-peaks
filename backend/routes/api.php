@@ -51,6 +51,10 @@ Route::prefix('v1')->group(function () {
             Route::patch('/tours/{tour}', [Admin\TourController::class, 'update']);
             Route::put('/tours/{tour}/translations/{locale}', [Admin\TourController::class, 'translation']);
             Route::put('/tours/{tour}/prices', [Admin\TourController::class, 'prices']);
+            Route::post('/tours/{tour}/images', [Admin\TourImageController::class, 'store']);
+            Route::put('/tours/{tour}/images', [Admin\TourImageController::class, 'order']);
+            Route::patch('/tours/{tour}/images/{media}', [Admin\TourImageController::class, 'describe']);
+            Route::get('/media', [Admin\TourImageController::class, 'library']);
 
             Route::get('/reviews', [Admin\ReviewController::class, 'index']);
             Route::post('/reviews', [Admin\ReviewController::class, 'store']);

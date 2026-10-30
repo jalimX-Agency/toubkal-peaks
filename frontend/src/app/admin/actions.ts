@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { AdminApiError, SESSION_COOKIE, SESSION_DAYS, adminApi, adminLogin } from "@/lib/admin/api";
-import type { ActionState, AdminLocale, TourContent } from "@/lib/admin/types";
+import type { ActionState, AdminLocale, TourContent, TripImage } from "@/lib/admin/types";
 
 /** Runs an admin API write and turns its errors into a form state (field errors included). */
 async function attempt(run: () => Promise<unknown>, okMessage = "Saved"): Promise<ActionState> {
@@ -251,4 +251,36 @@ export async function deletePerson(id: number): Promise<ActionState> {
   const result = await attempt(() => adminApi(`/team-members/${id}`, { method: "DELETE" }), "Removed");
   revalidatePath("/admin/people");
   return result;
+}
+
+// --- trip photos ------------------------------------------------------------------
+
+/** One photo per call: the website's server limits the size of a request. */
+export async function uploadTripPhoto(tourId: number, form: FormData): Promise<ActionState> {
+  const file = form.get("photo");
+  if (!(file instanceof File) || file.size === 0) return { status: "error", message: "Choose a photo first." };
+  const body = new FormData();
+  body.append("photo", file);
+  const result = await attempt(() => adminApi(`/tours/${tourId}/images`, { method: "POST", body }), "Photo added");
+  revalidatePath(`/admin/trips/${tourId}`);
+  return result;
+}
+
+/** The trip's photos in order (first = main photo); photos left out are removed from the trip, library photos added. */
+export async function setTripPhotos(tourId: number, ids: number[]): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/tours/${tourId}/images`, { method: "PUT", body: JSON.stringify({ ids }) }), "Photos saved");
+  revalidatePath(`/admin/trips/${tourId}`);
+  return result;
+}
+
+export async function describeTripPhoto(tourId: number, mediaId: number, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const alt = Object.fromEntries(LOCALES.map((l) => [l, text(form, `alt_${l}`)]));
+  const result = await attempt(() => adminApi(`/tours/${tourId}/images/${mediaId}`, { method: "PATCH", body: JSON.stringify({ alt }) }), "Description saved");
+  revalidatePath(`/admin/trips/${tourId}`);
+  return result;
+}
+
+export async function searchPhotoLibrary(q: string, page = 1): Promise<{ data: TripImage[]; meta: { current_page: number; last_page: number; total: number } }> {
+  const query = new URLSearchParams({ page: String(page), ...(q.trim() ? { q: q.trim() } : {}) });
+  return adminApi(`/media?${query}`);
 }
