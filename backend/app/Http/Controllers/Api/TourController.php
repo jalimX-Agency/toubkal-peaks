@@ -17,7 +17,7 @@ class TourController extends Controller
     /**
      * Published tours as cards.
      * Query: locale, category (key such as "treks" or "treks.toubkal"; a parent includes its children),
-     * featured=1, per_page (1-60, default 24).
+     * featured=1, per_page (1-100, default 24).
      */
     public function index(Request $request)
     {
@@ -29,7 +29,7 @@ class TourController extends Controller
         if ($request->boolean('featured')) {
             $query->where('is_featured', true);
         }
-        $perPage = min(max((int) $request->query('per_page', 24), 1), 60);
+        $perPage = min(max((int) $request->query('per_page', 24), 1), 100);
 
         return TourCardResource::collection($query->paginate($perPage)->withQueryString());
     }

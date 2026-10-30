@@ -8,7 +8,7 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { TourCard as Tour } from "@/lib/types";
 
 const TABS = [
-  { key: "all", category: null, path: "/treks" },
+  { key: "all", category: null, path: "/trips" },
   { key: "toubkal", category: "treks.toubkal", path: "/treks/toubkal" },
   { key: "atlas", category: "treks.atlas-valleys-villages", path: "/treks/atlas-valleys-villages" },
   { key: "regional", category: "treks.regional-treks", path: "/treks/regional-treks" },

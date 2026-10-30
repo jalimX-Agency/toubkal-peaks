@@ -9,6 +9,7 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 import { media, site } from "@/lib/site";
 
 const LINKS = [
+  { key: "trips", path: "/trips" },
   { key: "treks", path: "/treks" },
   { key: "sahara", path: "/sahara-desert-tours" },
   { key: "morocco", path: "/morocco-tours" },
@@ -56,7 +57,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
             />
           </Link>
 
-          <nav aria-label="Main" className="hidden items-center gap-7 xl:flex">
+          <nav aria-label="Main" className="hidden items-center gap-5 xl:flex 2xl:gap-7">
             {LINKS.map((link) => (
               <Link
                 key={link.key}
