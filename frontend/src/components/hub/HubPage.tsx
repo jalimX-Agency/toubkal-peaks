@@ -43,7 +43,7 @@ export function HubPage({ hub, lang, dict, tours }: { hub: Hub; lang: Locale; di
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
-      <section className="relative isolate overflow-hidden bg-navy-deep text-white">
+      <section data-dark-hero className="relative isolate overflow-hidden bg-navy-deep pt-[4.25rem] text-white md:pt-20">
         <HeroBackdrop src={pageHeroes[hub.key]} />
         <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 md:px-8 md:pb-16 md:pt-10">
           <nav aria-label="Breadcrumb" className="mono text-white/55">

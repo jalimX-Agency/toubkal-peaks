@@ -56,7 +56,7 @@ export default function Error({ reset }: { error: Error & { digest?: string }; r
   }, [pathname]);
 
   return (
-    <section className="mx-auto flex min-h-[60vh] max-w-xl flex-col items-start justify-center px-4 py-16">
+    <section className="mx-auto flex min-h-[60vh] max-w-xl flex-col items-start justify-center px-4 pb-16 pt-32 md:pt-36">
       <p className="mono text-gold">500</p>
       <h1 className="heading mt-2 text-[clamp(1.8rem,3.6vw,2.6rem)]">{t.title}</h1>
       <p className="mt-3 text-muted">{t.text}</p>

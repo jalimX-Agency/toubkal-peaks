@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { BookingWizardLoader } from "@/components/book/BookingWizardLoader";
+import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { hasLocale, localePath, locales, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { getTours } from "@/lib/api";
-import { media } from "@/lib/site";
+import { pageHeroes } from "@/lib/site";
 
 const PATH = "/book";
 
@@ -32,9 +33,9 @@ export default async function BookPage({ params }: PageProps<"/[lang]/book">) {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-navy-deep text-white">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cover bg-center opacity-[0.16]" style={{ backgroundImage: `url(${media.topo})` }} />
-        <div className="mx-auto max-w-6xl px-4 pb-8 pt-8 md:px-8 md:pb-12 md:pt-12">
+      <section data-dark-hero className="relative isolate overflow-hidden bg-navy-deep pt-[4.25rem] text-white md:pt-20">
+        <HeroBackdrop src={pageHeroes.book} />
+        <div className="mx-auto max-w-6xl px-4 pb-10 pt-10 md:px-8 md:pb-14 md:pt-14">
           <p className="mono text-gold-light">{dict.book.eyebrow}</p>
           <h1 className="font-display mt-2 text-[clamp(1.9rem,4.2vw,3.2rem)] font-semibold leading-[1.08]">{dict.book.title}</h1>
           <p className="mt-3 max-w-2xl leading-relaxed text-white/80">{dict.book.lead}</p>

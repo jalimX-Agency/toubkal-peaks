@@ -33,7 +33,7 @@ export function TripHero({ tour, lang, trip, tours, homeLabel, categoryLabel }: 
   const difficulty = formatDifficulty(tour.difficulty, tours);
 
   return (
-    <section className="relative isolate overflow-hidden bg-navy-deep text-white">
+    <section data-dark-hero className="relative isolate overflow-hidden bg-navy-deep pt-[4.25rem] text-white md:pt-20">
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cover bg-center opacity-[0.16]" style={{ backgroundImage: `url(${media.topo})` }} />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-8 md:px-8 lg:grid-cols-12 lg:items-center lg:gap-14 lg:pb-16 lg:pt-10">
         <div className="lg:col-span-7">

@@ -95,7 +95,7 @@ export function TopoHero({ lang, dict, camps }: { lang: Locale; dict: Dictionary
   }, [playing, desktop, nextReady, index, go]);
 
   return (
-    <section className="relative isolate overflow-hidden bg-navy-deep text-white">
+    <section data-dark-hero className="relative isolate overflow-hidden bg-navy-deep text-white">
       {/* phones: footage */}
       <div className="absolute inset-0 -z-20 lg:hidden">
         <video

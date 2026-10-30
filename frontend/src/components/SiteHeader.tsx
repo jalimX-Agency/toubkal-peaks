@@ -19,16 +19,24 @@ const LINKS = [
 export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav"] }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // home page: the bar floats over the hero photo, transparent until the visitor scrolls
-  const isHome = /^\/(?:(?:fr|es|de)\/?)?$/.test(usePathname());
-  const clear = isHome && !scrolled && !open;
+  // The bar floats over every page's dark hero (marked data-dark-hero), transparent until the visitor
+  // scrolls. A page that starts with light content (404) keeps the cream bar. Checked again after
+  // each navigation; the first render assumes a hero, as nearly every page has one.
+  const [overHero, setOverHero] = useState(true);
+  const pathname = usePathname();
+  const clear = overHero && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
+    const measure = () => {
+      const hero = document.querySelector("#main [data-dark-hero]");
+      setOverHero(hero !== null && hero.getBoundingClientRect().top + window.scrollY < 8);
+      onScroll();
+    };
+    measure();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -42,7 +50,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
   return (
     <>
       <header
-        className={`${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-50 transition-[background-color,box-shadow] duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 ${
           clear ? "bg-gradient-to-b from-navy-deep/55 to-transparent" : "bg-cream"
         } ${scrolled || open ? "shadow-[0_1px_0_var(--line),0_6px_20px_rgba(2,46,85,0.06)]" : ""}`}
       >

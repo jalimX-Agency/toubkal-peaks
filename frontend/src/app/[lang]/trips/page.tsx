@@ -68,7 +68,7 @@ export default async function TripsPage({ params }: PageProps<"/[lang]/trips">) 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
-      <section className="relative isolate overflow-hidden bg-navy-deep text-white">
+      <section data-dark-hero className="relative isolate overflow-hidden bg-navy-deep pt-[4.25rem] text-white md:pt-20">
         <HeroBackdrop src={pageHeroes.trips} />
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-10 md:px-8 md:pb-14 md:pt-14">
           <p className="mono text-gold-light">

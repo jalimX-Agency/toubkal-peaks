@@ -61,6 +61,7 @@ export const pageHeroes: Record<string, string> = {
   "day-trips-from-marrakech": `${TRIPS}/oz2-the-ouzoud-waterfalls-at-sunset.jpg`,
   "trips": `${TRIPS}/sa6-camel-caravan-on-the-merzouga-dunes-at-sunset.jpg`,
   "about": `${TRIPS}/o192-hikers-and-mules-on-a-rocky-atlas-trail.jpg`,
+  "book": `${TRIPS}/im1-imlil-valley-and-the-toubkal-massif-under-clouds-high-atlas.jpg`,
   "contact": `${TRIPS}/im3-mint-tea-on-a-guesthouse-table-with-a-view-of-the-atlas-peak.jpg`,
 };
 

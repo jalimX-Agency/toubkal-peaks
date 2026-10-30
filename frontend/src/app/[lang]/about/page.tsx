@@ -49,7 +49,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
-      <section className="relative isolate overflow-hidden bg-navy-deep text-white">
+      <section data-dark-hero className="relative isolate overflow-hidden bg-navy-deep pt-[4.25rem] text-white md:pt-20">
         <HeroBackdrop src={pageHeroes.about} />
         <div className="mx-auto max-w-7xl px-4 pb-12 pt-12 md:px-8 md:pb-16 md:pt-16">
           <p className="mono text-gold-light">{about.eyebrow}</p>
