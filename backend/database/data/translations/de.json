@@ -1713,82 +1713,121 @@
    "id": 1038,
    "slug": "7-tage-trek-mgoun-gipfel",
    "title": "7 Tage – Trek auf den Gipfel des M'Goun",
-   "summary": null,
+   "summary": "Sieben Tage Trekking durch den zentralen Hohen Atlas Marokkos: vom Glücklichen Tal von Aït Bougmez über den Aghouri-Pass und das Tarkeddite-Plateau zum Gipfel des M'Goun (4.071 m), einem der höchsten Berge Nordafrikas, und zurück durch das wilde Oulilimt-Tal.",
    "seo_description": null,
-   "highlights": [],
+   "highlights": [
+    "Der Gipfel des M'Goun, 4.071 m, einer der höchsten Berge Nordafrikas",
+    "Der Aghouri-Pass (3.450 m) und das weite Tarkeddite-Plateau",
+    "Das wilde, abgelegene Oulilimt-Tal",
+    "Das Glückliche Tal von Aït Bougmez mit seinen traditionellen Amazigh-Dörfern",
+    "Fünf Wandertage (etwa 67–83 km), vier Nächte im Zelt und zwei in Berber-Gästehäusern"
+   ],
    "facts": {
     "best_time": "Mai bis Oktober",
-    "departs_from": "Marrakesch, 8:00 Uhr. Die Abfahrtszeit kann an Ihre Wünsche angepasst werden.",
+    "departs_from": "Marrakesch (gegen 9:00 Uhr, Abfahrtszeit flexibel)",
     "departure_times": "Variabel",
     "duration": "7 Tage / 6 Nächte",
     "type": "Trekking",
-    "guides_speaking": "Englisch, Französisch, Spanisch, Arabisch, Berberisch",
+    "guides_speaking": "Englisch, Französisch, Spanisch, Arabisch, Amazigh",
     "grade": "Mittel bis schwer",
-    "trip_level": "4.087 m",
+    "maximum_altitude": "4.071 m",
     "solo_travelers": "Auf Anfrage"
    },
    "itinerary": [
     {
      "day": 1,
-     "title": "MARRAKESCH – AGOUTI",
-     "stats": {},
-     "accommodation": "",
+     "title": "Marrakesch – Ouzoud-Wasserfälle – Agouti (Aït-Bougmez-Tal)",
+     "stats": {
+      "driving_distance": "220–250 km",
+      "driving_time": "5–6 Stunden",
+      "meals": "Abendessen"
+     },
+     "accommodation": "Traditionelles Berber-Gästehaus, Agouti",
      "body": [
-      "Abholung um 9:00 Uhr an Ihrem Riad oder Hotel für die 6-stündige Fahrt ins Aït-Bougmez-Tal, mit einem Stopp an den spektakulären, 100 m hohen Ouzoud-Wasserfällen. Übernachtung in einer einfachen traditionellen Herberge in Agouti, einem charmanten kleinen Dorf mit Blick über das Bougmez-Tal."
+      "Ihr Abenteuer beginnt mit einem privaten Transfer ab Marrakesch gegen 9:00 Uhr. Wir fahren in Richtung zentraler Hoher Atlas, durch schöne Landschaften und vorbei an traditionellen Dörfern. Unterwegs halten wir an den eindrucksvollen Ouzoud-Wasserfällen, einer der beeindruckendsten Naturattraktionen Marokkos, wo Sie spazieren gehen und fotografieren können. Nach dem Mittagessen fahren wir über Azilal weiter in das schöne Aït-Bougmez-Tal, auch Glückliches Tal genannt. In Agouti angekommen, treffen Sie Ihren Bergführer und das Trekking-Team. Traditionelles marokkanisches Abendessen und Übernachtung in einem einheimischen Berber-Gästehaus."
      ]
     },
     {
      "day": 2,
-     "title": "AGOUTI – AZIB AROUS",
-     "stats": {},
-     "accommodation": "",
+     "title": "Agouti – Aït Saïd – Arous-Tal – Azib Arous",
+     "stats": {
+      "distance": "10–14 km",
+      "hiking_duration": "5 Stunden",
+      "elevation": "Lager auf etwa 2.200–2.300 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Berglager, Azib Arous",
      "body": [
-      "Sanfter Start auf dem Pfad ins Tal des Assif n'Arous, vorbei an Aït Said mit Blick auf den M'Goun-Gipfel. Weiter nach Azib Arous (2.200 m), optional mit Besuch der Arous-Schlucht. Übernachtung im Camp. Ca. 5 Stunden Gehzeit im Aufstieg."
+      "Nach dem Frühstück beginnen wir die Wanderung durch das schöne Aït-Bougmez-Tal, vorbei an traditionellen Amazigh-Dörfern, Feldern und Terrassengärten. Allmählich gelangen wir in das Arous-Tal, auf Bergpfaden am Fluss entlang, mit wunderbarem Blick auf die umliegenden Gipfel, darunter der M'Goun. Wir kommen durch das Dorf Aït Saïd und gehen weiter nach Azib Arous, einer traditionellen Sommerweide der einheimischen Hirten. Optional können Sie die eindrucksvolle Arous-Schlucht erkunden, bevor wir am Abend das Lager beziehen."
      ]
     },
     {
      "day": 3,
-     "title": "AZIB AROUS – TARKEDDIT-PLATEAU",
-     "stats": {},
-     "accommodation": "",
+     "title": "Azib Arous – Aghouri-Pass – Tarkeddite-Plateau",
+     "stats": {
+      "distance": "12–15 km",
+      "hiking_duration": "6 Stunden",
+      "elevation": "Bis 3.450 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Berglager, Tarkeddite-Plateau (etwa 2.900 m)",
      "body": [
-      "Aufstieg über weite Weiden zum Aghouri-Pass (3.450 m) mit herrlichem Blick auf das Plateau und den M'Goun-Grat. Abstieg auf das windgeformte, oft verschneite Hochplateau von Tarkeddit (2.900 m). Übernachtung im Camp. Ca. 6 Stunden Gehzeit."
+      "Heute erwartet uns ein spektakulärer Bergwandertag: Wir steigen allmählich durch Hochweiden zum Aghouri-Pass (3.450 m) auf. Der Aufstieg belohnt uns mit großartigen Panoramablicken auf das M'Goun-Massiv und das weite Tarkeddite-Plateau unter uns. Nach dem Pass steigen wir auf Bergpfaden zum schönen Plateau auf etwa 2.900 m ab. Diese abgelegene Landschaft ist im Sommer die Heimat nomadischer Hirten und ihrer Herden. Wir schlagen unser Lager auf und essen zu Abend unter der eindrucksvollen Bergkulisse."
      ]
     },
     {
      "day": 4,
-     "title": "BESTEIGUNG DES M'GOUN",
-     "stats": {},
-     "accommodation": "",
+     "title": "Aufstieg zum M'Goun (4.071 m) – Oulilimt-Tal",
+     "stats": {
+      "distance": "18–20 km",
+      "hiking_duration": "8–9 Stunden",
+      "elevation": "Gipfel 4.071 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Berglager, Oulilimt-Tal",
      "body": [
-      "Heute besteigen wir den Gipfel des Djebel M'Goun. Der Aufstieg folgt einem langen Grat, immer auf 4.000 m oder höher, und dauert je nach Schneelage meist 4 bis 5 Stunden. Vom Gipfel bietet sich ein eindrucksvoller Blick über das Draa-Tal und nach Süden zur Sahara. Nach weiteren 2 km auf dem Grat steigen wir ins Oulilimt-Tal ab und zelten an der Oulilimt-Quelle. Ca. 9 Stunden Gehzeit."
+      "Das ist der Höhepunkt des gesamten Treks. Wir brechen früh am Morgen auf und steigen zum eindrucksvollen Grat des M'Goun auf. Der Aufstieg folgt einem langen Bergrücken mit spektakulärem Blick über den zentralen Hohen Atlas. Nach etwa 4–5 Stunden Aufstieg erreichen wir den Gipfel auf 4.071 m, von dem man atemberaubende Ausblicke auf das Draa-Tal, das Rosental und die fernen Wüstenlandschaften der Sahara genießt. Nach einer Pause am Gipfel folgen wir dem Grat und steigen in das abgelegene Oulilimt-Tal ab. Wir erreichen die natürlichen Quellen von Oulilimt, wo unser Team das Lager für eine wohlverdiente Ruhe nach diesem anstrengenden Tag vorbereitet."
      ]
     },
     {
      "day": 5,
-     "title": "OULILIMT – AFLAFAL",
-     "stats": {},
-     "accommodation": "",
+     "title": "Oulilimt-Tal – Aflafal",
+     "stats": {
+      "distance": "10–14 km",
+      "hiking_duration": "5 Stunden",
+      "elevation": "Etwa 2.200–2.400 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Berglager, Aflafal",
      "body": [
-      "Die nächsten zwei Tage führen durch abgelegenes Gebiet zurück in Richtung Aït-Bougmez-Tal. Heute geht es das Oulilimt-Tal hinunter, dem Flusslauf folgend, mit Übernachtung im Camp. Ca. 5 Stunden Gehzeit."
+      "Nach dem Frühstück setzen wir unsere Reise durch das schöne, abgelegene Oulilimt-Tal fort. Die heutige Wanderung folgt dem Fluss durch eine dramatische Berglandschaft, vorbei an natürlichen Quellen, grünen Weiden, Felsformationen und traditionellen saisonalen Hirtensiedlungen. Der Weg führt allmählich durch dieses friedliche Tal bergab und lässt Zeit, die Landschaft zu genießen und die traditionelle Lebensweise der Bergbewohner kennenzulernen. Wir erreichen Aflafal, schlagen das Lager auf und verbringen einen entspannten Abend inmitten der herrlichen Berge des Hohen Atlas."
      ]
     },
     {
      "day": 6,
-     "title": "AFLAFAL – BOUGMEZ-TAL",
-     "stats": {},
-     "accommodation": "",
+     "title": "Aflafal – Tizi n'Aït Imi – Timite (Glückliches Tal)",
+     "stats": {
+      "distance": "17–20 km",
+      "hiking_duration": "7 Stunden",
+      "elevation": "Bis etwa 2.960 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Einheimisches Berber-Gästehaus, Timite",
      "body": [
-      "Eine lange, aber lohnende Etappe vom Camp zum Pass Tizi n'Aït Imi und hinunter ins wunderschöne Bougmez-Tal. Übernachtung in einer kleinen Herberge im Dorf Timit. Ca. 7 Stunden Gehzeit."
+      "Heute verlassen wir das abgelegene Oulilimt-Tal und kehren in das schöne Aït-Bougmez-Tal zurück. Wir beginnen mit einem allmählichen Aufstieg zum Pass Tizi n'Aït Imi (etwa 2.960 m), von dem sich spektakuläre Panoramablicke über den Hohen Atlas öffnen. Nach dem Pass folgt ein langer Abstieg in die grünen Landschaften des Glücklichen Tals. Unterwegs kommen wir an traditionellen Berberdörfern, Terrassenfeldern und Gärten vorbei. Am Nachmittag erreichen wir das Dorf Timite, wo man uns herzlich empfängt und wir die letzte Nacht in einem traditionellen Berber-Gästehaus verbringen."
      ]
     },
     {
      "day": 7,
-     "title": "RÜCKFAHRT NACH MARRAKESCH",
-     "stats": {},
+     "title": "Timite – Azilal – Marrakesch",
+     "stats": {
+      "driving_distance": "220–250 km",
+      "driving_time": "5–6 Stunden",
+      "meals": "Frühstück"
+     },
      "accommodation": "",
      "body": [
-      "Nach dem Frühstück bringt Sie unser privater Transfer von Timit zurück nach Marrakesch (6 Stunden Fahrt)."
+      "Nach dem Frühstück verabschieden wir uns vom schönen Aït-Bougmez-Tal und fahren im privaten Transfer zurück nach Marrakesch. Wir fahren durch die spektakulären Landschaften des zentralen Hohen Atlas, vorbei an traditionellen Dörfern, Bergtälern und der Landschaft um Azilal. Unterwegs können wir einige Stopps für Fotos, Erfrischungen und das Mittagessen in einem lokalen Restaurant einlegen. Am Nachmittag fahren wir weiter nach Marrakesch und erreichen Ihre Unterkunft – damit endet Ihr unvergessliches siebentägiges M'Goun-Trekking-Abenteuer."
      ]
     }
    ],

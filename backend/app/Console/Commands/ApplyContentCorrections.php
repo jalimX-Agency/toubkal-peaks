@@ -28,6 +28,12 @@ class ApplyContentCorrections extends Command
 
         $counts = ['applied' => 0, 'already done' => 0, 'edited since (kept)' => 0, 'unknown tour' => 0];
         foreach ($data['corrections'] ?? [] as $c) {
+            if ($c['field'] === 'prices') {
+                $counts[$this->correctPrices($tourIds[$c['id']] ?? null, $c)]++;
+
+                continue;
+            }
+
             $translation = isset($tourIds[$c['id']])
                 ? TourTranslation::where(['tour_id' => $tourIds[$c['id']], 'locale' => $locale])->first()
                 : null;
@@ -54,5 +60,37 @@ class ApplyContentCorrections extends Command
         $this->table(array_keys($counts), [array_values($counts)]);
 
         return self::SUCCESS;
+    }
+
+    /**
+     * Price tiers as [people from, people to, price per person] rows. Replaced only while they still match
+     * "before"; the tour is then marked as price-checked, like a save in the admin.
+     */
+    private function correctPrices(?int $tourId, array $c): string
+    {
+        $tour = $tourId ? Tour::withTrashed()->with('prices')->find($tourId) : null;
+        if ($tour === null) {
+            return 'unknown tour';
+        }
+
+        $rows = fn ($prices) => $prices->sortBy('min_pax')->map(fn ($p) => [(int) $p->min_pax, $p->max_pax === null ? null : (int) $p->max_pax, (float) $p->price_per_person])->values()->all();
+        $current = $rows($tour->prices);
+        if ($current == $c['after']) {
+            return 'already done';
+        }
+        if ($current != $c['before']) {
+            $this->warn("Kept tour {$c['id']} prices: edited since the import.");
+
+            return 'edited since (kept)';
+        }
+        if (! $this->option('dry-run')) {
+            $tour->prices()->delete();
+            foreach ($c['after'] as [$min, $max, $price]) {
+                $tour->prices()->create(['min_pax' => $min, 'max_pax' => $max, 'price_per_person' => $price]);
+            }
+            $tour->update(['price_reviewed_at' => now()]);
+        }
+
+        return 'applied';
     }
 }

@@ -3628,6 +3628,265 @@
      ]
     }
    ]
+  },
+  {
+   "id": 1038,
+   "field": "summary",
+   "before": null,
+   "after": "A seven-day trek through Morocco's Central High Atlas, from the Aït Bougmez Happy Valley over the Aghouri Pass and the Tarkeddite Plateau to the summit of Mount M'Goun (4,071 m), one of the highest peaks in North Africa, and back through the wild Oulilimt Valley."
+  },
+  {
+   "id": 1038,
+   "field": "highlights",
+   "before": [],
+   "after": [
+    "Summit of Mount M'Goun, 4,071 m, one of the highest peaks in North Africa",
+    "Aghouri Pass (3,450 m) and the vast Tarkeddite Plateau",
+    "The wild, remote Oulilimt Valley",
+    "The Aït Bougmez Happy Valley and its traditional Amazigh villages",
+    "Five walking days (about 67–83 km), with four nights in camp and two in Berber guesthouses"
+   ]
+  },
+  {
+   "id": 1038,
+   "field": "facts",
+   "before": {
+    "best_time": "May to October",
+    "departs_from": "Marrakech: 08:00am. Start time can be modified to suit your needs.",
+    "departure_times": "Varied",
+    "duration": "7days/6nights",
+    "type": "Trekking",
+    "guides_speaking": "English, French, Spanish, Arabic, Berber,",
+    "grade": "Moderate to difficult",
+    "trip_level": "4087m",
+    "solo_travelers": "On request"
+   },
+   "after": {
+    "best_time": "May to October",
+    "departs_from": "Marrakech (around 09:00, flexible start time)",
+    "departure_times": "Varied",
+    "duration": "7 days / 6 nights",
+    "type": "Trekking",
+    "guides_speaking": "English, French, Spanish, Arabic, Amazigh",
+    "grade": "Moderate to difficult",
+    "maximum_altitude": "4,071 m",
+    "solo_travelers": "On request"
+   }
+  },
+  {
+   "id": 1038,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "MARRAKECH – AGOUTI",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "You will be picked up at 9am from your Riad/Hotel for a journey of 6 hr to Ait Bougmez Valley. There will be time along the way for a stop to see the spectacular 100m drop of the Cascade Ouzoud (waterfall), overnight in a simple traditionel guesthouse in Agouti, a charming small village with views over the Bougmez Valley."
+     ]
+    },
+    {
+     "day": 2,
+     "title": "AGOUTI – AZIB AROUS",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "A gentle start to the trek following the trail to Assif N’Arouss valley, passing by Ait Said with views of the M’goun Peak. Continue on to Azib Arouss (2200m) with an optional visit to the Arouss Gorge overnight in camp. Approx, 5 hrs walking. Ascent"
+     ]
+    },
+    {
+     "day": 3,
+     "title": "AZIB AROUS – TARKEDDIT PLATEAU",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Trek up through wide grazing pastures to cross the Aghouri pass at 3,450m with superb views of the plateau below and the Mgoun Ridge. Descend to the wind-eroded and snow-covered high plateau of Tarkedit (2,900m) overnight in camp. Approx. 6 hrs walking"
+     ]
+    },
+    {
+     "day": 4,
+     "title": "ASCEND M’GOUN",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Today we make our ascent to the summit of Djebel M’goun. The climb follows a long ridge, all at or above 4,000m, typically taking between 4 and 5 hours to the summit, depending on snow conditions. From the top, there are impressive views across the Draa Valley and towards the Sahara Desert to the south. After following the ridge for a further 2km past the summit, we descend into the Oulilimt Valley and camp overnight near the Oulilimt water spring, Approx. 9 hrs walking"
+     ]
+    },
+    {
+     "day": 5,
+     "title": "OULILMT – AFLAFAL",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "The next two days are spent trekking through remote country back towards the Ait Bougmez Valley. Today you’ll descend down the Oulilimt Valley, following the course of the river and camping overnight at Oulilimt, Approx. 5 hrs walking"
+     ]
+    },
+    {
+     "day": 6,
+     "title": "AFLAFAL – BOUGMEZ VALLEY",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Today is a long but rewarding trek from camp at Oulilimt to the pass at Tizi N’Ait Imi and down into the stunning Bougmez Valley overnight in Timmit village in a small guest house. Approx. 7 hrs Walking"
+     ]
+    },
+    {
+     "day": 7,
+     "title": "JOURNEY BACK TO MARRAKECH",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Drive back to Marrakech after breakfast our Private transfer from Timmit will take you back to Marrakech (6 hrs of journey)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Ouzoud Waterfalls – Agouti (Aït Bougmez Valley)",
+     "stats": {
+      "driving_distance": "220–250 km",
+      "driving_time": "5–6 hours",
+      "meals": "Dinner"
+     },
+     "accommodation": "Traditional Berber guesthouse, Agouti",
+     "body": [
+      "Your adventure begins with a private transfer from Marrakech at around 09:00. We travel towards the Central High Atlas Mountains, enjoying beautiful countryside and traditional villages along the way. En route, we stop at the spectacular Ouzoud Waterfalls, one of Morocco's most impressive natural attractions, where you can enjoy a walk and take photographs. After lunch, we continue through Azilal and towards the beautiful Aït Bougmez Valley, also known as the Happy Valley. Upon arrival in Agouti, you meet your mountain guide and trekking team. Enjoy a traditional Moroccan dinner and spend the night in a local Berber guesthouse."
+     ]
+    },
+    {
+     "day": 2,
+     "title": "Agouti – Aït Saïd – Arous Valley – Azib Arous",
+     "stats": {
+      "distance": "10–14 km",
+      "hiking_duration": "5 hours",
+      "elevation": "Camp around 2,200–2,300 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Mountain camp, Azib Arous",
+     "body": [
+      "After breakfast, we begin our trek through the beautiful Aït Bougmez Valley, passing traditional Amazigh villages, cultivated fields and terraced gardens. We gradually enter the Arous Valley, following mountain paths alongside the river and enjoying wonderful views of the surrounding peaks, including Mount M'Goun. We pass through Aït Saïd village and continue towards Azib Arous, a traditional summer grazing area used by local shepherds. There is an optional walk to explore the impressive Arous Gorge before settling into camp for the evening."
+     ]
+    },
+    {
+     "day": 3,
+     "title": "Azib Arous – Aghouri Pass – Tarkeddite Plateau",
+     "stats": {
+      "distance": "12–15 km",
+      "hiking_duration": "6 hours",
+      "elevation": "Up to 3,450 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Mountain camp, Tarkeddite Plateau (about 2,900 m)",
+     "body": [
+      "Today is a spectacular mountain trekking day as we climb gradually through high-altitude pastures towards the Aghouri Pass (3,450 m). The ascent rewards us with magnificent panoramic views of the M'Goun mountain range and the vast Tarkeddite Plateau below. After reaching the pass, we descend along mountain trails towards the beautiful plateau, situated at approximately 2,900 m. This remote landscape is home to nomadic shepherds and their livestock during the summer months. We establish our camp and enjoy dinner beneath the impressive mountain scenery."
+     ]
+    },
+    {
+     "day": 4,
+     "title": "Ascend Mount M'Goun (4,071 m) – Oulilimt Valley",
+     "stats": {
+      "distance": "18–20 km",
+      "hiking_duration": "8–9 hours",
+      "elevation": "Summit 4,071 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Mountain camp, Oulilimt Valley",
+     "body": [
+      "This is the highlight of the entire trek. We start early in the morning, climbing towards the impressive ridge of Mount M'Goun. The ascent follows a long mountain ridge, with spectacular views across the Central High Atlas Mountains. After approximately 4–5 hours of climbing, we reach the summit at 4,071 m, where we can admire breathtaking views over the Draa Valley, the Valley of Roses and the distant Saharan landscapes. After enjoying time at the summit, we continue along the ridge before descending towards the remote Oulilimt Valley. We arrive near the natural springs of Oulilimt, where our team prepares camp for a well-deserved rest after this challenging day."
+     ]
+    },
+    {
+     "day": 5,
+     "title": "Oulilimt Valley – Aflafal",
+     "stats": {
+      "distance": "10–14 km",
+      "hiking_duration": "5 hours",
+      "elevation": "Around 2,200–2,400 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Mountain camp, Aflafal",
+     "body": [
+      "After breakfast, we continue our journey through the beautiful and remote Oulilimt Valley. Today's walk follows the river through a dramatic mountain landscape, passing natural springs, green pastures, rocky formations and traditional seasonal shepherd settlements. The trail gradually descends through this peaceful valley, offering opportunities to enjoy the scenery and discover the traditional lifestyle of local mountain communities. We arrive at Aflafal, where we set up camp and enjoy a relaxing evening surrounded by the magnificent High Atlas Mountains."
+     ]
+    },
+    {
+     "day": 6,
+     "title": "Aflafal – Tizi n'Aït Imi – Timite (Happy Valley)",
+     "stats": {
+      "distance": "17–20 km",
+      "hiking_duration": "7 hours",
+      "elevation": "Up to about 2,960 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Local Berber guesthouse, Timite",
+     "body": [
+      "Today we leave the remote Oulilimt Valley and make our way back towards the beautiful Aït Bougmez Valley. We begin with a gradual ascent towards Tizi n'Aït Imi Pass (approximately 2,960 m), where spectacular panoramic views open up across the surrounding High Atlas Mountains. After reaching the pass, we begin a long descent towards the green landscapes of the Happy Valley. Along the way, we pass traditional Berber villages, terraced fields and cultivated gardens. By the afternoon, we arrive in Timite village, where we enjoy a warm welcome and spend our final night in a traditional Berber guesthouse."
+     ]
+    },
+    {
+     "day": 7,
+     "title": "Timite – Azilal – Marrakech",
+     "stats": {
+      "driving_distance": "220–250 km",
+      "driving_time": "5–6 hours",
+      "meals": "Breakfast"
+     },
+     "accommodation": "",
+     "body": [
+      "After breakfast, we say goodbye to the beautiful Aït Bougmez Valley and begin our private transfer back to Marrakech. We travel through the spectacular landscapes of the Central High Atlas, passing traditional villages, mountain valleys and the countryside around Azilal. We can make a few stops along the way for photographs, refreshments and lunch at a local restaurant. In the afternoon, we continue towards Marrakech, arriving at your accommodation and bringing this unforgettable seven-day Mount M'Goun trekking adventure to an end."
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1038,
+   "field": "prices",
+   "before": [
+    [
+     1,
+     1,
+     849.0
+    ],
+    [
+     2,
+     3,
+     629.0
+    ],
+    [
+     4,
+     7,
+     589.0
+    ],
+    [
+     8,
+     12,
+     499.0
+    ]
+   ],
+   "after": [
+    [
+     1,
+     1,
+     1689.0
+    ],
+    [
+     2,
+     3,
+     939.0
+    ],
+    [
+     4,
+     7,
+     849.0
+    ],
+    [
+     8,
+     12,
+     759.0
+    ]
+   ]
   }
  ]
 }
