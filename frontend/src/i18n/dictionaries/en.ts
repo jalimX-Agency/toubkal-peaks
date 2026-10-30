@@ -5,6 +5,7 @@ const en = {
       "Climb Mount Toubkal, sleep in the Sahara and explore Morocco's imperial cities on private, tailor-made trips with experienced local guides. Based in Marrakech.",
   },
   nav: {
+    about: "About",
     treks: "Atlas Treks",
     sahara: "Sahara",
     morocco: "Imperial Cities",
@@ -109,6 +110,28 @@ const en = {
     primary: "Plan your trip",
     whatsapp: "WhatsApp us",
     email: "Email us",
+  },
+  about: {
+    metaTitle: "About us & our team",
+    metaDescription: "Meet the Toubkal Peaks Travel team: local guides and trip planners with decades of experience in the Atlas Mountains, the Sahara and Morocco’s imperial cities.",
+    eyebrow: "About us",
+    title: "The people behind your trip",
+    lead: "Toubkal Peaks Travel is a Marrakech-based travel company run by local guides. We plan every trek, desert trip and tour ourselves, so the person who designs your itinerary knows the mountains, the villages and the tracks first-hand.",
+    team: "Our team",
+    members: [
+      {
+        name: "Omar Jellah",
+        role: "Co-Founder & Planning Manager",
+        photoAlt: "Omar Jellah, co-founder of Toubkal Peaks Travel, with the Atlas Mountains behind him",
+        bio: ["With over 25 years of experience in tourism, Omar Jellah is the Co-Founder and Planning Manager of Toubkal Peaks Travel. He began his career in 2000 as a tour and mountain guide, working with international travel companies, tour operators and independent travellers.", "In 2006, driven by his passion for travel and his love for Morocco, he established his own travel company to share the country’s authentic beauty with visitors from around the world.", "Over the years, Omar has led and organised countless journeys across Morocco, from the Atlas Mountains and Sahara Desert to the Imperial Cities, historic sites and traditional Berber villages. Today, he combines his extensive field experience and local knowledge to plan and coordinate tailor-made tours, trekking adventures and cultural experiences.", "His philosophy is simple: creating meaningful journeys, genuine connections and unforgettable memories."],
+      },
+      {
+        name: "Rachid Ait Lmouden",
+        role: "Mountain Trekking & Desert Guide",
+        photoAlt: "Rachid Ait Lmouden, mountain and desert guide, above a turquoise lake in the Atlas",
+        bio: ["Rachid Ait Lmouden is an experienced Moroccan guide with a deep knowledge of the High Atlas Mountains and the Sahara Desert. Specialising in Mount Toubkal expeditions, mountain trekking and desert tours, he combines local expertise, knowledge of Berber culture and a genuine passion for showcasing Morocco.", "With a strong connection to the region and its traditions, Rachid is dedicated to delivering safe, authentic and personalised travel experiences. His aim is to introduce visitors to Morocco’s spectacular landscapes, rich cultural heritage and traditional way of life, creating memorable journeys for travellers from around the world."],
+      },
+    ],
   },
   footer: {
     tagline: "Explore Morocco differently.",

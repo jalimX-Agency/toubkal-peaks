@@ -13,6 +13,7 @@ const LINKS = [
   { key: "sahara", path: "/sahara-desert-tours" },
   { key: "morocco", path: "/morocco-tours" },
   { key: "dayTrips", path: "/day-trips-from-marrakech" },
+  { key: "about", path: "/about" },
   { key: "contact", path: "/contact" },
 ] as const;
 

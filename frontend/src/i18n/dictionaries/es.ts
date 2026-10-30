@@ -7,6 +7,7 @@ const es: Dictionary = {
       "Sube al Toubkal, duerme en el Sahara y descubre las ciudades imperiales en viajes privados y a medida con guías locales con experiencia. Con base en Marrakech.",
   },
   nav: {
+    about: "Nosotros",
     treks: "Treks Atlas",
     sahara: "Sahara",
     morocco: "Ciudades imperiales",
@@ -111,6 +112,28 @@ const es: Dictionary = {
     primary: "Planifica tu viaje",
     whatsapp: "Escríbenos por WhatsApp",
     email: "Escríbenos",
+  },
+  about: {
+    metaTitle: "Sobre nosotros y nuestro equipo",
+    metaDescription: "Conoce al equipo de Toubkal Peaks Travel: guías locales y organizadores de viajes con décadas de experiencia en el Atlas, el Sáhara y las ciudades imperiales de Marruecos.",
+    eyebrow: "Sobre nosotros",
+    title: "Las personas detrás de tu viaje",
+    lead: "Toubkal Peaks Travel es una agencia de viajes de Marrakech dirigida por guías locales. Organizamos nosotros mismos cada trekking, viaje por el desierto y circuito: quien diseña tu itinerario conoce las montañas, los pueblos y los senderos por experiencia propia.",
+    team: "Nuestro equipo",
+    members: [
+      {
+        name: "Omar Jellah",
+        role: "Cofundador y responsable de planificación",
+        photoAlt: "Omar Jellah, cofundador de Toubkal Peaks Travel, con las montañas del Atlas detrás",
+        bio: ["Con más de 25 años de experiencia en el turismo, Omar Jellah es cofundador y responsable de planificación de Toubkal Peaks Travel. Empezó su carrera en 2000 como guía de viajes y de montaña, trabajando con empresas de viajes internacionales, operadores turísticos y viajeros independientes.", "En 2006, movido por su pasión por viajar y su amor por Marruecos, fundó su propia agencia para compartir la belleza auténtica del país con visitantes de todo el mundo.", "A lo largo de los años, Omar ha guiado y organizado innumerables viajes por Marruecos, desde el Atlas y el Sáhara hasta las ciudades imperiales, los sitios históricos y los pueblos bereberes tradicionales. Hoy combina su amplia experiencia sobre el terreno y su conocimiento local para planificar circuitos a medida, aventuras de trekking y experiencias culturales.", "Su filosofía es sencilla: crear viajes con sentido, conexiones genuinas y recuerdos inolvidables."],
+      },
+      {
+        name: "Rachid Ait Lmouden",
+        role: "Guía de trekking de montaña y de desierto",
+        photoAlt: "Rachid Ait Lmouden, guía de montaña y de desierto, sobre un lago turquesa del Atlas",
+        bio: ["Rachid Ait Lmouden es un guía marroquí con experiencia y un profundo conocimiento del Alto Atlas y del desierto del Sáhara. Especializado en ascensiones al Toubkal, trekking de montaña y viajes por el desierto, une su conocimiento local, su cercanía a la cultura bereber y una pasión sincera por mostrar Marruecos.", "Muy unido a su región y a sus tradiciones, Rachid se dedica a ofrecer viajes seguros, auténticos y personalizados. Su objetivo es dar a conocer a los viajeros los espectaculares paisajes de Marruecos, su rico patrimonio cultural y su forma de vida tradicional, con viajes que se recuerdan."],
+      },
+    ],
   },
   footer: {
     tagline: "Explora Marruecos de otra manera.",

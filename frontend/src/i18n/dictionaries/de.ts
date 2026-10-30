@@ -7,6 +7,7 @@ const de: Dictionary = {
       "Besteigen Sie den Toubkal, übernachten Sie in der Sahara und entdecken Sie die Königsstädte auf privaten, maßgeschneiderten Reisen mit erfahrenen einheimischen Guides. Sitz in Marrakesch.",
   },
   nav: {
+    about: "Über uns",
     treks: "Atlas-Treks",
     sahara: "Sahara",
     morocco: "Königsstädte",
@@ -111,6 +112,28 @@ const de: Dictionary = {
     primary: "Reise planen",
     whatsapp: "Per WhatsApp schreiben",
     email: "E-Mail schreiben",
+  },
+  about: {
+    metaTitle: "Über uns und unser Team",
+    metaDescription: "Lernen Sie das Team von Toubkal Peaks Travel kennen: einheimische Guides und Reiseplaner mit jahrzehntelanger Erfahrung im Atlas, in der Sahara und in den Königsstädten Marokkos.",
+    eyebrow: "Über uns",
+    title: "Die Menschen hinter Ihrer Reise",
+    lead: "Toubkal Peaks Travel ist ein Reiseveranstalter in Marrakesch, der von einheimischen Guides geführt wird. Wir planen jede Trekkingtour, Wüstenreise und Rundreise selbst: Wer Ihre Route entwirft, kennt die Berge, Dörfer und Pfade aus eigener Erfahrung.",
+    team: "Unser Team",
+    members: [
+      {
+        name: "Omar Jellah",
+        role: "Mitgründer und Leiter der Reiseplanung",
+        photoAlt: "Omar Jellah, Mitgründer von Toubkal Peaks Travel, vor den Bergen des Atlas",
+        bio: ["Mit über 25 Jahren Erfahrung im Tourismus ist Omar Jellah Mitgründer und Leiter der Reiseplanung von Toubkal Peaks Travel. Er begann seine Laufbahn im Jahr 2000 als Reise- und Bergführer und arbeitete für internationale Reiseunternehmen, Reiseveranstalter und Individualreisende.", "Im Jahr 2006 gründete er, getrieben von seiner Leidenschaft fürs Reisen und seiner Liebe zu Marokko, sein eigenes Reiseunternehmen, um die authentische Schönheit des Landes mit Besuchern aus aller Welt zu teilen.", "Im Laufe der Jahre hat Omar unzählige Reisen durch Marokko geführt und organisiert, vom Atlas und der Sahara bis zu den Königsstädten, historischen Stätten und traditionellen Berberdörfern. Heute verbindet er seine große Felderfahrung und sein Wissen vor Ort, um maßgeschneiderte Rundreisen, Trekkingtouren und Kulturerlebnisse zu planen.", "Seine Philosophie ist einfach: bedeutungsvolle Reisen, echte Begegnungen und unvergessliche Erinnerungen schaffen."],
+      },
+      {
+        name: "Rachid Ait Lmouden",
+        role: "Trekking- und Wüstenführer",
+        photoAlt: "Rachid Ait Lmouden, Berg- und Wüstenführer, über einem türkisfarbenen See im Atlas",
+        bio: ["Rachid Ait Lmouden ist ein erfahrener marokkanischer Guide mit tiefer Kenntnis des Hohen Atlas und der Sahara. Spezialisiert auf Besteigungen des Toubkal, Bergtrekking und Wüstenreisen, verbindet er Ortskenntnis, Wissen über die Berberkultur und echte Leidenschaft dafür, Marokko zu zeigen.", "Eng mit seiner Heimatregion und ihren Traditionen verbunden, bietet Rachid sichere, authentische und persönliche Reisen. Er möchte Reisenden die spektakulären Landschaften Marokkos, sein reiches kulturelles Erbe und seine traditionelle Lebensweise näherbringen und Reisen schaffen, an die man sich gern erinnert."],
+      },
+    ],
   },
   footer: {
     tagline: "Marokko anders entdecken.",
