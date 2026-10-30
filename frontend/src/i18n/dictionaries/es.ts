@@ -183,6 +183,12 @@ const es: Dictionary = {
         bio: ["Con muchos años de experiencia en el turismo, Brahim aporta a cada viaje conocimiento, curiosidad y comprensión cultural. Forma parte del equipo de Toubkal Peaks desde 2022 y guía sobre todo nuestras aventuras por el Alto Atlas y los paisajes del desierto del Sáhara.", "Brahim habla con fluidez cinco idiomas: árabe, tamazight (bereber), inglés, francés y español. Tras vivir ocho años en España, ha desarrollado un aprecio sincero por otras culturas, tradiciones y formas de vida.", "Lo que hace especial a Brahim es su pasión por la historia y su gusto por contar historias. Ya sea explicando las tradiciones de los pueblos bereberes, presentando a los viajeros a las comunidades locales o contando la historia de las antiguas ciudades de Marruecos, siempre da vida a los lugares y a sus historias."],
       },
       {
+        name: "Mohamed",
+        role: "Guía de montaña y de cultura",
+        photoAlt: "Mohamed, guía, sonriendo junto a un río de montaña en el Atlas",
+        bio: ["Nacido y criado en el corazón del Alto Atlas marroquí, Mohamed tiene una conexión profunda con los paisajes, las tradiciones y la gente que hacen de Marruecos un lugar tan especial.", "Desde que se unió al equipo en 2019, se ha convertido en uno de nuestros guías más experimentados y de confianza. Su pasión va mucho más allá de guiar: disfruta de verdad compartiendo sus conocimientos, sus historias y la cultura local con cada viajero que conoce.", "Ya sea al frente de una aventura por el Alto Atlas, explorando el desierto del Sáhara o descubriendo la historia y los rincones ocultos de las ciudades imperiales, Mohamed da vida a cada viaje con su experiencia, su calidez y su simpatía. Para él, guiar no es solo una profesión: es la oportunidad de compartir su tierra con el mundo."],
+      },
+      {
         name: "Hamid",
         role: "Conductor profesional",
         photoAlt: "Hamid, conductor, delante de un todoterreno en las estribaciones del Atlas",

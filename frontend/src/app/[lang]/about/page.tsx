@@ -9,7 +9,7 @@ import { media, site } from "@/lib/site";
 const PATH = "/about";
 
 /** Team photos live in public/team, in the same order as dict.about.members (the owner first). */
-const PHOTOS = ["/team/omar-jellah.jpg", "/team/rachid.jpg", "/team/brahim.jpg", "/team/hamid.jpg"];
+const PHOTOS = ["/team/omar-jellah.jpg", "/team/rachid.jpg", "/team/brahim.jpg", "/team/mohamed.jpg", "/team/hamid.jpg"];
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about">): Promise<Metadata> {
   const { lang } = await params;
@@ -76,11 +76,11 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
             </div>
           </div>
 
-          <ul className="mt-16 grid gap-12 sm:grid-cols-2 md:mt-24 lg:grid-cols-3 lg:gap-10">
+          <ul className="mt-16 grid gap-12 sm:grid-cols-2 md:mt-24 lg:gap-x-12 lg:gap-y-16">
             {team.map((member, i) => (
               <li key={member.name}>
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-line">
-                  <Image src={PHOTOS[i + 1]} alt={member.photoAlt} fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" className="object-cover" />
+                  <Image src={PHOTOS[i + 1]} alt={member.photoAlt} fill sizes="(min-width: 1280px) 600px, (min-width: 640px) 45vw, 90vw" className="object-cover" />
                 </div>
                 <p className="mono mt-5 text-gold">{member.role}</p>
                 <h3 className="font-display mt-1 text-2xl font-semibold text-navy">{member.name}</h3>

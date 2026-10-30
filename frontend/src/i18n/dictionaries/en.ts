@@ -181,6 +181,12 @@ const en = {
         bio: ["With many years of experience in the tourism industry, Brahim brings a wealth of knowledge, curiosity and cultural understanding to every journey. He has been part of the Toubkal Peaks team since 2022, mainly guiding our adventures through the High Atlas Mountains and the landscapes of the Sahara Desert.", "Brahim is fluent in five languages: Arabic, Tamazight (Berber), English, French and Spanish. Having lived in Spain for eight years, he has developed a genuine appreciation for different cultures, traditions and ways of life.", "What makes Brahim particularly special is his passion for history and his love of sharing stories. Whether explaining the traditions of Berber villages, introducing travellers to local communities or sharing the history of Morocco’s ancient cities, he always brings places and their stories to life."],
       },
       {
+        name: "Mohamed",
+        role: "Mountain & Cultural Guide",
+        photoAlt: "Mohamed, guide, smiling beside a mountain river in the Atlas",
+        bio: ["Born and raised in the heart of Morocco’s High Atlas Mountains, Mohamed has a deep connection to the landscapes, traditions and people that make Morocco so special.", "Since joining our team in 2019, he has become one of our most trusted and experienced guides. His passion for his work goes far beyond guiding: he genuinely enjoys sharing his knowledge, stories and local culture with every traveller he meets.", "Whether leading an adventure through the High Atlas, exploring the Sahara Desert or discovering the history and hidden gems of Morocco’s imperial cities, Mohamed brings every journey to life with his experience, warmth and friendly personality. For him, guiding is not just a profession: it is an opportunity to share his homeland with the world."],
+      },
+      {
         name: "Hamid",
         role: "Professional Driver",
         photoAlt: "Hamid, driver, standing in front of a four-wheel drive in the Atlas foothills",
