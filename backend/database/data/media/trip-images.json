@@ -1,0 +1,2314 @@
+{
+ "_comment": "Trip photos. Files live on R2 under site/trips/; imported by toubkal:sync-images. Keys are short ids, tours are old WordPress ids, the first image of a tour is its main photo.",
+ "base": "site/trips/",
+ "images": {
+  "ac2": {
+   "file": "ac2-mountain-biker-on-a-desert-track-in-morocco.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Mountain biker on a desert track in Morocco"
+   },
+   "source": "px:30005517"
+  },
+  "ac3": {
+   "file": "ac3-bike-trail-through-a-moroccan-valley.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Bike trail through a Moroccan valley"
+   },
+   "source": "px:30005513"
+  },
+  "ac4": {
+   "file": "ac4-rider-galloping-on-a-beach-at-sunset.jpg",
+   "width": 1920,
+   "height": 3063,
+   "alt": {
+    "en": "Rider galloping on a beach at sunset"
+   },
+   "source": "px:19943683"
+  },
+  "ac5": {
+   "file": "ac5-horse-riding-on-the-beach-at-essaouira.jpg",
+   "width": 1920,
+   "height": 3410,
+   "alt": {
+    "en": "Horse riding on the beach at Essaouira"
+   },
+   "source": "px:40530321"
+  },
+  "ag1": {
+   "file": "ag1-the-agafay-desert-with-the-snowy-atlas-behind.jpg",
+   "width": 1920,
+   "height": 1536,
+   "alt": {
+    "en": "The Agafay desert with the snowy Atlas behind"
+   },
+   "source": "px:35910047"
+  },
+  "ag2": {
+   "file": "ag2-camels-in-the-agafay-desert.jpg",
+   "width": 1920,
+   "height": 1536,
+   "alt": {
+    "en": "Camels in the Agafay desert"
+   },
+   "source": "px:35910049"
+  },
+  "ag3": {
+   "file": "ag3-camels-resting-in-agafay-at-sunset.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Camels resting in Agafay at sunset"
+   },
+   "source": "px:24193958"
+  },
+  "ag5": {
+   "file": "ag5-village-in-the-agafay-hills.jpg",
+   "width": 1920,
+   "height": 2485,
+   "alt": {
+    "en": "Village in the Agafay hills"
+   },
+   "source": "px:35910042"
+  },
+  "ag6": {
+   "file": "ag6-breakfast-overlooking-the-agafay-desert.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Breakfast overlooking the Agafay desert"
+   },
+   "source": "px:18160499"
+  },
+  "av1": {
+   "file": "av1-berber-village-and-terraced-fields-in-the-atlas-mountains.jpg",
+   "width": 1920,
+   "height": 1225,
+   "alt": {
+    "en": "Berber village and terraced fields in the Atlas Mountains"
+   },
+   "source": "px:37684085"
+  },
+  "av10": {
+   "file": "av10-winter-snow-on-the-mountains-around-the-ait-bougmez-valley.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Winter snow on the mountains around the Aït Bougmez valley"
+   },
+   "source": "px:13519910"
+  },
+  "av11": {
+   "file": "av11-rocky-slopes-of-the-tassaout-valley-in-the-central-high-atla.jpg",
+   "width": 1920,
+   "height": 1080,
+   "alt": {
+    "en": "Rocky slopes of the Tassaout valley in the Central High Atlas"
+   },
+   "source": "px:32515417"
+  },
+  "av12": {
+   "file": "av12-stone-walls-along-a-mule-path-in-an-atlas-valley.jpg",
+   "width": 1920,
+   "height": 1273,
+   "alt": {
+    "en": "Stone walls along a mule path in an Atlas valley"
+   },
+   "source": "px:37684069"
+  },
+  "av13": {
+   "file": "av13-snow-capped-high-atlas-ridges-seen-from-the-foothills.jpg",
+   "width": 1920,
+   "height": 1226,
+   "alt": {
+    "en": "Snow-capped High Atlas ridges seen from the foothills"
+   },
+   "source": "px:37401857"
+  },
+  "av14": {
+   "file": "av14-mud-brick-houses-and-green-fields-in-a-mountain-village.jpg",
+   "width": 1920,
+   "height": 1335,
+   "alt": {
+    "en": "Mud-brick houses and green fields in a mountain village"
+   },
+   "source": "px:37401856"
+  },
+  "av15": {
+   "file": "av15-local-guide-leading-a-packed-mule-across-a-river.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Local guide leading a packed mule across a river"
+   },
+   "source": "px:37441809"
+  },
+  "av16": {
+   "file": "av16-guesthouse-terrace-with-berber-rugs-and-a-view-of-the-atlas.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Guesthouse terrace with Berber rugs and a view of the Atlas"
+   },
+   "source": "px:37587583"
+  },
+  "av17": {
+   "file": "av17-stone-houses-of-a-traditional-berber-village.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Stone houses of a traditional Berber village"
+   },
+   "source": "px:36872107"
+  },
+  "av18": {
+   "file": "av18-women-walking-in-a-mountain-village-below-the-atlas-peaks.jpg",
+   "width": 1920,
+   "height": 2888,
+   "alt": {
+    "en": "Women walking in a mountain village below the Atlas peaks"
+   },
+   "source": "px:39370856"
+  },
+  "av2": {
+   "file": "av2-berber-village-on-green-slopes-below-the-high-atlas.jpg",
+   "width": 1920,
+   "height": 1441,
+   "alt": {
+    "en": "Berber village on green slopes below the High Atlas"
+   },
+   "source": "px:37401853"
+  },
+  "av3": {
+   "file": "av3-hillside-village-among-trees-in-an-atlas-valley.jpg",
+   "width": 1920,
+   "height": 1322,
+   "alt": {
+    "en": "Hillside village among trees in an Atlas valley"
+   },
+   "source": "px:37714712"
+  },
+  "av4": {
+   "file": "av4-poplars-and-earth-houses-in-an-atlas-valley-village.jpg",
+   "width": 1920,
+   "height": 1349,
+   "alt": {
+    "en": "Poplars and earth houses in an Atlas valley village"
+   },
+   "source": "px:37684117"
+  },
+  "av5": {
+   "file": "av5-river-and-bridge-in-a-high-atlas-valley.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "River and bridge in a High Atlas valley"
+   },
+   "source": "px:37672161"
+  },
+  "av6": {
+   "file": "av6-wide-green-valley-with-scattered-farms-in-the-atlas.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Wide green valley with scattered farms in the Atlas"
+   },
+   "source": "px:37672170"
+  },
+  "av7": {
+   "file": "av7-yellow-wildflowers-below-the-snowy-atlas-near-marrakech.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Yellow wildflowers below the snowy Atlas near Marrakech"
+   },
+   "source": "px:36909829"
+  },
+  "av8": {
+   "file": "av8-villager-walking-through-orchards-in-an-atlas-valley.jpg",
+   "width": 1920,
+   "height": 1624,
+   "alt": {
+    "en": "Villager walking through orchards in an Atlas valley"
+   },
+   "source": "px:37700554"
+  },
+  "av9": {
+   "file": "av9-rugged-slopes-of-the-high-atlas.jpg",
+   "width": 1920,
+   "height": 1080,
+   "alt": {
+    "en": "Rugged slopes of the High Atlas"
+   },
+   "source": "px:33898627"
+  },
+  "cf1": {
+   "file": "cf1-moroccan-tagine-with-fresh-herbs.jpg",
+   "width": 1920,
+   "height": 1282,
+   "alt": {
+    "en": "Moroccan tagine with fresh herbs"
+   },
+   "source": "px:998244"
+  },
+  "cf10": {
+   "file": "cf10-gnawa-musician-with-krakeb-castanets.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Gnawa musician with krakeb castanets"
+   },
+   "source": "px:16136037"
+  },
+  "cf2": {
+   "file": "cf2-chicken-tagine-with-lemon-and-olives.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Chicken tagine with lemon and olives"
+   },
+   "source": "px:2287524"
+  },
+  "cf4": {
+   "file": "cf4-moroccan-lunch-with-tagine-and-couscous.jpg",
+   "width": 1920,
+   "height": 2400,
+   "alt": {
+    "en": "Moroccan lunch with tagine and couscous"
+   },
+   "source": "px:23025176"
+  },
+  "cf5": {
+   "file": "cf5-glass-of-moroccan-mint-tea.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Glass of Moroccan mint tea"
+   },
+   "source": "px:3889844"
+  },
+  "cf8": {
+   "file": "cf8-moroccan-breakfast-table.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Moroccan breakfast table"
+   },
+   "source": "px:14017961"
+  },
+  "ch1": {
+   "file": "ch1-nomad-tents-on-the-plain-of-m-hamid.jpg",
+   "width": 1920,
+   "height": 1277,
+   "alt": {
+    "en": "Nomad tents on the plain of M'Hamid"
+   },
+   "source": "px:30489582"
+  },
+  "ch2": {
+   "file": "ch2-dunes-and-mountains-near-m-hamid-el-ghizlane.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Dunes and mountains near M'Hamid El Ghizlane"
+   },
+   "source": "px:30490948"
+  },
+  "ch3": {
+   "file": "ch3-desert-camp-at-the-foot-of-the-erg-chigaga-dunes.jpg",
+   "width": 1920,
+   "height": 1277,
+   "alt": {
+    "en": "Desert camp at the foot of the Erg Chigaga dunes"
+   },
+   "source": "px:35901289"
+  },
+  "ch4": {
+   "file": "ch4-berber-tent-below-a-high-dune-erg-chigaga.jpg",
+   "width": 1920,
+   "height": 1277,
+   "alt": {
+    "en": "Berber tent below a high dune, Erg Chigaga"
+   },
+   "source": "px:35901297"
+  },
+  "ch5": {
+   "file": "ch5-4x4-crossing-the-desert-towards-erg-chigaga.jpg",
+   "width": 1920,
+   "height": 1371,
+   "alt": {
+    "en": "4x4 crossing the desert towards Erg Chigaga"
+   },
+   "source": "px:30330000"
+  },
+  "ch6": {
+   "file": "ch6-local-driver-at-the-wheel-on-a-desert-track.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Local driver at the wheel on a desert track"
+   },
+   "source": "px:34963965"
+  },
+  "co1": {
+   "file": "co1-essaouira-sea-fort-and-fishing-boats.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Essaouira sea fort and fishing boats"
+   },
+   "source": "px:255545"
+  },
+  "co10": {
+   "file": "co10-earth-ramparts-of-taroudant.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Earth ramparts of Taroudant"
+   },
+   "source": "px:36685468"
+  },
+  "co11": {
+   "file": "co11-street-in-the-essaouira-medina.jpg",
+   "width": 1920,
+   "height": 2876,
+   "alt": {
+    "en": "Street in the Essaouira medina"
+   },
+   "source": "px:30588279"
+  },
+  "co12": {
+   "file": "co12-taghazout-on-the-atlantic-coast.jpg",
+   "width": 1920,
+   "height": 1536,
+   "alt": {
+    "en": "Taghazout on the Atlantic coast"
+   },
+   "source": "px:28152720"
+  },
+  "co2": {
+   "file": "co2-blue-fishing-boats-and-nets-in-essaouira.jpg",
+   "width": 1920,
+   "height": 1370,
+   "alt": {
+    "en": "Blue fishing boats and nets in Essaouira"
+   },
+   "source": "px:6662921"
+  },
+  "co3": {
+   "file": "co3-essaouira-harbour-and-ramparts.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Essaouira harbour and ramparts"
+   },
+   "source": "px:14199922"
+  },
+  "co4": {
+   "file": "co4-essaouira-ramparts-and-blue-boats.jpg",
+   "width": 1920,
+   "height": 1282,
+   "alt": {
+    "en": "Essaouira ramparts and blue boats"
+   },
+   "source": "px:36956708"
+  },
+  "co5": {
+   "file": "co5-natural-arch-at-legzira-beach.jpg",
+   "width": 1920,
+   "height": 1271,
+   "alt": {
+    "en": "Natural arch at Legzira beach"
+   },
+   "source": "px:20374287"
+  },
+  "co6": {
+   "file": "co6-tafraoute-among-red-granite-hills.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Tafraoute among red granite hills"
+   },
+   "source": "px:28206028"
+  },
+  "co8": {
+   "file": "co8-the-painted-rocks-near-tafraoute.jpg",
+   "width": 1920,
+   "height": 946,
+   "alt": {
+    "en": "The painted rocks near Tafraoute"
+   },
+   "source": "px:6745815"
+  },
+  "co9": {
+   "file": "co9-mosque-in-taroudant.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Mosque in Taroudant"
+   },
+   "source": "px:30111076"
+  },
+  "dr1": {
+   "file": "dr1-palm-groves-of-the-draa-valley.jpg",
+   "width": 1920,
+   "height": 1277,
+   "alt": {
+    "en": "Palm groves of the Draa valley"
+   },
+   "source": "px:29638614"
+  },
+  "dr2": {
+   "file": "dr2-kasbah-at-agdz-reflected-in-the-draa-river.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Kasbah at Agdz reflected in the Draa river"
+   },
+   "source": "px:17399234"
+  },
+  "dr3": {
+   "file": "dr3-oasis-below-the-mountains-near-zagora.jpg",
+   "width": 1920,
+   "height": 1542,
+   "alt": {
+    "en": "Oasis below the mountains near Zagora"
+   },
+   "source": "px:11387352"
+  },
+  "dr4": {
+   "file": "dr4-date-palms-in-the-zagora-palm-grove.jpg",
+   "width": 1920,
+   "height": 1277,
+   "alt": {
+    "en": "Date palms in the Zagora palm grove"
+   },
+   "source": "px:11387356"
+  },
+  "dr5": {
+   "file": "dr5-kasbah-below-the-cliffs-near-zagora.jpg",
+   "width": 1920,
+   "height": 1277,
+   "alt": {
+    "en": "Kasbah below the cliffs near Zagora"
+   },
+   "source": "px:30250253"
+  },
+  "dr6": {
+   "file": "dr6-camel-caravan-crossing-the-dunes-near-zagora.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Camel caravan crossing the dunes near Zagora"
+   },
+   "source": "px:8357638"
+  },
+  "dt1": {
+   "file": "dt1-rock-formations-of-the-dades-gorge.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Rock formations of the Dades Gorge"
+   },
+   "source": "px:14145715"
+  },
+  "dt2": {
+   "file": "dt2-poplars-along-the-river-in-the-dades-valley.jpg",
+   "width": 1920,
+   "height": 1080,
+   "alt": {
+    "en": "Poplars along the river in the Dades valley"
+   },
+   "source": "px:33898633"
+  },
+  "dt3": {
+   "file": "dt3-the-tinghir-oasis-below-the-mountains.jpg",
+   "width": 1920,
+   "height": 1066,
+   "alt": {
+    "en": "The Tinghir oasis below the mountains"
+   },
+   "source": "px:30320620"
+  },
+  "dt5": {
+   "file": "dt5-kasbah-ruins-in-the-green-oasis-of-kelaat-m-gouna.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Kasbah ruins in the green oasis of Kelaat M'Gouna"
+   },
+   "source": "px:36178772"
+  },
+  "dt6": {
+   "file": "dt6-hairpin-road-climbing-out-of-the-dades-gorge.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Hairpin road climbing out of the Dades Gorge"
+   },
+   "source": "px:28804535"
+  },
+  "dt7": {
+   "file": "dt7-river-between-the-walls-of-the-todra-gorge.jpg",
+   "width": 1839,
+   "height": 2766,
+   "alt": {
+    "en": "River between the walls of the Todra Gorge"
+   },
+   "source": "px:30369008"
+  },
+  "dt8": {
+   "file": "dt8-the-narrow-todra-gorge-at-sunrise.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "The narrow Todra Gorge at sunrise"
+   },
+   "source": "px:23551283"
+  },
+  "dt9": {
+   "file": "dt9-kasbah-in-kelaat-m-gouna-valley-of-roses.jpg",
+   "width": 1920,
+   "height": 3412,
+   "alt": {
+    "en": "Kasbah in Kelaat M'Gouna, Valley of Roses"
+   },
+   "source": "px:32392769"
+  },
+  "fs1": {
+   "file": "fs1-the-fes-medina-at-sunset.jpg",
+   "width": 1920,
+   "height": 1081,
+   "alt": {
+    "en": "The Fes medina at sunset"
+   },
+   "source": "px:6545522"
+  },
+  "fs10": {
+   "file": "fs10-roman-ruins-of-volubilis.jpg",
+   "width": 1920,
+   "height": 1281,
+   "alt": {
+    "en": "Roman ruins of Volubilis"
+   },
+   "source": "px:18573925"
+  },
+  "fs11": {
+   "file": "fs11-triumphal-arch-of-volubilis.jpg",
+   "width": 1920,
+   "height": 1286,
+   "alt": {
+    "en": "Triumphal arch of Volubilis"
+   },
+   "source": "px:19629322"
+  },
+  "fs12": {
+   "file": "fs12-arch-of-caracalla-at-volubilis.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Arch of Caracalla at Volubilis"
+   },
+   "source": "px:37441415"
+  },
+  "fs13": {
+   "file": "fs13-dye-pits-of-the-fes-tanneries.jpg",
+   "width": 1920,
+   "height": 2896,
+   "alt": {
+    "en": "Dye pits of the Fes tanneries"
+   },
+   "source": "px:10031052"
+  },
+  "fs2": {
+   "file": "fs2-the-fes-medina-and-its-walls.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "The Fes medina and its walls"
+   },
+   "source": "px:29595710"
+  },
+  "fs3": {
+   "file": "fs3-the-chouara-tannery-in-fes.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "The Chouara tannery in Fes"
+   },
+   "source": "px:38112164"
+  },
+  "fs4": {
+   "file": "fs4-rooftops-and-minaret-in-the-fes-medina.jpg",
+   "width": 1920,
+   "height": 1920,
+   "alt": {
+    "en": "Rooftops and minaret in the Fes medina"
+   },
+   "source": "px:30398389"
+  },
+  "fs6": {
+   "file": "fs6-carved-doorway-with-zellige-tiles-in-fes.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Carved doorway with zellige tiles in Fes"
+   },
+   "source": "px:13794309"
+  },
+  "fs8": {
+   "file": "fs8-riad-courtyard-in-fes.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Riad courtyard in Fes"
+   },
+   "source": "px:40168591"
+  },
+  "fs9": {
+   "file": "fs9-tiled-gateway-in-meknes.jpg",
+   "width": 1920,
+   "height": 3414,
+   "alt": {
+    "en": "Tiled gateway in Meknes"
+   },
+   "source": "px:31004588"
+  },
+  "im1": {
+   "file": "im1-imlil-valley-and-the-toubkal-massif-under-clouds-high-atlas.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Imlil valley and the Toubkal massif under clouds, High Atlas"
+   },
+   "source": "px:17492446"
+  },
+  "im2": {
+   "file": "im2-snow-streaked-peaks-above-green-terraces-near-tachedirt-high.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Snow-streaked peaks above green terraces near Tachedirt, High Atlas"
+   },
+   "source": "px:37538524"
+  },
+  "im3": {
+   "file": "im3-mint-tea-on-a-guesthouse-table-with-a-view-of-the-atlas-peak.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Mint tea on a guesthouse table with a view of the Atlas peaks"
+   },
+   "source": "px:37538533"
+  },
+  "im4": {
+   "file": "im4-the-snow-covered-high-atlas-range-under-a-clear-blue-sky.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "The snow-covered High Atlas range under a clear blue sky"
+   },
+   "source": "px:33662300"
+  },
+  "im5": {
+   "file": "im5-green-valley-and-stream-below-the-mountains-at-imlil.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Green valley and stream below the mountains at Imlil"
+   },
+   "source": "px:29601658"
+  },
+  "im7": {
+   "file": "im7-waterfall-on-a-mountain-trail-near-tachedirt.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Waterfall on a mountain trail near Tachedirt"
+   },
+   "source": "px:37587575"
+  },
+  "im8": {
+   "file": "im8-hiker-on-a-snowy-ridge-in-the-high-atlas.jpg",
+   "width": 1920,
+   "height": 3410,
+   "alt": {
+    "en": "Hiker on a snowy ridge in the High Atlas"
+   },
+   "source": "px:36533362"
+  },
+  "im9": {
+   "file": "im9-mule-track-leading-towards-the-snowy-atlas-peaks.jpg",
+   "width": 1920,
+   "height": 3413,
+   "alt": {
+    "en": "Mule track leading towards the snowy Atlas peaks"
+   },
+   "source": "px:37538540"
+  },
+  "mk1": {
+   "file": "mk1-jemaa-el-fna-square-at-night.jpg",
+   "width": 1920,
+   "height": 1442,
+   "alt": {
+    "en": "Jemaa el-Fna square at night"
+   },
+   "source": "px:39321140"
+  },
+  "mk10": {
+   "file": "mk10-lanterns-in-a-marrakech-souk.jpg",
+   "width": 1920,
+   "height": 2876,
+   "alt": {
+    "en": "Lanterns in a Marrakech souk"
+   },
+   "source": "px:18687094"
+  },
+  "mk11": {
+   "file": "mk11-palm-lined-path-in-the-majorelle-garden.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Palm-lined path in the Majorelle Garden"
+   },
+   "source": "px:25791913"
+  },
+  "mk12": {
+   "file": "mk12-blue-fountain-in-the-majorelle-garden.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Blue fountain in the Majorelle Garden"
+   },
+   "source": "px:37818897"
+  },
+  "mk13": {
+   "file": "mk13-majorelle-blue-villa-and-cacti.jpg",
+   "width": 1920,
+   "height": 2773,
+   "alt": {
+    "en": "Majorelle blue villa and cacti"
+   },
+   "source": "px:13794444"
+  },
+  "mk14": {
+   "file": "mk14-tiled-riad-courtyard-with-a-fountain.jpg",
+   "width": 1920,
+   "height": 3412,
+   "alt": {
+    "en": "Tiled riad courtyard with a fountain"
+   },
+   "source": "px:30257102"
+  },
+  "mk2": {
+   "file": "mk2-evening-crowds-at-jemaa-el-fna.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Evening crowds at Jemaa el-Fna"
+   },
+   "source": "px:35891424"
+  },
+  "mk3": {
+   "file": "mk3-jemaa-el-fna-and-the-koutoubia-minaret-at-dusk.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Jemaa el-Fna and the Koutoubia minaret at dusk"
+   },
+   "source": "px:16188292"
+  },
+  "mk4": {
+   "file": "mk4-shops-in-a-marrakech-souk.jpg",
+   "width": 1920,
+   "height": 1219,
+   "alt": {
+    "en": "Shops in a Marrakech souk"
+   },
+   "source": "px:22711558"
+  },
+  "mk5": {
+   "file": "mk5-spices-at-a-marrakech-market.jpg",
+   "width": 1920,
+   "height": 1080,
+   "alt": {
+    "en": "Spices at a Marrakech market"
+   },
+   "source": "px:35787268"
+  },
+  "mk6": {
+   "file": "mk6-riad-courtyard-in-marrakech-seen-from-above.jpg",
+   "width": 1920,
+   "height": 1277,
+   "alt": {
+    "en": "Riad courtyard in Marrakech seen from above"
+   },
+   "source": "px:15531325"
+  },
+  "mk7": {
+   "file": "mk7-food-stalls-lighting-up-jemaa-el-fna.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Food stalls lighting up Jemaa el-Fna"
+   },
+   "source": "px:20895317"
+  },
+  "mk8": {
+   "file": "mk8-the-koutoubia-minaret-and-palm-trees.jpg",
+   "width": 1920,
+   "height": 2879,
+   "alt": {
+    "en": "The Koutoubia minaret and palm trees"
+   },
+   "source": "px:15193658"
+  },
+  "n0": {
+   "file": "n0-imlil-valley-and-the-kasbah-du-toubkal-below-snowy-peaks.jpg",
+   "width": 1280,
+   "height": 848,
+   "alt": {
+    "en": "Imlil valley and the Kasbah du Toubkal below snowy peaks"
+   },
+   "source": "own:WhatsApp Image 2026-10-30 at 16.42.22.jpeg"
+  },
+  "n5": {
+   "file": "n5-gates-of-the-royal-palace-in-fes.jpg",
+   "width": 1280,
+   "height": 853,
+   "alt": {
+    "en": "Gates of the Royal Palace in Fes"
+   },
+   "source": "own:WhatsApp Image 2026-10-30 at 16.43.37.jpeg"
+  },
+  "n6": {
+   "file": "n6-olives-and-preserved-lemons-at-a-marrakech-market.jpg",
+   "width": 1280,
+   "height": 853,
+   "alt": {
+    "en": "Olives and preserved lemons at a Marrakech market"
+   },
+   "source": "own:WhatsApp Image 2026-10-30 at 16.43.47.jpeg"
+  },
+  "n7": {
+   "file": "n7-the-toubkal-refuge-at-3-207-m.jpg",
+   "width": 1280,
+   "height": 852,
+   "alt": {
+    "en": "The Toubkal refuge at 3,207 m"
+   },
+   "source": "own:WhatsApp Image 2026-10-30 at 16.43.56.jpeg"
+  },
+  "n8": {
+   "file": "n8-busy-street-in-the-marrakech-souks.jpg",
+   "width": 1024,
+   "height": 771,
+   "alt": {
+    "en": "Busy street in the Marrakech souks"
+   },
+   "source": "own:WhatsApp Image 2026-10-30 at 16.44.15.jpeg"
+  },
+  "no1": {
+   "file": "no1-blue-stairs-in-chefchaouen.jpg",
+   "width": 1920,
+   "height": 1281,
+   "alt": {
+    "en": "Blue stairs in Chefchaouen"
+   },
+   "source": "px:18487344"
+  },
+  "no10": {
+   "file": "no10-cap-spartel-lighthouse-near-tangier.jpg",
+   "width": 1920,
+   "height": 2400,
+   "alt": {
+    "en": "Cap Spartel lighthouse near Tangier"
+   },
+   "source": "px:14009980"
+  },
+  "no11": {
+   "file": "no11-hiking-in-the-akchour-mountains.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Hiking in the Akchour mountains"
+   },
+   "source": "px:1129418"
+  },
+  "no12": {
+   "file": "no12-chefchaouen-beneath-the-mountains-at-sunset.jpg",
+   "width": 1920,
+   "height": 1325,
+   "alt": {
+    "en": "Chefchaouen beneath the mountains at sunset"
+   },
+   "source": "px:29595709"
+  },
+  "no2": {
+   "file": "no2-hikers-on-the-akchour-trail-near-chefchaouen.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Hikers on the Akchour trail near Chefchaouen"
+   },
+   "source": "px:1129417"
+  },
+  "no3": {
+   "file": "no3-white-walls-and-ramparts-of-asilah.jpg",
+   "width": 1920,
+   "height": 1282,
+   "alt": {
+    "en": "White walls and ramparts of Asilah"
+   },
+   "source": "px:25254935"
+  },
+  "no4": {
+   "file": "no4-blue-alley-in-chefchaouen.jpg",
+   "width": 1920,
+   "height": 3413,
+   "alt": {
+    "en": "Blue alley in Chefchaouen"
+   },
+   "source": "px:10295568"
+  },
+  "no5": {
+   "file": "no5-tiled-stairway-with-plants-in-chefchaouen.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Tiled stairway with plants in Chefchaouen"
+   },
+   "source": "px:9422948"
+  },
+  "no6": {
+   "file": "no6-chefchaouen-below-the-rif-mountains.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Chefchaouen below the Rif mountains"
+   },
+   "source": "px:34362535"
+  },
+  "no7": {
+   "file": "no7-chefchaouen-seen-from-above.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Chefchaouen seen from above"
+   },
+   "source": "px:33912190"
+  },
+  "no8": {
+   "file": "no8-river-in-akchour-rif-mountains.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "River in Akchour, Rif mountains"
+   },
+   "source": "px:30580972"
+  },
+  "no9": {
+   "file": "no9-tangier-port-and-medina.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Tangier port and medina"
+   },
+   "source": "px:20890430"
+  },
+  "o102": {
+   "file": "o102-mountain-village-below-the-snowy-toubkal-massif.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Mountain village below the snowy Toubkal massif"
+   },
+   "source": "old:2019/09/sidi-chamarouch.jpg"
+  },
+  "o151": {
+   "file": "o151-hikers-looking-over-the-atlas-foothills.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Hikers looking over the Atlas foothills"
+   },
+   "source": "old:2022/02/20191122_1251200-scaled.jpg"
+  },
+  "o152": {
+   "file": "o152-lunch-on-a-terrace-with-the-snowy-atlas-behind.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Lunch on a terrace with the snowy Atlas behind"
+   },
+   "source": "old:2022/02/20191204_135548-scaled.jpg"
+  },
+  "o153": {
+   "file": "o153-stop-on-a-desert-road-with-our-4x4.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Stop on a desert road with our 4x4"
+   },
+   "source": "old:2022/02/20191223_172851-scaled.jpg"
+  },
+  "o154": {
+   "file": "o154-berber-guide-with-a-camel-in-the-sahara.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Berber guide with a camel in the Sahara"
+   },
+   "source": "old:2022/02/20200113_175814-scaled-e1645690588785.jpg"
+  },
+  "o189": {
+   "file": "o189-trekking-group-on-a-mountain-path.jpg",
+   "width": 1200,
+   "height": 800,
+   "alt": {
+    "en": "Trekking group on a mountain path"
+   },
+   "source": "old:2025/09/Berber-Villages-Trekking-Journey-Pic.webp"
+  },
+  "o192": {
+   "file": "o192-hikers-and-mules-on-a-rocky-atlas-trail.jpg",
+   "width": 1920,
+   "height": 1080,
+   "alt": {
+    "en": "Hikers and mules on a rocky Atlas trail"
+   },
+   "source": "old:2025/09/Mule-Trek-1.jpg"
+  },
+  "o199": {
+   "file": "o199-stone-refuges-in-the-toubkal-valley.jpg",
+   "width": 1000,
+   "height": 661,
+   "alt": {
+    "en": "Stone refuges in the Toubkal valley"
+   },
+   "source": "old:2025/09/refuge-toubkal-2025.jpg"
+  },
+  "o200": {
+   "file": "o200-aroumd-village-above-imlil.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Aroumd village above Imlil"
+   },
+   "source": "old:2025/10/Armed-Village-Picture-scaled.jpeg"
+  },
+  "o202": {
+   "file": "o202-hikers-among-the-rock-towers-of-jbel-saghro.jpg",
+   "width": 1280,
+   "height": 852,
+   "alt": {
+    "en": "Hikers among the rock towers of Jbel Saghro"
+   },
+   "source": "old:2025/11/Jbel-Saghro-Pic.jpg"
+  },
+  "o57": {
+   "file": "o57-trekkers-on-the-snowy-slopes-below-toubkal.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Trekkers on the snowy slopes below Toubkal"
+   },
+   "source": "old:2019/09/3d-mount-toubkal.jpg"
+  },
+  "o58": {
+   "file": "o58-trekkers-at-the-summit-of-toubkal-4-167-m.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Trekkers at the summit of Toubkal, 4,167 m"
+   },
+   "source": "old:2019/09/3d-toubkal-experience.jpg"
+  },
+  "o59": {
+   "file": "o59-trekking-group-on-a-rocky-ridge-in-the-high-atlas.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Trekking group on a rocky ridge in the High Atlas"
+   },
+   "source": "old:2019/09/4d-berber-village.jpg"
+  },
+  "o65": {
+   "file": "o65-hikers-by-an-old-kasbah-in-the-dades-valley.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Hikers by an old kasbah in the Dades valley"
+   },
+   "source": "old:2019/09/5d-dades-trek.jpg"
+  },
+  "o67": {
+   "file": "o67-hikers-on-a-red-earth-path-above-terraced-fields.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Hikers on a red-earth path above terraced fields"
+   },
+   "source": "old:2019/09/6d-oukaimeden-trek.jpg"
+  },
+  "o68": {
+   "file": "o68-group-of-hikers-on-a-mountain-trail-in-the-atlas.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Group of hikers on a mountain trail in the Atlas"
+   },
+   "source": "old:2019/09/7d-mgoun-summit.jpg"
+  },
+  "o69": {
+   "file": "o69-hiker-resting-above-lake-ifni.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Hiker resting above Lake Ifni"
+   },
+   "source": "old:2019/09/7d-toubkal-circle.jpg"
+  },
+  "o70": {
+   "file": "o70-ski-touring-in-the-toubkal-massif.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Ski touring in the Toubkal massif"
+   },
+   "source": "old:2019/09/8d-Skiing-Toubkal.jpg"
+  },
+  "o81": {
+   "file": "o81-mountain-bikers-above-an-atlas-valley.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Mountain bikers above an Atlas valley"
+   },
+   "source": "old:2019/09/Full-day-Mountain-biking.jpg"
+  },
+  "o82": {
+   "file": "o82-horse-riding-on-a-track-in-the-atlas-foothills.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Horse riding on a track in the Atlas foothills"
+   },
+   "source": "old:2019/09/Full-day-horse-back-riding.jpg"
+  },
+  "o83": {
+   "file": "o83-trekkers-on-a-rocky-path-in-the-toubkal-massif.jpg",
+   "width": 1000,
+   "height": 664,
+   "alt": {
+    "en": "Trekkers on a rocky path in the Toubkal massif"
+   },
+   "source": "old:2019/09/Hiking-Mount-Toubkal.jpg"
+  },
+  "o84": {
+   "file": "o84-rock-pinnacles-of-jbel-saghro-and-a-mule-caravan.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Rock pinnacles of Jbel Saghro and a mule caravan"
+   },
+   "source": "old:2019/09/Jbel-Saghro.jpg"
+  },
+  "o87": {
+   "file": "o87-arches-of-the-tinmel-mosque.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Arches of the Tinmel mosque"
+   },
+   "source": "old:2019/09/Tinmel-mosque.jpg"
+  },
+  "o98": {
+   "file": "o98-lalla-takerkoust-lake-and-the-atlas-foothills.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "Lalla Takerkoust lake and the Atlas foothills"
+   },
+   "source": "old:2019/09/ouirgane-valley.jpg"
+  },
+  "o99": {
+   "file": "o99-the-ourika-valley.jpg",
+   "width": 900,
+   "height": 450,
+   "alt": {
+    "en": "The Ourika valley"
+   },
+   "source": "old:2019/09/ourika-valley.jpg"
+  },
+  "oa1": {
+   "file": "oa1-the-ksar-of-ait-ben-haddou-above-the-river.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "The ksar of Aït Ben Haddou above the river"
+   },
+   "source": "px:37818892"
+  },
+  "oa10": {
+   "file": "oa10-ait-ben-haddou-with-the-snowy-atlas-in-the-distance.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Aït Ben Haddou with the snowy Atlas in the distance"
+   },
+   "source": "px:35087920"
+  },
+  "oa11": {
+   "file": "oa11-winding-road-over-the-tizi-n-tichka-pass.jpg",
+   "width": 1920,
+   "height": 1278,
+   "alt": {
+    "en": "Winding road over the Tizi n'Tichka pass"
+   },
+   "source": "px:30254940"
+  },
+  "oa2": {
+   "file": "oa2-ait-ben-haddou-reflected-in-the-river.jpg",
+   "width": 1920,
+   "height": 1421,
+   "alt": {
+    "en": "Aït Ben Haddou reflected in the river"
+   },
+   "source": "px:3581916"
+  },
+  "oa3": {
+   "file": "oa3-rooftops-of-the-ait-ben-haddou-ksar.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Rooftops of the Aït Ben Haddou ksar"
+   },
+   "source": "px:5504556"
+  },
+  "oa4": {
+   "file": "oa4-taourirt-kasbah-in-ouarzazate.jpg",
+   "width": 1920,
+   "height": 1272,
+   "alt": {
+    "en": "Taourirt Kasbah in Ouarzazate"
+   },
+   "source": "px:943510"
+  },
+  "oa5": {
+   "file": "oa5-mud-brick-walls-of-the-taourirt-kasbah.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Mud-brick walls of the Taourirt Kasbah"
+   },
+   "source": "px:17399231"
+  },
+  "oa6": {
+   "file": "oa6-kasbah-amridil-in-the-skoura-oasis.jpg",
+   "width": 1920,
+   "height": 1063,
+   "alt": {
+    "en": "Kasbah Amridil in the Skoura oasis"
+   },
+   "source": "px:6769006"
+  },
+  "oa8": {
+   "file": "oa8-the-snowy-high-atlas-seen-from-the-ouarzazate-side.jpg",
+   "width": 1920,
+   "height": 1298,
+   "alt": {
+    "en": "The snowy High Atlas seen from the Ouarzazate side"
+   },
+   "source": "px:29816095"
+  },
+  "oa9": {
+   "file": "oa9-atlas-foothills-near-ouarzazate.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Atlas foothills near Ouarzazate"
+   },
+   "source": "px:18077158"
+  },
+  "ou1": {
+   "file": "ou1-the-ourika-valley-with-the-snow-capped-atlas-behind.jpg",
+   "width": 1920,
+   "height": 2562,
+   "alt": {
+    "en": "The Ourika valley with the snow-capped Atlas behind"
+   },
+   "source": "px:38084344"
+  },
+  "ou2": {
+   "file": "ou2-village-and-river-in-the-ourika-valley.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Village and river in the Ourika valley"
+   },
+   "source": "px:38084347"
+  },
+  "ou3": {
+   "file": "ou3-houses-among-the-trees-of-the-ourika-valley.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Houses among the trees of the Ourika valley"
+   },
+   "source": "px:38084333"
+  },
+  "ou4": {
+   "file": "ou4-mint-tea-by-the-fireplace-in-an-ouirgane-guesthouse.jpg",
+   "width": 1920,
+   "height": 2891,
+   "alt": {
+    "en": "Mint tea by the fireplace in an Ouirgane guesthouse"
+   },
+   "source": "px:17443886"
+  },
+  "ou5": {
+   "file": "ou5-country-road-through-the-hills-near-amizmiz.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Country road through the hills near Amizmiz"
+   },
+   "source": "px:40303823"
+  },
+  "ou6": {
+   "file": "ou6-hills-around-lalla-takerkoust.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Hills around Lalla Takerkoust"
+   },
+   "source": "px:17492434"
+  },
+  "ou7": {
+   "file": "ou7-lalla-takerkoust-lake-with-the-atlas-behind.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Lalla Takerkoust lake with the Atlas behind"
+   },
+   "source": "px:20742312"
+  },
+  "ou8": {
+   "file": "ou8-carved-wooden-door-at-the-tinmel-mosque.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Carved wooden door at the Tinmel mosque"
+   },
+   "source": "px:13624920"
+  },
+  "ou9": {
+   "file": "ou9-hand-woven-berber-rugs-in-the-ourika-valley.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Hand-woven Berber rugs in the Ourika valley"
+   },
+   "source": "px:38084336"
+  },
+  "oz1": {
+   "file": "oz1-the-ouzoud-waterfalls-falling-into-their-gorge.jpg",
+   "width": 1920,
+   "height": 1080,
+   "alt": {
+    "en": "The Ouzoud Waterfalls falling into their gorge"
+   },
+   "source": "px:104610"
+  },
+  "oz2": {
+   "file": "oz2-the-ouzoud-waterfalls-at-sunset.jpg",
+   "width": 1920,
+   "height": 1330,
+   "alt": {
+    "en": "The Ouzoud Waterfalls at sunset"
+   },
+   "source": "px:38277704"
+  },
+  "oz3": {
+   "file": "oz3-rainbow-over-the-ouzoud-cascades.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Rainbow over the Ouzoud cascades"
+   },
+   "source": "px:24206815"
+  },
+  "oz4": {
+   "file": "oz4-the-lower-pool-of-the-ouzoud-waterfalls.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "The lower pool of the Ouzoud Waterfalls"
+   },
+   "source": "px:35669894"
+  },
+  "oz5": {
+   "file": "oz5-barbary-macaque-above-the-ouzoud-waterfalls.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Barbary macaque above the Ouzoud Waterfalls"
+   },
+   "source": "px:35634839"
+  },
+  "oz6": {
+   "file": "oz6-boat-on-the-pool-beneath-the-ouzoud-falls.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Boat on the pool beneath the Ouzoud Falls"
+   },
+   "source": "px:8489143"
+  },
+  "rc1": {
+   "file": "rc1-kasbah-of-the-udayas-in-rabat.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Kasbah of the Udayas in Rabat"
+   },
+   "source": "px:14722175"
+  },
+  "rc2": {
+   "file": "rc2-blue-boats-on-the-bou-regreg-with-rabat-behind.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Blue boats on the Bou Regreg with Rabat behind"
+   },
+   "source": "px:31239789"
+  },
+  "rc3": {
+   "file": "rc3-hassan-ii-mosque-in-casablanca.jpg",
+   "width": 1920,
+   "height": 1242,
+   "alt": {
+    "en": "Hassan II Mosque in Casablanca"
+   },
+   "source": "px:6587429"
+  },
+  "rc4": {
+   "file": "rc4-hassan-ii-mosque-by-the-atlantic.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Hassan II Mosque by the Atlantic"
+   },
+   "source": "px:28289056"
+  },
+  "rc5": {
+   "file": "rc5-hassan-tower-in-rabat.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Hassan Tower in Rabat"
+   },
+   "source": "px:30550615"
+  },
+  "rc6": {
+   "file": "rc6-hassan-ii-mosque-seen-through-an-arch.jpg",
+   "width": 1920,
+   "height": 3414,
+   "alt": {
+    "en": "Hassan II Mosque seen through an arch"
+   },
+   "source": "px:20580486"
+  },
+  "sa1": {
+   "file": "sa1-the-erg-chebbi-dunes-at-merzouga.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "The Erg Chebbi dunes at Merzouga"
+   },
+   "source": "px:3909922"
+  },
+  "sa10": {
+   "file": "sa10-camel-riders-on-the-rolling-sahara-dunes.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Camel riders on the rolling Sahara dunes"
+   },
+   "source": "px:37818882"
+  },
+  "sa11": {
+   "file": "sa11-saddled-camels-walking-on-the-sand.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Saddled camels walking on the sand"
+   },
+   "source": "px:33566021"
+  },
+  "sa12": {
+   "file": "sa12-riding-a-camel-through-the-dunes.jpg",
+   "width": 1920,
+   "height": 1333,
+   "alt": {
+    "en": "Riding a camel through the dunes"
+   },
+   "source": "px:998656"
+  },
+  "sa13": {
+   "file": "sa13-two-travellers-on-top-of-a-sahara-dune.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Two travellers on top of a Sahara dune"
+   },
+   "source": "px:37818879"
+  },
+  "sa14": {
+   "file": "sa14-berber-tent-in-the-merzouga-desert.jpg",
+   "width": 1920,
+   "height": 2868,
+   "alt": {
+    "en": "Berber tent in the Merzouga desert"
+   },
+   "source": "px:9726838"
+  },
+  "sa15": {
+   "file": "sa15-entrance-of-a-desert-camp-in-merzouga.jpg",
+   "width": 1920,
+   "height": 3413,
+   "alt": {
+    "en": "Entrance of a desert camp in Merzouga"
+   },
+   "source": "px:6651522"
+  },
+  "sa16": {
+   "file": "sa16-lit-tent-in-the-sahara-at-night.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Lit tent in the Sahara at night"
+   },
+   "source": "px:4405241"
+  },
+  "sa17": {
+   "file": "sa17-starry-sky-over-the-sahara-with-a-camel.jpg",
+   "width": 1920,
+   "height": 2878,
+   "alt": {
+    "en": "Starry sky over the Sahara with a camel"
+   },
+   "source": "px:8570089"
+  },
+  "sa18": {
+   "file": "sa18-campfire-in-the-desert-at-night.jpg",
+   "width": 1920,
+   "height": 2880,
+   "alt": {
+    "en": "Campfire in the desert at night"
+   },
+   "source": "px:13792320"
+  },
+  "sa19": {
+   "file": "sa19-desert-camp-with-palm-trees-in-merzouga.jpg",
+   "width": 1920,
+   "height": 2560,
+   "alt": {
+    "en": "Desert camp with palm trees in Merzouga"
+   },
+   "source": "px:36221130"
+  },
+  "sa2": {
+   "file": "sa2-palm-tree-and-dunes-at-merzouga.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Palm tree and dunes at Merzouga"
+   },
+   "source": "px:4805548"
+  },
+  "sa20": {
+   "file": "sa20-travellers-walking-the-dunes-with-a-berber-guide.jpg",
+   "width": 1920,
+   "height": 2401,
+   "alt": {
+    "en": "Travellers walking the dunes with a Berber guide"
+   },
+   "source": "px:32130878"
+  },
+  "sa3": {
+   "file": "sa3-camel-trek-through-the-merzouga-dunes.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Camel trek through the Merzouga dunes"
+   },
+   "source": "px:5614643"
+  },
+  "sa4": {
+   "file": "sa4-camel-caravan-crossing-the-erg-chebbi.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Camel caravan crossing the Erg Chebbi"
+   },
+   "source": "px:12214734"
+  },
+  "sa5": {
+   "file": "sa5-camels-on-the-dunes-of-merzouga.jpg",
+   "width": 1920,
+   "height": 1186,
+   "alt": {
+    "en": "Camels on the dunes of Merzouga"
+   },
+   "source": "px:4869960"
+  },
+  "sa6": {
+   "file": "sa6-camel-caravan-on-the-merzouga-dunes-at-sunset.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Camel caravan on the Merzouga dunes at sunset"
+   },
+   "source": "px:30320422"
+  },
+  "sa7": {
+   "file": "sa7-berber-guide-leading-camels-in-the-sahara.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Berber guide leading camels in the Sahara"
+   },
+   "source": "px:11478765"
+  },
+  "sa8": {
+   "file": "sa8-desert-camp-among-the-dunes-of-erg-chebbi.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Desert camp among the dunes of Erg Chebbi"
+   },
+   "source": "px:10434667"
+  },
+  "sa9": {
+   "file": "sa9-desert-camp-under-a-sunset-sky.jpg",
+   "width": 1920,
+   "height": 1440,
+   "alt": {
+    "en": "Desert camp under a sunset sky"
+   },
+   "source": "px:35976808"
+  },
+  "sk1": {
+   "file": "sk1-frozen-lake-and-snowy-slopes-at-oukaimeden.jpg",
+   "width": 1920,
+   "height": 1146,
+   "alt": {
+    "en": "Frozen lake and snowy slopes at Oukaïmeden"
+   },
+   "source": "px:30076089"
+  },
+  "sk2": {
+   "file": "sk2-snowy-peaks-above-the-oukaimeden-ski-area.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Snowy peaks above the Oukaïmeden ski area"
+   },
+   "source": "px:38786767"
+  },
+  "sk3": {
+   "file": "sk3-rocky-summit-covered-in-snow-oukaimeden.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Rocky summit covered in snow, Oukaïmeden"
+   },
+   "source": "px:38786763"
+  },
+  "sk4": {
+   "file": "sk4-snow-covered-mountains-and-village-houses-in-the-high-atlas.jpg",
+   "width": 1920,
+   "height": 1280,
+   "alt": {
+    "en": "Snow-covered mountains and village houses in the High Atlas"
+   },
+   "source": "px:30251304"
+  }
+ },
+ "tours": {
+  "24304": [
+   "ag1",
+   "ag2",
+   "ag3",
+   "sa18",
+   "ag6",
+   "sa17",
+   "ag5",
+   "cf1"
+  ],
+  "1078": [
+   "o81",
+   "ac3",
+   "ac2",
+   "im1",
+   "av7",
+   "av2",
+   "av12"
+  ],
+  "1070": [
+   "ou6",
+   "ou7",
+   "av7",
+   "av2",
+   "ou1",
+   "ou2",
+   "o98",
+   "cf5"
+  ],
+  "24290": [
+   "im1",
+   "n0",
+   "im5",
+   "av15",
+   "im3",
+   "av3",
+   "o102"
+  ],
+  "1069": [
+   "ou1",
+   "ou2",
+   "ou3",
+   "ou9",
+   "av5",
+   "cf4",
+   "o99"
+  ],
+  "1077": [
+   "co1",
+   "co2",
+   "co4",
+   "co3",
+   "co11",
+   "ac5",
+   "cf2"
+  ],
+  "1079": [
+   "o82",
+   "ac4",
+   "av7",
+   "av6",
+   "ag1",
+   "av2"
+  ],
+  "24297": [
+   "oa1",
+   "oa2",
+   "oa3",
+   "oa4",
+   "oa11",
+   "oa10",
+   "oa5"
+  ],
+  "24478": [
+   "mk3",
+   "mk1",
+   "mk8",
+   "mk4",
+   "mk11",
+   "mk6",
+   "mk10",
+   "mk5",
+   "n6",
+   "n8"
+  ],
+  "1055": [
+   "av3",
+   "ou4",
+   "av8",
+   "av14",
+   "av12",
+   "ou5",
+   "av5"
+  ],
+  "1076": [
+   "oz1",
+   "oz2",
+   "oz3",
+   "oz4",
+   "oz5",
+   "oz6"
+  ],
+  "1064": [
+   "o87",
+   "ou8",
+   "av6",
+   "av9",
+   "av4",
+   "av1",
+   "ou5"
+  ],
+  "1065": [
+   "im1",
+   "im2",
+   "im7",
+   "av15",
+   "im9",
+   "im3",
+   "o83"
+  ],
+  "1046": [
+   "rc3",
+   "mk3",
+   "ag1",
+   "im1",
+   "co12",
+   "co1",
+   "mk11",
+   "co2"
+  ],
+  "1045": [
+   "sa4",
+   "fs1",
+   "fs10",
+   "rc1",
+   "dt7",
+   "oa1",
+   "co1",
+   "mk3"
+  ],
+  "1047": [
+   "no12",
+   "no4",
+   "no3",
+   "no9",
+   "no2",
+   "fs10",
+   "fs3",
+   "rc1",
+   "no6"
+  ],
+  "1085": [
+   "co5",
+   "co1",
+   "co6",
+   "co8",
+   "co9",
+   "ch3",
+   "oa4",
+   "im1"
+  ],
+  "24451": [
+   "sa6",
+   "no4",
+   "fs11",
+   "fs3",
+   "dt8",
+   "oa2",
+   "mk3",
+   "no10"
+  ],
+  "1090": [
+   "rc4",
+   "no7",
+   "fs4",
+   "sa3",
+   "dt1",
+   "oa3",
+   "im1",
+   "mk1"
+  ],
+  "1086": [
+   "rc1",
+   "no5",
+   "no9",
+   "fs13",
+   "sa13",
+   "oa1",
+   "mk12",
+   "co2"
+  ],
+  "24424": [
+   "co1",
+   "co3",
+   "co11",
+   "mk3",
+   "mk14",
+   "rc5",
+   "im1",
+   "cf2"
+  ],
+  "24848": [
+   "fs1",
+   "fs12",
+   "fs9",
+   "sa5",
+   "dt3",
+   "oa10",
+   "mk8",
+   "fs6",
+   "n5"
+  ],
+  "1041": [
+   "fs2",
+   "rc6",
+   "fs10",
+   "fs8",
+   "n5",
+   "ag1",
+   "av2",
+   "mk2",
+   "cf8"
+  ],
+  "1099": [
+   "dt5",
+   "dt9",
+   "dt1",
+   "dt7",
+   "sa10",
+   "dr2",
+   "oa2",
+   "sa14"
+  ],
+  "1044": [
+   "im4",
+   "mk13",
+   "oa1",
+   "dt2",
+   "sa1",
+   "fs3",
+   "fs11",
+   "no1"
+  ],
+  "24428": [
+   "rc2",
+   "fs4",
+   "sa16",
+   "cf10",
+   "dt8",
+   "co10",
+   "co4",
+   "mk7"
+  ],
+  "24455": [
+   "sa4",
+   "sa1",
+   "sa8",
+   "dt8",
+   "oa3",
+   "fs1",
+   "sa17"
+  ],
+  "999": [
+   "dr6",
+   "oa1",
+   "dr1",
+   "dr3",
+   "dr4",
+   "dr2",
+   "oa4",
+   "sa16"
+  ],
+  "24432": [
+   "sa3",
+   "oa11",
+   "oa2",
+   "dt6",
+   "dt7",
+   "sa9",
+   "sa13",
+   "fs3"
+  ],
+  "1092": [
+   "sa6",
+   "sa2",
+   "sa8",
+   "oa6",
+   "dt8",
+   "sa18",
+   "sa11",
+   "o154"
+  ],
+  "1093": [
+   "sa5",
+   "fs1",
+   "sa19",
+   "sa7",
+   "dt7",
+   "dt1",
+   "oa1",
+   "oa11"
+  ],
+  "1094": [
+   "ch5",
+   "ch3",
+   "oa1",
+   "dt2",
+   "dt7",
+   "dr4",
+   "ch4",
+   "ch6"
+  ],
+  "24460": [
+   "sa10",
+   "mk1",
+   "oa11",
+   "dt1",
+   "dt8",
+   "sa15",
+   "sa17",
+   "o153"
+  ],
+  "24843": [
+   "ch3",
+   "ch1",
+   "ch2",
+   "dr3",
+   "ch4",
+   "ch5",
+   "sa17"
+  ],
+  "24614": [
+   "sa12",
+   "oa10",
+   "dt6",
+   "dt7",
+   "sa20",
+   "sa14",
+   "fs13",
+   "av13"
+  ],
+  "995": [
+   "av12",
+   "im9",
+   "av17",
+   "o192",
+   "im7",
+   "av14",
+   "o200"
+  ],
+  "67": [
+   "im1",
+   "o152",
+   "im3",
+   "av15",
+   "im5",
+   "o102",
+   "av16",
+   "im2"
+  ],
+  "997": [
+   "av3",
+   "ou4",
+   "av8",
+   "av1",
+   "av14",
+   "av12",
+   "av16"
+  ],
+  "1006": [
+   "av2",
+   "av1",
+   "o67",
+   "av17",
+   "im2",
+   "o189",
+   "av18"
+  ],
+  "1014": [
+   "n0",
+   "av16",
+   "im3",
+   "o151",
+   "ou4",
+   "av3",
+   "im5",
+   "o152"
+  ],
+  "1012": [
+   "av1",
+   "av14",
+   "av17",
+   "o192",
+   "av18",
+   "av12",
+   "im9",
+   "o67"
+  ],
+  "1274": [
+   "ou5",
+   "av4",
+   "av8",
+   "av6",
+   "av17",
+   "cf4",
+   "av14"
+  ],
+  "1030": [
+   "av2",
+   "o200",
+   "av1",
+   "im7",
+   "av15",
+   "o189",
+   "av18",
+   "im1"
+  ],
+  "1276": [
+   "ou5",
+   "av3",
+   "av4",
+   "ou4",
+   "av6",
+   "av8",
+   "av14"
+  ],
+  "1036": [
+   "av6",
+   "av10",
+   "oz1",
+   "av8",
+   "av4",
+   "av14",
+   "av5",
+   "av16"
+  ],
+  "1034": [
+   "dt2",
+   "dt1",
+   "dt9",
+   "dt5",
+   "av9",
+   "dt6",
+   "o65"
+  ],
+  "1040": [
+   "dt5",
+   "dt9",
+   "dt2",
+   "o65",
+   "oa4",
+   "oa11",
+   "av9"
+  ],
+  "1052": [
+   "o202",
+   "o84",
+   "dt3",
+   "dr5",
+   "oa11",
+   "sa18",
+   "oa9"
+  ],
+  "1063": [
+   "av9",
+   "oa9",
+   "av11",
+   "av13",
+   "o68",
+   "av15",
+   "oa8"
+  ],
+  "1038": [
+   "av13",
+   "oz2",
+   "av10",
+   "o59",
+   "av9",
+   "av11",
+   "o83",
+   "av15"
+  ],
+  "1101": [
+   "o70",
+   "sk2",
+   "sk1",
+   "sk3",
+   "im4",
+   "im8",
+   "n7",
+   "sk4"
+  ],
+  "1058": [
+   "no2",
+   "no11",
+   "no8",
+   "no6",
+   "no4",
+   "no12",
+   "no5"
+  ],
+  "992": [
+   "o58",
+   "o57",
+   "n7",
+   "im1",
+   "o199",
+   "im9",
+   "n0"
+  ],
+  "1001": [
+   "o57",
+   "o58",
+   "n7",
+   "o83",
+   "im2",
+   "o199",
+   "im5",
+   "im1"
+  ],
+  "1007": [
+   "o59",
+   "im7",
+   "o58",
+   "n7",
+   "im9",
+   "o68",
+   "im1"
+  ],
+  "1016": [
+   "im2",
+   "av12",
+   "im7",
+   "o192",
+   "o58",
+   "n7",
+   "av16",
+   "o189"
+  ],
+  "1017": [
+   "o67",
+   "av1",
+   "av17",
+   "o192",
+   "im7",
+   "o58",
+   "n7",
+   "o83"
+  ],
+  "1018": [
+   "o58",
+   "n7",
+   "im1",
+   "dt1",
+   "sa3",
+   "sa9",
+   "o57",
+   "dt6"
+  ],
+  "1024": [
+   "o69",
+   "im2",
+   "av17",
+   "av15",
+   "o58",
+   "n7",
+   "im8",
+   "av14"
+  ]
+ }
+}

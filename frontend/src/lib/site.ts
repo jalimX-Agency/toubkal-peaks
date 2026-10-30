@@ -47,6 +47,21 @@ export const media = {
   topo: `${CDN}/site/textures/topo.svg`,
 };
 
+/** Background photos of the page heroes (category hubs and pages without a photo of their own), on R2 (site/trips/). */
+const TRIPS = `${CDN}/site/trips`;
+export const pageHeroes: Record<string, string> = {
+  "treks": `${TRIPS}/o189-trekking-group-on-a-mountain-path.jpg`,
+  "treks.toubkal": `${TRIPS}/o57-trekkers-on-the-snowy-slopes-below-toubkal.jpg`,
+  "treks.atlas-valleys-villages": `${TRIPS}/av2-berber-village-on-green-slopes-below-the-high-atlas.jpg`,
+  "treks.regional-treks": `${TRIPS}/av11-rocky-slopes-of-the-tassaout-valley-in-the-central-high-atla.jpg`,
+  "sahara-desert-tours": `${TRIPS}/sa4-camel-caravan-crossing-the-erg-chebbi.jpg`,
+  "morocco-tours": `${TRIPS}/fs1-the-fes-medina-at-sunset.jpg`,
+  "day-trips-from-marrakech": `${TRIPS}/oz2-the-ouzoud-waterfalls-at-sunset.jpg`,
+  "trips": `${TRIPS}/sa6-camel-caravan-on-the-merzouga-dunes-at-sunset.jpg`,
+  "about": `${TRIPS}/o192-hikers-and-mules-on-a-rocky-atlas-trail.jpg`,
+  "contact": `${TRIPS}/im3-mint-tea-on-a-guesthouse-table-with-a-view-of-the-atlas-peak.jpg`,
+};
+
 /** Free Pexels photos for what the client has no photos of yet (sources: media/pexels/sources.txt in the client folder). */
 const STOCK = `${CDN}/site/stock`;
 export const stock = {

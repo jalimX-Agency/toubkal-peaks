@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { TourCard } from "@/components/TourCard";
 import { CtaBand } from "@/components/home/CtaBand";
+import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { HUBS, type Hub } from "@/lib/hubs";
-import { media, site } from "@/lib/site";
+import { site, pageHeroes } from "@/lib/site";
 import type { TourCard as Tour } from "@/lib/types";
 
 /** A category of trips (Treks, Sahara, ...): title and introduction, sub-sections for treks, then every trip in it. */
@@ -42,7 +43,7 @@ export function HubPage({ hub, lang, dict, tours }: { hub: Hub; lang: Locale; di
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <section className="relative isolate overflow-hidden bg-navy-deep text-white">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cover bg-center opacity-[0.16]" style={{ backgroundImage: `url(${media.topo})` }} />
+        <HeroBackdrop src={pageHeroes[hub.key]} />
         <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 md:px-8 md:pb-16 md:pt-10">
           <nav aria-label="Breadcrumb" className="mono text-white/55">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">

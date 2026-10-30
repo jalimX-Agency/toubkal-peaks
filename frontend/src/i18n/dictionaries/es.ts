@@ -171,6 +171,12 @@ const es: Dictionary = {
         bio: ["Con más de 25 años de experiencia en el turismo, Omar Jellah es cofundador y responsable de planificación de Toubkal Peaks Travel. Empezó su carrera en 2000 como guía de viajes y de montaña, trabajando con empresas de viajes internacionales, operadores turísticos y viajeros independientes.", "En 2006, movido por su pasión por viajar y su amor por Marruecos, fundó su propia agencia para compartir la belleza auténtica del país con visitantes de todo el mundo.", "A lo largo de los años, Omar ha guiado y organizado innumerables viajes por Marruecos, desde el Atlas y el Sáhara hasta las ciudades imperiales, los sitios históricos y los pueblos bereberes tradicionales. Hoy combina su amplia experiencia sobre el terreno y su conocimiento local para planificar circuitos a medida, aventuras de trekking y experiencias culturales.", "Su filosofía es sencilla: crear viajes con sentido, conexiones genuinas y recuerdos inolvidables."],
       },
       {
+        name: "Mohamed",
+        role: "Guía principal, especialista en grandes circuitos por Marruecos",
+        photoAlt: "Mohamed, guía principal, sonriendo en un parque en otoño",
+        bio: ["Mohamed es uno de los guías principales de Toubkal Peaks Travel, especializado en circuitos privados y a medida por Marruecos. Desde que se unió al equipo en 2016, ha adquirido una amplia experiencia con agencias de viajes internacionales, viajeros independientes y grupos privados de todo el mundo.", "Nacido y criado en el Alto Atlas, Mohamed tiene una conexión profunda con su herencia amazigh, las tradiciones locales y la belleza natural de su tierra. Le apasiona compartir la rica historia de Marruecos, la diversidad de sus culturas, sus paisajes impresionantes y la vida auténtica de los pueblos.", "Su objetivo es crear viajes con sentido y que se recuerden, acercando a los viajeros a las comunidades locales. Con su calidez, su conocimiento local y su pasión por la hospitalidad, convierte cada viaje en una experiencia única."],
+      },
+      {
         name: "Rachid",
         role: "Guía de trekking de montaña y de desierto",
         photoAlt: "Rachid, guía de montaña y de desierto, sobre un lago turquesa del Atlas",

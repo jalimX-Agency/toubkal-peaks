@@ -169,6 +169,12 @@ const en = {
         bio: ["With over 25 years of experience in tourism, Omar Jellah is the Co-Founder and Planning Manager of Toubkal Peaks Travel. He began his career in 2000 as a tour and mountain guide, working with international travel companies, tour operators and independent travellers.", "In 2006, driven by his passion for travel and his love for Morocco, he established his own travel company to share the country’s authentic beauty with visitors from around the world.", "Over the years, Omar has led and organised countless journeys across Morocco, from the Atlas Mountains and Sahara Desert to the Imperial Cities, historic sites and traditional Berber villages. Today, he combines his extensive field experience and local knowledge to plan and coordinate tailor-made tours, trekking adventures and cultural experiences.", "His philosophy is simple: creating meaningful journeys, genuine connections and unforgettable memories."],
       },
       {
+        name: "Mohamed",
+        role: "Lead Tour Guide & Morocco Grand Tours Specialist",
+        photoAlt: "Mohamed, lead tour guide, smiling in a park in autumn",
+        bio: ["Mohamed is one of the leading tour guides at Toubkal Peaks Travel, specialising in private and tailor-made tours across Morocco. Since joining our team in 2016, he has gained extensive experience working with international travel agencies, independent travellers and private groups from around the world.", "Born and raised in the High Atlas Mountains, Mohamed has a deep connection to his Amazigh heritage, local traditions and the natural beauty of his homeland. He is passionate about sharing Morocco’s rich history, diverse cultures, breathtaking landscapes and authentic village life.", "His goal is to create meaningful and memorable journeys, bringing travellers closer to local communities. With his warm personality, local knowledge and passion for hospitality, he makes every journey a unique experience."],
+      },
+      {
         name: "Rachid",
         role: "Mountain Trekking & Desert Guide",
         photoAlt: "Rachid, mountain and desert guide, above a turquoise lake in the Atlas",

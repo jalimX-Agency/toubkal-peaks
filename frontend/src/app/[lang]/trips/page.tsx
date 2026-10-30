@@ -3,11 +3,12 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { TourCard } from "@/components/TourCard";
 import { TripFinder, type FinderTour } from "@/components/trips/TripFinder";
+import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { getTours } from "@/lib/api";
 import { HUBS } from "@/lib/hubs";
-import { media, site } from "@/lib/site";
+import { site, pageHeroes } from "@/lib/site";
 
 const PATH = "/trips";
 
@@ -68,7 +69,7 @@ export default async function TripsPage({ params }: PageProps<"/[lang]/trips">) 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <section className="relative isolate overflow-hidden bg-navy-deep text-white">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cover bg-center opacity-[0.16]" style={{ backgroundImage: `url(${media.topo})` }} />
+        <HeroBackdrop src={pageHeroes.trips} />
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-10 md:px-8 md:pb-14 md:pt-14">
           <p className="mono text-gold-light">
             {String(tours.length).padStart(2, "0")} · {trips.eyebrow}

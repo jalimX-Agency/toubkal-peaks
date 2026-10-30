@@ -14,3 +14,5 @@ toubkal:create-admin --email=admin@toubkal-peaks.com --role=admin
 # New programmes for the 5-day Ait Bougmez and 7-day M'Goun treks, and the M'Goun prices (EN corrections, then FR/ES/DE; hand-edited content is kept).
 toubkal:apply-corrections
 toubkal:import-translations
+# New trip photos (6 to 10 per trip; files already on R2 under site/trips/).
+toubkal:sync-images

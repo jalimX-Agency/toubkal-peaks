@@ -171,6 +171,12 @@ const de: Dictionary = {
         bio: ["Mit über 25 Jahren Erfahrung im Tourismus ist Omar Jellah Mitgründer und Leiter der Reiseplanung von Toubkal Peaks Travel. Er begann seine Laufbahn im Jahr 2000 als Reise- und Bergführer und arbeitete für internationale Reiseunternehmen, Reiseveranstalter und Individualreisende.", "Im Jahr 2006 gründete er, getrieben von seiner Leidenschaft fürs Reisen und seiner Liebe zu Marokko, sein eigenes Reiseunternehmen, um die authentische Schönheit des Landes mit Besuchern aus aller Welt zu teilen.", "Im Laufe der Jahre hat Omar unzählige Reisen durch Marokko geführt und organisiert, vom Atlas und der Sahara bis zu den Königsstädten, historischen Stätten und traditionellen Berberdörfern. Heute verbindet er seine große Felderfahrung und sein Wissen vor Ort, um maßgeschneiderte Rundreisen, Trekkingtouren und Kulturerlebnisse zu planen.", "Seine Philosophie ist einfach: bedeutungsvolle Reisen, echte Begegnungen und unvergessliche Erinnerungen schaffen."],
       },
       {
+        name: "Mohamed",
+        role: "Leitender Reiseleiter, Spezialist für große Marokko-Rundreisen",
+        photoAlt: "Mohamed, leitender Reiseleiter, lächelnd in einem herbstlichen Park",
+        bio: ["Mohamed ist einer der leitenden Reiseleiter von Toubkal Peaks Travel und auf private, maßgeschneiderte Rundreisen durch Marokko spezialisiert. Seit er 2016 zu unserem Team kam, hat er viel Erfahrung mit internationalen Reiseagenturen, Individualreisenden und privaten Gruppen aus aller Welt gesammelt.", "Im Hohen Atlas geboren und aufgewachsen, ist Mohamed eng mit seinem amazighischen Erbe, den lokalen Traditionen und der Natur seiner Heimat verbunden. Er teilt mit Leidenschaft Marokkos reiche Geschichte, seine vielfältigen Kulturen, atemberaubenden Landschaften und das authentische Dorfleben.", "Sein Ziel sind bedeutungsvolle, unvergessliche Reisen, die Reisende den Menschen vor Ort näherbringen. Mit seiner Herzlichkeit, seinem Ortswissen und seiner Gastfreundschaft macht er jede Reise zu einem besonderen Erlebnis."],
+      },
+      {
         name: "Rachid",
         role: "Trekking- und Wüstenführer",
         photoAlt: "Rachid, Berg- und Wüstenführer, über einem türkisfarbenen See im Atlas",

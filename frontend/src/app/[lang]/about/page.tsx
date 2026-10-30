@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/home/CtaBand";
+import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { media, site } from "@/lib/site";
+import { site, pageHeroes } from "@/lib/site";
 
 const PATH = "/about";
 
 /** Team photos live in public/team, in the same order as dict.about.members (the owner first). */
-const PHOTOS = ["/team/omar-jellah.jpg", "/team/rachid.jpg", "/team/brahim.jpg", "/team/mohamed.jpg", "/team/hamid.jpg"];
+const PHOTOS = ["/team/omar-jellah.jpg", "/team/mohamed-lead-guide.jpg", "/team/rachid.jpg", "/team/brahim.jpg", "/team/mohamed.jpg", "/team/hamid.jpg"];
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about">): Promise<Metadata> {
   const { lang } = await params;
@@ -50,7 +51,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <section className="relative isolate overflow-hidden bg-navy-deep text-white">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cover bg-center opacity-[0.16]" style={{ backgroundImage: `url(${media.topo})` }} />
+        <HeroBackdrop src={pageHeroes.about} />
         <div className="mx-auto max-w-7xl px-4 pb-12 pt-12 md:px-8 md:pb-16 md:pt-16">
           <p className="mono text-gold-light">{about.eyebrow}</p>
           <h1 className="font-display mt-3 max-w-3xl text-[clamp(2.1rem,4.6vw,3.6rem)] font-semibold leading-[1.08]">{about.title}</h1>
@@ -78,7 +79,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
 
           <ul className="mt-16 grid gap-12 sm:grid-cols-2 md:mt-24 lg:gap-x-12 lg:gap-y-16">
             {team.map((member, i) => (
-              <li key={member.name}>
+              <li key={PHOTOS[i + 1]}>
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-line">
                   <Image src={PHOTOS[i + 1]} alt={member.photoAlt} fill sizes="(min-width: 1280px) 600px, (min-width: 640px) 45vw, 90vw" className="object-cover" />
                 </div>

@@ -4,13 +4,26 @@
     {
       "name": "frontend",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "frontend", "run", "dev", "--", "--port", "3000"],
+      "runtimeArgs": [
+        "--prefix",
+        "frontend",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "3000"
+      ],
       "port": 3000
     },
     {
       "name": "backend-test",
       "runtimeExecutable": "php",
-      "runtimeArgs": ["backend/artisan", "serve", "--host=127.0.0.1", "--port=8000"],
+      "runtimeArgs": [
+        "backend/artisan",
+        "serve",
+        "--host=127.0.0.1",
+        "--port=8000"
+      ],
       "port": 8000,
       "env": {
         "DB_CONNECTION": "sqlite",
@@ -24,10 +37,54 @@
     {
       "name": "frontend-admin-local",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--prefix", "frontend", "next", "dev", "frontend", "--port", "3001"],
+      "runtimeArgs": [
+        "--prefix",
+        "frontend",
+        "next",
+        "dev",
+        "frontend",
+        "--port",
+        "3001"
+      ],
       "port": 3001,
       "env": {
         "ADMIN_API_URL": "http://127.0.0.1:8000/api/v1"
+      }
+    },
+    {
+      "name": "backend-images",
+      "runtimeExecutable": "php",
+      "runtimeArgs": [
+        "backend/artisan",
+        "serve",
+        "--host=127.0.0.1",
+        "--port=8000"
+      ],
+      "port": 8000,
+      "env": {
+        "DB_CONNECTION": "sqlite",
+        "DB_DATABASE": "C:/Users/pc/AppData/Local/Temp/claude/C--projects-client-projects-toubkal-peaks/7a00835f-9e9c-4d11-867a-5bac3b6efe48/scratchpad/mgoun.sqlite",
+        "DB_HOST": "",
+        "DB_PREFIX": "",
+        "MAIL_MAILER": "log",
+        "FRONTEND_URL": ""
+      }
+    },
+    {
+      "name": "frontend-local-api",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--prefix",
+        "frontend",
+        "next",
+        "dev",
+        "frontend",
+        "--port",
+        "3003"
+      ],
+      "port": 3003,
+      "env": {
+        "NEXT_PUBLIC_API_URL": "http://127.0.0.1:8000/api/v1"
       }
     }
   ]

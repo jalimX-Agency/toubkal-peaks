@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BookingForm } from "@/components/trip/BookingForm";
+import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { media, site, whatsappLink } from "@/lib/site";
+import { site, whatsappLink, pageHeroes } from "@/lib/site";
 
 const PATH = "/contact";
 
@@ -52,7 +53,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <section className="relative isolate overflow-hidden bg-navy-deep text-white">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cover bg-center opacity-[0.16]" style={{ backgroundImage: `url(${media.topo})` }} />
+        <HeroBackdrop src={pageHeroes.contact} />
         <div className="mx-auto max-w-7xl px-4 pb-12 pt-12 md:px-8 md:pb-16 md:pt-16">
           <p className="mono text-gold-light">{contact.eyebrow}</p>
           <h1 className="font-display mt-3 max-w-3xl text-[clamp(2.1rem,4.6vw,3.6rem)] font-semibold leading-[1.08]">{contact.title}</h1>
