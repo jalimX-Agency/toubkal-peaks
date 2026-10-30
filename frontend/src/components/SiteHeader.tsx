@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { localePath, type Locale } from "@/i18n/config";
@@ -18,6 +19,9 @@ const LINKS = [
 export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav"] }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // home page: the bar floats over the hero photo, transparent until the visitor scrolls
+  const isHome = /^\/(?:(?:fr|es|de)\/?)?$/.test(usePathname());
+  const clear = isHome && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -38,14 +42,14 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
   return (
     <>
       <header
-        className={`sticky top-0 z-50 bg-cream transition-shadow duration-300 ${
-          scrolled || open ? "shadow-[0_1px_0_var(--line),0_6px_20px_rgba(2,46,85,0.06)]" : ""
-        }`}
+        className={`${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-50 transition-[background-color,box-shadow] duration-300 ${
+          clear ? "bg-gradient-to-b from-navy-deep/55 to-transparent" : "bg-cream"
+        } ${scrolled || open ? "shadow-[0_1px_0_var(--line),0_6px_20px_rgba(2,46,85,0.06)]" : ""}`}
       >
         <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-6 px-4 md:h-20 md:px-8">
           <Link href={href("/")} className="shrink-0" onClick={() => setOpen(false)}>
             <Image
-              src={media.logo.src}
+              src={clear ? media.logoOnDark.src : media.logo.src}
               alt={site.name}
               width={595}
               height={128}
@@ -59,7 +63,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
               <Link
                 key={link.key}
                 href={href(link.path)}
-                className="text-[0.92rem] font-semibold text-navy transition-colors hover:text-gold"
+                className={`text-[0.92rem] font-semibold transition-colors ${clear ? "text-white hover:text-gold-light" : "text-navy hover:text-gold"}`}
               >
                 {dict[link.key]}
               </Link>
@@ -67,7 +71,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
           </nav>
 
           <div className="hidden items-center gap-5 xl:flex">
-            <LocaleSwitcher current={lang} label={dict.language} />
+            <LocaleSwitcher current={lang} label={dict.language} tone={clear ? "light" : "dark"} />
             <Link href={href("/book")} className="btn-gold !px-5 !py-3">
               {dict.plan}
             </Link>
@@ -75,7 +79,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary["nav
 
           <button
             type="button"
-            className="-mr-2 inline-flex items-center gap-2 p-2 text-sm font-semibold text-navy xl:hidden"
+            className={`-mr-2 inline-flex items-center gap-2 p-2 text-sm font-semibold xl:hidden ${clear ? "text-white" : "text-navy"}`}
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}

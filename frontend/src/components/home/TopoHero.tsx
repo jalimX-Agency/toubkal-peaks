@@ -138,7 +138,8 @@ export function TopoHero({ lang, dict, camps }: { lang: Locale; dict: Dictionary
         style={{ backgroundImage: `url(${media.topo})` }}
       />
 
-      <div className="mx-auto grid min-h-[min(calc(100svh-4.25rem),52rem)] max-w-7xl content-end gap-8 px-4 pb-6 pt-16 md:min-h-[min(calc(100svh-5rem),52rem)] md:px-8 lg:gap-y-6 lg:pb-6 lg:pt-10">
+      {/* the header floats over the hero (transparent until scrolled): the hero takes the full screen and starts below the bar */}
+      <div className="mx-auto grid min-h-[min(100svh,56.25rem)] max-w-7xl content-end gap-8 px-4 pb-6 pt-[6.25rem] md:min-h-[min(100svh,57rem)] md:px-8 md:pt-28 lg:gap-y-6 lg:pb-6 lg:pt-28">
         <div className="max-w-2xl lg:self-center">
           {/* phones: where the footage was filmed; desktop: the place in the current photo */}
           <p className="mono fade-up flex flex-wrap items-center gap-x-3 gap-y-1 text-gold-light">

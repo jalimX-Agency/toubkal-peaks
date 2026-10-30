@@ -305,6 +305,9 @@ const es: Dictionary = {
     edit: "Editar",
     summary: "Tu viaje",
     trip: {
+      showMore: "Ver más viajes ({n} más)",
+      count: "{n} viajes",
+      selected: "Elegido",
       title: "¿Qué viaje te gustaría?",
       search: "Buscar un viaje",
       custom: "Viaje a medida",
@@ -326,6 +329,9 @@ const es: Dictionary = {
       past: "Elige una fecha a partir de hoy.",
     },
     group: {
+      tiers: "Precio por persona según el tamaño del grupo",
+      people: "personas",
+      person: "persona",
       title: "¿Quién viaja?",
       adults: "Adultos",
       adultsHint: "12 años o más",

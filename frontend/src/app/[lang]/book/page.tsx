@@ -49,6 +49,8 @@ export default async function BookPage({ params }: PageProps<"/[lang]/book">) {
 }
 
 async function Wizard({ lang, dict }: { lang: Locale; dict: Dictionary }) {
-  const { data: tours } = await getTours({ locale: lang, perPage: 60 });
+  const { data } = await getTours({ locale: lang, perPage: 100 });
+  // only what the trip picker shows (no summaries or carousel photos): a lighter page
+  const tours = data.map((x) => ({ ...x, summary: null, photos: undefined }));
   return <BookingWizardLoader lang={lang} tours={tours} t={dict.book} tabs={dict.tours.tabs} toursDict={dict.tours} whatsappMessage={dict.whatsapp.message} />;
 }

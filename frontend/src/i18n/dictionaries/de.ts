@@ -305,6 +305,9 @@ const de: Dictionary = {
     edit: "Ändern",
     summary: "Ihre Reise",
     trip: {
+      showMore: "Mehr Reisen anzeigen ({n} weitere)",
+      count: "{n} Reisen",
+      selected: "Ausgewählt",
       title: "Welche Reise möchten Sie?",
       search: "Reise suchen",
       custom: "Individuelle Reise",
@@ -326,6 +329,9 @@ const de: Dictionary = {
       past: "Wählen Sie ein Datum ab heute.",
     },
     group: {
+      tiers: "Preis pro Person nach Gruppengröße",
+      people: "Personen",
+      person: "Person",
       title: "Wer reist mit?",
       adults: "Erwachsene",
       adultsHint: "Ab 12 Jahren",

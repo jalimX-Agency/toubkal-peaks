@@ -41,6 +41,11 @@ const EMPTY: Draft = {
 };
 
 const STORAGE_KEY = "tp-booking-draft";
+const STEP_KEY = "tp-booking-step";
+const TRIPS_PER_PAGE = 8;
+
+/** Lower case, accents removed: "Aït" matches "ait". */
+const fold = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const FIELD_STEP: Record<string, Step> = {
   tour_id: "trip", start_date: "dates", adults: "group", children: "group", special_requests: "prefs",
   first_name: "details", last_name: "details", email: "details", phone: "details", country: "details", consent: "review",
@@ -67,9 +72,9 @@ type Props = {
   whatsappMessage: string;
 };
 
-function readDraft(): string | null {
+function readStored(key: string): string | null {
   try {
-    return sessionStorage.getItem(STORAGE_KEY);
+    return sessionStorage.getItem(key);
   } catch {
     return null; // storage blocked: the wizard simply starts empty
   }
@@ -89,12 +94,17 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
   const [draft, setDraft] = useState<Draft>(() => {
     let restored: Partial<Draft> = {};
     try {
-      restored = JSON.parse(readDraft() ?? "{}");
+      restored = JSON.parse(readStored(STORAGE_KEY) ?? "{}");
     } catch {}
     return presetTour ? { ...EMPTY, ...restored, tripId: presetTour.id, custom: false } : { ...EMPTY, ...restored };
   });
-  const [step, setStep] = useState(presetTour ? 1 : 0);
-  const [reached, setReached] = useState(presetTour ? 1 : 0);
+  // a reload comes back to the step the visitor was on (a ?trip= link starts at the dates)
+  const [saved] = useState(() => {
+    const n = Number(readStored(STEP_KEY));
+    return Number.isInteger(n) && n > 0 && n < STEPS.length ? n : 0;
+  });
+  const [step, setStep] = useState(presetTour ? Math.max(1, saved) : saved);
+  const [reached, setReached] = useState(presetTour ? Math.max(1, saved) : saved);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [consent, setConsent] = useState(false);
   const [banner, setBanner] = useState<string | null>(null);
@@ -106,8 +116,9 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
   useEffect(() => {
     try {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+      sessionStorage.setItem(STEP_KEY, String(step));
     } catch {}
-  }, [draft]);
+  }, [draft, step]);
 
   const trip = useMemo(() => tours.find((x) => x.id === draft.tripId) ?? null, [tours, draft.tripId]);
   useEffect(() => {
@@ -203,6 +214,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
       if (res.status === "success") {
         try {
           sessionStorage.removeItem(STORAGE_KEY);
+          sessionStorage.removeItem(STEP_KEY);
         } catch {}
         setDone({ reference: res.reference, name: draft.firstName.trim() });
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -238,7 +250,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
   const estimateText = estimate !== null ? formatPrice(estimate, currency, lang) : null;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-32 pt-6 md:px-8 md:pt-10 lg:grid lg:grid-cols-12 lg:gap-10 lg:pb-20">
+    <div className="mx-auto max-w-6xl px-4 pb-32 pt-6 md:px-8 md:pt-10 lg:grid lg:grid-cols-12 lg:gap-10">
       <div className="lg:col-span-8">
         {/* progress */}
         <div className="flex items-center justify-between gap-4">
@@ -256,6 +268,16 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
                 aria-label={`${i + 1}. ${t.steps[s]}`}
                 className={`block h-1.5 w-full rounded-full transition-colors ${i < step ? "bg-gold" : i === step ? "bg-navy" : i <= reached ? "bg-gold/40" : "bg-line"} disabled:cursor-default`}
               />
+            </li>
+          ))}
+        </ol>
+        <ol className="mt-2 hidden grid-cols-6 gap-1.5 sm:grid" aria-hidden="true">
+          {STEPS.map((s, i) => (
+            <li key={s}>
+              <button type="button" tabIndex={-1} onClick={() => i <= reached && i !== step && goTo(i)} disabled={i > reached}
+                className={`w-full truncate text-left text-xs font-semibold transition-colors ${i === step ? "text-navy" : i <= reached ? "text-gold hover:text-navy" : "text-muted/60"} disabled:cursor-default`}>
+                {t.steps[s]}
+              </button>
             </li>
           ))}
         </ol>
@@ -279,8 +301,8 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
           <div className="mt-6">
             {current === "trip" && (
               <TripStep tours={tours} draft={draft} t={t} tabs={tabs} toursDict={toursDict} lang={lang} error={errors.tripId}
-                onPick={(id) => { setDraft((d) => ({ ...d, tripId: id, custom: false })); setErrors({}); }}
-                onCustom={() => { setDraft((d) => ({ ...d, tripId: null, custom: true })); setErrors({}); }} />
+                onPick={(id) => { setDraft((d) => ({ ...d, tripId: id, custom: false })); setErrors({}); setTimeout(() => goTo(1), 250); }}
+                onCustom={() => { setDraft((d) => ({ ...d, tripId: null, custom: true })); setErrors({}); setTimeout(() => goTo(1), 250); }} />
             )}
 
             {current === "dates" && (
@@ -324,6 +346,23 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
                     <p className="mt-1 text-ink">{onRequest || draft.custom ? t.group.onRequest : "…"}</p>
                   )}
                 </div>
+                {pricing && pricing.tiers.length > 1 && !onRequest && (
+                  <div className="rounded-sm border border-line bg-white p-5">
+                    <p className="text-sm font-semibold text-navy">{t.group.tiers}</p>
+                    <ul className="mt-3 divide-y divide-line text-sm">
+                      {pricing.tiers.filter((x) => x.price_per_person !== null).map((x) => {
+                        const here = people >= x.min_pax && (x.max_pax === null || people <= x.max_pax);
+                        const range = x.max_pax === x.min_pax ? `${x.min_pax}` : x.max_pax === null ? `${x.min_pax}+` : `${x.min_pax}–${x.max_pax}`;
+                        return (
+                          <li key={x.min_pax} className={`flex justify-between gap-3 py-2 ${here ? "font-semibold text-navy" : "text-muted"}`}>
+                            <span>{range} {x.max_pax === 1 ? t.group.person : t.group.people}</span>
+                            <span>{formatPrice(x.price_per_person!, currency, lang)} {t.group.perPerson}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
 
@@ -402,13 +441,6 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
             )}
           </div>
 
-          {/* desktop actions (phones use the bottom bar) */}
-          <div className="mt-10 hidden items-center justify-between gap-4 lg:flex">
-            {step > 0 ? <button type="button" onClick={() => goTo(step - 1)} className="font-semibold text-navy underline-offset-4 hover:underline">← {t.back}</button> : <span />}
-            <button type="button" onClick={next} disabled={pending} className="btn-gold min-w-48 disabled:opacity-60">
-              {current === "review" ? (pending ? t.review.sending : t.review.submit) : t.next}
-            </button>
-          </div>
         </section>
       </div>
 
@@ -441,12 +473,13 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
         </div>
       </aside>
 
-      {/* phones and tablets: fixed bottom bar */}
-      <div data-mobile-bar className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
-        <div className="mx-auto flex max-w-3xl items-center gap-3">
+      {/* fixed bottom bar at every size: Back, the estimate and Continue are always in reach */}
+      <div data-mobile-bar className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 px-4 py-3 backdrop-blur md:px-8">
+        <div className="mx-auto flex max-w-3xl items-center gap-3 lg:max-w-6xl">
           {step > 0 && (
-            <button type="button" onClick={() => goTo(step - 1)} aria-label={t.back} className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-line text-navy">
+            <button type="button" onClick={() => goTo(step - 1)} aria-label={t.back} className="flex h-12 shrink-0 items-center justify-center gap-2 rounded-sm border border-line px-4 text-navy">
               <span aria-hidden="true" className="text-xl">←</span>
+              <span className="hidden font-semibold sm:inline">{t.back}</span>
             </button>
           )}
           <div className="min-w-0 flex-1">
@@ -459,7 +492,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
               <p className="truncate text-sm font-medium text-navy">{tripTitle !== "—" ? tripTitle : t.steps[current]}</p>
             )}
           </div>
-          <button type="button" onClick={next} disabled={pending} className="btn-gold shrink-0 !px-6 !py-3 disabled:opacity-60">
+          <button type="button" onClick={next} disabled={pending} className="btn-gold shrink-0 !px-6 !py-3 disabled:opacity-60 lg:min-w-48">
             {current === "review" ? (pending ? t.review.sending : t.review.submit) : t.next}
           </button>
         </div>
@@ -474,9 +507,21 @@ function TripStep({ tours, draft, t, tabs, toursDict, lang, error, onPick, onCus
 }) {
   const [query, setQuery] = useState("");
   const [tab, setTab] = useState<string>("all");
+  const [shown, setShown] = useState(TRIPS_PER_PAGE);
   const groups = HUBS.filter((h) => h.tab !== "all" && tours.some((x) => x.category.key === h.key));
-  const q = query.trim().toLowerCase();
-  const list = tours.filter((x) => (tab === "all" || x.category.key === tab) && (!q || x.title.toLowerCase().includes(q)));
+  const words = fold(query).split(/\s+/).filter(Boolean);
+  const list = tours
+    .filter((x) => tab === "all" || x.category.key === tab)
+    .filter((x) => words.every((w) => fold(`${x.title} ${x.category.name ?? ""}`).includes(w)))
+    .sort((a, b) => Number(b.is_featured) - Number(a.is_featured));
+  const chosen = !draft.custom ? tours.find((x) => x.id === draft.tripId) : undefined;
+  // the chosen trip stays first, so "Continue" never needs a long scroll back
+  const ordered = chosen && list.includes(chosen) ? [chosen, ...list.filter((x) => x !== chosen)] : list;
+  const visible = ordered.slice(0, shown);
+  const filter = (fn: () => void) => {
+    fn();
+    setShown(TRIPS_PER_PAGE);
+  };
 
   return (
     <div>
@@ -492,38 +537,46 @@ function TripStep({ tours, draft, t, tabs, toursDict, lang, error, onPick, onCus
 
       <div className="mt-6">
         <label htmlFor="trip-search" className="sr-only">{t.trip.search}</label>
-        <input id="trip-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t.trip.search}
+        <input id="trip-search" type="search" value={query} onChange={(e) => filter(() => setQuery(e.target.value))} placeholder={t.trip.search}
           className="block w-full rounded-sm border border-line bg-white px-4 py-3.5 text-base text-ink outline-none placeholder:text-muted/70 focus:border-navy" />
       </div>
       <div className="no-scrollbar -mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0">
-        <Chip active={tab === "all"} onClick={() => setTab("all")}>{tabs.all}</Chip>
+        <Chip active={tab === "all"} onClick={() => filter(() => setTab("all"))}>{tabs.all}</Chip>
         {groups.map((g) => (
-          <Chip key={g.key} active={tab === g.key} onClick={() => setTab(g.key)}>{tabs[g.tab as keyof typeof tabs]}</Chip>
+          <Chip key={g.key} active={tab === g.key} onClick={() => filter(() => setTab(g.key))}>{tabs[g.tab as keyof typeof tabs]}</Chip>
         ))}
       </div>
+      <p className="mono mt-4 text-muted" aria-live="polite">{t.trip.count.replace("{n}", String(list.length))}</p>
 
-      <ul className="mt-4 space-y-2.5">
-        {list.map((x) => {
-          const active = draft.tripId === x.id && !draft.custom;
+      <ul className="mt-2 grid gap-2.5 sm:grid-cols-2">
+        {visible.map((x) => {
+          const active = x === chosen;
           const meta = [formatDuration(x, toursDict), x.from_price !== null ? `${toursDict.from} ${formatPrice(x.from_price, x.currency, lang)}` : null].filter(Boolean).join(" · ");
           return (
             <li key={x.id}>
               <button type="button" onClick={() => onPick(x.id)} aria-pressed={active}
-                className={`flex w-full items-center gap-3.5 rounded-sm border bg-white p-2.5 text-left transition-colors ${active ? "border-navy shadow-[0_0_0_1px_var(--navy)]" : "border-line hover:border-navy/40"}`}>
+                className={`flex h-full w-full items-center gap-3.5 rounded-sm border bg-white p-2.5 text-left transition-colors ${active ? "border-navy shadow-[0_0_0_1px_var(--navy)]" : "border-line hover:border-navy/40"}`}>
                 <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-sm bg-sand">
-                  {x.hero && <Image src={x.hero.url} alt="" fill sizes="64px" className="object-cover" />}
+                  {x.hero && <Image src={x.hero.url} alt="" fill sizes="64px" loading="lazy" className="object-cover" />}
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="line-clamp-2 font-semibold leading-snug text-navy">{x.title}</span>
                   {meta && <span className="mono mt-1 block text-muted">{meta}</span>}
+                  {active && <span className="mt-1 block text-xs font-semibold text-atlas">✓ {t.trip.selected}</span>}
                 </span>
                 <span aria-hidden="true" className={`mr-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs ${active ? "border-navy bg-navy text-white" : "border-line text-transparent"}`}>✓</span>
               </button>
             </li>
           );
         })}
-        {list.length === 0 && <li className="py-6 text-center text-muted">{t.trip.none}</li>}
+        {list.length === 0 && <li className="py-6 text-center text-muted sm:col-span-2">{t.trip.none}</li>}
       </ul>
+      {ordered.length > shown && (
+        <button type="button" onClick={() => setShown((n) => n + TRIPS_PER_PAGE)}
+          className="mt-4 w-full rounded-sm border border-line bg-white py-3 text-sm font-semibold text-navy transition-colors hover:border-navy">
+          {t.trip.showMore.replace("{n}", String(ordered.length - shown))}
+        </button>
+      )}
     </div>
   );
 }

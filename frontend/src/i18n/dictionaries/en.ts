@@ -303,6 +303,9 @@ const en = {
     edit: "Edit",
     summary: "Your trip",
     trip: {
+      showMore: "Show more trips ({n} more)",
+      count: "{n} trips",
+      selected: "Selected",
       title: "Which trip would you like?",
       search: "Search a trip",
       custom: "Tailor-made trip",
@@ -324,6 +327,9 @@ const en = {
       past: "Choose a date from today.",
     },
     group: {
+      tiers: "Price per person by group size",
+      people: "people",
+      person: "person",
       title: "Who is travelling?",
       adults: "Adults",
       adultsHint: "12 years and over",
