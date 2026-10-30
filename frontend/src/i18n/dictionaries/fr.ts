@@ -120,6 +120,8 @@ const fr: Dictionary = {
     legal: "Mentions légales",
     rights: "Tous droits réservés.",
     basedIn: "Marrakech, Maroc",
+    address: "Adresse du bureau",
+    registration: "Immatriculation de l'entreprise",
     phone: "Téléphone et WhatsApp",
     email: "E-mail",
   },

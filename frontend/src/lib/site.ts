@@ -7,15 +7,18 @@ export const site = {
   whatsapp: "+212661283086",
   whatsappDisplay: "+212 661 283 086",
   phones: ["+212 661 283 086", "+212 670 414 623"],
+  /** Office address, as given by the owner. */
+  address: { street: "Dr Aremd, Commune Asni", region: "El Haouz", postalCode: "42150", city: "Marrakech" },
   city: "Marrakech",
   country: "MA",
   riadUrl: "https://www.riad-berber-towers.com/en",
-  /** Moroccan company registration, as published on the current site's footer. */
+  /** Moroccan company registration, as given by the owner. */
   registration: [
-    { label: "RC", value: "6987" },
-    { label: "CNSS", value: "2440072" },
-    { label: "TP", value: "67010545" },
-    { label: "IF", value: "6500145" },
+    { label: "RC", value: "52029" },
+    { label: "P", value: "46417602" },
+    { label: "IF", value: "40494420" },
+    { label: "CNSS", value: "9119076" },
+    { label: "ICE", value: "000114960000080" },
   ],
 };
 

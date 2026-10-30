@@ -118,6 +118,8 @@ const en = {
     legal: "Legal notice",
     rights: "All rights reserved.",
     basedIn: "Marrakech, Morocco",
+    address: "Office address",
+    registration: "Company registration",
     phone: "Phone & WhatsApp",
     email: "Email",
   },

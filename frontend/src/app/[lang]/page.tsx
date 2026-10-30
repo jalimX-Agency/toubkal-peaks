@@ -61,7 +61,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     email: site.email,
     telephone: site.phones[0],
     description: dict.meta.homeDescription,
-    address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: site.country },
+    address: { "@type": "PostalAddress", streetAddress: site.address.street, addressLocality: site.city, addressRegion: site.address.region, postalCode: site.address.postalCode, addressCountry: site.country },
     areaServed: "Morocco",
     knowsLanguage: locales,
     ...(reviews.summary.count > 0 && reviews.summary.average

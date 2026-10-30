@@ -69,12 +69,22 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
                 WhatsApp {site.whatsappDisplay}
               </a>
             </li>
-            <li className="text-white/60">{dict.footer.basedIn}</li>
+            <li>
+              <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.address}</span>
+              <address className="not-italic text-white/75">
+                {site.address.street}, {site.address.region}
+                <br />
+                {site.address.postalCode} {dict.footer.basedIn}
+              </address>
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-white/10">
+        <p className="mono mx-auto max-w-7xl px-4 pt-5 text-xs leading-relaxed text-white/45 md:px-8">
+          <span className="uppercase tracking-wider">{dict.footer.registration}</span> · {site.registration.map((r) => `${r.label} ${r.value}`).join(" · ")}
+        </p>
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-5 text-sm text-white/55 md:px-8">
           <span>
             © {year} {site.name}. {dict.footer.rights}

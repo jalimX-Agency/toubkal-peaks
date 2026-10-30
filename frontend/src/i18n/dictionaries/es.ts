@@ -120,6 +120,8 @@ const es: Dictionary = {
     legal: "Aviso legal",
     rights: "Todos los derechos reservados.",
     basedIn: "Marrakech, Marruecos",
+    address: "Dirección de la oficina",
+    registration: "Registro de la empresa",
     phone: "Teléfono y WhatsApp",
     email: "Correo",
   },

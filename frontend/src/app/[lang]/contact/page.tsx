@@ -44,7 +44,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
       name: site.name,
       email: site.email,
       telephone: site.phones,
-      address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: site.country },
+      address: { "@type": "PostalAddress", streetAddress: site.address.street, addressLocality: site.city, addressRegion: site.address.region, postalCode: site.address.postalCode, addressCountry: site.country },
     },
   }).replace(/</g, "\\u003c");
 

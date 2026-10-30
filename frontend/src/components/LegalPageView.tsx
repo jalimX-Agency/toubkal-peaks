@@ -1,6 +1,7 @@
 import type { LegalPage } from "@/content/legal";
 import { media, site } from "@/lib/site";
 
+const address = `${site.address.street}, ${site.address.region}, ${site.address.postalCode} ${site.address.city}`;
 const registration = site.registration.map((r) => `${r.label} ${r.value}`).join(" · ");
 
 /** Plain, readable legal page: title band, then numbered sections. */
@@ -23,7 +24,7 @@ export function LegalPageView({ page }: { page: LegalPage }) {
             </h2>
             <div className="mt-3 space-y-3 leading-relaxed text-ink">
               {section.body.map((p) => (
-                <p key={p}>{p.replace("{registration}", registration)}</p>
+                <p key={p}>{p.replace("{registration}", registration).replace("{address}", address)}</p>
               ))}
             </div>
           </section>

@@ -24,7 +24,7 @@ export const legal: Record<Locale, { notice: LegalPage; privacy: LegalPage }> = 
       description: "Publisher, registration and hosting of the Toubkal Peaks Travel website.",
       updated: "Last updated: October 2026",
       sections: [
-        { heading: "Publisher", body: ["Toubkal Peaks Travel, tour operator based in Marrakech, Morocco.", "Email: info@toubkal-peaks.com · Phone and WhatsApp: +212 661 283 086, +212 670 414 623.", "Company registration: {registration}."] },
+        { heading: "Publisher", body: ["Toubkal Peaks Travel, tour operator based in Marrakech, Morocco.", "Email: info@toubkal-peaks.com · Phone and WhatsApp: +212 661 283 086, +212 670 414 623.", "Office: {address}, Morocco.", "Company registration: {registration}."] },
         { heading: "Hosting", body: ["Website: Vercel Inc. (vercel.com).", "Booking system and database: 20i Ltd (20i.com).", "Images and media: Cloudflare, Inc. (cloudflare.com)."] },
         { heading: "Intellectual property", body: ["Texts, logo and the client's own photographs belong to Toubkal Peaks Travel and may not be reused without written permission.", "Some landscape photographs come from Pexels and are used under the Pexels licence."] },
         { heading: "Prices and bookings", body: ["Prices shown are per person for private trips and may change. A booking request sent through the website is not a confirmed booking: availability and the final price are confirmed by email."] },
@@ -51,7 +51,7 @@ export const legal: Record<Locale, { notice: LegalPage; privacy: LegalPage }> = 
       description: "Éditeur, immatriculation et hébergement du site Toubkal Peaks Travel.",
       updated: "Dernière mise à jour : octobre 2026",
       sections: [
-        { heading: "Éditeur", body: ["Toubkal Peaks Travel, organisateur de voyages basé à Marrakech, Maroc.", "E-mail : info@toubkal-peaks.com · Téléphone et WhatsApp : +212 661 283 086, +212 670 414 623.", "Immatriculation : {registration}."] },
+        { heading: "Éditeur", body: ["Toubkal Peaks Travel, organisateur de voyages basé à Marrakech, Maroc.", "E-mail : info@toubkal-peaks.com · Téléphone et WhatsApp : +212 661 283 086, +212 670 414 623.", "Bureau : {address}, Maroc.", "Immatriculation : {registration}."] },
         { heading: "Hébergement", body: ["Site web : Vercel Inc. (vercel.com).", "Système de réservation et base de données : 20i Ltd (20i.com).", "Images et médias : Cloudflare, Inc. (cloudflare.com)."] },
         { heading: "Propriété intellectuelle", body: ["Les textes, le logo et les photographies propres à Toubkal Peaks Travel lui appartiennent et ne peuvent être réutilisés sans autorisation écrite.", "Certaines photographies de paysages proviennent de Pexels et sont utilisées selon la licence Pexels."] },
         { heading: "Prix et réservations", body: ["Les prix affichés sont par personne pour des voyages privés et peuvent évoluer. Une demande envoyée par le site n'est pas une réservation confirmée : la disponibilité et le prix final sont confirmés par e-mail."] },
@@ -78,7 +78,7 @@ export const legal: Record<Locale, { notice: LegalPage; privacy: LegalPage }> = 
       description: "Editor, registro y alojamiento del sitio web de Toubkal Peaks Travel.",
       updated: "Última actualización: octubre de 2026",
       sections: [
-        { heading: "Editor", body: ["Toubkal Peaks Travel, operador de viajes con sede en Marrakech, Marruecos.", "Correo: info@toubkal-peaks.com · Teléfono y WhatsApp: +212 661 283 086, +212 670 414 623.", "Registro de la empresa: {registration}."] },
+        { heading: "Editor", body: ["Toubkal Peaks Travel, operador de viajes con sede en Marrakech, Marruecos.", "Correo: info@toubkal-peaks.com · Teléfono y WhatsApp: +212 661 283 086, +212 670 414 623.", "Oficina: {address}, Marruecos.", "Registro de la empresa: {registration}."] },
         { heading: "Alojamiento", body: ["Sitio web: Vercel Inc. (vercel.com).", "Sistema de reservas y base de datos: 20i Ltd (20i.com).", "Imágenes y contenidos multimedia: Cloudflare, Inc. (cloudflare.com)."] },
         { heading: "Propiedad intelectual", body: ["Los textos, el logotipo y las fotografías propias pertenecen a Toubkal Peaks Travel y no pueden reutilizarse sin autorización por escrito.", "Algunas fotografías de paisajes proceden de Pexels y se usan según la licencia de Pexels."] },
         { heading: "Precios y reservas", body: ["Los precios indicados son por persona para viajes privados y pueden cambiar. Una solicitud enviada desde el sitio no es una reserva confirmada: la disponibilidad y el precio final se confirman por correo."] },
@@ -105,7 +105,7 @@ export const legal: Record<Locale, { notice: LegalPage; privacy: LegalPage }> = 
       description: "Herausgeber, Registrierung und Hosting der Website von Toubkal Peaks Travel.",
       updated: "Stand: Oktober 2026",
       sections: [
-        { heading: "Herausgeber", body: ["Toubkal Peaks Travel, Reiseveranstalter mit Sitz in Marrakesch, Marokko.", "E-Mail: info@toubkal-peaks.com · Telefon und WhatsApp: +212 661 283 086, +212 670 414 623.", "Unternehmensregistrierung: {registration}."] },
+        { heading: "Herausgeber", body: ["Toubkal Peaks Travel, Reiseveranstalter mit Sitz in Marrakesch, Marokko.", "E-Mail: info@toubkal-peaks.com · Telefon und WhatsApp: +212 661 283 086, +212 670 414 623.", "Büro: {address}, Marokko.", "Unternehmensregistrierung: {registration}."] },
         { heading: "Hosting", body: ["Website: Vercel Inc. (vercel.com).", "Buchungssystem und Datenbank: 20i Ltd (20i.com).", "Bilder und Medien: Cloudflare, Inc. (cloudflare.com)."] },
         { heading: "Urheberrecht", body: ["Texte, Logo und eigene Fotos gehören Toubkal Peaks Travel und dürfen ohne schriftliche Genehmigung nicht weiterverwendet werden.", "Einige Landschaftsfotos stammen von Pexels und werden gemäß der Pexels-Lizenz verwendet."] },
         { heading: "Preise und Buchungen", body: ["Die angegebenen Preise gelten pro Person für private Reisen und können sich ändern. Eine über die Website gesendete Anfrage ist keine bestätigte Buchung: Verfügbarkeit und Endpreis werden per E-Mail bestätigt."] },
