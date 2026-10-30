@@ -3468,6 +3468,166 @@
      ]
     }
    ]
+  },
+  {
+   "id": 1036,
+   "field": "summary",
+   "before": null,
+   "after": "Discover the Aït Bougmez Valley, the Happy Valley of the Central High Atlas, on a five-day journey of mountain walks, Berber villages, ancient terraces, walnut and apple orchards and natural springs, with a visit to the Ouzoud Waterfalls on the way."
+  },
+  {
+   "id": 1036,
+   "field": "highlights",
+   "before": [],
+   "after": [
+    "Ouzoud Waterfalls on the way to the valley",
+    "Three days of walking through the Happy Valley's orchards, terraced fields and Berber villages",
+    "Dinosaur footprints at Ibakliwin village",
+    "Aqqa N'Ouilzouay plateau at 2,473 m, with views over the High Atlas",
+    "Nights in camp beside natural springs and in traditional Berber guesthouses"
+   ]
+  },
+  {
+   "id": 1036,
+   "field": "facts",
+   "before": {
+    "best_time": "April – November",
+    "departs_from": "Marrakech (08:00 AM, flexible start time)",
+    "departure_times": "Flexible to suit your needs",
+    "duration": "5 Days / 4 Nights",
+    "type": "Trekking",
+    "languages_available": "English, French, Spanish, Arabic, Berber"
+   },
+   "after": {
+    "best_time": "April – November",
+    "departs_from": "Marrakech (08:00 AM, flexible start time)",
+    "departure_times": "Flexible to suit your needs",
+    "duration": "5 Days / 4 Nights",
+    "type": "Trekking",
+    "languages_available": "English, French, Spanish, Arabic, Berber",
+    "maximum_altitude": "2,473 m"
+   }
+  },
+  {
+   "id": 1036,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech | Ait Bougmez – Agouti",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "This morning you will be meeting with our Local guide and private tourism transport to start your journey to the Ait Bougmez happy valley in the Central High Atlas Mountains. The journey takes a total of around four hours, but we break the journey half way with a visit to Morocco’s most impressive waterfall – the Cascades d’Ouzoud. Arriving at the village of Ouzoud, set in a broad flat valley, one has little idea of what lies beyond. Passing the cluster of restaurants and souvenir shops, the ground drops away dramatically, giving way to a verdant gorge, with three beautiful cascades of white water falling into the pools below. Here you can take a walk down to the foot of the falls and choose an appropriate spot for a picnic lunch prepared by local guide and cook. After lunch we continue, through the town of Azilal and along a winding mountain road and cross Tizi Oughbar pass at 2200m) then continue zigzags down to join the valley of Ait Bougmez, Overnight in camp or Gite in agouti 1760m). Include: (B.L.D) Distance 240kms duration H driving."
+     ]
+    },
+    {
+     "day": 2,
+     "title": "Agouti – aguerd Noudad – Ain Ait Imi camp",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "After breakfast we start the walk through happy valley, our walk always between the garden of apples trees and some walnut threes, and also a dramatic view of the typical villages we stop for lunch near a spring water anther the walnut trees shade and also next to the very old village which call Aguerd -n-Ouzro, we will have there about 2 hours break, then continue walk via Ait Imi then continue to join the spring of Ait Imi 2083m), Overnight in camp, include (B.L.D) Duration: 05H."
+     ]
+    },
+    {
+     "day": 3,
+     "title": "Ain Ait Imi – Rbat",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Today, we head always the happy valley and our walk always between the gardens, then we stop in Ibakalouin village to visit the dinosaur track then continue via Rbat then continue to join a cold spring water we camp next to, altitude there 2108m) , include (B.L.D)Duration: 05H."
+     ]
+    },
+    {
+     "day": 4,
+     "title": "Rbat – Ifran – Ait Hkim valley – Timite",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "After breakfast we start walk via Rbat village 1935m) then continue up we leave that valley and we continue cross plateau of aqqa – n- Ouilzouay at 2473m) to join Ait Hkim valley via Ifran village then continue by the valley with all most typical villages stop for lunch in the good spot by the river anther the walnut shade after lunch we continue always between the gardens to Intel Timite village overnight in guest local Gite at 1950m), include (B.L.D) Duration: 06H"
+     ]
+    },
+    {
+     "day": 5,
+     "title": "transfer back to Marrakech on the same way",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Distance: 240kms"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Ouzoud Waterfalls – Agouti (Aït Bougmez)",
+     "stats": {
+      "driving_distance": "240–260 km",
+      "driving_time": "5–6 hours, excluding the waterfall visit",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Traditional Berber guesthouse, Agouti (1,760 m)",
+     "body": [
+      "After meeting your local mountain guide and private driver in Marrakech, we set off towards the Central High Atlas Mountains. Along the way, we visit the spectacular Ouzoud Waterfalls, where you can enjoy a walk through the lush gorge and admire the impressive cascades. We stop for a picnic lunch before continuing through Azilal and crossing the scenic Tizi Oughbar Pass (2,200 m). We then descend into the beautiful Aït Bougmez Valley, arriving in Agouti (1,760 m), where you spend your first night in a traditional Berber guesthouse or camp."
+     ]
+    },
+    {
+     "day": 2,
+     "title": "Agouti – Aguerd N'Ouzrou – Aït Imi Spring Camp",
+     "stats": {
+      "distance": "12–14 km",
+      "hiking_duration": "5 hours",
+      "elevation": "1,760–2,083 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Camp at Aït Imi spring (2,083 m)",
+     "body": [
+      "After breakfast, we begin our trek through the heart of the Happy Valley, walking along beautiful paths surrounded by apple orchards, walnut trees and traditional Berber villages. We pass through Aguerd N'Ouzrou, where we enjoy a relaxing lunch beneath the walnut trees, close to a natural spring and the historic village. After a leisurely break, we continue towards Aït Imi village and its refreshing natural spring at 2,083 m, where we set up camp for the night."
+     ]
+    },
+    {
+     "day": 3,
+     "title": "Aït Imi Spring – Ibakliwin – Rbat",
+     "stats": {
+      "distance": "12–14 km",
+      "hiking_duration": "5 hours",
+      "elevation": "2,083–2,108 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Camp at a natural spring near Rbat (2,108 m)",
+     "body": [
+      "Today's walk continues through the peaceful Happy Valley, following scenic paths between cultivated fields, orchards and traditional Amazigh villages. We make a special stop at Ibakliwin village to discover its remarkable dinosaur footprints, an interesting reminder of the region's prehistoric past. We then continue towards Rbat village, enjoying the beautiful mountain scenery along the way. By the afternoon, we reach a refreshing natural spring at approximately 2,108 m, where we establish our camp and enjoy a relaxing evening surrounded by the mountains."
+     ]
+    },
+    {
+     "day": 4,
+     "title": "Rbat – Aqqa N'Ouilzouay Pass – Ifran – Aït Hkim Valley – Timite",
+     "stats": {
+      "distance": "15–17 km",
+      "hiking_duration": "6 hours",
+      "elevation": "Up to 2,473 m",
+      "meals": "Breakfast, lunch & dinner"
+     },
+     "accommodation": "Berber guesthouse, Timite (1,950 m)",
+     "body": [
+      "After breakfast, we leave Rbat village and gradually climb towards the beautiful plateau of Aqqa N'Ouilzouay, reaching an altitude of approximately 2,473 m. From here, we enjoy magnificent views of the surrounding High Atlas Mountains before descending towards Ifran village and entering the picturesque Aït Hkim Valley. Our route passes through several traditional Berber villages, terraced fields and beautiful walnut groves. We stop beside the river for a picnic lunch before continuing along the valley towards Timite village (1,950 m), where we spend our final night in a welcoming local Berber guesthouse."
+     ]
+    },
+    {
+     "day": 5,
+     "title": "Timite – Azilal – Marrakech",
+     "stats": {
+      "driving_distance": "220–250 km",
+      "driving_time": "5–6 hours",
+      "meals": "Breakfast & lunch"
+     },
+     "accommodation": "",
+     "body": [
+      "After breakfast, we say goodbye to the beautiful Aït Bougmez Valley and begin our private transfer back to Marrakech. We follow the winding mountain road through the spectacular landscapes of the Central High Atlas, passing traditional Berber villages, agricultural terraces and impressive mountain scenery. We continue towards Azilal before travelling through the foothills of the Atlas Mountains and the surrounding countryside. Along the way, we can stop for photographs, refreshments and lunch at a local restaurant. In the afternoon, we continue towards Marrakech, arriving in the city and transferring you to your accommodation, marking the end of our wonderful five-day Happy Valley trekking adventure."
+     ]
+    }
+   ]
   }
  ]
 }

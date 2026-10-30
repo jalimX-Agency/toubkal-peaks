@@ -1572,61 +1572,91 @@
    "id": 1036,
    "slug": "5-dias-trekking-ait-bougmez-valle-feliz",
    "title": "5 días – trekking por Aït Bougmez, el valle feliz",
-   "summary": null,
+   "summary": "Descubre el valle de Aït Bougmez, el «Valle Feliz» del Alto Atlas central, en un viaje de cinco días con caminatas de montaña, pueblos bereberes, antiguas terrazas de cultivo, huertos de nogales y manzanos y fuentes naturales, con una visita a las cascadas de Ouzoud por el camino.",
    "seo_description": null,
-   "highlights": [],
+   "highlights": [
+    "Las cascadas de Ouzoud de camino al valle",
+    "Tres días de caminata por los huertos, los campos en terrazas y los pueblos bereberes del Valle Feliz",
+    "Las huellas de dinosaurio del pueblo de Ibakliwin",
+    "La meseta de Aqqa N'Ouilzouay a 2.473 m, con vistas al Alto Atlas",
+    "Noches en campamento junto a fuentes naturales y en casas de huéspedes bereberes tradicionales"
+   ],
    "facts": {
     "best_time": "De abril a noviembre",
     "departs_from": "Marrakech (8:00, horario flexible)",
     "departure_times": "Flexible, según tus necesidades",
     "duration": "5 días / 4 noches",
     "type": "Trekking",
-    "languages_available": "Inglés, francés, español, árabe, bereber"
+    "languages_available": "Inglés, francés, español, árabe, bereber",
+    "maximum_altitude": "2.473 m"
    },
    "itinerary": [
     {
      "day": 1,
-     "title": "Marrakech | Aït Bougmez – Agouti",
-     "stats": {},
-     "accommodation": "",
+     "title": "Marrakech – cascadas de Ouzoud – Agouti (Aït Bougmez)",
+     "stats": {
+      "driving_distance": "240–260 km",
+      "driving_time": "5–6 horas, sin contar la visita a las cascadas",
+      "meals": "Desayuno, almuerzo y cena"
+     },
+     "accommodation": "Casa de huéspedes bereber tradicional, Agouti (1.760 m)",
      "body": [
-      "Esta mañana te encuentras con tu guía local y tu transporte turístico privado para viajar al valle feliz de Aït Bougmez, en el Alto Atlas central. El trayecto dura unas cuatro horas en total, con una parada a mitad de camino en las cascadas de Ouzoud, las más impresionantes de Marruecos. Al llegar al pueblo de Ouzoud, en un amplio valle llano, nada hace sospechar lo que hay más allá: pasados los restaurantes y las tiendas de recuerdos, el terreno se hunde de golpe en una garganta verde con tres preciosas cascadas de agua blanca que caen a las pozas. Puedes bajar al pie de las cascadas y elegir un rincón para el picnic que preparan tu guía y tu cocinero. Después de comer seguimos por la ciudad de Azilal y una carretera de montaña sinuosa hasta el puerto de Tizi Oughbar (2.200 m), y bajamos en zigzag al valle de Aït Bougmez. Noche en campamento o albergue en Agouti (1.760 m). Incluye desayuno, almuerzo y cena. Distancia: 240 km."
+      "Tras conocer a tu guía de montaña local y a tu conductor privado en Marrakech, salimos hacia el Alto Atlas central. En el camino visitamos las espectaculares cascadas de Ouzoud, donde podrás pasear por la frondosa garganta y admirar las impresionantes caídas de agua. Paramos para un almuerzo de picnic y seguimos por Azilal y el pintoresco puerto de Tizi Oughbar (2.200 m). Después bajamos al hermoso valle de Aït Bougmez y llegamos a Agouti (1.760 m), donde pasas la primera noche en una casa de huéspedes bereber tradicional o en un campamento."
      ]
     },
     {
      "day": 2,
-     "title": "Agouti – Aguerd n'Ouzrou – campamento del manantial de Aït Imi",
-     "stats": {},
-     "accommodation": "",
+     "title": "Agouti – Aguerd N'Ouzrou – campamento de la fuente de Aït Imi",
+     "stats": {
+      "distance": "12–14 km",
+      "hiking_duration": "5 horas",
+      "elevation": "1.760–2.083 m",
+      "meals": "Desayuno, almuerzo y cena"
+     },
+     "accommodation": "Campamento en la fuente de Aït Imi (2.083 m)",
      "body": [
-      "Después del desayuno empezamos a caminar por el valle feliz, entre huertos de manzanos y nogales, con vistas espectaculares de los pueblos típicos. Comida junto a un manantial, a la sombra de los nogales, al lado del antiquísimo pueblo de Aguerd n'Ouzrou, con unas 2 horas de descanso. Después seguimos por Aït Imi hasta el manantial de Aït Imi (2.083 m). Noche en campamento. Incluye desayuno, almuerzo y cena. Duración: 5 horas."
+      "Tras el desayuno, empezamos la caminata por el corazón del Valle Feliz, por bonitos senderos rodeados de huertos de manzanos, nogales y pueblos bereberes tradicionales. Pasamos por Aguerd N'Ouzrou, donde almorzamos con calma bajo los nogales, cerca de una fuente natural y del histórico pueblo. Después de un descanso tranquilo, seguimos hacia el pueblo de Aït Imi y su refrescante fuente a 2.083 m, donde montamos el campamento para pasar la noche."
      ]
     },
     {
      "day": 3,
-     "title": "Manantial de Aït Imi – Rbat",
-     "stats": {},
-     "accommodation": "",
+     "title": "Fuente de Aït Imi – Ibakliwin – Rbat",
+     "stats": {
+      "distance": "12–14 km",
+      "hiking_duration": "5 horas",
+      "elevation": "2.083–2.108 m",
+      "meals": "Desayuno, almuerzo y cena"
+     },
+     "accommodation": "Campamento junto a una fuente natural, Rbat (2.108 m)",
      "body": [
-      "Hoy seguimos por el valle feliz entre huertos, con una parada en el pueblo de Ibakalioune para ver las huellas de dinosaurio, y continuamos por Rbat hasta un manantial de agua fresca junto al que acampamos (2.108 m). Incluye desayuno, almuerzo y cena. Duración: 5 horas."
+      "La caminata de hoy continúa por el tranquilo Valle Feliz, por senderos pintorescos entre campos cultivados, huertos y pueblos amazigh tradicionales. Hacemos una parada especial en el pueblo de Ibakliwin para ver sus notables huellas de dinosaurio, un interesante recuerdo del pasado prehistórico de la región. Seguimos después hacia el pueblo de Rbat, disfrutando del bello paisaje de montaña. Por la tarde llegamos a una refrescante fuente natural a unos 2.108 m, donde montamos el campamento y disfrutamos de una tarde relajada rodeados de montañas."
      ]
     },
     {
      "day": 4,
-     "title": "Rbat – Ifrane – valle de Aït Hkim – Timit",
-     "stats": {},
-     "accommodation": "",
+     "title": "Rbat – puerto de Aqqa N'Ouilzouay – Ifran – valle de Aït Hkim – Timite",
+     "stats": {
+      "distance": "15–17 km",
+      "hiking_duration": "6 horas",
+      "elevation": "Hasta 2.473 m",
+      "meals": "Desayuno, almuerzo y cena"
+     },
+     "accommodation": "Casa de huéspedes bereber, Timite (1.950 m)",
      "body": [
-      "Después del desayuno salimos por el pueblo de Rbat (1.935 m) y subimos para dejar el valle y cruzar la meseta de Aqqa n'Ouilzouay (2.473 m) hasta el valle de Aït Hkim por el pueblo de Ifrane. Seguimos el valle y sus pueblos típicos, con almuerzo junto al río a la sombra de los nogales, y continuamos entre huertos hasta el pueblo de Timit. Noche en un albergue local (1.950 m). Incluye desayuno, almuerzo y cena. Duración: 6 horas."
+      "Tras el desayuno, dejamos el pueblo de Rbat y subimos poco a poco hacia la hermosa meseta de Aqqa N'Ouilzouay, a unos 2.473 m de altitud. Desde aquí disfrutamos de magníficas vistas de las montañas del Alto Atlas antes de bajar hacia el pueblo de Ifran y entrar en el pintoresco valle de Aït Hkim. La ruta pasa por varios pueblos bereberes tradicionales, campos en terrazas y hermosos nogales. Paramos junto al río para un almuerzo de picnic y seguimos por el valle hasta el pueblo de Timite (1.950 m), donde pasamos la última noche en una acogedora casa de huéspedes bereber."
      ]
     },
     {
      "day": 5,
-     "title": "Regreso a Marrakech por la misma ruta",
-     "stats": {},
+     "title": "Timite – Azilal – Marrakech",
+     "stats": {
+      "driving_distance": "220–250 km",
+      "driving_time": "5–6 horas",
+      "meals": "Desayuno y almuerzo"
+     },
      "accommodation": "",
      "body": [
-      "Distancia: 240 km"
+      "Tras el desayuno, nos despedimos del hermoso valle de Aït Bougmez y empezamos el traslado privado de vuelta a Marrakech. Seguimos la sinuosa carretera de montaña por los espectaculares paisajes del Alto Atlas central, pasando por pueblos bereberes tradicionales, terrazas agrícolas e impresionantes panoramas. Continuamos hacia Azilal y atravesamos las estribaciones del Atlas y el campo de los alrededores. En el camino podemos parar para hacer fotos, tomar algo y almorzar en un restaurante local. Por la tarde seguimos hacia Marrakech, llegamos a la ciudad y te llevamos a tu alojamiento, con lo que termina esta maravillosa aventura de cinco días por el Valle Feliz."
      ]
     }
    ],

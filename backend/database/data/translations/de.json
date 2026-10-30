@@ -1572,61 +1572,91 @@
    "id": 1036,
    "slug": "5-tage-trek-ait-bougmez-gluecklisches-tal",
    "title": "5 Tage – Trek im Aït-Bougmez-Tal, dem glücklichen Tal",
-   "summary": null,
+   "summary": "Entdecken Sie das Aït-Bougmez-Tal, das „Glückliche Tal“ im zentralen Hohen Atlas, auf einer fünftägigen Reise mit Bergwanderungen, Berberdörfern, alten Anbauterrassen, Walnuss- und Apfelhainen und natürlichen Quellen – mit einem Besuch der Ouzoud-Wasserfälle unterwegs.",
    "seo_description": null,
-   "highlights": [],
+   "highlights": [
+    "Die Ouzoud-Wasserfälle auf dem Weg ins Tal",
+    "Drei Wandertage durch Obstgärten, Terrassenfelder und Berberdörfer des Glücklichen Tals",
+    "Die Dinosaurierspuren beim Dorf Ibakliwin",
+    "Das Plateau Aqqa N'Ouilzouay auf 2.473 m mit Blick über den Hohen Atlas",
+    "Nächte im Zelt an natürlichen Quellen und in traditionellen Berber-Gästehäusern"
+   ],
    "facts": {
     "best_time": "April bis November",
     "departs_from": "Marrakesch (8:00 Uhr, flexible Startzeit)",
     "departure_times": "Flexibel nach Ihren Wünschen",
     "duration": "5 Tage / 4 Nächte",
     "type": "Trekking",
-    "languages_available": "Englisch, Französisch, Spanisch, Arabisch, Berberisch"
+    "languages_available": "Englisch, Französisch, Spanisch, Arabisch, Berberisch",
+    "maximum_altitude": "2.473 m"
    },
    "itinerary": [
     {
      "day": 1,
-     "title": "Marrakesch | Aït Bougmez – Agouti",
-     "stats": {},
-     "accommodation": "",
+     "title": "Marrakesch – Ouzoud-Wasserfälle – Agouti (Aït Bougmez)",
+     "stats": {
+      "driving_distance": "240–260 km",
+      "driving_time": "5–6 Stunden, ohne den Besuch der Wasserfälle",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Traditionelles Berber-Gästehaus, Agouti (1.760 m)",
      "body": [
-      "Heute Morgen treffen Sie Ihren einheimischen Guide und Ihren privaten Fahrer und fahren ins glückliche Tal von Aït Bougmez im zentralen Hohen Atlas. Die Fahrt dauert insgesamt rund vier Stunden, mit einer Pause auf halber Strecke an den Ouzoud-Wasserfällen, den eindrucksvollsten Marokkos. Im Dorf Ouzoud, in einem breiten, flachen Tal gelegen, ahnt man nicht, was dahinter liegt: Nach den Restaurants und Souvenirläden fällt das Gelände steil in eine grüne Schlucht ab, in der drei schöne weiße Kaskaden in die Becken stürzen. Sie können zum Fuß der Fälle hinabsteigen und sich einen Platz für das Picknick suchen, das Guide und Koch zubereiten. Nach dem Essen geht es durch die Stadt Azilal und über eine kurvige Bergstraße zum Tizi-Oughbar-Pass (2.200 m), dann in Serpentinen hinunter ins Aït-Bougmez-Tal. Übernachtung im Camp oder in der Herberge in Agouti (1.760 m). Inklusive Frühstück, Mittag- und Abendessen. Strecke: 240 km."
+      "Nach dem Treffen mit Ihrem einheimischen Bergführer und Ihrem privaten Fahrer in Marrakesch fahren wir in Richtung zentraler Hoher Atlas. Unterwegs besuchen wir die eindrucksvollen Ouzoud-Wasserfälle, wo Sie durch die grüne Schlucht spazieren und die beeindruckenden Kaskaden bewundern können. Wir machen eine Pause für ein Picknick und fahren dann über Azilal und den landschaftlich schönen Pass Tizi Oughbar (2.200 m) weiter. Anschließend steigen wir in das schöne Aït-Bougmez-Tal ab und erreichen Agouti (1.760 m), wo Sie die erste Nacht in einem traditionellen Berber-Gästehaus oder im Zelt verbringen."
      ]
     },
     {
      "day": 2,
-     "title": "Agouti – Aguerd n'Ouzrou – Camp an der Quelle von Aït Imi",
-     "stats": {},
-     "accommodation": "",
+     "title": "Agouti – Aguerd N'Ouzrou – Zeltlager an der Quelle von Aït Imi",
+     "stats": {
+      "distance": "12–14 km",
+      "hiking_duration": "5 Stunden",
+      "elevation": "1.760–2.083 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Zeltlager an der Quelle von Aït Imi (2.083 m)",
      "body": [
-      "Nach dem Frühstück wandern wir durch das glückliche Tal, zwischen Apfelgärten und Walnussbäumen, mit herrlichem Blick auf die typischen Dörfer. Mittagessen an einer Quelle im Schatten der Walnussbäume, neben dem sehr alten Dorf Aguerd n'Ouzrou, mit etwa 2 Stunden Pause. Weiter über Aït Imi zur Quelle von Aït Imi (2.083 m). Übernachtung im Camp. Inklusive Frühstück, Mittag- und Abendessen. Dauer: 5 Stunden."
+      "Nach dem Frühstück beginnen wir die Wanderung im Herzen des Glücklichen Tals, auf schönen Wegen zwischen Apfelgärten, Walnussbäumen und traditionellen Berberdörfern. Wir kommen durch Aguerd N'Ouzrou, wo wir in Ruhe unter den Walnussbäumen zu Mittag essen, nahe einer natürlichen Quelle und dem historischen Dorf. Nach einer entspannten Pause gehen wir weiter zum Dorf Aït Imi und seiner erfrischenden Quelle auf 2.083 m, wo wir das Lager für die Nacht aufschlagen."
      ]
     },
     {
      "day": 3,
-     "title": "Quelle von Aït Imi – Rbat",
-     "stats": {},
-     "accommodation": "",
+     "title": "Quelle von Aït Imi – Ibakliwin – Rbat",
+     "stats": {
+      "distance": "12–14 km",
+      "hiking_duration": "5 Stunden",
+      "elevation": "2.083–2.108 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Zeltlager an einer natürlichen Quelle bei Rbat (2.108 m)",
      "body": [
-      "Heute folgen wir weiter dem glücklichen Tal zwischen den Gärten, mit einem Halt im Dorf Ibakalioune, um die Dinosaurierspuren zu sehen, und weiter über Rbat zu einer kühlen Quelle, an der wir zelten (2.108 m). Inklusive Frühstück, Mittag- und Abendessen. Dauer: 5 Stunden."
+      "Die heutige Wanderung führt weiter durch das friedliche Glückliche Tal, auf landschaftlich schönen Wegen zwischen Feldern, Obstgärten und traditionellen Amazigh-Dörfern. Wir halten besonders im Dorf Ibakliwin, um seine bemerkenswerten Dinosaurierspuren zu entdecken – eine interessante Erinnerung an die Urgeschichte der Region. Danach gehen wir weiter zum Dorf Rbat und genießen unterwegs die schöne Berglandschaft. Am Nachmittag erreichen wir eine erfrischende natürliche Quelle auf etwa 2.108 m, wo wir unser Lager aufschlagen und einen entspannten Abend inmitten der Berge verbringen."
      ]
     },
     {
      "day": 4,
-     "title": "Rbat – Ifrane – Aït-Hkim-Tal – Timit",
-     "stats": {},
-     "accommodation": "",
+     "title": "Rbat – Pass Aqqa N'Ouilzouay – Ifran – Aït-Hkim-Tal – Timite",
+     "stats": {
+      "distance": "15–17 km",
+      "hiking_duration": "6 Stunden",
+      "elevation": "Bis 2.473 m",
+      "meals": "Frühstück, Mittag- und Abendessen"
+     },
+     "accommodation": "Berber-Gästehaus, Timite (1.950 m)",
      "body": [
-      "Nach dem Frühstück geht es durch das Dorf Rbat (1.935 m) und bergauf aus dem Tal hinaus über das Plateau Aqqa n'Ouilzouay (2.473 m) ins Aït-Hkim-Tal beim Dorf Ifrane. Wir folgen dem Tal mit seinen typischen Dörfern, essen am Fluss im Schatten der Walnussbäume zu Mittag und wandern dann zwischen den Gärten weiter bis zum Dorf Timit. Übernachtung in einer lokalen Herberge (1.950 m). Inklusive Frühstück, Mittag- und Abendessen. Dauer: 6 Stunden."
+      "Nach dem Frühstück verlassen wir das Dorf Rbat und steigen allmählich zum schönen Plateau Aqqa N'Ouilzouay auf, auf etwa 2.473 m Höhe. Von hier genießen wir großartige Ausblicke auf die umliegenden Berge des Hohen Atlas, bevor wir zum Dorf Ifran absteigen und in das malerische Aït-Hkim-Tal gelangen. Unsere Route führt durch mehrere traditionelle Berberdörfer, Terrassenfelder und schöne Walnusshaine. Wir machen am Fluss Picknick und gehen dann durch das Tal weiter zum Dorf Timite (1.950 m), wo wir die letzte Nacht in einem gastfreundlichen Berber-Gästehaus verbringen."
      ]
     },
     {
      "day": 5,
-     "title": "Rückfahrt nach Marrakesch auf demselben Weg",
-     "stats": {},
+     "title": "Timite – Azilal – Marrakesch",
+     "stats": {
+      "driving_distance": "220–250 km",
+      "driving_time": "5–6 Stunden",
+      "meals": "Frühstück und Mittagessen"
+     },
      "accommodation": "",
      "body": [
-      "Strecke: 240 km"
+      "Nach dem Frühstück verabschieden wir uns vom schönen Aït-Bougmez-Tal und fahren im privaten Transfer zurück nach Marrakesch. Wir folgen der kurvenreichen Bergstraße durch die spektakulären Landschaften des zentralen Hohen Atlas, vorbei an traditionellen Berberdörfern, Anbauterrassen und eindrucksvollen Panoramen. Wir fahren weiter nach Azilal und durch die Ausläufer des Atlas und das umliegende Land. Unterwegs können wir für Fotos, Erfrischungen und das Mittagessen in einem lokalen Restaurant anhalten. Am Nachmittag fahren wir weiter nach Marrakesch, erreichen die Stadt und bringen Sie zu Ihrer Unterkunft – damit endet Ihr wunderbares fünftägiges Abenteuer im Glücklichen Tal."
      ]
     }
    ],

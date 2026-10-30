@@ -11,3 +11,6 @@ toubkal:create-admin --email=admin@toubkal-peaks.com --role=admin
 # Already run on the server, kept for reference: toubkal:import, toubkal:publish --all,
 # toubkal:import-translations, toubkal:apply-corrections. Do not re-add publish --all:
 # it would put back online any trip the team has set to draft in the admin.
+# New programme for the 5-day Ait Bougmez trek (EN corrections, then FR/ES/DE; hand-edited translations are kept).
+toubkal:apply-corrections
+toubkal:import-translations
