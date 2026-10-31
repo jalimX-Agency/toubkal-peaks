@@ -24,6 +24,11 @@ class NewBookingNotification extends Mailable
 
     public function content(): Content
     {
-        return new Content(view: 'emails.booking-notification');
+        $site = rtrim(trim(explode(',', (string) config('services.frontend.url'))[0]), '/');
+
+        return new Content(view: 'emails.booking-notification', with: [
+            'adminUrl' => $site ? "{$site}/admin/bookings/{$this->booking->reference}" : null,
+            'whatsapp' => $this->booking->phone ? 'https://wa.me/'.preg_replace('/\D+/', '', $this->booking->phone) : null,
+        ]);
     }
 }

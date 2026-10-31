@@ -106,14 +106,19 @@ export async function saveBookingNotes(reference: string, _prev: ActionState, fo
 }
 
 export async function changeBookingStatus(reference: string, _prev: ActionState, form: FormData): Promise<ActionState> {
-  const result = await attempt(() =>
-    adminApi(`/bookings/${encodeURIComponent(reference)}/status`, {
+  let emailed: boolean | null = null;
+  const result = await attempt(async () => {
+    const res = await adminApi<{ customer_emailed?: boolean | null }>(`/bookings/${encodeURIComponent(reference)}/status`, {
       method: "POST",
       body: JSON.stringify({ status: text(form, "status"), note: nullable(form, "note") }),
-    }),
-    "Status updated",
-  );
-  if (result.status === "ok") revalidatePath(`/admin/bookings/${reference}`);
+    });
+    emailed = res.customer_emailed ?? null;
+  }, "Status updated");
+  if (result.status !== "ok") return result;
+  revalidatePath(`/admin/bookings/${reference}`);
+  // confirming sends the customer the PayPal deposit link
+  if (emailed === true) return { status: "ok", message: "Confirmed: the customer received the PayPal deposit email" };
+  if (emailed === false) return { status: "error", message: "Confirmed, but the deposit email could not be sent: send the PayPal link yourself" };
   return result;
 }
 

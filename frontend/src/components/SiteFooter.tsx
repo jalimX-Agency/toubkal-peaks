@@ -4,7 +4,7 @@ import Link from "next/link";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
-import { media, site, whatsappLink } from "@/lib/site";
+import { depositLink, media, site, whatsappLink } from "@/lib/site";
 
 /** The current year, cached: reading the clock directly would make the whole footer dynamic. */
 async function currentYear() {
@@ -74,6 +74,12 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
               <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.reservations}</span>
               <a href={`mailto:${site.reservationsEmail}`} className={linkClass}>
                 {site.reservationsEmail}
+              </a>
+            </li>
+            <li>
+              <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.deposit}</span>
+              <a href={depositLink()} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                {dict.footer.depositLink}
               </a>
             </li>
             <li>

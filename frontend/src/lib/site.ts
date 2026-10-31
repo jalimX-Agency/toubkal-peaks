@@ -6,6 +6,8 @@ export const site = {
   email: "info@toubkal-peaks.com",
   contactEmail: "contact@toubkal-peaks.com",
   reservationsEmail: "reservations@toubkal-peaks.com",
+  /** Deposit that secures a booking once availability is confirmed, paid by PayPal (same as the API's BOOKING_DEPOSIT). */
+  deposit: { amount: 50, currency: "EUR", paypal: "https://paypal.me/OmarAitlmouden" },
   whatsapp: "+212661283086",
   whatsappDisplay: "+212 661 283 086",
   phones: ["+212 661 283 086", "+212 670 414 623"],
@@ -85,3 +87,6 @@ export const stock = {
 
 export const whatsappLink = (text?: string) =>
   `https://wa.me/${site.whatsapp.replace("+", "")}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+
+/** PayPal.me link with the deposit amount filled in. */
+export const depositLink = () => `${site.deposit.paypal}/${site.deposit.amount}${site.deposit.currency}`;

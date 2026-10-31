@@ -172,6 +172,8 @@ const de: Dictionary = {
     team: "Unser Team",
   },
   footer: {
+    deposit: "Buchungsanzahlung",
+    depositLink: "Mit PayPal zahlen",
     reservations: "Buchungen",
     tagline: "Marokko anders entdecken.",
     trips: "Reisen",
@@ -388,6 +390,9 @@ const de: Dictionary = {
       local: "Lokales Team mit Sitz in Imlil",
     },
     success: {
+      depositTitle: "Termine sichern",
+      deposit: "Sobald wir die Verfügbarkeit bestätigt haben, sichern Sie Ihre Termine mit einer Anzahlung von {deposit} per PayPal. Sie wird vom Gesamtpreis abgezogen; den Link senden wir Ihnen auch per E-Mail.",
+      depositButton: "PayPal-Link für die Anzahlung",
       title: "Vielen Dank, {name}!",
       text: "Ihre Anfrage {reference} ist unterwegs.",
       next: "So geht es weiter",

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Enums\BookingStatus;
 use App\Http\Controllers\Controller;
+use App\Mail\BookingConfirmed;
 use App\Models\Booking;
 use App\Models\BookingStatusLog;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
 
 /** Reservation requests for the team: list, details, edits and the status workflow. */
@@ -89,7 +91,19 @@ class BookingController extends Controller
 
         $booking->transitionTo(BookingStatus::from($data['status']), $request->user()->id, $data['note'] ?? null);
 
-        return response()->json(['data' => $this->detail($booking->fresh())]);
+        // trip available: the customer gets the PayPal deposit link (a mail failure never blocks the change)
+        $mailed = null;
+        if ($data['status'] === BookingStatus::Confirmed->value) {
+            try {
+                Mail::to($booking->email)->send(new BookingConfirmed($booking->fresh()));
+                $mailed = true;
+            } catch (\Throwable $e) {
+                report($e);
+                $mailed = false;
+            }
+        }
+
+        return response()->json(['data' => $this->detail($booking->fresh()), 'customer_emailed' => $mailed]);
     }
 
     private function find(string $reference): Booking

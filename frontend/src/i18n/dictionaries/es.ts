@@ -172,6 +172,8 @@ const es: Dictionary = {
     team: "Nuestro equipo",
   },
   footer: {
+    deposit: "Depósito de reserva",
+    depositLink: "Pagar con PayPal",
     reservations: "Reservas",
     tagline: "Explora Marruecos de otra manera.",
     trips: "Viajes",
@@ -388,6 +390,9 @@ const es: Dictionary = {
       local: "Equipo local con base en Imlil",
     },
     success: {
+      depositTitle: "Reservar tus fechas",
+      deposit: "Cuando confirmemos la disponibilidad, reservas tus fechas con un depósito de {deposit} por PayPal. Se descuenta del precio total, y también te enviamos el enlace por correo.",
+      depositButton: "Enlace de PayPal para el depósito",
       title: "¡Gracias, {name}!",
       text: "Tu solicitud {reference} está en camino.",
       next: "Próximos pasos",

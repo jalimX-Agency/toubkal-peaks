@@ -170,6 +170,8 @@ const en = {
     team: "Our team",
   },
   footer: {
+    deposit: "Booking deposit",
+    depositLink: "Pay by PayPal",
     reservations: "Reservations",
     tagline: "Explore Morocco differently.",
     trips: "Trips",
@@ -386,6 +388,9 @@ const en = {
       local: "Local team based in Imlil",
     },
     success: {
+      depositTitle: "Securing your dates",
+      deposit: "Once we have confirmed availability, you secure your dates with a {deposit} deposit by PayPal. It is deducted from the total price, and we also send you the link by email.",
+      depositButton: "PayPal deposit link",
       title: "Thank you, {name}!",
       text: "Your request {reference} is on its way.",
       next: "What happens next",

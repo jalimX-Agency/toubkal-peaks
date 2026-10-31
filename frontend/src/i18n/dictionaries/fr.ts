@@ -172,6 +172,8 @@ const fr: Dictionary = {
     team: "Notre équipe",
   },
   footer: {
+    deposit: "Acompte de réservation",
+    depositLink: "Payer par PayPal",
     reservations: "Réservations",
     tagline: "Explorez le Maroc autrement.",
     trips: "Voyages",
@@ -388,6 +390,9 @@ const fr: Dictionary = {
       local: "Équipe locale basée à Imlil",
     },
     success: {
+      depositTitle: "Bloquer vos dates",
+      deposit: "Une fois la disponibilité confirmée, vous bloquez vos dates avec un acompte de {deposit} par PayPal. Il est déduit du prix total, et nous vous envoyons aussi le lien par e-mail.",
+      depositButton: "Lien PayPal pour l'acompte",
       title: "Merci, {name} !",
       text: "Votre demande {reference} est bien envoyée.",
       next: "La suite",
