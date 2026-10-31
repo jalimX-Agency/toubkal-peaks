@@ -8,8 +8,8 @@ import { useEffect, useRef } from "react";
  * opens it with ?open=…; closing goes to `closeHref` (the list with its filters, without the panel)
  * and keeps the scroll. Escape and the backdrop close it.
  */
-export function SidePanel({ title, subtitle, badge, fullHref, closeHref, children }: {
-  title: string; subtitle?: string; badge?: React.ReactNode; fullHref?: string; closeHref: string; children: React.ReactNode;
+export function SidePanel({ title, subtitle, badge, fullHref, closeHref, wide = false, children }: {
+  title: string; subtitle?: string; badge?: React.ReactNode; fullHref?: string; closeHref: string; wide?: boolean; children: React.ReactNode;
 }) {
   const router = useRouter();
   const panel = useRef<HTMLDivElement>(null);
@@ -31,7 +31,7 @@ export function SidePanel({ title, subtitle, badge, fullHref, closeHref, childre
   return (
     <div className="fixed inset-0 z-50 flex justify-end" role="dialog" aria-modal="true" aria-label={title}>
       <button type="button" aria-label="Close" onClick={close} className="absolute inset-0 cursor-default bg-navy-deep/40 backdrop-blur-[1px]" />
-      <div ref={panel} tabIndex={-1} className="relative flex h-full w-full max-w-2xl flex-col overflow-hidden bg-cream shadow-2xl outline-none md:rounded-l-xl">
+      <div ref={panel} tabIndex={-1} className={`relative flex h-full w-full ${wide ? "max-w-5xl" : "max-w-2xl"} flex-col overflow-hidden bg-cream shadow-2xl outline-none md:rounded-l-xl`}>
         <div className="flex items-start gap-3 border-b border-line bg-white px-4 py-4 md:px-6">
           <div className="min-w-0 flex-1">
             <p className="truncate font-display text-xl font-semibold text-navy">{title}</p>

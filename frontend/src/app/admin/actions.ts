@@ -125,6 +125,9 @@ export async function changeBookingStatus(reference: string, _prev: ActionState,
 
 // --- trips -------------------------------------------------------------------
 
+/** A trip changed: its full page, the list and the side panel opened over it. */
+const revalidateTrips = () => revalidatePath("/admin/trips", "layout");
+
 export async function updateTourSettings(id: number, _prev: ActionState, form: FormData): Promise<ActionState> {
   const result = await attempt(() =>
     adminApi(`/tours/${id}`, {
@@ -144,19 +147,19 @@ export async function updateTourSettings(id: number, _prev: ActionState, form: F
       }),
     }),
   );
-  if (result.status === "ok") revalidatePath(`/admin/trips/${id}`);
+  if (result.status === "ok") revalidateTrips();
   return result;
 }
 
 export async function saveTourPrices(id: number, tiers: { min_pax: number; max_pax: number | null; price_per_person: number | null }[]): Promise<ActionState> {
   const result = await attempt(() => adminApi(`/tours/${id}/prices`, { method: "PUT", body: JSON.stringify({ tiers }) }), "Prices saved");
-  if (result.status === "ok") revalidatePath(`/admin/trips/${id}`);
+  if (result.status === "ok") revalidateTrips();
   return result;
 }
 
 export async function saveTourContent(id: number, locale: AdminLocale, content: Omit<TourContent, "updated_at">): Promise<ActionState> {
   const result = await attempt(() => adminApi(`/tours/${id}/translations/${locale}`, { method: "PUT", body: JSON.stringify(content) }), "Content saved");
-  if (result.status === "ok") revalidatePath(`/admin/trips/${id}`);
+  if (result.status === "ok") revalidateTrips();
   return result;
 }
 
@@ -251,21 +254,21 @@ export async function uploadTripPhoto(tourId: number, form: FormData): Promise<A
   const body = new FormData();
   body.append("photo", file);
   const result = await attempt(() => adminApi(`/tours/${tourId}/images`, { method: "POST", body }), "Photo added");
-  revalidatePath(`/admin/trips/${tourId}`);
+  revalidateTrips();
   return result;
 }
 
 /** The trip's photos in order (first = main photo); photos left out are removed from the trip, library photos added. */
 export async function setTripPhotos(tourId: number, ids: number[]): Promise<ActionState> {
   const result = await attempt(() => adminApi(`/tours/${tourId}/images`, { method: "PUT", body: JSON.stringify({ ids }) }), "Photos saved");
-  revalidatePath(`/admin/trips/${tourId}`);
+  revalidateTrips();
   return result;
 }
 
 export async function describeTripPhoto(tourId: number, mediaId: number, _prev: ActionState, form: FormData): Promise<ActionState> {
   const alt = Object.fromEntries(LOCALES.map((l) => [l, text(form, `alt_${l}`)]));
   const result = await attempt(() => adminApi(`/tours/${tourId}/images/${mediaId}`, { method: "PATCH", body: JSON.stringify({ alt }) }), "Description saved");
-  revalidatePath(`/admin/trips/${tourId}`);
+  revalidateTrips();
   return result;
 }
 

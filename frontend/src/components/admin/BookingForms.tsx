@@ -22,41 +22,67 @@ const HINT: Record<BookingStatus, string> = {
 };
 
 export function BookingStatusActions({ reference, current, next, deposit, currency }: { reference: string; current: BookingStatus; next: BookingStatus[]; deposit: number | null; currency: string }) {
-  const [state, action] = useActionState<ActionState, FormData>(changeBookingStatus.bind(null, reference), { status: "idle" });
   const [choice, setChoice] = useState<BookingStatus | null>(null);
+  // once the move is saved, back to the buttons of the new status (the result message stays)
+  const [state, action] = useActionState<ActionState, FormData>(async (prev, form) => {
+    const result = await changeBookingStatus(reference, prev, form);
+    if (result.status === "ok") setChoice(null);
+    return result;
+  }, { status: "idle" });
 
-  if (next.length === 0) return <p className="text-sm text-muted">This booking is {current}: no further step.</p>;
+  if (next.length === 0) {
+    return (
+      <div className="space-y-2">
+        <p className="text-sm text-muted">This booking is {current}: nothing more to do.</p>
+        <FormMessage state={state} />
+      </div>
+    );
+  }
+
+  // the step forward as the main button, the other moves quieter, cancelling as a red link
+  const forward = next.filter((s) => s !== "cancelled");
+  const main = forward.find((s) => s !== "pending");
+
+  if (!choice) {
+    return (
+      <div className="space-y-2">
+        <div className="flex flex-wrap items-center gap-2">
+          {forward.map((s) => (
+            <button key={s} type="button" onClick={() => setChoice(s)}
+              className={`rounded-md px-4 py-2.5 text-sm font-semibold transition-colors ${s === main ? "bg-navy text-white hover:bg-navy-deep" : "border border-line bg-white text-navy hover:border-navy"}`}>
+              {LABEL[s]}
+            </button>
+          ))}
+          {next.includes("cancelled") && (
+            <button type="button" onClick={() => setChoice("cancelled")} className="ml-auto px-2 py-2.5 text-sm font-semibold text-sahara hover:underline">{LABEL.cancelled}</button>
+          )}
+        </div>
+        {main && <p className="text-xs text-muted">{HINT[main]}</p>}
+        <FormMessage state={state} />
+      </div>
+    );
+  }
 
   return (
     <form action={action} className="space-y-3">
-      <div className="grid gap-2">
-        {next.map((s) => (
-          <label key={s} className={`flex cursor-pointer items-start gap-3 rounded-md border p-3 text-sm transition-colors ${choice === s ? "border-navy bg-cream" : "border-line hover:border-navy/40"}`}>
-            <input type="radio" name="status" value={s} checked={choice === s} onChange={() => setChoice(s)} className="mt-0.5 accent-[var(--navy)]" />
-            <span>
-              <span className={`block font-semibold ${s === "cancelled" ? "text-sahara" : "text-navy"}`}>{LABEL[s]}</span>
-              {HINT[s] && <span className="block text-xs text-muted">{HINT[s]}</span>}
-            </span>
-          </label>
-        ))}
-      </div>
-      {choice && (
-        <>
-          {choice === "confirmed" && (
-            <Field label={`Deposit for this customer (${currency})`} name="deposit_amount" type="number" min={0} step="1" required
-              defaultValue={deposit ?? ""} state={state} hint="Sent with the PayPal link in the confirmation email. 0 = no deposit (the email then just confirms)." />
-          )}
-          <label className="block text-sm">
-            <span className="font-medium text-navy">Note (optional)</span>
-            <input name="note" maxLength={500} placeholder={choice === "cancelled" ? "Reason" : "e.g. guide and riad booked"} className={inputClass} />
-          </label>
-          <div className="flex items-center gap-3">
-            <Submit className={choice === "cancelled" ? "!bg-sahara" : ""}>{LABEL[choice]}</Submit>
-            <FormMessage state={state} />
-          </div>
-        </>
+      <input type="hidden" name="status" value={choice} />
+      <p className={`text-sm font-semibold ${choice === "cancelled" ? "text-sahara" : "text-navy"}`}>
+        {LABEL[choice]}
+        {HINT[choice] && <span className="block text-xs font-normal text-muted">{HINT[choice]}</span>}
+      </p>
+      {choice === "confirmed" && (
+        <Field label={`Deposit for this customer (${currency})`} name="deposit_amount" type="number" min={0} step="1" required autoFocus
+          defaultValue={deposit ?? ""} state={state} hint="Sent with the PayPal link in the confirmation email. 0 = no deposit (the email then just confirms)." />
       )}
-      {!choice && <FormMessage state={state} />}
+      <label className="block text-sm">
+        <span className="font-medium text-navy">Note (optional)</span>
+        <input name="note" maxLength={500} placeholder={choice === "cancelled" ? "Reason" : "e.g. guide and riad booked"} className={inputClass} />
+      </label>
+      <div className="flex flex-wrap items-center gap-3">
+        <Submit className={choice === "cancelled" ? "!bg-sahara" : ""}>{LABEL[choice]}</Submit>
+        <button type="button" onClick={() => setChoice(null)} className="text-sm font-semibold text-muted hover:text-navy">Back</button>
+        <FormMessage state={state} />
+      </div>
     </form>
   );
 }

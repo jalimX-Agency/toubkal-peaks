@@ -35,7 +35,7 @@ const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCa
 
 /**
  * Every trip is loaded once; search, filters, order and pages all work in the browser, instantly.
- * Opening a trip prefetches its page on hover, so the editor appears quickly.
+ * A trip opens in a side panel over the list (?open=): the list, its filters and its page stay as they are.
  */
 export function TripsTable({ trips }: { trips: TourRow[] }) {
   const [q, setQ] = useState("");
@@ -122,7 +122,7 @@ export function TripsTable({ trips }: { trips: TourRow[] }) {
         <ul className="grid gap-2.5 lg:grid-cols-2">
           {visible.map((t) => (
             <li key={t.id}>
-              <Link href={`/admin/trips/${t.id}`} prefetch className="flex gap-3 rounded-lg border border-line bg-white p-3 transition-colors hover:border-navy/40">
+              <Link href={`/admin/trips?open=${t.id}`} scroll={false} className="flex gap-3 rounded-lg border border-line bg-white p-3 transition-colors hover:border-navy/40">
                 <span className="relative h-20 w-24 shrink-0 overflow-hidden rounded-md bg-sand">
                   {t.hero && <Image src={t.hero} alt="" fill sizes="96px" className="object-cover" />}
                 </span>
