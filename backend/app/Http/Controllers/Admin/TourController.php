@@ -26,6 +26,7 @@ class TourController extends Controller
         ]);
 
         $tours = Tour::with(['translations:id,tour_id,locale,title,slug,translation_status,updated_at', 'category:id,key', 'prices', 'hero'])
+            ->withCount('media')
             ->when($data['status'] ?? null, fn ($q, $s) => $q->where('status', $s))
             ->when($data['category'] ?? null, fn ($q, $c) => $q->whereHas('category', fn ($w) => $w->where('key', $c)->orWhere('key', 'like', "{$c}.%")))
             ->when($data['q'] ?? null, fn ($q, $term) => $q->whereHas('translations', fn ($w) => $w->where('title', 'like', '%'.str_replace(['%', '_'], ['\%', '\_'], $term).'%')))
@@ -38,6 +39,9 @@ class TourController extends Controller
             'category' => $t->category?->key,
             'status' => $t->status->value,
             'duration_days' => $t->duration_days,
+            'difficulty' => $t->difficulty,
+            'photos' => $t->media_count,
+            'sort_order' => $t->sort_order,
             'price_mode' => $t->price_mode->value,
             'from_price' => $t->fromPrice(),
             'currency' => $t->currency,

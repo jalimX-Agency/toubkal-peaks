@@ -5,6 +5,9 @@ import { PageHeader, StatusBadge } from "@/components/admin/ui";
 import { AdminApiError, adminApi } from "@/lib/admin/api";
 import type { TourDetail } from "@/lib/admin/types";
 
+// Admin pages read the API for the signed-in member on every visit: no instant (prerendered) navigation.
+export const instant = false;
+
 export const metadata: Metadata = { title: "Trip" };
 
 export default async function TripPage({ params }: PageProps<"/admin/trips/[id]">) {

@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\BookingController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\RedirectController;
 use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\SettingController;
 use App\Http\Controllers\Api\TeamController;
 use App\Http\Controllers\Api\TourController;
 use Illuminate\Http\Request;
@@ -22,6 +23,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/tours/{slug}', [TourController::class, 'show']);
         Route::get('/reviews', [ReviewController::class, 'index']);
         Route::get('/team', [TeamController::class, 'index']);
+        Route::get('/settings', [SettingController::class, 'index']);
         Route::get('/redirects', [RedirectController::class, 'index']);
     });
 
@@ -45,6 +47,7 @@ Route::prefix('v1')->group(function () {
             Route::get('/bookings/{reference}', [Admin\BookingController::class, 'show']);
             Route::patch('/bookings/{reference}', [Admin\BookingController::class, 'update']);
             Route::post('/bookings/{reference}/status', [Admin\BookingController::class, 'status']);
+            Route::delete('/bookings/{reference}', [Admin\BookingController::class, 'destroy']);
 
             Route::get('/tours', [Admin\TourController::class, 'index']);
             Route::get('/tours/{tour}', [Admin\TourController::class, 'show']);
@@ -60,6 +63,9 @@ Route::prefix('v1')->group(function () {
             Route::post('/reviews', [Admin\ReviewController::class, 'store']);
             Route::patch('/reviews/{review}', [Admin\ReviewController::class, 'update']);
             Route::delete('/reviews/{review}', [Admin\ReviewController::class, 'destroy']);
+
+            Route::get('/settings', [Admin\SettingController::class, 'index']);
+            Route::put('/settings', [Admin\SettingController::class, 'update']);
 
             Route::get('/team-members', [Admin\TeamMemberController::class, 'index']);
             Route::post('/team-members', [Admin\TeamMemberController::class, 'store']);

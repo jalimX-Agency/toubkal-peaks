@@ -112,6 +112,17 @@ class BookingController extends Controller
         return response()->json(['data' => $this->detail($booking->fresh()), 'customer_emailed' => $mailed]);
     }
 
+    /** Removes a request from the lists (soft delete: it stays in the database, out of sight). */
+    public function destroy(Request $request, string $reference): JsonResponse
+    {
+        $booking = $this->find($reference);
+        $booking->forceFill(['admin_notes' => trim(($booking->admin_notes ?? '')."
+[Deleted by {$request->user()->name} on ".now()->toDateString().']')])->save();
+        $booking->delete();
+
+        return response()->json(['message' => 'Booking deleted.']);
+    }
+
     private function find(string $reference): Booking
     {
         return Booking::where('reference', $reference)->firstOrFail();

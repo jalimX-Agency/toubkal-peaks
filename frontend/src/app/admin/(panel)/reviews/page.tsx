@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { ReviewActions, ReviewForm } from "@/components/admin/ReviewForms";
 import { Empty, FilterTabs, PageHeader, Pagination, StatusBadge, day } from "@/components/admin/ui";
+import { LiveSearch } from "@/components/admin/LiveSearch";
 import { adminApi } from "@/lib/admin/api";
 import type { AdminReview, Paged, ReviewStatus, TourRow } from "@/lib/admin/types";
+
+// Admin pages read the API for the signed-in member on every visit: no instant (prerendered) navigation.
+export const instant = false;
 
 export const metadata: Metadata = { title: "Reviews" };
 
@@ -29,12 +33,7 @@ export default async function ReviewsPage({ searchParams }: PageProps<"/admin/re
           <div className="border-t border-line p-4"><ReviewForm tours={tourOptions} /></div>
         </details>
 
-        <form className="flex gap-2" role="search">
-          {params.status && <input type="hidden" name="status" value={params.status} />}
-          <input name="q" defaultValue={params.q} type="search" placeholder="Author or text"
-            className="min-w-0 flex-1 rounded-md border border-line bg-white px-3 py-2.5 text-base outline-none focus:border-navy md:text-sm" />
-          <button className="rounded-md bg-navy px-4 text-sm font-semibold text-white">Search</button>
-        </form>
+        <LiveSearch placeholder="Author or text" />
         <FilterTabs base="/admin/reviews" current={params.status ?? ""} params={params} options={[
           { value: "", label: "All", count: Object.values(res.counts).reduce((a, b) => a + b, 0) },
           { value: "pending", label: "To approve", count: res.counts.pending },

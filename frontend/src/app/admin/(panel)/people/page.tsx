@@ -4,6 +4,9 @@ import { Empty, PageHeader } from "@/components/admin/ui";
 import { adminApi } from "@/lib/admin/api";
 import type { AdminTeamMember } from "@/lib/admin/types";
 
+// Admin pages read the API for the signed-in member on every visit: no instant (prerendered) navigation.
+export const instant = false;
+
 export const metadata: Metadata = { title: "Team page" };
 
 export default async function PeoplePage() {

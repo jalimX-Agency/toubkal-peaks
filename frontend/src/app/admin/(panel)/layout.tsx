@@ -2,8 +2,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { AdminShell } from "@/components/admin/AdminShell";
-import { adminApi } from "@/lib/admin/api";
-import type { AdminUser } from "@/lib/admin/types";
+import { currentUser } from "@/lib/admin/api";
 
 /** Signed-in area: the navigation shell, then each page streams in below it. */
 export default function PanelLayout({ children }: { children: React.ReactNode }) {
@@ -15,7 +14,7 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
 }
 
 async function Shell({ children }: { children: React.ReactNode }) {
-  const { user } = await adminApi<{ user: AdminUser }>("/auth/me");
+  const user = await currentUser();
   // A temporary password must be replaced before anything else (path forwarded by proxy.ts).
   const path = (await headers()).get("x-admin-path") ?? "";
   if (user.must_change_password && !path.startsWith("/admin/account")) redirect("/admin/account?first=1");

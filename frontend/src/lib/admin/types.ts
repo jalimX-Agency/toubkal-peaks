@@ -64,6 +64,9 @@ export interface TourRow {
   category: string | null;
   status: TourStatus;
   duration_days: number | null;
+  difficulty: string | null;
+  photos: number;
+  sort_order: number;
   price_mode: "tiers" | "on_request";
   from_price: number | null;
   currency: string;

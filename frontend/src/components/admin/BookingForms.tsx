@@ -1,7 +1,8 @@
 "use client";
 
-import { useActionState, useState } from "react";
-import { changeBookingStatus, saveBookingNotes, updateBooking } from "@/app/admin/actions";
+import { useRouter } from "next/navigation";
+import { useActionState, useState, useTransition } from "react";
+import { changeBookingStatus, deleteBooking, saveBookingNotes, updateBooking } from "@/app/admin/actions";
 import { Field, FormMessage, Submit, TextArea, inputClass } from "@/components/admin/form";
 import type { ActionState, BookingDetail, BookingStatus } from "@/lib/admin/types";
 
@@ -96,5 +97,32 @@ export function BookingEditForm({ booking: b }: { booking: BookingDetail }) {
         <FormMessage state={state} />
       </div>
     </form>
+  );
+}
+
+/** Delete, after typing nothing but a clear confirmation; then back to the list (side panel closed). */
+export function BookingDelete({ reference, name }: { reference: string; name: string }) {
+  const router = useRouter();
+  const [state, setState] = useState<ActionState>({ status: "idle" });
+  const [pending, start] = useTransition();
+  const remove = () => {
+    if (!confirm(`Delete the booking of ${name} (${reference})? It disappears from the lists.`)) return;
+    start(async () => {
+      const result = await deleteBooking(reference);
+      setState(result);
+      if (result.status === "ok") {
+        router.replace("/admin/bookings");
+        router.refresh();
+      }
+    });
+  };
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <p className="flex-1 text-sm text-muted">Spam, test or duplicate request? Remove it from the lists.</p>
+      <button type="button" onClick={remove} disabled={pending} className="rounded-md border border-sahara/40 px-4 py-2 text-sm font-semibold text-sahara hover:bg-sahara/5 disabled:opacity-60">
+        {pending ? "Deleting…" : "Delete booking"}
+      </button>
+      <FormMessage state={state} />
+    </div>
   );
 }

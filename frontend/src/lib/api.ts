@@ -126,6 +126,15 @@ export async function getTours(params: { locale: string; category?: string; perP
   return cachedRead<Paginated<TourCard>>("tours", `/tours?${query}`, { data: [] });
 }
 
+export type SiteSettings = { copy_protection: boolean };
+
+/** Site options switched in the admin. If the API cannot be read, copy protection stays on. */
+export async function getSettings(): Promise<SiteSettings> {
+  "use cache";
+  const res = await cachedRead<{ data?: Partial<SiteSettings> }>("settings", "/settings", {});
+  return { copy_protection: res.data?.copy_protection ?? true };
+}
+
 /** The people on the About page, in the order set in the admin. */
 export async function getTeam(locale: string): Promise<TeamMember[]> {
   "use cache";

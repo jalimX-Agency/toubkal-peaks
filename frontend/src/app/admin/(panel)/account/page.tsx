@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { PasswordForm } from "@/components/admin/PasswordForm";
 import { Card, PageHeader } from "@/components/admin/ui";
-import { adminApi } from "@/lib/admin/api";
-import type { AdminUser } from "@/lib/admin/types";
+import { currentUser } from "@/lib/admin/api";
+
+// Admin pages read the API for the signed-in member on every visit: no instant (prerendered) navigation.
+export const instant = false;
 
 export const metadata: Metadata = { title: "Account" };
 
 export default async function AccountPage({ searchParams }: PageProps<"/admin/account">) {
-  const [{ user }, params] = await Promise.all([adminApi<{ user: AdminUser }>("/auth/me"), searchParams]);
+  const [user, params] = await Promise.all([currentUser(), searchParams]);
   const forced = user.must_change_password;
 
   return (

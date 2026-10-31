@@ -116,6 +116,7 @@ export async function changeBookingStatus(reference: string, _prev: ActionState,
   }, "Status updated");
   if (result.status !== "ok") return result;
   revalidatePath(`/admin/bookings/${reference}`);
+  revalidatePath("/admin/bookings");
   // confirming sends the customer the PayPal deposit link
   if (emailed === true) return { status: "ok", message: "Confirmed: the customer received the PayPal deposit email" };
   if (emailed === false) return { status: "error", message: "Confirmed, but the deposit email could not be sent: send the PayPal link yourself" };
@@ -190,23 +191,6 @@ export async function saveReview(id: number | null, _prev: ActionState, form: Fo
   };
   const result = await attempt(() => adminApi(id ? `/reviews/${id}` : "/reviews", { method: id ? "PATCH" : "POST", body: JSON.stringify(payload) }));
   revalidatePath("/admin/reviews");
-  return result;
-}
-
-// --- team --------------------------------------------------------------------
-
-export async function inviteMember(_prev: ActionState, form: FormData): Promise<ActionState> {
-  const result = await attempt(
-    () => adminApi("/users", { method: "POST", body: JSON.stringify({ name: text(form, "name"), email: text(form, "email"), role: text(form, "role") }) }),
-    "Invitation sent",
-  );
-  revalidatePath("/admin/team");
-  return result;
-}
-
-export async function updateMember(id: number, changes: { role?: string; is_active?: boolean; reset_password?: boolean }): Promise<ActionState> {
-  const result = await attempt(() => adminApi(`/users/${id}`, { method: "PATCH", body: JSON.stringify(changes) }), changes.reset_password ? "New password sent" : "Saved");
-  revalidatePath("/admin/team");
   return result;
 }
 
@@ -288,4 +272,21 @@ export async function describeTripPhoto(tourId: number, mediaId: number, _prev: 
 export async function searchPhotoLibrary(q: string, page = 1): Promise<{ data: TripImage[]; meta: { current_page: number; last_page: number; total: number } }> {
   const query = new URLSearchParams({ page: String(page), ...(q.trim() ? { q: q.trim() } : {}) });
   return adminApi(`/media?${query}`);
+}
+
+export async function deleteBooking(reference: string): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/bookings/${encodeURIComponent(reference)}`, { method: "DELETE" }), "Deleted");
+  if (result.status === "ok") {
+    revalidatePath("/admin/bookings");
+    revalidatePath("/admin");
+  }
+  return result;
+}
+
+// --- site settings -------------------------------------------------------------------
+
+export async function saveSettings(changes: { copy_protection?: boolean }): Promise<ActionState> {
+  const result = await attempt(() => adminApi("/settings", { method: "PUT", body: JSON.stringify(changes) }), "Saved: the website updates within a minute");
+  revalidatePath("/admin/settings");
+  return result;
 }

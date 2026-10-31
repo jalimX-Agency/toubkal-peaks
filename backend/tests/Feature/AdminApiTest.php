@@ -85,7 +85,7 @@ class AdminApiTest extends TestCase
             ->assertOk()->assertJsonPath('data.admin_notes', 'Vegetarian')->assertJsonPath('data.balance_due', 700);
 
         $this->postJson("/api/v1/admin/bookings/{$ref}/status", ['status' => 'completed'])->assertStatus(422);
-        $this->postJson("/api/v1/admin/bookings/{$ref}/status", ['status' => 'confirmed', 'note' => 'Guide booked'])
+        $this->postJson("/api/v1/admin/bookings/{$ref}/status", ['status' => 'confirmed', 'deposit_amount' => 100, 'note' => 'Guide booked'])
             ->assertOk()->assertJsonPath('data.status', 'confirmed')
             ->assertJsonPath('data.history.1.user', 'Hassan')->assertJsonPath('data.history.1.note', 'Guide booked')
             ->assertJsonPath('data.next_statuses', ['paid', 'completed', 'cancelled']);
