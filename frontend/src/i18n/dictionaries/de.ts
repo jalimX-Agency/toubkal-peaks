@@ -105,6 +105,79 @@ const de: Dictionary = {
     cta: "Riad Berber Towers entdecken",
     photoAlt: "Dachterrasse in Imlil mit einer Tajine auf dem Tisch und dem schneebedeckten Toubkal-Massiv dahinter",
   },
+  toubkal: {
+    eyebrow: "Unser Hausberg",
+    title: "Besteigen Sie den Toubkal, das Dach Nordafrikas",
+    text: "Mit 4.167 m ist der Toubkal der höchste Gipfel des Atlas und Nordafrikas. Der klassische Aufstieg dauert zwei Tage ab Imlil: ein langer Weg hinauf zur Hütte, dann ein früher Start, um den Gipfel bei Sonnenaufgang zu erreichen, und der Abstieg zurück ins Dorf. Im Sommer ist es eine nicht-technische Trekkingtour für trainierte Wanderer; im Winter wird sie durch den Schnee zur Hochtour mit Steigeisen und Pickel.",
+    stats: {
+      summit: "Gipfel",
+      gain: "Aufstieg ab Imlil",
+      days: "Tage für den klassischen Aufstieg",
+    },
+    stops: {
+      imlil: "Imlil",
+      chamharouch: "Sidi Chamharouch",
+      refuge: "Toubkal-Hütte",
+      summit: "Toubkal-Gipfel",
+    },
+    profileLabel: "Höhenprofil des klassischen Toubkal-Aufstiegs ab Imlil",
+    trips: "{count} Toubkal-Reisen",
+    from: "ab {price}",
+    cta: "Toubkal-Trekkings ansehen",
+  },
+  seasons: {
+    eyebrow: "Reisezeit",
+    title: "Die beste Zeit für jede Reise",
+    lead: "Marokko lässt sich das ganze Jahr bereisen, doch Gebirge und Wüste haben ihre eigenen Jahreszeiten.",
+    atlas: "Atlas-Trekkings & Toubkal",
+    sahara: "Sahara-Wüste",
+    months: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+    legend: {
+      best: "Ideal",
+      good: "Gut",
+      hard: "Anspruchsvoll",
+    },
+    notes: {
+      atlas: "Frühling und Herbst sind ideal. Im Winter liegt Schnee: Der Toubkal wird zur Besteigung mit Steigeisen und Pickel. Der Sommer ist in den Tälern heiß, in der Höhe aber angenehm.",
+      sahara: "Von Oktober bis April ist Dünensaison, mit kalten Nächten im Dezember und Januar. Von Juni bis August ist die Mittagshitze extrem.",
+    },
+  },
+  guides: {
+    eyebrow: "Ihre Guides",
+    title: "Einheimische Guides, die im Atlas aufgewachsen sind",
+    text: "Wer Ihre Reise plant, begleitet sie auch: Guides und Fahrer aus den Dörfern rund um Imlil und Marrakesch, die jeden Pfad, jede Familie und jede Piste kennen.",
+    cta: "Das Team kennenlernen",
+  },
+  faq: {
+    eyebrow: "Fragen",
+    title: "Häufige Fragen",
+    items: [
+      {
+        q: "Wie fit muss ich für den Toubkal sein?",
+        a: "Im Sommer ist der klassische zweitägige Aufstieg eine nicht-technische, aber anstrengende Tour: etwa 5 bis 6 Stunden Gehzeit am ersten Tag und ein sehr früher Start am zweiten, über 4.000 m. Sie sollten lange Wanderungen gewohnt sein. Im Winter liegt Schnee auf der Route; dann braucht es Steigeisen, Pickel und etwas Bergerfahrung.",
+      },
+      {
+        q: "Sind Ihre Reisen privat?",
+        a: "Ja. Jede Reise ist privat und auf Ihre Gruppe zugeschnitten, vom Alleinreisenden bis zu Familien und Freunden. Sie reisen mit Ihrem eigenen Guide und, wenn nötig, Ihrem eigenen Fahrer.",
+      },
+      {
+        q: "Wie buche ich, und wann bezahle ich?",
+        a: "Senden Sie uns Ihre Termine und Wünsche über das Buchungsformular oder WhatsApp. Wir antworten innerhalb von 24 Stunden mit einem Reiseplan und einem klaren Preis. Jetzt wird nichts berechnet: Sobald wir die Verfügbarkeit bestätigt haben, sichern Sie Ihre Termine mit einer Anzahlung per PayPal, die vom Gesamtpreis abgezogen wird.",
+      },
+      {
+        q: "Holen Sie uns in Marrakesch ab?",
+        a: "Ja. Wir holen Sie am ersten Tag in Ihrem Hotel oder Riad in Marrakesch ab und bringen Sie am Ende der Reise zurück.",
+      },
+      {
+        q: "Wann ist die beste Reisezeit?",
+        a: "Für den Atlas und den Toubkal April bis Juni sowie September bis Oktober. Für die Sahara Oktober bis April. Wintertrekkings und Wüstenreisen im Sommer sind mit guter Vorbereitung möglich: Fragen Sie uns.",
+      },
+      {
+        q: "Können Sie einen Reiseplan anpassen?",
+        a: "Ja. Unsere Programme sind ein Ausgangspunkt: Wir können Tage hinzufügen oder streichen, das Niveau der Unterkünfte wählen und Trekking, Wüste und Königsstädte in einer Reise verbinden.",
+      },
+    ],
+  },
   reviews: {
     eyebrow: "Bewertungen",
     title: "Das sagen unsere Reisenden",

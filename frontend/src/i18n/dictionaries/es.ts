@@ -105,6 +105,79 @@ const es: Dictionary = {
     cta: "Conoce el Riad Berber Towers",
     photoAlt: "Terraza en Imlil con un tajín sobre la mesa y el macizo nevado del Toubkal al fondo",
   },
+  toubkal: {
+    eyebrow: "Nuestra montaña",
+    title: "Sube al Toubkal, el techo del norte de África",
+    text: "Con 4.167 m, el Toubkal es la cumbre más alta del Atlas y del norte de África. La ascensión clásica se hace en dos días desde Imlil: una larga subida hasta el refugio y, al día siguiente, una salida temprana para llegar a la cumbre al amanecer y bajar al pueblo. En verano es un trekking no técnico para caminantes en forma; en invierno, la nieve lo convierte en una ascensión de montaña con crampones y piolet.",
+    stats: {
+      summit: "cumbre",
+      gain: "de desnivel desde Imlil",
+      days: "días para la ascensión clásica",
+    },
+    stops: {
+      imlil: "Imlil",
+      chamharouch: "Sidi Chamharouch",
+      refuge: "Refugio del Toubkal",
+      summit: "Cumbre del Toubkal",
+    },
+    profileLabel: "Perfil de altitud de la ascensión clásica al Toubkal desde Imlil",
+    trips: "{count} viajes al Toubkal",
+    from: "desde {price}",
+    cta: "Ver los trekkings al Toubkal",
+  },
+  seasons: {
+    eyebrow: "Cuándo ir",
+    title: "La mejor época para cada viaje",
+    lead: "Marruecos se puede visitar todo el año, pero la montaña y el desierto tienen sus propias temporadas.",
+    atlas: "Trekkings del Atlas y Toubkal",
+    sahara: "Desierto del Sahara",
+    months: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+    legend: {
+      best: "Ideal",
+      good: "Buena",
+      hard: "Exigente",
+    },
+    notes: {
+      atlas: "La primavera y el otoño son ideales. El invierno trae nieve: el Toubkal se convierte en una ascensión con crampones y piolet. El verano es caluroso en los valles pero agradable en altura.",
+      sahara: "De octubre a abril es la temporada de las dunas, con noches frías en diciembre y enero. De junio a agosto el calor es extremo a mediodía.",
+    },
+  },
+  guides: {
+    eyebrow: "Tus guías",
+    title: "Guías locales que crecieron en el Atlas",
+    text: "Quienes preparan tu viaje también lo acompañan: guías y conductores de los pueblos de alrededor de Imlil y Marrakech, que conocen cada sendero, cada familia y cada pista.",
+    cta: "Conoce al equipo",
+  },
+  faq: {
+    eyebrow: "Preguntas",
+    title: "Preguntas frecuentes",
+    items: [
+      {
+        q: "¿Qué forma física hace falta para subir al Toubkal?",
+        a: "En verano, la ascensión clásica de dos días es un trekking no técnico, pero exigente: unas 5 a 6 horas de marcha el primer día y una salida muy temprana el segundo, por encima de 4.000 m. Conviene estar acostumbrado a caminatas largas. En invierno la ruta está nevada y requiere crampones, piolet y algo de experiencia en montaña.",
+      },
+      {
+        q: "¿Vuestros viajes son privados?",
+        a: "Sí. Cada viaje es privado y a medida para tu grupo, desde viajeros solos hasta familias y amigos. Viajas con tu propio guía y, cuando hace falta, tu propio conductor.",
+      },
+      {
+        q: "¿Cómo reservo y cuándo pago?",
+        a: "Envíanos tus fechas y lo que te gustaría hacer por el formulario de reserva o WhatsApp. Respondemos en 24 horas con un itinerario y un precio claro. No se cobra nada por ahora: cuando confirmamos la disponibilidad, reservas tus fechas con un depósito por PayPal, que se descuenta del precio total.",
+      },
+      {
+        q: "¿Nos recogéis en Marrakech?",
+        a: "Sí. Te recogemos en tu hotel o riad de Marrakech el primer día y te llevamos de vuelta al final del viaje.",
+      },
+      {
+        q: "¿Cuál es la mejor época para viajar?",
+        a: "Para el Atlas y el Toubkal, de abril a junio y de septiembre a octubre. Para el Sahara, de octubre a abril. Los trekkings de invierno y el desierto en verano son posibles con buena preparación: pregúntanos.",
+      },
+      {
+        q: "¿Podéis cambiar un itinerario?",
+        a: "Sí. Nuestros programas son un punto de partida: podemos añadir o quitar días, elegir el nivel de alojamiento y combinar trekking, desierto y ciudades imperiales en un mismo viaje.",
+      },
+    ],
+  },
   reviews: {
     eyebrow: "Opiniones",
     title: "Lo que dicen nuestros viajeros",

@@ -3,15 +3,19 @@ import { notFound } from "next/navigation";
 import { TourCard } from "@/components/TourCard";
 import { CtaBand } from "@/components/home/CtaBand";
 import { TopoHero } from "@/components/home/TopoHero";
+import { Faq } from "@/components/home/Faq";
+import { Guides } from "@/components/home/Guides";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { Pillars, type PillarKey } from "@/components/home/Pillars";
+import { Seasons } from "@/components/home/Seasons";
 import { RiadBand } from "@/components/home/RiadBand";
+import { ToubkalFeature } from "@/components/home/ToubkalFeature";
 import { Testimonials } from "@/components/home/Testimonials";
 import { TourExplorer } from "@/components/home/TourExplorer";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { getReviews, getTours } from "@/lib/api";
+import { getReviews, getTeam, getTours } from "@/lib/api";
 import { media, site } from "@/lib/site";
 import type { TourCard as Tour } from "@/lib/types";
 
@@ -43,7 +47,12 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const [dict, tours, reviews] = await Promise.all([getDictionary(lang), getTours({ locale: lang, perPage: 60 }), getReviews(6)]);
+  const [dict, tours, reviews, team] = await Promise.all([getDictionary(lang), getTours({ locale: lang, perPage: 100 }), getReviews(6), getTeam(lang)]);
+
+  // the Toubkal section: how many climbs, and the lowest "from" price among them
+  const toubkal = tours.data.filter((t) => t.category.key === "treks.toubkal");
+  const priced = toubkal.filter((t) => t.price_mode === "tiers" && t.from_price !== null).sort((a, b) => a.from_price! - b.from_price!);
+  const toubkalFrom = priced[0] ? { amount: priced[0].from_price!, currency: priced[0].currency } : null;
 
   const counts: Record<PillarKey, number> = { treks: 0, sahara: 0, cities: 0, dayTrips: 0 };
   for (const tour of tours.data) counts[pillarOf(tour)]++;
@@ -85,8 +94,12 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         />
       )}
       <HowItWorks dict={dict.steps} />
+      <ToubkalFeature lang={lang} dict={dict.toubkal} count={toubkal.length} fromPrice={toubkalFrom} />
       <RiadBand dict={dict.riad} />
+      <Seasons dict={dict.seasons} />
+      <Guides lang={lang} dict={dict.guides} members={team} />
       <Testimonials dict={dict.reviews} reviews={reviews.data} summary={reviews.summary} />
+      <Faq dict={dict.faq} />
       <CtaBand lang={lang} dict={dict.cta} message={dict.whatsapp.message} />
     </>
   );

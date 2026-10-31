@@ -103,6 +103,79 @@ const en = {
     cta: "Visit Riad Berber Towers",
     photoAlt: "Rooftop terrace in Imlil with a tagine on the table and the snowy Toubkal massif behind",
   },
+  toubkal: {
+    eyebrow: "Our home mountain",
+    title: "Climb Mount Toubkal, the roof of North Africa",
+    text: "At 4,167 m, Toubkal is the highest summit of the Atlas and of North Africa. The classic ascent takes two days from Imlil: a long walk up to the refuge, then an early start to reach the summit at sunrise and the descent back to the village. In summer it is a non-technical trek for fit walkers; in winter, snow turns it into a mountaineering climb with crampons and an ice axe.",
+    stats: {
+      summit: "summit",
+      gain: "ascent from Imlil",
+      days: "days for the classic climb",
+    },
+    stops: {
+      imlil: "Imlil",
+      chamharouch: "Sidi Chamharouch",
+      refuge: "Toubkal refuge",
+      summit: "Toubkal summit",
+    },
+    profileLabel: "Elevation profile of the classic Toubkal ascent from Imlil",
+    trips: "{count} Toubkal trips",
+    from: "from {price}",
+    cta: "See the Toubkal treks",
+  },
+  seasons: {
+    eyebrow: "When to go",
+    title: "The best time for each journey",
+    lead: "Morocco can be visited all year, but the mountains and the desert have their own seasons.",
+    atlas: "Atlas treks & Toubkal",
+    sahara: "Sahara desert",
+    months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    legend: {
+      best: "Best",
+      good: "Good",
+      hard: "Demanding",
+    },
+    notes: {
+      atlas: "Spring and autumn are ideal. Winter brings snow: Toubkal becomes a climb with crampons and an ice axe. Summer is hot in the valleys but pleasant at altitude.",
+      sahara: "October to April is the season for the dunes, with cold nights in December and January. From June to August the heat is extreme in the middle of the day.",
+    },
+  },
+  guides: {
+    eyebrow: "Your guides",
+    title: "Local guides who grew up in the Atlas",
+    text: "The people who plan your trip also lead it: guides and drivers from the villages around Imlil and Marrakech, who know every trail, family and track.",
+    cta: "Meet the team",
+  },
+  faq: {
+    eyebrow: "Questions",
+    title: "Frequently asked questions",
+    items: [
+      {
+        q: "How fit do I need to be to climb Mount Toubkal?",
+        a: "In summer the classic two-day ascent is a non-technical trek, but it is demanding: about 5 to 6 hours of walking on the first day and an early start on the second, above 4,000 m. You should be used to long walks in the hills. In winter the route is covered in snow and needs crampons, an ice axe and some mountain experience.",
+      },
+      {
+        q: "Are your trips private?",
+        a: "Yes. Every trip is private and tailor-made for your group, from a solo traveller to families and friends. You travel with your own guide and, when needed, your own driver.",
+      },
+      {
+        q: "How do I book, and when do I pay?",
+        a: "Send us your dates and wishes by the booking form or WhatsApp. We reply within 24 hours with an itinerary and a clear price. Nothing is charged at this stage: once we confirm availability, you secure your dates with a deposit by PayPal, deducted from the total price.",
+      },
+      {
+        q: "Do you pick us up in Marrakech?",
+        a: "Yes. We pick you up at your hotel or riad in Marrakech on the first day and bring you back at the end of the trip.",
+      },
+      {
+        q: "When is the best time to visit?",
+        a: "For the Atlas mountains and Toubkal, April to June and September to October. For the Sahara, October to April. Winter treks and summer desert trips are possible with the right preparation: ask us.",
+      },
+      {
+        q: "Can you change an itinerary?",
+        a: "Yes. Our programmes are a starting point: we can add or remove days, choose the level of accommodation and combine a trek, the desert and the imperial cities in one trip.",
+      },
+    ],
+  },
   reviews: {
     eyebrow: "Reviews",
     title: "What our travellers say",

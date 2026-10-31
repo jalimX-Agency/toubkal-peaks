@@ -105,6 +105,79 @@ const fr: Dictionary = {
     cta: "Découvrir le Riad Berber Towers",
     photoAlt: "Terrasse à Imlil avec un tajine sur la table et le massif enneigé du Toubkal en arrière-plan",
   },
+  toubkal: {
+    eyebrow: "Notre montagne",
+    title: "Gravir le Toubkal, le toit de l'Afrique du Nord",
+    text: "Avec ses 4 167 m, le Toubkal est le plus haut sommet de l'Atlas et d'Afrique du Nord. L'ascension classique se fait en deux jours depuis Imlil : une longue montée jusqu'au refuge, puis un départ matinal pour atteindre le sommet au lever du soleil et redescendre au village. En été, c'est un trek non technique pour marcheurs en forme ; en hiver, la neige en fait une ascension d'alpinisme, avec crampons et piolet.",
+    stats: {
+      summit: "sommet",
+      gain: "de dénivelé depuis Imlil",
+      days: "jours pour l'ascension classique",
+    },
+    stops: {
+      imlil: "Imlil",
+      chamharouch: "Sidi Chamharouch",
+      refuge: "Refuge du Toubkal",
+      summit: "Sommet du Toubkal",
+    },
+    profileLabel: "Profil d'altitude de l'ascension classique du Toubkal depuis Imlil",
+    trips: "{count} voyages au Toubkal",
+    from: "à partir de {price}",
+    cta: "Voir les treks du Toubkal",
+  },
+  seasons: {
+    eyebrow: "Quand partir",
+    title: "La meilleure période pour chaque voyage",
+    lead: "Le Maroc se visite toute l'année, mais la montagne et le désert ont chacun leurs saisons.",
+    atlas: "Treks de l'Atlas et Toubkal",
+    sahara: "Désert du Sahara",
+    months: ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Août", "Sep", "Oct", "Nov", "Déc"],
+    legend: {
+      best: "Idéal",
+      good: "Bien",
+      hard: "Exigeant",
+    },
+    notes: {
+      atlas: "Le printemps et l'automne sont idéaux. L'hiver apporte la neige : le Toubkal devient une ascension avec crampons et piolet. L'été est chaud dans les vallées mais agréable en altitude.",
+      sahara: "D'octobre à avril, c'est la saison des dunes, avec des nuits froides en décembre et janvier. De juin à août, la chaleur est extrême au milieu de la journée.",
+    },
+  },
+  guides: {
+    eyebrow: "Vos guides",
+    title: "Des guides locaux qui ont grandi dans l'Atlas",
+    text: "Ceux qui préparent votre voyage l'accompagnent aussi : des guides et chauffeurs des villages autour d'Imlil et de Marrakech, qui connaissent chaque sentier, chaque famille et chaque piste.",
+    cta: "Découvrir l'équipe",
+  },
+  faq: {
+    eyebrow: "Questions",
+    title: "Questions fréquentes",
+    items: [
+      {
+        q: "Quelle condition physique faut-il pour gravir le Toubkal ?",
+        a: "En été, l'ascension classique en deux jours est un trek non technique, mais exigeant : environ 5 à 6 heures de marche le premier jour et un départ très matinal le second, au-dessus de 4 000 m. Il faut être habitué aux longues randonnées. En hiver, l'itinéraire est enneigé et demande crampons, piolet et une première expérience de la montagne.",
+      },
+      {
+        q: "Vos voyages sont-ils privés ?",
+        a: "Oui. Chaque voyage est privé et conçu sur mesure pour votre groupe, du voyageur seul aux familles et amis. Vous partez avec votre propre guide et, si besoin, votre propre chauffeur.",
+      },
+      {
+        q: "Comment réserver, et quand payer ?",
+        a: "Envoyez-nous vos dates et vos envies par le formulaire de réservation ou WhatsApp. Nous répondons sous 24 heures avec un itinéraire et un prix clair. Rien n'est débité à ce stade : une fois la disponibilité confirmée, vous bloquez vos dates avec un acompte par PayPal, déduit du prix total.",
+      },
+      {
+        q: "Venez-vous nous chercher à Marrakech ?",
+        a: "Oui. Nous venons vous chercher à votre hôtel ou riad à Marrakech le premier jour et vous y ramenons à la fin du voyage.",
+      },
+      {
+        q: "Quelle est la meilleure période ?",
+        a: "Pour l'Atlas et le Toubkal, d'avril à juin et de septembre à octobre. Pour le Sahara, d'octobre à avril. Les treks d'hiver et le désert en été restent possibles avec une bonne préparation : demandez-nous.",
+      },
+      {
+        q: "Pouvez-vous modifier un itinéraire ?",
+        a: "Oui. Nos programmes sont une base : nous pouvons ajouter ou retirer des jours, choisir le niveau d'hébergement et combiner trek, désert et villes impériales dans un même voyage.",
+      },
+    ],
+  },
   reviews: {
     eyebrow: "Avis",
     title: "Ce que disent nos voyageurs",
