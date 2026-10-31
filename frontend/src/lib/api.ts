@@ -45,10 +45,12 @@ async function throttled<T>(run: () => Promise<T>): Promise<T> {
 /**
  * The host sometimes refuses a request instead of answering it: "too many requests" (429), "access
  * denied" (403), "unavailable" (503), or a 200 carrying its HTML "Security Verification" page instead of
- * JSON. Those are temporary: wait (as long as it asks, within reason) and try again, three times.
+ * JSON. Those are temporary: wait (as long as it asks, within reason) and try again. Three times
+ * during the build (a failed read would leave a page empty until its next refresh); once on the live
+ * site, where retrying into a rate limit only makes it last longer and the cache keeps the last good data.
  */
 const RETRY_STATUSES = [403, 429, 503];
-const RETRY_DELAYS_MS = [1500, 4000, 8000];
+const RETRY_DELAYS_MS = IS_BUILD ? [1500, 4000, 8000] : [2500];
 
 const REQUEST_TIMEOUT_MS = 15_000;
 
@@ -83,11 +85,12 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 /**
- * How long a successful read is kept: served fresh for 5 minutes, refreshed in the background every
- * 30 minutes, and kept up to a week, so a page keeps showing its last good content while the API
- * refuses requests. Content edits do not wait: Laravel revalidates the matching tag at once.
+ * How long a successful read is kept: refreshed in the background once a day and kept up to a month,
+ * so a page keeps showing its last good content while the API refuses requests. Content edits do not
+ * wait for that: Laravel revalidates the matching tag at once (FrontendCache). A shorter refresh only
+ * multiplied the requests to the API host, which then rate-limits the site.
  */
-const KEEP = { stale: 300, revalidate: 1800, expire: 7 * 24 * 3600 };
+const KEEP = { stale: 3600, revalidate: 24 * 3600, expire: 30 * 24 * 3600 };
 
 /**
  * Cached read helpers. A failing API must not break the build or a page: they return an empty
@@ -120,11 +123,21 @@ export async function getCategories(locale: string): Promise<Category[]> {
   return res.data;
 }
 
-export async function getTours(params: { locale: string; category?: string; perPage?: number }): Promise<Paginated<TourCard>> {
+/** Every published trip of a language in one cached read (the site has fewer than 100). */
+async function getAllTours(locale: string): Promise<Paginated<TourCard>> {
   "use cache";
-  const query = new URLSearchParams({ locale: params.locale, per_page: String(params.perPage ?? 24) });
-  if (params.category) query.set("category", params.category);
-  return cachedRead<Paginated<TourCard>>("tours", `/tours?${query}`, { data: [] });
+  return cachedRead<Paginated<TourCard>>("tours", `/tours?${new URLSearchParams({ locale, per_page: "100" })}`, { data: [] });
+}
+
+/**
+ * Published trips, optionally of one category ("treks" includes "treks.toubkal"...). All pages share
+ * the one list per language above instead of each asking the API for its own slice.
+ */
+export async function getTours(params: { locale: string; category?: string; perPage?: number }): Promise<Paginated<TourCard>> {
+  const all = await getAllTours(params.locale);
+  const { category } = params;
+  const data = category ? all.data.filter((t) => t.category.key === category || t.category.key.startsWith(`${category}.`)) : all.data;
+  return { data: data.slice(0, params.perPage ?? 24) };
 }
 
 export type SiteSettings = { copy_protection: boolean };
