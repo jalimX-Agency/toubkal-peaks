@@ -4250,6 +4250,115 @@
     "max_altitude_m": 2279
    },
    "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1065,
+   "field": "summary",
+   "before": null,
+   "after": "A full-day Atlas Mountains hike and Berber cultural experience: escape the busy streets of Marrakech for Toubkal National Park, home to Mount Toubkal (4,167 m), the highest peak in North Africa, and walk from Imlil to the shrine of Sidi Chamharouch on a private excursion.",
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "Full day (approximately 8:30 AM – 5:30/6:00 PM)",
+    "maximum_altitude": "2,315 m",
+    "difficulty": "Moderate",
+    "type": "Private excursion"
+   },
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech – Toubkal National Park – Marrakech",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Escape the bustle of Marrakech and immerse yourself in the majestic scenery of the High Atlas Mountains on this full-day adventure to Toubkal National Park, home to North Africa’s highest peak. This trip offers a perfect combination of nature, culture, and local tradition.",
+      "Journey to Imlil",
+      "Your day begins with pickup from your hotel or riad in Marrakech at 09:00 AM. Travel in a private vehicle through the winding roads of the Atlas foothills, enjoying scenic mountain views, valleys, and traditional Berber villages along the way. Upon arrival in Imlil, meet your experienced local mountain guide who will lead you through the park.",
+      "Hike through Toubkal Valley",
+      "The hike begins in the lush Toubkal Valley, passing through green fields adorned with apple, walnut, and cherry trees. As you ascend, the views of Adj Mountain (3,100 m), Aglzim Mountain (3,900 m), and Mount Toubkal (4,167 m) dominate the landscape. The route combines gentle pathways with moderate inclines, offering opportunities to observe traditional mountain life, terraced farms, and local wildlife.",
+      "Sidi Chamarouch Shrine",
+      "Along the trail, reach Sidi Chamarouch (2,315 m), a small village and holy shrine dedicated to a revered local saint. Pilgrims have visited this site for centuries, and it remains a spiritual and cultural landmark. While non-Muslim visitors cannot cross the bridge into the shrine, you can admire its unique architecture and take photos from outside.",
+      "Picnic Lunch",
+      "Enjoy a traditional picnic lunch by the river and a waterfall, served on Berber carpets. Your chef prepares fresh Moroccan dishes, allowing you to savor the flavors of the Atlas while surrounded by breathtaking natural scenery. Take your time to relax, explore the area, and capture the tranquil beauty of the surroundings.",
+      "Return to Marrakech",
+      "After lunch, descend back to Aremd Village, enjoying the stunning valley views along the way. Return to Marrakech by private transport in the afternoon, concluding a day filled with adventure, culture, and unforgettable mountain landscapes."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Imlil – Toubkal National Park – Marrakech",
+     "stats": {
+      "duration": "About 8:30 AM – 5:30/6:00 PM",
+      "driving_time": "1.5 hours each way",
+      "driving_distance": "About 130 km round trip",
+      "walking_distance": "10–12 km",
+      "hiking_duration": "5–6 hours",
+      "elevation": "Max. 2,315 m",
+      "meals": "Picnic lunch"
+     },
+     "accommodation": "",
+     "body": [
+      "Escape the busy streets of Marrakech and discover the spectacular landscapes of Toubkal National Park, home to Mount Toubkal (4,167 m), the highest peak in North Africa.",
+      "Depart Marrakech at approximately 8:30 AM in a comfortable private vehicle and enjoy a scenic drive through the foothills of the High Atlas Mountains, passing traditional Berber villages and beautiful mountain valleys. After approximately 1.5 hours, arrive in Imlil (1,740 m), where you will meet your experienced local mountain guide.",
+      "Begin your hike through the beautiful Toubkal Valley, passing terraced fields, walnut and apple orchards, traditional mountain villages and impressive views of the surrounding peaks. Continue towards Aremd village and ascend to Sidi Chamharouch (2,315 m), an important local pilgrimage site known for its distinctive white-painted shrine and mountain setting.",
+      "Enjoy a traditional Moroccan picnic lunch near the river and waterfalls, surrounded by the breathtaking scenery of the High Atlas. After lunch, descend along the scenic mountain trails towards Imlil, where your driver will be waiting for the return journey to Marrakech. Arrival is expected at approximately 5:30–6:00 PM."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "highlights",
+   "before": [
+    "Panoramic views of North Africa’s highest peak, Mount Toubkal",
+    "Moderate hike through lush valleys, orchards, and terraced farms",
+    "Visit the historic Sidi Chamarouch shrine",
+    "Traditional picnic lunch by the river and waterfall",
+    "Ideal for photography, nature, and cultural experiences",
+    "Immersive experience in Berber village life and mountain culture"
+   ],
+   "after": [
+    "The Toubkal Valley, its terraced fields and walnut and apple orchards",
+    "Views of the High Atlas peaks around Mount Toubkal (4,167 m)",
+    "Aremd, a traditional Berber mountain village",
+    "The white shrine of Sidi Chamharouch (2,315 m), a local pilgrimage site",
+    "Traditional Moroccan picnic lunch by the river and waterfalls"
+   ],
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "upgrades",
+   "before": null,
+   "after": [
+    "Optional overnight stay at Riad Berber Towers, our charming mountain guesthouse in the heart of Imlil: comfortable rooms, mountain views, traditional Moroccan hospitality and breakfast included. The next morning, return to Marrakech or continue exploring the High Atlas. Not included in the excursion price: extra cost, subject to availability; dinner and other services are charged separately."
+   ],
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "settings",
+   "before": {
+    "difficulty": null,
+    "max_altitude_m": null
+   },
+   "after": {
+    "difficulty": "moderate",
+    "max_altitude_m": 2315
+   },
+   "note": "owner text 2026-10-31 (3)"
   }
  ]
 }

@@ -14,6 +14,7 @@
 # (trip photos) and toubkal:import-team (About page team).
 # Atlas Mountains & Imlil day trip: the full programme (the import kept only two paragraphs); Atlas Mountains 3 Valleys
 # day trip, Essaouira day trip and Atlas mountain biking day trip: the owner's new texts. All in the four languages.
+# Then: Toubkal National Park day trip (Imlil - Sidi Chamharouch), the owner's new programme, in the four languages.
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es

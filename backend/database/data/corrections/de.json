@@ -343,6 +343,102 @@
     "Eine Nacht im Riad Berber Towers, unserem Bergriad im Herzen von Imlil, vor oder nach Ihrer Tour: Fragen Sie uns nach der Verfügbarkeit"
    ],
    "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1065,
+   "field": "summary",
+   "before": null,
+   "after": "Ein ganzer Tag Wandern und Berberkultur im Atlas: Lassen Sie das Treiben von Marrakesch hinter sich und entdecken Sie den Toubkal-Nationalpark mit dem Toubkal (4.167 m), dem höchsten Gipfel Nordafrikas. Auf diesem privaten Ausflug wandern Sie von Imlil bis zum Heiligtum Sidi Chamharouch.",
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "Ganzer Tag (ca. 8:30 – 17:30/18:00 Uhr)",
+    "maximum_altitude": "2.315 m",
+    "difficulty": "Mittel",
+    "type": "Privater Ausflug"
+   },
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Toubkal-Nationalpark – Marrakesch",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Lassen Sie den Trubel Marrakeschs hinter sich und tauchen Sie ein in die majestätische Landschaft des Hohen Atlas: ein Tagesabenteuer im Toubkal-Nationalpark, Heimat des höchsten Gipfels Nordafrikas. Ein Tag, der Natur, Kultur und lokale Traditionen verbindet.",
+      "Fahrt nach Imlil",
+      "Abholung an Ihrem Hotel oder Riad in Marrakesch um 9:00 Uhr. Im privaten Fahrzeug geht es über kurvige Straßen durch die Ausläufer des Atlas, vorbei an Bergpanoramen, Tälern und traditionellen Berberdörfern. In Imlil erwartet Sie Ihr erfahrener einheimischer Bergführer, der Sie durch den Park begleitet.",
+      "Wanderung durch das Toubkal-Tal",
+      "Die Wanderung beginnt im grünen Toubkal-Tal, zwischen Feldern mit Apfel-, Walnuss- und Kirschbäumen. Beim Aufstieg prägen der Adj (3.100 m), der Aguelzim (3.900 m) und der Toubkal (4.167 m) die Landschaft. Der Weg wechselt zwischen leichten Passagen und mäßigen Anstiegen und gibt Einblicke in das traditionelle Bergleben, die Terrassenfelder und die Tierwelt.",
+      "Heiligtum Sidi Chamharouch",
+      "Unterwegs erreichen Sie Sidi Chamharouch (2.315 m), einen kleinen Weiler mit dem Heiligtum eines verehrten lokalen Heiligen. Pilger kommen seit Jahrhunderten hierher, und der Ort ist bis heute ein spirituelles und kulturelles Wahrzeichen. Nichtmuslimische Besucher dürfen die Brücke zum Heiligtum nicht überqueren, können die besondere Architektur aber von außen betrachten und fotografieren.",
+      "Picknick",
+      "Genießen Sie ein traditionelles Picknick am Fluss und an einem Wasserfall, serviert auf Berberteppichen. Ihr Koch bereitet frische marokkanische Gerichte zu, mitten in atemberaubender Natur. Nehmen Sie sich Zeit zum Entspannen, Erkunden und Genießen der ruhigen Umgebung.",
+      "Rückkehr nach Marrakesch",
+      "Nach dem Essen Abstieg zum Dorf Aremd mit herrlichem Blick ins Tal. Am Nachmittag Rückfahrt im privaten Fahrzeug nach Marrakesch, nach einem Tag voller Abenteuer, Kultur und unvergesslicher Berglandschaften."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Imlil – Toubkal-Nationalpark – Marrakesch",
+     "stats": {
+      "duration": "Ca. 8:30 – 17:30/18:00 Uhr",
+      "driving_time": "1,5 Stunden pro Strecke",
+      "driving_distance": "Ca. 130 km hin und zurück",
+      "walking_distance": "10–12 km",
+      "hiking_duration": "5–6 Stunden",
+      "elevation": "Max. 2.315 m",
+      "meals": "Picknick"
+     },
+     "accommodation": "",
+     "body": [
+      "Lassen Sie die belebten Straßen von Marrakesch hinter sich und entdecken Sie die spektakulären Landschaften des Toubkal-Nationalparks mit dem Toubkal (4.167 m), dem höchsten Gipfel Nordafrikas.",
+      "Abfahrt in Marrakesch gegen 8:30 Uhr in einem komfortablen Privatfahrzeug. Die Panoramastraße führt durch die Ausläufer des Hohen Atlas, vorbei an traditionellen Berberdörfern und schönen Bergtälern. Nach etwa 1,5 Stunden erreichen Sie Imlil (1.740 m), wo Sie Ihr erfahrener einheimischer Bergführer erwartet.",
+      "Die Wanderung beginnt im schönen Toubkal-Tal, vorbei an Terrassenfeldern, Walnuss- und Apfelgärten, traditionellen Bergdörfern und mit eindrucksvollen Blicken auf die umliegenden Gipfel. Weiter geht es zum Dorf Aremd und hinauf nach Sidi Chamharouch (2.315 m), einem wichtigen örtlichen Pilgerort, bekannt für sein weiß getünchtes Heiligtum inmitten der Berge.",
+      "Genießen Sie ein traditionelles marokkanisches Picknick am Fluss und an den Wasserfällen, umgeben von der atemberaubenden Landschaft des Hohen Atlas. Nach dem Mittagessen steigen Sie auf Bergpfaden nach Imlil ab, wo Ihr Fahrer für die Rückfahrt nach Marrakesch wartet. Ankunft gegen 17:30 – 18:00 Uhr."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "highlights",
+   "before": [
+    "Panoramablick auf den Toubkal, den höchsten Gipfel Nordafrikas",
+    "Mittelschwere Wanderung durch grüne Täler, Obstgärten und Terrassenfelder",
+    "Besuch des historischen Heiligtums Sidi Chamharouch",
+    "Traditionelles Picknick am Fluss und Wasserfall",
+    "Ideal für Fotografie, Natur und Kultur",
+    "Eintauchen in das Leben der Berberdörfer und die Bergkultur"
+   ],
+   "after": [
+    "Das Toubkal-Tal mit seinen Terrassenfeldern und Walnuss- und Apfelgärten",
+    "Blicke auf die Gipfel des Hohen Atlas rund um den Toubkal (4.167 m)",
+    "Aremd, ein traditionelles Berberdorf in den Bergen",
+    "Das weiße Heiligtum Sidi Chamharouch (2.315 m), ein örtlicher Pilgerort",
+    "Traditionelles marokkanisches Picknick am Fluss und an den Wasserfällen"
+   ],
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "upgrades",
+   "before": null,
+   "after": [
+    "Optionale Übernachtung im Riad Berber Towers, unserem charmanten Berggasthaus im Herzen von Imlil: komfortable Zimmer, Bergblick, traditionelle marokkanische Gastfreundschaft, Frühstück inklusive. Am nächsten Morgen zurück nach Marrakesch oder weiter in den Hohen Atlas. Nicht im Ausflugspreis enthalten: gegen Aufpreis und nach Verfügbarkeit; Abendessen und weitere Leistungen werden separat berechnet."
+   ],
+   "note": "owner text 2026-10-31 (3)"
   }
  ]
 }

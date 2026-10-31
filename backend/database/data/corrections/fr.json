@@ -343,6 +343,102 @@
     "Une nuit au Riad Berber Towers, notre riad de montagne au cœur d'Imlil, avant ou après votre sortie : contactez-nous pour les disponibilités"
    ],
    "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1065,
+   "field": "summary",
+   "before": null,
+   "after": "Une journée de randonnée et de découverte de la culture berbère dans l'Atlas : quittez l'agitation de Marrakech pour le parc national du Toubkal, qui abrite le Toubkal (4 167 m), plus haut sommet d'Afrique du Nord, et marchez d'Imlil jusqu'au sanctuaire de Sidi Chamharouch, en excursion privée.",
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "Journée complète (environ 8 h 30 – 17 h 30/18 h)",
+    "maximum_altitude": "2 315 m",
+    "difficulty": "Modérée",
+    "type": "Excursion privée"
+   },
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech – Parc national du Toubkal – Marrakech",
+     "stats": {},
+     "accommodation": "",
+     "body": [
+      "Échappez à l'agitation de Marrakech et plongez dans les paysages majestueux du Haut Atlas avec cette journée d'aventure dans le parc national du Toubkal, qui abrite le plus haut sommet d'Afrique du Nord. Une journée qui associe nature, culture et traditions locales.",
+      "Route vers Imlil",
+      "Prise en charge à votre hôtel ou riad de Marrakech à 9 h. En véhicule privé, vous suivez les routes sinueuses des contreforts de l'Atlas, entre panoramas de montagne, vallées et villages berbères traditionnels. À Imlil, vous retrouvez votre guide de montagne local expérimenté, qui vous accompagne dans le parc.",
+      "Randonnée dans la vallée du Toubkal",
+      "La randonnée commence dans la vallée verdoyante du Toubkal, à travers des champs plantés de pommiers, de noyers et de cerisiers. À mesure que vous montez, le mont Adj (3 100 m), le mont Aguelzim (3 900 m) et le Toubkal (4 167 m) dominent le paysage. Le sentier alterne passages faciles et montées modérées, avec la vie montagnarde traditionnelle, les cultures en terrasses et la faune locale tout autour.",
+      "Sanctuaire de Sidi Chamharouch",
+      "Sur le sentier, vous atteignez Sidi Chamharouch (2 315 m), petit hameau et sanctuaire dédié à un saint local vénéré. Les pèlerins s'y rendent depuis des siècles et le lieu reste un repère spirituel et culturel. Les visiteurs non musulmans ne peuvent pas franchir le pont menant au sanctuaire, mais peuvent admirer son architecture et le photographier de l'extérieur.",
+      "Pique-nique",
+      "Déjeuner pique-nique traditionnel au bord de la rivière et d'une cascade, servi sur des tapis berbères. Votre cuisinier prépare des plats marocains frais pour savourer les saveurs de l'Atlas au cœur d'une nature à couper le souffle. Prenez le temps de vous détendre, d'explorer les environs et de profiter de la beauté paisible des lieux.",
+      "Retour à Marrakech",
+      "Après le déjeuner, descente vers le village d'Aremd avec de superbes vues sur la vallée. Retour à Marrakech en transport privé dans l'après-midi, au terme d'une journée d'aventure, de culture et de paysages de montagne inoubliables."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Imlil – parc national du Toubkal – Marrakech",
+     "stats": {
+      "duration": "Environ 8 h 30 – 17 h 30/18 h",
+      "driving_time": "1 h 30 dans chaque sens",
+      "driving_distance": "Environ 130 km aller-retour",
+      "walking_distance": "10 à 12 km",
+      "hiking_duration": "5 à 6 heures",
+      "elevation": "2 315 m max.",
+      "meals": "Pique-nique"
+     },
+     "accommodation": "",
+     "body": [
+      "Quittez l'agitation de Marrakech et découvrez les paysages spectaculaires du parc national du Toubkal, qui abrite le Toubkal (4 167 m), plus haut sommet d'Afrique du Nord.",
+      "Départ de Marrakech vers 8 h 30 dans un véhicule privé confortable. La route panoramique traverse les contreforts du Haut Atlas, ses villages berbères traditionnels et ses belles vallées de montagne. Après environ 1 h 30, arrivée à Imlil (1 740 m), où vous retrouvez votre guide de montagne local expérimenté.",
+      "La randonnée commence dans la belle vallée du Toubkal, entre cultures en terrasses, vergers de noyers et de pommiers, villages de montagne traditionnels et vues impressionnantes sur les sommets alentour. Vous continuez vers le village d'Aremd puis montez jusqu'à Sidi Chamharouch (2 315 m), important lieu de pèlerinage local, reconnaissable à son sanctuaire peint en blanc dans un cadre de montagne.",
+      "Pique-nique marocain traditionnel près de la rivière et des cascades, au milieu des paysages grandioses du Haut Atlas. Après le déjeuner, descente par les sentiers de montagne vers Imlil, où votre chauffeur vous attend pour le retour à Marrakech. Arrivée prévue vers 17 h 30 – 18 h."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "highlights",
+   "before": [
+    "Vue panoramique sur le Toubkal, plus haut sommet d'Afrique du Nord",
+    "Randonnée modérée à travers vallées verdoyantes, vergers et cultures en terrasses",
+    "Visite du sanctuaire historique de Sidi Chamharouch",
+    "Pique-nique traditionnel au bord de la rivière et de la cascade",
+    "Idéal pour la photo, la nature et la découverte culturelle",
+    "Immersion dans la vie des villages berbères et la culture de montagne"
+   ],
+   "after": [
+    "La vallée du Toubkal, ses cultures en terrasses et ses vergers de noyers et de pommiers",
+    "Vues sur les sommets du Haut Atlas autour du Toubkal (4 167 m)",
+    "Aremd, village berbère de montagne traditionnel",
+    "Le sanctuaire blanc de Sidi Chamharouch (2 315 m), lieu de pèlerinage local",
+    "Pique-nique marocain traditionnel au bord de la rivière et des cascades"
+   ],
+   "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 1065,
+   "field": "upgrades",
+   "before": null,
+   "after": [
+    "Nuit en option au Riad Berber Towers, notre charmante maison d'hôtes de montagne au cœur d'Imlil : chambres confortables, vue sur les montagnes, hospitalité marocaine traditionnelle et petit-déjeuner inclus. Le lendemain matin, retour à Marrakech ou poursuite de la découverte du Haut Atlas. Non inclus dans le prix de l'excursion : supplément, sous réserve de disponibilité ; dîner et autres services en supplément."
+   ],
+   "note": "owner text 2026-10-31 (3)"
   }
  ]
 }
