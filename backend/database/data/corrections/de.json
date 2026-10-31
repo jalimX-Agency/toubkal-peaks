@@ -160,6 +160,189 @@
     "Geführte Spaziergänge und kulturelle Besuche"
    ],
    "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1077,
+   "field": "summary",
+   "before": null,
+   "after": "Ein privater Tagesausflug an die Atlantikküste: Lassen Sie das Treiben von Marrakesch hinter sich und entdecken Sie Essaouira, die historische Küstenstadt mit ihrer UNESCO-geschützten Medina, dem traditionellen Fischerhafen, Sandstränden und entspannter Atmosphäre, mit einem Halt bei einer Arganöl-Kooperative unterwegs.",
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "1 Tag (ca. 8:00 – 19:00 Uhr)",
+    "departs_from": "Marrakesch",
+    "type": "Privater Ausflug"
+   },
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Essaouira entdecken – Marrakesch",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Tagesausflug nach Essaouira – Küstenstadt, Medina und Argan",
+      "Inklusive: privater Transport (ca. 2,5 Stunden pro Strecke), professioneller Guide und optionale Aktivitäten.",
+      "Beginnen Sie den Tag mit dem Frühstück in Marrakesch und fahren Sie dann nach Essaouira, einer charmanten Küstenstadt mit reichem kulturellem und historischem Erbe. Die Fahrt führt durch schöne Landschaften, kleine Orte und einzelne Berberdörfer.",
+      "Essaouira, das frühere Mogador, ist seit Langem ein kultureller Treffpunkt und zog in den 1960er- und 70er-Jahren Musiker wie Jimi Hendrix, Bob Marley und Cat Stevens an. Besuchen Sie die Medina, ein UNESCO-Welterbe, mit weiß getünchten Häusern und blauen Fensterläden, Thuja-Holzwerkstätten, Kunstgalerien und vielen Fischrestaurants.",
+      "Höhepunkte der Tour:",
+      "- Rundgang durch die Medina mit den Gewürz- und Schmucksouks",
+      "- Place Moulay El Hassan und die Skala du Port mit Blick auf die portugiesischen Festungsmauern und den Fischerhafen",
+      "- Besuch einer Argan-Kooperative, in der Frauen Öl, Mus und Kosmetik aus Argan herstellen",
+      "- Optional ein Weingut der Region mit Wein- und Käseverkostung",
+      "- Mittagessen in einem traditionellen Fischgrill mit Blick auf den Atlantik",
+      "- Der Orson-Welles-Platz, der an die Dreharbeiten zu Othello in Essaouira erinnert",
+      "Für Abenteuerlustige bietet die Ranch de Diabat Quadfahren, Kamel- oder Pferderitte und Wassersport wie Kajak, Windsurfen oder Surfen (je nach Wetter). Essaouira gilt als Windhauptstadt Afrikas und ist ideal für Wassersportler.",
+      "Rückkehr nach Marrakesch am späten Nachmittag, nach einem Tag voller Kultur, Geschichte und Küstenschönheit."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Essaouira – Marrakesch",
+     "stats": {
+      "duration": "Ca. 8:00 – 19:00 Uhr",
+      "driving_time": "2,5–3 Stunden pro Strecke",
+      "driving_distance": "Rund 360 km hin und zurück"
+     },
+     "accommodation": "",
+     "body": [
+      "Abfahrt in Marrakesch gegen 8:00 Uhr in einem komfortablen, klimatisierten Privatfahrzeug mit Ihrem professionellen, Englisch sprechenden Fahrer. Die Fahrt führt durch das marokkanische Hinterland, vorbei an traditionellen Dörfern, Feldern und den berühmten Arganwäldern.",
+      "Unterwegs halten Sie bei einer Arganöl-Kooperative und erfahren, wie das berühmte marokkanische Arganöl traditionell hergestellt wird und wie die Frauen der Region natürliche Öle, Kosmetik und kulinarische Produkte erzeugen.",
+      "Weiter geht es nach Essaouira, dem früheren Mogador, einer reizvollen Küstenstadt mit faszinierender Geschichte und einzigartiger Architektur. Erkunden Sie die Medina, UNESCO-Weltkulturerbe, mit ihren weiß getünchten Häusern und blauen Fensterläden, traditionellen Souks, Kunstgalerien und Handwerksbetrieben.",
+      "Besuchen Sie den Platz Moulay El Hassan, die Skala de la Kasbah und die Skala du Port mit ihren beeindruckenden Festungsmauern im portugiesischen Stil, den blauen Fischerbooten und spektakulären Ausblicken auf den Atlantik. Entdecken Sie auch das berühmte Thujaholz-Handwerk der Stadt und den Orson-Welles-Platz, der an die Dreharbeiten zu Othello erinnert.",
+      "Freie Zeit zum Mittagessen in einem traditionellen Restaurant oder an einem Fischgrill, wo Sie fangfrischen Fisch und andere marokkanische Spezialitäten mit Blick auf den Atlantik probieren.",
+      "Am späten Nachmittag treffen Sie Ihren Fahrer zur Rückfahrt nach Marrakesch durch Küsten- und Landschaften des Hinterlands. Ankunft in Ihrem Hotel oder Riad gegen 19:00 Uhr."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "Ein Halt bei einer Arganöl-Kooperative der Frauen",
+    "Die UNESCO-geschützte Medina von Essaouira mit Souks und Kunstgalerien",
+    "Die portugiesischen Festungsmauern der Skala und die blauen Boote im Hafen",
+    "Frischer Fisch und marokkanische Spezialitäten am Atlantik",
+    "Thujaholz-Handwerk und der Orson-Welles-Platz"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "included",
+   "before": [
+    "Privater Transport",
+    "Englischsprachiger Fahrer"
+   ],
+   "after": [
+    "Komfortables, klimatisiertes Privatfahrzeug",
+    "Professioneller, Englisch sprechender Fahrer",
+    "Besuch einer Arganöl-Kooperative"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "upgrades",
+   "before": null,
+   "after": [
+    "Kamel- oder Pferderitt am Strand, Quad, Surfen, Windsurfen, Kitesurfen und Kajak (je nach Wetter und Verfügbarkeit)"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "summary",
+   "before": "Diese Tour verbindet Abenteuer im Atlasgebirge mit kulturellen Entdeckungen: ideal für Reisende, die Radfahren und authentische Begegnungen gleichermaßen lieben.",
+   "after": "Eine wunderbare Verbindung aus Mountainbiken, spektakulären Landschaften und authentischer Berberkultur im Herzen des Hohen Atlas: von Imlil über den Pass Tizi n'Tamatert (2.279 m) und durch das Imnane-Tal hinab zum Marktort Asni.",
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "facts",
+   "before": {
+    "duration": "Ganzer Tag (ca. 45 km mit dem Rad)",
+    "difficulty": "Mittel (für aktive Reisende)",
+    "best_time": "Ganzjährig"
+   },
+   "after": {
+    "duration": "Ganzer Tag (6–7 Stunden)",
+    "difficulty": "Anspruchsvoll",
+    "maximum_altitude": "Pass Tizi n'Tamatert (2.279 m)"
+   },
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Imlil – mit dem Rad nach Asni",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Abfahrt in Marrakesch um 9:00 Uhr im privaten Fahrzeug. In Imlil (1.740 m) empfängt Sie Ihr Bergführer und bereitet Sie auf den Tag vor. Zunächst geht es auf Asphalt stetig bergauf zum Tizi-n'Tamatert-Pass (2.300 m), mit herrlichem Blick auf die Gipfel des Atlas.",
+      "Nach einer kurzen Pause am Pass folgen Sie einer Panoramapiste hinunter ins Imnan-Tal mit traditionellen Berberdörfern wie Ouanskra, Tamguist, Ikiss und Amsakrou. Vorbei an Terrassenfeldern, Walnusshainen und Lehmhäusern verbindet die Strecke Begegnungen und Naturschönheit.",
+      "Gegen Mittag Halt im ruhigen Dorf Arg für ein Picknick am Fluss im Schatten der Walnussbäume, der perfekte Ort zum Entspannen und Kraft tanken.",
+      "Am Nachmittag fahren Sie durch Amsakrou und dann hinunter zum Dorf Imsker, tiefer hinein in die Tallandschaft. Schließlich erreichen Sie Asni (1.300 m), einen lebhaften Ort, bekannt für seinen Berbermarkt am Samstag, auf dem die Einheimischen in bunter, authentischer Atmosphäre handeln.",
+      "Am Ende der Tour bringt Sie Ihr privates Fahrzeug bequem zurück nach Marrakesch."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Imlil – mit dem Mountainbike nach Asni",
+     "stats": {
+      "distance": "Rund 40–45 km mit dem Rad",
+      "transfer_time": "Rund 65 km von Marrakesch nach Imlil",
+      "meals": "Picknick"
+     },
+     "accommodation": "",
+     "body": [
+      "Ihr Abenteuer beginnt um 9:00 Uhr mit einem privaten Transfer von Marrakesch nach Imlil (1.740 m), rund 65 km entfernt. Sie treffen Ihren professionellen Mountainbike-Guide und fahren bergauf zum Pass Tizi n'Tamatert, mit spektakulären Panoramablicken auf den Hohen Atlas.",
+      "Nach einer kurzen Pause geht es hinab ins schöne Imnane-Tal, vorbei an traditionellen Berberdörfern wie Ouanskra, Tamguist, Ikiss und Amsakrou. Erleben Sie das authentische Bergleben, Terrassenfelder, Walnusshaine und traditionelle Berberhäuser.",
+      "Gegen Mittag genießen Sie ein Picknick am Fluss beim Dorf Arg. Am Nachmittag fahren Sie weiter durch das Tal nach Imsker und beenden die Tour in Asni, einem traditionellen Berber-Marktort. Samstags können Sie auch den lebhaften Wochenmarkt erkunden.",
+      "Am Ende der Tour wartet Ihr Privatfahrzeug auf Sie für die bequeme Rückfahrt nach Marrakesch."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "Aufstieg zum Pass Tizi n'Tamatert (2.279 m) mit Blick auf den Hohen Atlas",
+    "Abfahrt durch das Imnane-Tal und seine Berberdörfer",
+    "Picknick am Fluss bei Arg",
+    "Ziel in Asni mit seinem Samstagsmarkt"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "upgrades",
+   "before": null,
+   "after": [
+    "Eine Nacht im Riad Berber Towers, unserem Bergriad im Herzen von Imlil, vor oder nach Ihrer Tour: Fragen Sie uns nach der Verfügbarkeit"
+   ],
+   "note": "owner text 2026-10-31 (2)"
   }
  ]
 }

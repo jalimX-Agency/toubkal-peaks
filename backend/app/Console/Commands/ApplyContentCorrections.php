@@ -40,6 +40,11 @@ class ApplyContentCorrections extends Command
 
                 continue;
             }
+            if ($c['field'] === 'settings') {
+                $counts[$this->correctSettings($tourIds[$c['id']] ?? null, $c)]++;
+
+                continue;
+            }
 
             $translation = isset($tourIds[$c['id']])
                 ? TourTranslation::where(['tour_id' => $tourIds[$c['id']], 'locale' => $locale])->first()
@@ -67,6 +72,33 @@ class ApplyContentCorrections extends Command
         $this->table(array_keys($counts), [array_values($counts)]);
 
         return self::SUCCESS;
+    }
+
+    /**
+     * Trip settings shared by every language (difficulty, highest altitude, duration), as in the admin's
+     * Settings tab. Same rule as the texts: replaced only while they still hold the "before" values.
+     */
+    private function correctSettings(?int $tourId, array $c): string
+    {
+        $tour = $tourId ? Tour::withTrashed()->find($tourId) : null;
+        if ($tour === null) {
+            return 'unknown tour';
+        }
+
+        $keys = array_values(array_intersect(array_keys($c['after']), ['difficulty', 'max_altitude_m', 'duration_days', 'duration_nights']));
+        $current = $tour->only($keys);
+        if ($current == array_intersect_key($c['after'], array_flip($keys))) {
+            return 'already done';
+        }
+        if ($current != array_intersect_key($c['before'], array_flip($keys))) {
+            $this->warn("Kept tour {$c['id']} settings: edited since the import.");
+
+            return 'edited since (kept)';
+        }
+        $tour->fill(array_intersect_key($c['after'], array_flip($keys)));
+        $this->option('dry-run') || $tour->save();
+
+        return 'applied';
     }
 
     /**

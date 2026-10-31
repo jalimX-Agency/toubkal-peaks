@@ -13,7 +13,7 @@
 # Also run since: the corrections and translations of the Ait Bougmez and M'Goun programmes, toubkal:sync-images
 # (trip photos) and toubkal:import-team (About page team).
 # Atlas Mountains & Imlil day trip: the full programme (the import kept only two paragraphs); Atlas Mountains 3 Valleys
-# day trip: the owner's new text. Both in the four languages.
+# day trip, Essaouira day trip and Atlas mountain biking day trip: the owner's new texts. All in the four languages.
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es

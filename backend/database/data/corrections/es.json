@@ -160,6 +160,196 @@
     "Paseos guiados y visitas culturales"
    ],
    "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1077,
+   "field": "title",
+   "before": "Excursión a Esauira desde Marrakech",
+   "after": "Excursión a Essaouira desde Marrakech",
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "summary",
+   "before": null,
+   "after": "Una excursión privada de un día a la costa atlántica: deja el bullicio de Marrakech por Essaouira, ciudad histórica junto al mar famosa por su medina declarada Patrimonio de la UNESCO, su puerto pesquero tradicional, sus playas de arena y su ambiente relajado, con una parada en una cooperativa de aceite de argán por el camino.",
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "1 día (aprox. 8:00 – 19:00)",
+    "departs_from": "Marrakech",
+    "type": "Excursión privada"
+   },
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech – descubrimiento de Esauira – Marrakech",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Excursión a Esauira – ciudad costera, medina y argán",
+      "Incluye: transporte privado (aprox. 2 h 30 por trayecto), guía profesional y actividades opcionales.",
+      "Empieza el día con el desayuno en Marrakech y sal hacia Esauira, una encantadora ciudad costera con un rico patrimonio cultural e histórico. El trayecto atraviesa paisajes bonitos, pequeños pueblos junto a la carretera y algunas aldeas bereberes.",
+      "Esauira, antigua Mogador, ha sido durante mucho tiempo un centro cultural que atrajo en los años sesenta y setenta a músicos famosos como Jimi Hendrix, Bob Marley y Cat Stevens. Visita su medina, Patrimonio Mundial de la UNESCO, con casas encaladas de contraventanas azules, talleres de madera de tuya, galerías de arte y muchos restaurantes de pescado.",
+      "Lo más destacado:",
+      "- Recorrido por la medina, incluidos los zocos de especias y de joyas",
+      "- La plaza Moulay El Hassan y la Skala del puerto, con vistas impresionantes de las murallas portuguesas y del puerto pesquero",
+      "- Parada en una cooperativa de argán para ver cómo las mujeres elaboran aceite, crema y cosméticos de argán",
+      "- Visita opcional a una bodega de la región para una cata de vinos y quesos",
+      "- Almuerzo en un asador de pescado tradicional frente al Atlántico",
+      "- La plaza Orson Welles, que recuerda el rodaje de Otelo en Esauira",
+      "Para los amantes de la aventura, el Rancho de Diabat ofrece quads, paseos en camello o a caballo y deportes acuáticos como kayak, windsurf o surf (según el tiempo). Esauira es conocida como la capital del viento de África, ideal para los deportes acuáticos.",
+      "Regreso a Marrakech a última hora de la tarde, al final de un día lleno de cultura, historia y belleza costera."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Essaouira – Marrakech",
+     "stats": {
+      "duration": "Aprox. 8:00 – 19:00",
+      "driving_time": "2 h 30 a 3 h en cada sentido",
+      "driving_distance": "Unos 360 km ida y vuelta"
+     },
+     "accommodation": "",
+     "body": [
+      "Salida de Marrakech hacia las 8:00 en un vehículo privado cómodo y con aire acondicionado, con tu conductor profesional de habla inglesa. La ruta cruza el campo marroquí, sus pueblos tradicionales, sus tierras de cultivo y los famosos bosques de arganes.",
+      "Por el camino, parada en una cooperativa de aceite de argán para descubrir la elaboración tradicional del famoso aceite de argán de Marruecos y el trabajo de las mujeres de la zona, que producen aceites naturales, cosméticos y productos culinarios.",
+      "Continúas hacia Essaouira, la antigua Mogador, una encantadora ciudad costera con una historia fascinante y una arquitectura única. Recorre su medina, Patrimonio Mundial de la UNESCO, con sus casas encaladas de contraventanas azules, zocos tradicionales, galerías de arte y talleres de artesanos.",
+      "Visita la plaza Moulay El Hassan, la Skala de la Kasbah y la Skala del puerto, donde admirarás las impresionantes murallas de estilo portugués, las barcas de pesca azules y vistas espectaculares del océano Atlántico. También puedes descubrir la famosa artesanía en madera de tuya y la plaza Orson Welles, vinculada al rodaje de Otelo.",
+      "Tiempo libre para almorzar en un restaurante tradicional o en una parrilla de pescado, donde probarás pescado recién capturado y otras especialidades marroquíes frente al Atlántico.",
+      "A última hora de la tarde, te reúnes con tu conductor para volver a Marrakech entre paisajes de costa y campo. Llegada a tu hotel o riad hacia las 19:00."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "Parada en una cooperativa femenina de aceite de argán",
+    "La medina de Essaouira, Patrimonio de la UNESCO, sus zocos y galerías de arte",
+    "Las murallas portuguesas de la Skala y las barcas azules del puerto",
+    "Pescado fresco y especialidades marroquíes frente al Atlántico",
+    "La artesanía en madera de tuya y la plaza Orson Welles"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "included",
+   "before": [
+    "Transporte privado",
+    "Conductor de habla inglesa"
+   ],
+   "after": [
+    "Vehículo privado cómodo con aire acondicionado",
+    "Conductor profesional de habla inglesa",
+    "Visita a una cooperativa de aceite de argán"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1077,
+   "field": "upgrades",
+   "before": null,
+   "after": [
+    "Paseo en camello o a caballo por la playa, quad, surf, windsurf, kitesurf y kayak (según el tiempo y la disponibilidad)"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "summary",
+   "before": "Esta salida combina aventura en el Atlas y descubrimiento cultural: la elección perfecta para viajeros a los que les gusta tanto la bici como los encuentros auténticos.",
+   "after": "Una magnífica combinación de bicicleta de montaña, paisajes espectaculares y auténtica cultura bereber en pleno Alto Atlas: de Imlil al puerto de Tizi n'Tamatert (2.279 m) y bajada por el valle de Imnane hasta el pueblo de mercado de Asni.",
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "facts",
+   "before": {
+    "duration": "Día completo (unos 45 km en bici)",
+    "difficulty": "Moderada (para viajeros activos)",
+    "best_time": "Todo el año"
+   },
+   "after": {
+    "duration": "Día completo (6–7 horas)",
+    "difficulty": "Exigente",
+    "maximum_altitude": "Puerto de Tizi n'Tamatert (2.279 m)"
+   },
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech – Imlil – en bici hasta Asni",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Salida de Marrakech a las 9:00 en transporte privado. En Imlil (1.740 m) te espera tu guía de montaña para prepararte para el día. Empiezas pedaleando cuesta arriba por carretera asfaltada, subiendo poco a poco hacia el puerto de Tizi n'Tamatert (2.300 m), con vistas impresionantes de las cumbres del Atlas.",
+      "Tras una breve pausa en el puerto, sigues por una pista panorámica que baja al valle de Imnan, salpicado de pueblos bereberes tradicionales como Ouanskra, Tamguist, Ikiss y Amsakrou. Entre bancales, nogales y casas de adobe, el recorrido combina encuentros culturales y belleza natural.",
+      "Hacia mediodía, parada en el tranquilo pueblo de Arg para un picnic junto al río, a la sombra de los nogales: el lugar perfecto para descansar y reponer fuerzas.",
+      "Por la tarde atraviesas Amsakrou y bajas hacia el pueblo de Imsker por una carretera que se adentra en el valle. Finalmente llegas a Asni (1.300 m), un pueblo animado conocido por su zoco bereber de los sábados, donde los lugareños se reúnen para comerciar en un ambiente colorido y auténtico.",
+      "Al final del recorrido, tu transporte privado te espera para llevarte cómodamente de vuelta a Marrakech."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Imlil – bicicleta de montaña hasta Asni",
+     "stats": {
+      "distance": "Unos 40–45 km en bici",
+      "transfer_time": "Unos 65 km de Marrakech a Imlil",
+      "meals": "Pícnic"
+     },
+     "accommodation": "",
+     "body": [
+      "La aventura empieza a las 9:00 con un traslado privado de Marrakech a Imlil (1.740 m), a unos 65 km. Te encuentras con tu guía profesional de bicicleta de montaña y empiezas a subir hacia el puerto de Tizi n'Tamatert, con espectaculares vistas panorámicas del Alto Atlas.",
+      "Tras un breve descanso, bajas al precioso valle de Imnane, pasando por pueblos bereberes tradicionales como Ouanskra, Tamguist, Ikiss y Amsakrou. Descubre la auténtica vida de montaña, los campos en terrazas, los nogales y las casas bereberes tradicionales.",
+      "Hacia mediodía, pícnic junto al río cerca del pueblo de Arg. Por la tarde, continúas por el valle hacia Imsker antes de terminar en Asni, un pueblo bereber de mercado. Si es sábado, también puedes recorrer su animado zoco semanal.",
+      "Al final del recorrido, tu vehículo privado te espera para el cómodo regreso a Marrakech."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "Subida al puerto de Tizi n'Tamatert (2.279 m) con vistas al Alto Atlas",
+    "Bajada por el valle de Imnane y sus pueblos bereberes",
+    "Pícnic junto al río cerca de Arg",
+    "Final en Asni, con su mercado de los sábados"
+   ],
+   "note": "owner text 2026-10-31 (2)"
+  },
+  {
+   "id": 1078,
+   "field": "upgrades",
+   "before": null,
+   "after": [
+    "Una noche en el Riad Berber Towers, nuestro riad de montaña en el corazón de Imlil, antes o después de la ruta: consúltanos la disponibilidad"
+   ],
+   "note": "owner text 2026-10-31 (2)"
   }
  ]
 }
