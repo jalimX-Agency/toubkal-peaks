@@ -2,6 +2,7 @@
 import { cookies } from "next/headers";
 import { cache } from "react";
 import { redirect } from "next/navigation";
+import { ORIGIN_HEADERS } from "@/lib/origin";
 
 // ADMIN_API_URL lets a local admin talk to a local API while the public pages read production.
 const API_URL = process.env.ADMIN_API_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
@@ -43,6 +44,7 @@ async function call(path: string, init: RequestInit & { token?: string | null } 
         // a FormData body (file upload) sets its own multipart content type
         ...(rest.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
         "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)",
+        ...ORIGIN_HEADERS,
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
         ...(rest.headers ?? {}),
       },

@@ -1,5 +1,6 @@
 import { cacheLife, cacheTag } from "next/cache";
 import type { Category, Paginated, Review, ReviewSummary, TeamMember, TourCard, TourDetail } from "@/lib/types";
+import { ORIGIN_HEADERS } from "@/lib/origin";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
 
@@ -64,7 +65,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
         // Next.js rejects inside "use cache" (the page fails with a 500, React error #441).
         signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
         // a clear user agent: the host's firewall blocks some generic ones, and this one can be allow-listed
-        headers: { Accept: "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)", ...(init?.headers ?? {}) },
+        headers: { Accept: "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)", ...ORIGIN_HEADERS, ...(init?.headers ?? {}) },
       }),
     );
     const refused = RETRY_STATUSES.includes(res.status) || (res.ok && !isJson(res));
