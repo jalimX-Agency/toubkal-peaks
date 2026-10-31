@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { localePath, locales, type Locale } from "@/i18n/config";
+import { activities } from "@/content/activities";
+import { destinations } from "@/content/destinations";
 import { getTours } from "@/lib/api";
 import { HUBS } from "@/lib/hubs";
 import { site } from "@/lib/site";
@@ -11,6 +13,10 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/book", priority: 0.6 },
   { path: "/about", priority: 0.6 },
   { path: "/contact", priority: 0.5 },
+  { path: "/destinations", priority: 0.7 },
+  { path: "/toubkal-guide", priority: 0.8 },
+  ...destinations.map((d) => ({ path: `/destinations/${d.slug}`, priority: 0.7 })),
+  ...activities.map((a) => ({ path: `/activities/${a.slug}`, priority: 0.6 })),
 ];
 
 const url = (lang: Locale, path: string) => `${site.url}${localePath(lang, path)}`;

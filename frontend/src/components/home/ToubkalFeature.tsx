@@ -22,8 +22,9 @@ const x = (at: number) => PAD.left + at * (W - PAD.left - PAD.right);
 const y = (alt: number) => PAD.top + (1 - (alt - 1500) / (4300 - 1500)) * (H - PAD.top - PAD.bottom);
 
 /** Mount Toubkal, the company's signature climb: the route as an elevation profile, key figures and the trips. */
-export function ToubkalFeature({ lang, dict, count, fromPrice }: {
+export function ToubkalFeature({ lang, dict, count, fromPrice, guideLabel }: {
   lang: Locale;
+  guideLabel: string;
   dict: Dictionary["toubkal"];
   count: number;
   fromPrice: { amount: number; currency: string } | null;
@@ -62,6 +63,9 @@ export function ToubkalFeature({ lang, dict, count, fromPrice }: {
             <Link href={localePath(lang, "/treks/toubkal")} className="btn-gold">
               {dict.cta}
               <Arrow />
+            </Link>
+            <Link href={localePath(lang, "/toubkal-guide")} className="text-sm font-semibold text-navy underline decoration-gold underline-offset-4 hover:text-gold">
+              {guideLabel}
             </Link>
             {count > 0 && (
               <p className="text-sm text-muted">

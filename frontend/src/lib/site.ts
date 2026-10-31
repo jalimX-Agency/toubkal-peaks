@@ -52,7 +52,7 @@ export const media = {
 };
 
 /** Background photos of the page heroes (category hubs and pages without a photo of their own), on R2 (site/trips/). */
-const TRIPS = `${CDN}/site/trips`;
+export const TRIPS = `${CDN}/site/trips`;
 export const pageHeroes: Record<string, string> = {
   "treks": `${TRIPS}/o189-trekking-group-on-a-mountain-path.jpg`,
   "treks.toubkal": `${TRIPS}/o57-trekkers-on-the-snowy-slopes-below-toubkal.jpg`,

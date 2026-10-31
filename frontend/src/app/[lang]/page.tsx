@@ -14,6 +14,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { TourExplorer } from "@/components/home/TourExplorer";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { hasLocale, localePath, locales } from "@/i18n/config";
+import { explore } from "@/content/explore";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { getReviews, getTeam, getTours } from "@/lib/api";
 import { media, site } from "@/lib/site";
@@ -94,7 +95,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         />
       )}
       <HowItWorks dict={dict.steps} />
-      <ToubkalFeature lang={lang} dict={dict.toubkal} count={toubkal.length} fromPrice={toubkalFrom} />
+      <ToubkalFeature lang={lang} dict={dict.toubkal} count={toubkal.length} fromPrice={toubkalFrom} guideLabel={explore[lang].guideLink} />
       <RiadBand dict={dict.riad} />
       <Seasons dict={dict.seasons} />
       <Guides lang={lang} dict={dict.guides} members={team} />
