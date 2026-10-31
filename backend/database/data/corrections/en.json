@@ -3887,6 +3887,67 @@
      759.0
     ]
    ]
+  },
+  {
+   "id": 24290,
+   "field": "summary",
+   "before": "Escape the vibrant city of Marrakech and immerse yourself in the tranquil beauty of the High Atlas Mountains. This day trip offers a perfect combination of nature, culture, and adventure, ideal for travelers seeking an authentic Moroccan experience outside the city.\n\nYour day begins at 09:00 with pickup from your Marrakech hotel or riad. Enjoy a scenic drive of approximately 1.5 hours through the rugged Moulay Brahim Gorges, where dramatic cliffs, rivers, and verdant valleys set the stage for your adventure. You’ll pass through Asni, a lively Berber village known for its weekly market, full of colorful spices, local crafts, and traditional produce. Depending on the route, you may also pass through Tahnnaout or Ourika, each offering glimpses of rural Moroccan life.",
+   "after": "Escape the vibrant city of Marrakech and immerse yourself in the tranquil beauty of the High Atlas Mountains. This day trip offers a perfect combination of nature, culture, and adventure, ideal for travelers seeking an authentic Moroccan experience outside the city."
+  },
+  {
+   "id": 24290,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "OVERVIEW",
+     "stats": [],
+     "accommodation": "",
+     "body": []
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Imlil – Aroumd – Marrakech",
+     "stats": {
+      "transport": "About 1.5 hours each way",
+      "hiking_duration": "1–4 hours, as you wish",
+      "meals": "Lunch"
+     },
+     "accommodation": "",
+     "body": [
+      "Your day begins at 09:00 with pickup from your Marrakech hotel or riad. Enjoy a scenic drive of approximately 1.5 hours through the rugged Moulay Brahim Gorges, where dramatic cliffs, rivers and green valleys set the stage for your adventure. You pass through Asni, a lively Berber village known for its weekly market, full of colourful spices, local crafts and traditional produce. Depending on the route, you may also pass through Tahanaout or the Ourika valley, each offering glimpses of rural Moroccan life.",
+      "Imlil, a charming village at the foot of Mount Toubkal (4,167 m), is the starting point for many treks and mountain adventures. It is a hub for local guides, mule services and trekking paths, nestled in a lush valley surrounded by high peaks. Here you can take in the alpine atmosphere and get ready for your walk or optional mule ride.",
+      "From Imlil, the walk (or mule ride) continues south to Aroumd village (1,850 m). The trail winds through terraced fields, olive groves and streams, with spectacular views of the Western High Atlas. Along the way you pass traditional Berber houses, see villagers at work and feel the rhythm of rural life.",
+      "In Aroumd, enjoy a traditional Berber lunch in a local family’s home: a unique chance to taste authentic Moroccan cooking, meet the locals and experience Berber hospitality. After lunch, take a short walk around the village, with its old paths, small streams and panoramic viewpoints.",
+      "In the afternoon, return to Marrakech by private vehicle, with more views of the peaks, valleys and forests: a relaxing end to a day of adventure, culture and natural beauty. The walk lasts 1 to 4 hours depending on your wishes, and a mule can carry those who prefer to walk less."
+     ]
+    }
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "Scenic drive through the Moulay Brahim gorges and the Berber market village of Asni",
+    "Imlil, the village at the foot of Mount Toubkal (4,167 m)",
+    "Walk or mule ride through terraced fields to Aroumd (1,850 m)",
+    "Traditional lunch in a Berber family’s home",
+    "A walk of 1 to 4 hours, suitable for most fitness levels"
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "facts",
+   "before": {
+    "difficulty": "Easy to moderate; suitable for most fitness levels"
+   },
+   "after": {
+    "difficulty": "Easy to moderate; suitable for most fitness levels",
+    "departure_time": "09:00, from your hotel or riad in Marrakech"
+   }
   }
  ]
 }

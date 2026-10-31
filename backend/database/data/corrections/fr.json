@@ -1,0 +1,66 @@
+{
+ "locale": "fr",
+ "corrections": [
+  {
+   "id": 24290,
+   "field": "summary",
+   "before": "Quittez l'effervescence de Marrakech et plongez dans la beauté paisible du Haut Atlas. Cette excursion d'une journée associe nature, culture et aventure, idéale pour les voyageurs en quête d'une expérience marocaine authentique hors de la ville.\n\nVotre journée commence à 9 h, avec la prise en charge à votre hôtel ou riad de Marrakech. Profitez d'une route panoramique d'environ 1 h 30 à travers les gorges escarpées de Moulay Brahim, où falaises spectaculaires, rivières et vallées verdoyantes plantent le décor. Vous traverserez Asni, un village berbère animé connu pour son marché hebdomadaire plein d'épices colorées, d'artisanat local et de produits traditionnels. Selon l'itinéraire, vous passerez aussi par Tahnaout ou l'Ourika, qui offrent chacun un aperçu de la vie rurale marocaine.",
+   "after": "Quittez l'effervescence de Marrakech et plongez dans la beauté paisible du Haut Atlas. Cette excursion d'une journée associe nature, culture et aventure, idéale pour les voyageurs en quête d'une expérience marocaine authentique hors de la ville."
+  },
+  {
+   "id": 24290,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "APERÇU",
+     "stats": [],
+     "accommodation": "",
+     "body": []
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Imlil – Aroumd – Marrakech",
+     "stats": {
+      "transport": "Environ 1 h 30 dans chaque sens",
+      "hiking_duration": "1 à 4 heures, selon vos envies",
+      "meals": "Déjeuner"
+     },
+     "accommodation": "",
+     "body": [
+      "Votre journée commence à 9 h, avec la prise en charge à votre hôtel ou riad de Marrakech. Profitez d'une route panoramique d'environ 1 h 30 à travers les gorges escarpées de Moulay Brahim, où falaises spectaculaires, rivières et vallées verdoyantes plantent le décor. Vous traversez Asni, un village berbère animé connu pour son marché hebdomadaire plein d'épices colorées, d'artisanat local et de produits traditionnels. Selon l'itinéraire, vous passez aussi par Tahanaout ou la vallée de l'Ourika, qui offrent chacune un aperçu de la vie rurale marocaine.",
+      "Imlil, charmant village au pied du Toubkal (4 167 m), est le point de départ de nombreux treks et aventures en montagne. C'est le rendez-vous des guides locaux, des muletiers et des sentiers de randonnée, niché dans une vallée verdoyante entourée de hauts sommets. Vous profitez ici de l'atmosphère montagnarde avant votre marche ou votre balade à dos de mule, en option.",
+      "Depuis Imlil, la marche (ou la balade à dos de mule) se poursuit vers le sud jusqu'au village d'Aroumd (1 850 m). Le sentier serpente entre champs en terrasses, oliveraies et ruisseaux, avec des vues spectaculaires sur le Haut Atlas occidental. En chemin, vous passez devant des maisons berbères traditionnelles, croisez des villageois au travail et découvrez le rythme de la vie rurale.",
+      "À Aroumd, vous déjeunez chez une famille berbère : une occasion unique de goûter une cuisine marocaine authentique, d'échanger avec les habitants et de découvrir l'hospitalité berbère. Après le repas, une courte balade vous fait découvrir les environs du village, ses vieux sentiers, ses petits ruisseaux et ses points de vue.",
+      "L'après-midi, retour à Marrakech en véhicule privé, avec encore de belles vues sur les sommets, les vallées et les forêts : une fin de journée reposante après l'aventure, la culture et la nature. La marche dure de 1 à 4 heures selon vos envies, et une mule peut porter ceux qui préfèrent moins marcher."
+     ]
+    }
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "La route panoramique des gorges de Moulay Brahim et le village berbère d'Asni et son marché",
+    "Imlil, le village au pied du Toubkal (4 167 m)",
+    "Marche ou balade à dos de mule entre les champs en terrasses jusqu'à Aroumd (1 850 m)",
+    "Déjeuner traditionnel chez une famille berbère",
+    "Une marche de 1 à 4 heures, adaptée à la plupart des niveaux"
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "facts",
+   "before": {
+    "difficulty": "Facile à modéré ; adapté à la plupart des niveaux"
+   },
+   "after": {
+    "difficulty": "Facile à modéré ; adapté à la plupart des niveaux",
+    "departure_time": "9 h, depuis votre hôtel ou riad à Marrakech"
+   }
+  }
+ ]
+}

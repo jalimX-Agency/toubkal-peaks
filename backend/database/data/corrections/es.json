@@ -1,0 +1,66 @@
+{
+ "locale": "es",
+ "corrections": [
+  {
+   "id": 24290,
+   "field": "summary",
+   "before": "Escapa del bullicio de Marrakech y sumérgete en la tranquila belleza del Alto Atlas. Esta excursión de un día combina naturaleza, cultura y aventura, ideal para viajeros que buscan una experiencia marroquí auténtica fuera de la ciudad.\n\nTu día empieza a las 9:00 con la recogida en tu hotel o riad de Marrakech. Disfruta de un trayecto panorámico de aproximadamente 1 h 30 a través de las abruptas gargantas de Moulay Brahim, donde acantilados espectaculares, ríos y valles verdes preparan el escenario. Pasarás por Asni, un animado pueblo bereber conocido por su mercado semanal lleno de especias de colores, artesanía local y productos tradicionales. Según la ruta, también pasarás por Tahnaout u Ourika, que ofrecen una mirada a la vida rural marroquí.",
+   "after": "Escapa del bullicio de Marrakech y sumérgete en la tranquila belleza del Alto Atlas. Esta excursión de un día combina naturaleza, cultura y aventura, ideal para viajeros que buscan una experiencia marroquí auténtica fuera de la ciudad."
+  },
+  {
+   "id": 24290,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "RESUMEN",
+     "stats": [],
+     "accommodation": "",
+     "body": []
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Imlil – Aroumd – Marrakech",
+     "stats": {
+      "transport": "Aprox. 1 h 30 en cada sentido",
+      "hiking_duration": "1 a 4 horas, a tu gusto",
+      "meals": "Almuerzo"
+     },
+     "accommodation": "",
+     "body": [
+      "Tu día empieza a las 9:00 con la recogida en tu hotel o riad de Marrakech. Disfruta de un trayecto panorámico de aproximadamente 1 h 30 a través de las abruptas gargantas de Moulay Brahim, donde acantilados espectaculares, ríos y valles verdes preparan el escenario. Pasas por Asni, un animado pueblo bereber conocido por su mercado semanal lleno de especias de colores, artesanía local y productos tradicionales. Según la ruta, también pasas por Tahanaout o el valle de Ourika, que ofrecen una mirada a la vida rural marroquí.",
+      "Imlil, un encantador pueblo al pie del Toubkal (4.167 m), es el punto de partida de muchos trekkings y aventuras de montaña. Es el centro de guías locales, muleros y senderos, en un valle verde rodeado de altas cumbres. Aquí disfrutas del ambiente de montaña y te preparas para la caminata o el paseo opcional en mula.",
+      "Desde Imlil, la caminata (o el paseo en mula) continúa hacia el sur hasta el pueblo de Aroumd (1.850 m). El sendero serpentea entre campos en terrazas, olivares y arroyos, con vistas espectaculares del Alto Atlas occidental. Por el camino pasas junto a casas bereberes tradicionales, ves a los vecinos trabajando y sientes el ritmo de la vida rural.",
+      "En Aroumd, disfrutas de un almuerzo bereber tradicional en casa de una familia local: una ocasión única para probar la auténtica cocina marroquí, conversar con los vecinos y conocer la hospitalidad bereber. Después de comer, un corto paseo te lleva por los alrededores del pueblo, sus antiguos caminos, pequeños arroyos y miradores.",
+      "Por la tarde, regreso a Marrakech en vehículo privado, con más vistas de cumbres, valles y bosques: un final tranquilo para un día de aventura, cultura y naturaleza. La caminata dura de 1 a 4 horas según prefieras, y una mula puede llevar a quien quiera caminar menos."
+     ]
+    }
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "Ruta panorámica por las gargantas de Moulay Brahim y el pueblo bereber de Asni y su mercado",
+    "Imlil, el pueblo al pie del Toubkal (4.167 m)",
+    "Caminata o paseo en mula entre campos en terrazas hasta Aroumd (1.850 m)",
+    "Almuerzo tradicional en casa de una familia bereber",
+    "Una caminata de 1 a 4 horas, apta para la mayoría de niveles"
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "facts",
+   "before": {
+    "difficulty": "Fácil a moderada; apta para la mayoría de niveles"
+   },
+   "after": {
+    "difficulty": "Fácil a moderada; apta para la mayoría de niveles",
+    "departure_time": "9:00, desde tu hotel o riad en Marrakech"
+   }
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "locale": "de",
+ "corrections": [
+  {
+   "id": 24290,
+   "field": "summary",
+   "before": "Lassen Sie das lebhafte Marrakesch hinter sich und tauchen Sie ein in die ruhige Schönheit des Hohen Atlas. Dieser Tagesausflug verbindet Natur, Kultur und Abenteuer und ist ideal für Reisende, die ein authentisches marokkanisches Erlebnis außerhalb der Stadt suchen.\n\nIhr Tag beginnt um 9:00 Uhr mit der Abholung in Ihrem Hotel oder Riad in Marrakesch. Genießen Sie eine etwa 1,5-stündige Panoramafahrt durch die schroffen Schluchten von Moulay Brahim, wo spektakuläre Felswände, Flüsse und grüne Täler die Kulisse bilden. Sie fahren durch Asni, ein lebhaftes Berberdorf, das für seinen Wochenmarkt mit bunten Gewürzen, lokalem Kunsthandwerk und traditionellen Produkten bekannt ist. Je nach Route geht es auch durch Tahnaout oder das Ourika-Tal, die einen Einblick in das ländliche Leben Marokkos geben.",
+   "after": "Lassen Sie das lebhafte Marrakesch hinter sich und tauchen Sie ein in die ruhige Schönheit des Hohen Atlas. Dieser Tagesausflug verbindet Natur, Kultur und Abenteuer und ist ideal für Reisende, die ein authentisches marokkanisches Erlebnis außerhalb der Stadt suchen."
+  },
+  {
+   "id": 24290,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "ÜBERBLICK",
+     "stats": [],
+     "accommodation": "",
+     "body": []
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Imlil – Aroumd – Marrakesch",
+     "stats": {
+      "transport": "Etwa 1,5 Stunden pro Strecke",
+      "hiking_duration": "1–4 Stunden, nach Wunsch",
+      "meals": "Mittagessen"
+     },
+     "accommodation": "",
+     "body": [
+      "Ihr Tag beginnt um 9:00 Uhr mit der Abholung in Ihrem Hotel oder Riad in Marrakesch. Genießen Sie eine etwa 1,5-stündige Panoramafahrt durch die schroffen Schluchten von Moulay Brahim, wo spektakuläre Felswände, Flüsse und grüne Täler die Kulisse bilden. Sie fahren durch Asni, ein lebhaftes Berberdorf, das für seinen Wochenmarkt mit bunten Gewürzen, lokalem Kunsthandwerk und traditionellen Produkten bekannt ist. Je nach Route geht es auch durch Tahanaout oder das Ourika-Tal, die einen Einblick in das ländliche Leben Marokkos geben.",
+      "Imlil, ein reizvolles Dorf am Fuß des Toubkal (4.167 m), ist Ausgangspunkt vieler Trekkingtouren und Bergabenteuer. Hier treffen sich einheimische Guides, Maultiertreiber und Wanderwege, eingebettet in ein grünes Tal zwischen hohen Gipfeln. Genießen Sie die Bergatmosphäre und machen Sie sich bereit für die Wanderung oder den optionalen Maultierritt.",
+      "Von Imlil führt die Wanderung (oder der Maultierritt) nach Süden zum Dorf Aroumd (1.850 m). Der Weg schlängelt sich durch Terrassenfelder, Olivenhaine und Bäche, mit spektakulären Ausblicken auf den westlichen Hohen Atlas. Unterwegs kommen Sie an traditionellen Berberhäusern vorbei, sehen die Dorfbewohner bei der Arbeit und spüren den Rhythmus des Landlebens.",
+      "In Aroumd genießen Sie ein traditionelles Berber-Mittagessen bei einer einheimischen Familie: eine einmalige Gelegenheit, authentische marokkanische Küche zu probieren, mit den Menschen ins Gespräch zu kommen und die Gastfreundschaft der Berber zu erleben. Nach dem Essen führt ein kurzer Spaziergang durch die Umgebung des Dorfes, mit alten Pfaden, kleinen Bächen und Aussichtspunkten.",
+      "Am Nachmittag fahren Sie im privaten Fahrzeug zurück nach Marrakesch, mit weiteren Ausblicken auf Gipfel, Täler und Wälder: ein entspannter Abschluss eines Tages voller Abenteuer, Kultur und Natur. Die Wanderung dauert je nach Wunsch 1 bis 4 Stunden, und wer weniger gehen möchte, kann auf einem Maultier reiten."
+     ]
+    }
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "highlights",
+   "before": null,
+   "after": [
+    "Panoramafahrt durch die Schluchten von Moulay Brahim und das Berberdorf Asni mit seinem Markt",
+    "Imlil, das Dorf am Fuß des Toubkal (4.167 m)",
+    "Wanderung oder Maultierritt durch Terrassenfelder nach Aroumd (1.850 m)",
+    "Traditionelles Mittagessen bei einer Berberfamilie",
+    "Eine Wanderung von 1 bis 4 Stunden, für die meisten Fitnessstufen geeignet"
+   ]
+  },
+  {
+   "id": 24290,
+   "field": "facts",
+   "before": {
+    "difficulty": "Leicht bis mittel; für die meisten Fitnessstufen geeignet"
+   },
+   "after": {
+    "difficulty": "Leicht bis mittel; für die meisten Fitnessstufen geeignet",
+    "departure_time": "9:00 Uhr, ab Ihrem Hotel oder Riad in Marrakesch"
+   }
+  }
+ ]
+}

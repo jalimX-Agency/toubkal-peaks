@@ -10,13 +10,20 @@ class ApplyContentCorrections extends Command
 {
     protected $signature = 'toubkal:apply-corrections
         {--file= : Corrections file (default: database/data/corrections/en.json)}
+        {--locale= : Use database/data/corrections/{locale}.json (fr, es, de...) instead of --file}
         {--dry-run : Report what would change without saving}';
 
     protected $description = 'Fix known errors in the imported tour content; a field is only replaced while it still holds the original text';
 
     public function handle(): int
     {
-        $file = $this->option('file') ?: database_path('data/corrections/en.json');
+        $locale = $this->option('locale');
+        if ($locale !== null && ! preg_match('/^[a-z]{2}$/', $locale)) {
+            $this->error("Invalid locale: {$locale}");
+
+            return self::FAILURE;
+        }
+        $file = $locale ? database_path("data/corrections/{$locale}.json") : ($this->option('file') ?: database_path('data/corrections/en.json'));
         if (! is_file($file)) {
             $this->error("File not found: {$file}");
 
