@@ -5,16 +5,13 @@
 
     <h2 style="margin:28px 0 12px; font-family:Georgia, serif; font-size:19px; font-weight:normal; color:#022e55;">{{ __('emails.received.next') }}</h2>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        @foreach ([__('emails.received.step1'), __('emails.received.step2', ['deposit' => $deposit]), __('emails.received.step3')] as $i => $step)
+        @foreach ([__('emails.received.step1'), __('emails.received.step2'), __('emails.received.step3')] as $i => $step)
             <tr>
                 <td width="40" valign="top" style="padding:0 12px 14px 0;">
                     <div style="width:28px; height:28px; border-radius:14px; background:#022e55; color:#ffffff; font-family:Georgia, serif; font-size:14px; line-height:28px; text-align:center;">{{ $i + 1 }}</div>
                 </td>
                 <td valign="top" style="padding:3px 0 14px; font-size:15px; color:#16263b;">
                     {{ $step }}
-                    @if ($i === 1)
-                        <br><a href="{{ $depositUrl }}" style="color:#bc7625; font-weight:bold;">{{ __('emails.deposit_link') }} →</a>
-                    @endif
                 </td>
             </tr>
         @endforeach

@@ -34,11 +34,9 @@ return [
         'revalidate_secret' => env('REVALIDATE_SECRET'),
     ],
 
-    // Deposit asked to secure a booking once availability is confirmed (paid by PayPal).
+    // Deposits are paid by PayPal; the amount is set per booking by the team when it confirms.
     'payments' => [
         'paypal_url' => env('PAYPAL_URL', 'https://paypal.me/OmarAitlmouden'),
-        'deposit' => (int) env('BOOKING_DEPOSIT', 50),
-        'deposit_currency' => env('BOOKING_DEPOSIT_CURRENCY', 'EUR'),
     ],
 
     'slack' => [

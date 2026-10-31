@@ -26,11 +26,11 @@ return [
         'intro' => 'We have received your request. A member of our team checks availability and replies within 24 hours with the final price. Nothing is charged at this stage.',
         'next' => 'What happens next',
         'step1' => 'We check availability and send you the final price, usually within 24 hours.',
-        'step2' => 'To secure your dates, you pay a deposit of :deposit by PayPal once we have confirmed. It is deducted from the total price.',
+        'step2' => 'To secure your dates, you pay a deposit by PayPal once we have confirmed: we send you the amount and the link. It is deducted from the total price.',
         'step3' => 'We prepare your trip and send you all the practical details.',
     ],
-    'deposit_link' => 'PayPal deposit link',
     'confirmed' => [
+        'intro_no_deposit' => 'We have confirmed availability for your trip. We will be in touch shortly with the next steps.',
         'subject' => 'Your trip is available: :reference',
         'preheader' => 'Secure your dates with a :deposit deposit by PayPal.',
         'eyebrow' => 'Availability confirmed',
@@ -40,4 +40,5 @@ return [
         'note' => 'Please write your reference :reference in the PayPal note. The deposit is deducted from the total price. As soon as we receive it, we confirm your booking and send you the details of your trip.',
         'other' => 'Prefer another way to pay? Reply to this email and we will find a solution.',
     ],
+    'deposit_link' => 'PayPal deposit link',
 ];

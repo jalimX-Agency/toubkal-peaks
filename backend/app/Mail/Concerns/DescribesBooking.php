@@ -27,14 +27,20 @@ trait DescribesBooking
         ];
     }
 
-    protected function deposit(): string
+    /** This customer's deposit, written in their language; null when none was set (or 0). */
+    protected function deposit(): ?string
     {
-        return Money::format(config('services.payments.deposit'), config('services.payments.deposit_currency'), $this->booking->locale ?: 'en');
+        $amount = (float) $this->booking->deposit_amount;
+
+        return $amount > 0 ? Money::format($amount, $this->booking->currency ?: 'EUR', $this->booking->locale ?: 'en') : null;
     }
 
-    /** PayPal.me link with the deposit amount filled in. */
+    /** PayPal.me link, with this customer's deposit filled in when there is one. */
     protected function depositUrl(): string
     {
-        return rtrim((string) config('services.payments.paypal_url'), '/').'/'.config('services.payments.deposit').config('services.payments.deposit_currency');
+        $base = rtrim((string) config('services.payments.paypal_url'), '/');
+        $amount = (float) $this->booking->deposit_amount;
+
+        return $amount > 0 ? $base.'/'.rtrim(rtrim(number_format($amount, 2, '.', ''), '0'), '.').($this->booking->currency ?: 'EUR') : $base;
     }
 }

@@ -9,7 +9,7 @@ import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { formatDuration, formatPrice } from "@/lib/format";
 import { HUBS } from "@/lib/hubs";
-import { depositLink, site, whatsappLink } from "@/lib/site";
+import { whatsappLink } from "@/lib/site";
 import type { PriceTier, TourCard, TourDetail } from "@/lib/types";
 
 const STEPS = ["trip", "dates", "group", "prefs", "details", "review"] as const;
@@ -603,11 +603,8 @@ function Success({ t, lang, done, whatsappMessage }: { t: Dictionary["book"]; la
       <div className="mt-8 rounded-sm border border-gold/40 bg-sand/50 p-5">
         <p className="font-semibold text-navy">{t.success.depositTitle}</p>
         <p className="mt-1 text-sm leading-relaxed text-ink">
-          {t.success.deposit.replace("{deposit}", formatPrice(site.deposit.amount, site.deposit.currency, lang))}
+          {t.success.deposit}
         </p>
-        <a href={depositLink()} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-gold underline-offset-4 hover:underline">
-          {t.success.depositButton} →
-        </a>
       </div>
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
         <a href={whatsappLink(whatsappMessage)} target="_blank" rel="noopener noreferrer" className="btn-gold">{t.success.whatsapp}</a>

@@ -391,8 +391,7 @@ const de: Dictionary = {
     },
     success: {
       depositTitle: "Termine sichern",
-      deposit: "Sobald wir die Verfügbarkeit bestätigt haben, sichern Sie Ihre Termine mit einer Anzahlung von {deposit} per PayPal. Sie wird vom Gesamtpreis abgezogen; den Link senden wir Ihnen auch per E-Mail.",
-      depositButton: "PayPal-Link für die Anzahlung",
+      deposit: "Sobald wir die Verfügbarkeit bestätigt haben, senden wir Ihnen die Anzahlung für Ihre Reise und den PayPal-Link, um Ihre Termine zu sichern. Sie wird vom Gesamtpreis abgezogen.",
       title: "Vielen Dank, {name}!",
       text: "Ihre Anfrage {reference} ist unterwegs.",
       next: "So geht es weiter",

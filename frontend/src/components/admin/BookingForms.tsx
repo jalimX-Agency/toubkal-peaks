@@ -14,13 +14,13 @@ const LABEL: Record<BookingStatus, string> = {
 };
 const HINT: Record<BookingStatus, string> = {
   pending: "",
-  confirmed: "Availability and price agreed with the customer.",
+  confirmed: "Trip available: the customer receives the PayPal link for their deposit.",
   paid: "Deposit or full payment received.",
   completed: "The trip has taken place.",
   cancelled: "The customer or the team cancelled.",
 };
 
-export function BookingStatusActions({ reference, current, next }: { reference: string; current: BookingStatus; next: BookingStatus[] }) {
+export function BookingStatusActions({ reference, current, next, deposit, currency }: { reference: string; current: BookingStatus; next: BookingStatus[]; deposit: number | null; currency: string }) {
   const [state, action] = useActionState<ActionState, FormData>(changeBookingStatus.bind(null, reference), { status: "idle" });
   const [choice, setChoice] = useState<BookingStatus | null>(null);
 
@@ -41,6 +41,10 @@ export function BookingStatusActions({ reference, current, next }: { reference: 
       </div>
       {choice && (
         <>
+          {choice === "confirmed" && (
+            <Field label={`Deposit for this customer (${currency})`} name="deposit_amount" type="number" min={0} step="1" required
+              defaultValue={deposit ?? ""} state={state} hint="Sent with the PayPal link in the confirmation email. 0 = no deposit (the email then just confirms)." />
+          )}
           <label className="block text-sm">
             <span className="font-medium text-navy">Note (optional)</span>
             <input name="note" maxLength={500} placeholder={choice === "cancelled" ? "Reason" : "e.g. guide and riad booked"} className={inputClass} />

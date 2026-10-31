@@ -87,7 +87,13 @@ class BookingController extends Controller
         $data = $request->validate([
             'status' => ['required', Rule::in(array_map(fn ($s) => $s->value, $booking->status->next()))],
             'note' => ['nullable', 'string', 'max:500'],
-        ], ['status.in' => 'This status change is not allowed from '.$booking->status->value.'.']);
+            // the deposit differs from one customer to another: asked when confirming (0 = no deposit)
+            'deposit_amount' => [Rule::requiredIf($request->input('status') === BookingStatus::Confirmed->value), 'nullable', 'numeric', 'min:0', 'max:1000000'],
+        ], ['status.in' => 'This status change is not allowed from '.$booking->status->value.'.', 'deposit_amount.required' => 'Enter the deposit for this customer (0 if none).']);
+
+        if (array_key_exists('deposit_amount', $data) && $data['deposit_amount'] !== null) {
+            $booking->update(['deposit_amount' => $data['deposit_amount']]);
+        }
 
         $booking->transitionTo(BookingStatus::from($data['status']), $request->user()->id, $data['note'] ?? null);
 

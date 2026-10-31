@@ -110,7 +110,7 @@ export async function changeBookingStatus(reference: string, _prev: ActionState,
   const result = await attempt(async () => {
     const res = await adminApi<{ customer_emailed?: boolean | null }>(`/bookings/${encodeURIComponent(reference)}/status`, {
       method: "POST",
-      body: JSON.stringify({ status: text(form, "status"), note: nullable(form, "note") }),
+      body: JSON.stringify({ status: text(form, "status"), note: nullable(form, "note"), deposit_amount: number(form, "deposit_amount") }),
     });
     emailed = res.customer_emailed ?? null;
   }, "Status updated");

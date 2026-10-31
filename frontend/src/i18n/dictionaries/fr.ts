@@ -391,8 +391,7 @@ const fr: Dictionary = {
     },
     success: {
       depositTitle: "Bloquer vos dates",
-      deposit: "Une fois la disponibilité confirmée, vous bloquez vos dates avec un acompte de {deposit} par PayPal. Il est déduit du prix total, et nous vous envoyons aussi le lien par e-mail.",
-      depositButton: "Lien PayPal pour l'acompte",
+      deposit: "Une fois la disponibilité confirmée, nous vous envoyons le montant de l'acompte pour votre voyage et le lien PayPal pour bloquer vos dates. Il est déduit du prix total.",
       title: "Merci, {name} !",
       text: "Votre demande {reference} est bien envoyée.",
       next: "La suite",

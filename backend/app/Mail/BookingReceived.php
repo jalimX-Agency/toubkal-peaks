@@ -28,10 +28,6 @@ class BookingReceived extends Mailable
 
     public function content(): Content
     {
-        return new Content(view: 'emails.booking-received', with: [
-            'rows' => $this->bookingRows(),
-            'deposit' => $this->deposit(),
-            'depositUrl' => $this->depositUrl(),
-        ]);
+        return new Content(view: 'emails.booking-received', with: ['rows' => $this->bookingRows()]);
     }
 }

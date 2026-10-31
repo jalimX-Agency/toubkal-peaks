@@ -26,11 +26,11 @@ return [
         'intro' => 'Nous avons bien reçu votre demande. Un membre de notre équipe vérifie les disponibilités et vous répond sous 24 heures avec le prix final. Rien n\'est débité à ce stade.',
         'next' => 'La suite',
         'step1' => 'Nous vérifions les disponibilités et vous envoyons le prix final, en général sous 24 heures.',
-        'step2' => 'Pour bloquer vos dates, vous versez un acompte de :deposit par PayPal une fois notre confirmation reçue. Il est déduit du prix total.',
+        'step2' => 'Pour bloquer vos dates, vous versez un acompte par PayPal une fois notre confirmation reçue : nous vous envoyons le montant et le lien. Il est déduit du prix total.',
         'step3' => 'Nous préparons votre voyage et vous envoyons toutes les informations pratiques.',
     ],
-    'deposit_link' => 'Lien PayPal pour l\'acompte',
     'confirmed' => [
+        'intro_no_deposit' => 'Nous avons confirmé la disponibilité de votre voyage. Nous revenons vers vous très vite pour la suite.',
         'subject' => 'Votre voyage est disponible : :reference',
         'preheader' => 'Bloquez vos dates avec un acompte de :deposit par PayPal.',
         'eyebrow' => 'Disponibilité confirmée',
@@ -40,4 +40,5 @@ return [
         'note' => 'Merci d\'indiquer votre référence :reference dans le message PayPal. L\'acompte est déduit du prix total. Dès sa réception, nous confirmons votre réservation et vous envoyons le détail de votre voyage.',
         'other' => 'Vous préférez un autre moyen de paiement ? Répondez à cet e-mail et nous trouverons une solution.',
     ],
+    'deposit_link' => 'Lien PayPal pour l\'acompte',
 ];

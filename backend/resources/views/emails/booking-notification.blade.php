@@ -32,5 +32,5 @@
             @endif
         </tr>
     </table>
-    <p style="margin:0; font-size:13px; color:#5b6779;">When the trip is available, set the request to “Confirmed” in the admin: the customer automatically receives the PayPal deposit link.</p>
+    <p style="margin:0; font-size:13px; color:#5b6779;">When the trip is available, set the request to “Confirmed” in the admin and enter this customer's deposit: they automatically receive the PayPal link with that amount.</p>
 </x-email.layout>

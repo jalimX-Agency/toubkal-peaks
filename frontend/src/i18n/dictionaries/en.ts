@@ -389,8 +389,7 @@ const en = {
     },
     success: {
       depositTitle: "Securing your dates",
-      deposit: "Once we have confirmed availability, you secure your dates with a {deposit} deposit by PayPal. It is deducted from the total price, and we also send you the link by email.",
-      depositButton: "PayPal deposit link",
+      deposit: "Once we have confirmed availability, we send you the deposit for your trip and the PayPal link to secure your dates. It is deducted from the total price.",
       title: "Thank you, {name}!",
       text: "Your request {reference} is on its way.",
       next: "What happens next",

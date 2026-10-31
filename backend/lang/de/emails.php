@@ -26,11 +26,11 @@ return [
         'intro' => 'Wir haben Ihre Anfrage erhalten. Ein Mitglied unseres Teams prüft die Verfügbarkeit und antwortet Ihnen innerhalb von 24 Stunden mit dem Endpreis. Es wird jetzt nichts berechnet.',
         'next' => 'So geht es weiter',
         'step1' => 'Wir prüfen die Verfügbarkeit und senden Ihnen den Endpreis, meist innerhalb von 24 Stunden.',
-        'step2' => 'Um Ihre Termine zu sichern, zahlen Sie nach unserer Bestätigung eine Anzahlung von :deposit per PayPal. Sie wird vom Gesamtpreis abgezogen.',
+        'step2' => 'Um Ihre Termine zu sichern, zahlen Sie nach unserer Bestätigung eine Anzahlung per PayPal: Betrag und Link senden wir Ihnen. Sie wird vom Gesamtpreis abgezogen.',
         'step3' => 'Wir bereiten Ihre Reise vor und senden Ihnen alle praktischen Informationen.',
     ],
-    'deposit_link' => 'PayPal-Link für die Anzahlung',
     'confirmed' => [
+        'intro_no_deposit' => 'Wir haben die Verfügbarkeit Ihrer Reise bestätigt. Wir melden uns in Kürze mit den nächsten Schritten.',
         'subject' => 'Ihre Reise ist verfügbar: :reference',
         'preheader' => 'Sichern Sie Ihre Termine mit einer Anzahlung von :deposit per PayPal.',
         'eyebrow' => 'Verfügbarkeit bestätigt',
@@ -40,4 +40,5 @@ return [
         'note' => 'Bitte geben Sie Ihre Referenz :reference in der PayPal-Nachricht an. Die Anzahlung wird vom Gesamtpreis abgezogen. Sobald sie eingegangen ist, bestätigen wir Ihre Buchung und senden Ihnen die Details Ihrer Reise.',
         'other' => 'Lieber eine andere Zahlungsart? Antworten Sie auf diese E-Mail, wir finden eine Lösung.',
     ],
+    'deposit_link' => 'PayPal-Link für die Anzahlung',
 ];

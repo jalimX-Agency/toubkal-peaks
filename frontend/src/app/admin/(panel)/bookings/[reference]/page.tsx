@@ -66,7 +66,7 @@ export default async function BookingPage({ params }: PageProps<"/admin/bookings
 
         <div className="space-y-5 lg:col-span-5">
           <Card title="Status">
-            <BookingStatusActions reference={b.reference} current={b.status} next={b.next_statuses} />
+            <BookingStatusActions reference={b.reference} current={b.status} next={b.next_statuses} deposit={b.deposit_amount} currency={b.currency} />
           </Card>
 
           <Card title="Payment">

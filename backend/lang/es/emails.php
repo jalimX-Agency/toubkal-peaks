@@ -26,11 +26,11 @@ return [
         'intro' => 'Hemos recibido tu solicitud. Un miembro de nuestro equipo comprueba la disponibilidad y te responde en 24 horas con el precio final. No se cobra nada por ahora.',
         'next' => 'Próximos pasos',
         'step1' => 'Comprobamos la disponibilidad y te enviamos el precio final, normalmente en 24 horas.',
-        'step2' => 'Para reservar tus fechas, pagas un depósito de :deposit por PayPal cuando te lo confirmemos. Se descuenta del precio total.',
+        'step2' => 'Para reservar tus fechas, pagas un depósito por PayPal cuando te lo confirmemos: te enviamos el importe y el enlace. Se descuenta del precio total.',
         'step3' => 'Preparamos tu viaje y te enviamos toda la información práctica.',
     ],
-    'deposit_link' => 'Enlace de PayPal para el depósito',
     'confirmed' => [
+        'intro_no_deposit' => 'Hemos confirmado la disponibilidad de tu viaje. Te escribimos muy pronto con los próximos pasos.',
         'subject' => 'Tu viaje está disponible: :reference',
         'preheader' => 'Reserva tus fechas con un depósito de :deposit por PayPal.',
         'eyebrow' => 'Disponibilidad confirmada',
@@ -40,4 +40,5 @@ return [
         'note' => 'Indica tu referencia :reference en el mensaje de PayPal. El depósito se descuenta del precio total. En cuanto lo recibamos, confirmamos tu reserva y te enviamos los detalles del viaje.',
         'other' => '¿Prefieres otra forma de pago? Responde a este correo y buscaremos una solución.',
     ],
+    'deposit_link' => 'Enlace de PayPal para el depósito',
 ];

@@ -36,26 +36,30 @@ class EmailsTest extends TestCase
         $mail->assertSeeInHtml('Merci, Ana');
         $mail->assertSeeInHtml('2 adultes, 1 enfant');
         $mail->assertSeeInHtml('10 mai 2027');
-        $mail->assertSeeInHtml('acompte de 50');
-        $mail->assertSeeInHtml('https://paypal.me/OmarAitlmouden/50EUR', false);
+        // the deposit is explained, but its amount and link only come with the team's confirmation
+        $mail->assertSeeInHtml('acompte par PayPal');
+        $mail->assertDontSeeInHtml('paypal.me', false);
     }
 
-    public function test_the_availability_email_puts_the_paypal_deposit_first(): void
+    public function test_the_availability_email_asks_for_this_customers_deposit(): void
     {
-        $mail = new BookingConfirmed($this->booking(['locale' => 'en']));
+        $mail = new BookingConfirmed($this->booking(['locale' => 'en', 'deposit_amount' => 120]));
 
         $mail->assertHasSubject("Your trip is available: {$mail->booking->reference} · Toubkal Peaks");
-        $mail->assertSeeInOrderInHtml(['Good news, Ana', 'Pay the €50 deposit with PayPal', $mail->booking->reference]);
-        $mail->assertSeeInHtml('href="https://paypal.me/OmarAitlmouden/50EUR"', false);
+        $mail->assertSeeInOrderInHtml(['Good news, Ana', 'Pay the €120 deposit with PayPal', $mail->booking->reference]);
+        $mail->assertSeeInHtml('href="https://paypal.me/OmarAitlmouden/120EUR"', false);
+
+        $other = new BookingConfirmed($this->booking(['locale' => 'de', 'deposit_amount' => 75.5]));
+        $other->assertSeeInHtml('https://paypal.me/OmarAitlmouden/75.5EUR', false);
+        $other->assertSeeInHtml('Anzahlung von 75,50');
     }
 
-    public function test_the_deposit_comes_from_the_configuration(): void
+    public function test_without_a_deposit_the_availability_email_only_confirms(): void
     {
-        config(['services.payments.deposit' => 80, 'services.payments.paypal_url' => 'https://paypal.me/example/']);
-        $mail = new BookingConfirmed($this->booking(['locale' => 'de']));
+        $mail = new BookingConfirmed($this->booking(['locale' => 'en', 'deposit_amount' => 0]));
 
-        $mail->assertSeeInHtml('https://paypal.me/example/80EUR', false);
-        $mail->assertSeeInHtml('Anzahlung von 80');
+        $mail->assertSeeInHtml('We will be in touch shortly with the next steps.');
+        $mail->assertDontSeeInHtml('paypal.me', false);
     }
 
     public function test_team_and_admin_emails_render_with_the_new_design(): void
@@ -79,10 +83,14 @@ class EmailsTest extends TestCase
         Sanctum::actingAs(User::factory()->create(['role' => 'staff']));
         $booking = $this->booking();
 
+        // the deposit is required when confirming
         $this->postJson("/api/v1/admin/bookings/{$booking->reference}/status", ['status' => 'confirmed'])
-            ->assertOk()->assertJsonPath('customer_emailed', true);
+            ->assertUnprocessable()->assertJsonValidationErrors('deposit_amount');
 
-        Mail::assertSent(BookingConfirmed::class, fn ($m) => $m->hasTo('ana@example.com'));
+        $this->postJson("/api/v1/admin/bookings/{$booking->reference}/status", ['status' => 'confirmed', 'deposit_amount' => 150])
+            ->assertOk()->assertJsonPath('customer_emailed', true)->assertJsonPath('data.deposit_amount', 150);
+
+        Mail::assertSent(BookingConfirmed::class, fn ($m) => $m->hasTo('ana@example.com') && str_contains($m->render(), 'paypal.me/OmarAitlmouden/150EUR'));
         $this->assertSame(BookingStatus::Confirmed, $booking->fresh()->status);
     }
 

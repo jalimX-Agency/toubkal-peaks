@@ -391,8 +391,7 @@ const es: Dictionary = {
     },
     success: {
       depositTitle: "Reservar tus fechas",
-      deposit: "Cuando confirmemos la disponibilidad, reservas tus fechas con un depósito de {deposit} por PayPal. Se descuenta del precio total, y también te enviamos el enlace por correo.",
-      depositButton: "Enlace de PayPal para el depósito",
+      deposit: "Cuando confirmemos la disponibilidad, te enviamos el importe del depósito de tu viaje y el enlace de PayPal para reservar tus fechas. Se descuenta del precio total.",
       title: "¡Gracias, {name}!",
       text: "Tu solicitud {reference} está en camino.",
       next: "Próximos pasos",
