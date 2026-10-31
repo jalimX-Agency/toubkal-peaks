@@ -61,6 +61,105 @@
     "difficulty": "Fácil a moderada; apta para la mayoría de niveles",
     "departure_time": "9:00, desde tu hotel o riad en Marrakech"
    }
+  },
+  {
+   "id": 1070,
+   "field": "summary",
+   "before": "Deja atrás las animadas calles de Marrakech y adéntrate en los impresionantes paisajes del Alto Atlas en esta excursión de un día. Valles frondosos, pueblos bereberes tradicionales, ríos y lagos tranquilos: una combinación perfecta de naturaleza, cultura y aventura. Ideal para desconectar de la ciudad, este viaje te sumerge en la vida auténtica de las montañas marroquíes.",
+   "after": "Un día completo en el Atlas entre montañas y cultura bereber: descubre los paisajes espectaculares y la auténtica cultura bereber del Alto Atlas en esta excursión privada desde Marrakech.",
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "Día completo (aprox. 9:00 – 17:00)",
+    "departure_time": "Marrakech a las 9:00",
+    "type": "Excursión privada"
+   },
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech – Takerkoust – meseta del Kik – Asni – valle de Ourika – Marrakech: excursión de un día",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Duración: día completo (aprox. 9:00 – 17:00)",
+      "Salida: Marrakech, 9:00",
+      "Incluye: transporte privado (aprox. 3 h), guía de habla inglesa, almuerzo tradicional, caminata",
+      "El programa",
+      "Salida de Marrakech a las 9:00 en un 4x4 cómodo con tu guía experimentado. Primero hacia el lago de Takerkoust y después a la meseta del Kik, a unos 1.800 m de altitud. Desde aquí hay vistas panorámicas del Atlas; en invierno, las cumbres nevadas forman un fondo espectacular.",
+      "Cruzarás las montañas hasta el valle de Asni por carreteras panorámicas entre pueblos bereberes tradicionales de adobe y piedra. Parada para una experiencia cultural auténtica en una casa bereber, donde la familia te ofrecerá té a la menta.",
+      "Continuarás por una pista de altura (unos 2.000 m) hasta el valle de Ourika. Descubre un jardín bioaromático con plantas medicinales que usan tradicionalmente los bereberes y, si quieres, las cascadas del valle. Almuerzo junto al río y visita opcional a una cooperativa de artesanía con alfombras, cerámica y joyas bereberes.",
+      "Regreso a Marrakech hacia las 17:00, al final de un día lleno de naturaleza, cultura y experiencias bereberes auténticas."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – lago de Takerkoust – meseta del Kik – Asni – valle de Ourika – Marrakech",
+     "stats": {
+      "duration": "Aprox. 9:00 – 17:00",
+      "driving_distance": "Unos 160 km ida y vuelta",
+      "meals": "Almuerzo"
+     },
+     "accommodation": "",
+     "body": [
+      "Salida de Marrakech hacia las 9:00 en un vehículo privado cómodo, con tu guía local experimentado. El viaje empieza hacia el lago de Takerkoust, un precioso embalse rodeado de montañas, perfecto para hacer fotos.",
+      "Continúas hacia la impresionante meseta del Kik, a unos 1.800 m de altitud. Disfruta de vistas panorámicas del Alto Atlas y sus pueblos bereberes tradicionales y, en invierno, de las magníficas cumbres nevadas.",
+      "Después, el camino atraviesa el pintoresco valle de Asni y sus pueblos amazigh tradicionales de piedra y tierra. Por el camino, un encuentro auténtico con una familia bereber: te reciben en su casa con un vaso de té a la menta y te cuentan sus costumbres y la vida diaria del pueblo.",
+      "Sigues por carreteras de montaña panorámicas, a unos 2.000 m, antes de bajar al precioso valle de Ourika, uno de los más visitados del Alto Atlas. Según tus preferencias y el tiempo disponible, también puedes visitar las famosas cascadas de Ourika.",
+      "Almuerzo marroquí tradicional en un restaurante junto al río, en el ambiente tranquilo del valle. Por la tarde, puedes visitar una cooperativa de artesanía local para descubrir la artesanía bereber: alfombras hechas a mano, cerámica y joyas.",
+      "Tras un día que combina paisajes de montaña, tradiciones, encuentros y naturaleza, regreso a Marrakech, con llegada hacia las 17:00."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "highlights",
+   "before": [
+    "Vistas panorámicas de montañas y mesetas",
+    "Visita a pueblos y casas bereberes tradicionales",
+    "Descubre un jardín bioaromático y las plantas medicinales",
+    "Almuerzo tradicional junto al río",
+    "Visita opcional a una cooperativa de artesanía local",
+    "Caminata moderada en un entorno natural precioso"
+   ],
+   "after": [
+    "El lago de Takerkoust y su paisaje de montaña",
+    "Vistas panorámicas desde la meseta del Kik (unos 1.800 m)",
+    "Té a la menta con una familia bereber en el valle de Asni",
+    "El valle de Ourika y, si quieres, sus cascadas",
+    "Almuerzo marroquí tradicional junto al río",
+    "Visita opcional a una cooperativa de artesanía bereber"
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "included",
+   "before": [
+    "-",
+    "Transporte privado en un 4x4 cómodo",
+    "Guía local oficial de habla inglesa",
+    "Almuerzo tradicional en casa de una familia bereber"
+   ],
+   "after": [
+    "Vehículo privado con conductor",
+    "Guía local experimentado",
+    "Almuerzo marroquí tradicional",
+    "Paseos guiados y visitas culturales"
+   ],
+   "note": "owner text 2026-10-31"
   }
  ]
 }

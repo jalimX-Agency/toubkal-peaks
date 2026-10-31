@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Redirect extends Model
 {
@@ -18,6 +19,9 @@ class Redirect extends Model
         static::saving(function (Redirect $redirect) {
             $redirect->from_path = static::normalize($redirect->from_path);
         });
+        // the public list (GET /api/v1/redirects) is cached for a few minutes: a change shows at once
+        static::saved(fn () => Cache::forget('api.redirects.v1'));
+        static::deleted(fn () => Cache::forget('api.redirects.v1'));
     }
 
     /** Lower-case path with a leading and trailing slash and no query string or fragment. */

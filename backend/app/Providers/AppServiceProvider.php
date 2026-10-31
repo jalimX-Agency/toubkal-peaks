@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\Models\CategoryTranslation;
 use App\Models\Media;
+use App\Models\Redirect;
 use App\Models\Review;
 use App\Models\Setting;
 use App\Models\TeamMember;
@@ -53,6 +54,7 @@ class AppServiceProvider extends ServiceProvider
             Review::class => ['reviews'],
             TeamMember::class => ['team'],
             Setting::class => ['settings'],
+            Redirect::class => ['redirects'],
         ];
         foreach ($affects as $model => $tags) {
             $refresh = fn () => app(FrontendCache::class)->revalidate(...$tags);

@@ -4,7 +4,7 @@ import { HubPage } from "@/components/hub/HubPage";
 import { TripPage } from "@/components/trip/TripPage";
 import { hasLocale, localePath, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { getTour, getTours } from "@/lib/api";
+import { getRedirects, getTour, getTours } from "@/lib/api";
 import { HUBS, hubByPath } from "@/lib/hubs";
 
 // Hubs are prerendered; each trip renders on its first request, then stays cached.
@@ -20,6 +20,19 @@ export const instant = false;
  */
 export async function generateStaticParams() {
   return locales.flatMap((lang) => HUBS.map((h) => ({ lang, rest: h.path.split("/") })));
+}
+
+/** The address as the redirects table stores it: lower case, language prefix except English, slashes around. */
+function oldPath(lang: Locale, rest: string[]) {
+  const decode = (part: string) => {
+    try {
+      return decodeURIComponent(part);
+    } catch {
+      return part; // a malformed address simply matches nothing (404)
+    }
+  };
+  const path = rest.map(decode).join("/").toLowerCase();
+  return `${lang === "en" ? "" : `/${lang}`}/${path}/`;
 }
 
 async function resolve(lang: Locale, rest: string[]) {
@@ -73,7 +86,12 @@ export default async function CataloguePage({ params }: PageProps<"/[lang]/[...r
   const { lang, rest } = await params;
   if (!hasLocale(lang)) notFound();
   const [dict, page] = await Promise.all([getDictionary(lang), resolve(lang, rest)]);
-  if (!page) notFound();
+  if (!page) {
+    // an old address (the previous WordPress site, a slug renamed in the admin) goes to its new page
+    const to = (await getRedirects())[oldPath(lang, rest)];
+    if (to) permanentRedirect(to === "/" ? to : to.replace(/\/+$/, ""));
+    notFound();
+  }
 
   if (page.kind === "hub") {
     const tours = await getTours({ locale: lang, category: page.hub.key, perPage: 60 });

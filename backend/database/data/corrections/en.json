@@ -3948,6 +3948,105 @@
     "difficulty": "Easy to moderate; suitable for most fitness levels",
     "departure_time": "09:00, from your hotel or riad in Marrakech"
    }
+  },
+  {
+   "id": 1070,
+   "field": "summary",
+   "before": "Escape the vibrant streets of Marrakech and venture into the breathtaking landscapes of the High Atlas Mountains on this full-day excursion. This tour takes you through lush valleys, traditional Berber villages, flowing rivers, and serene lakes, offering a perfect combination of natural beauty, culture, and adventure. Ideal for those seeking a peaceful retreat from the city, this trip immerses you in the authentic life of the Moroccan mountains.",
+   "after": "A full-day Atlas Mountains and Berber cultural experience: discover the spectacular landscapes and authentic Berber culture of the High Atlas on this private excursion from Marrakech.",
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "Full day (approximately 9:00 AM – 5:00 PM)",
+    "departure_time": "Marrakech at 9:00 AM",
+    "type": "Private excursion"
+   },
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech – Takerkouste – Kik Plateau – Asni – Ourika Valley – Marrakech: Full-Day Excursion",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Duration: Full day (approx. 9:00 AM – 5:00 PM)",
+      "Departure: Marrakech, 09:00 AM",
+      "Includes: Private transport (~3 hours), English-speaking guide, traditional lunch, hiking",
+      "Trip Overview",
+      "Depart Marrakech at 9:00 AM in a comfortable 4×4 with your experienced guide. Head first toward Takerkouste Lake, then continue to the Kik Plateau at around 1,800 m altitude. From here, enjoy panoramic views of the Atlas Mountains, and in winter, admire the snow-capped peaks creating a stunning backdrop.",
+      "Cross the mountains into the Asni Valley, traveling along scenic roads that pass through traditional Berber villages built from adobe and stone. Stop for an authentic cultural experience by visiting a Berber home, where you’ll enjoy mint tea with the local family.",
+      "Continue along a high-altitude track (around 2,000 m) to reach the Ourika Valley. Explore a bio-aromatic garden featuring medicinal plants traditionally used by the Berbers, and optionally visit the valley’s waterfalls. Enjoy a riverside lunch, and optionally visit a local handicraft cooperative to see Berber rugs, pottery, and jewelry.",
+      "Return to Marrakech by approximately 5:00 PM, completing a day rich in nature, culture, and authentic Berber experiences."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – Lake Takerkoust – Kik Plateau – Asni – Ourika Valley – Marrakech",
+     "stats": {
+      "duration": "About 9:00 AM – 5:00 PM",
+      "driving_distance": "About 160 km round trip",
+      "meals": "Lunch"
+     },
+     "accommodation": "",
+     "body": [
+      "Depart Marrakech at approximately 9:00 AM in a comfortable private vehicle accompanied by your experienced local guide. Your journey begins towards Lake Takerkoust, a beautiful reservoir surrounded by mountain scenery, offering wonderful opportunities for photography.",
+      "Continue towards the breathtaking Kik Plateau, situated at approximately 1,800 metres above sea level. Enjoy panoramic views of the High Atlas Mountains, traditional Berber villages and, during winter, the magnificent snow-covered peaks.",
+      "Your journey then takes you through the picturesque Asni Valley, passing traditional Amazigh villages built from stone and earth. Along the way, enjoy an authentic cultural encounter with a local Berber family. You will be warmly welcomed into their home and invited to share a traditional glass of Moroccan mint tea while learning about local customs and everyday village life.",
+      "Continue along scenic mountain roads at approximately 2,000 metres before descending towards the beautiful Ourika Valley, one of the most popular valleys in the High Atlas Mountains. You will also have the opportunity to explore the famous Ourika waterfalls, depending on your preferences and available time.",
+      "Enjoy a delicious traditional Moroccan lunch at a riverside restaurant, surrounded by the peaceful atmosphere of the valley. In the afternoon, you may also visit a local handicraft cooperative to discover traditional Berber craftsmanship, including handmade carpets, pottery and jewellery.",
+      "After a wonderful day combining mountain scenery, local traditions, cultural encounters and nature, begin your return journey to Marrakech, arriving at approximately 5:00 PM."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "highlights",
+   "before": [
+    "Scenic mountain and plateau views",
+    "Visit traditional Berber villages and homes",
+    "Explore a bio-aromatic garden and learn about medicinal plants",
+    "Enjoy a traditional riverside lunch",
+    "Optional visit to a local handicraft cooperative",
+    "Moderate hiking in a beautiful natural setting"
+   ],
+   "after": [
+    "Lake Takerkoust and its mountain scenery",
+    "Panoramic views from the Kik Plateau (about 1,800 m)",
+    "Mint tea with a Berber family in the Asni valley",
+    "The Ourika valley and, if you wish, its waterfalls",
+    "Traditional Moroccan lunch by the river",
+    "Optional visit to a Berber handicraft cooperative"
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "included",
+   "before": [
+    "-",
+    "Private transportation in a comfortable 4×4",
+    "Licensed English-speaking local guide",
+    "Traditional lunch at a Berber family home"
+   ],
+   "after": [
+    "Private vehicle with driver",
+    "Experienced local guide",
+    "Traditional Moroccan lunch",
+    "Guided walks and cultural visits"
+   ],
+   "note": "owner text 2026-10-31"
   }
  ]
 }

@@ -61,6 +61,105 @@
     "difficulty": "Leicht bis mittel; für die meisten Fitnessstufen geeignet",
     "departure_time": "9:00 Uhr, ab Ihrem Hotel oder Riad in Marrakesch"
    }
+  },
+  {
+   "id": 1070,
+   "field": "summary",
+   "before": "Lassen Sie die lebhaften Straßen Marrakeschs hinter sich und tauchen Sie bei diesem Tagesausflug in die atemberaubenden Landschaften des Hohen Atlas ein. Grüne Täler, traditionelle Berberdörfer, Flüsse und stille Seen verbinden Natur, Kultur und Abenteuer. Ideal für eine ruhige Auszeit von der Stadt, mitten im authentischen Leben der marokkanischen Berge.",
+   "after": "Ein ganzer Tag im Atlas zwischen Bergen und Berberkultur: Entdecken Sie auf diesem privaten Ausflug ab Marrakesch die spektakulären Landschaften und die authentische Berberkultur des Hohen Atlas.",
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "Ganzer Tag (ca. 9:00 – 17:00 Uhr)",
+    "departure_time": "Marrakesch, 9:00 Uhr",
+    "type": "Privater Ausflug"
+   },
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Takerkoust – Kik-Plateau – Asni – Ourika-Tal – Marrakesch: Tagesausflug",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Dauer: ganzer Tag (ca. 9:00 – 17:00 Uhr)",
+      "Abfahrt: Marrakesch, 9:00 Uhr",
+      "Inklusive: privater Transport (ca. 3 Std.), englischsprachiger Guide, traditionelles Mittagessen, Wanderung",
+      "Der Ablauf",
+      "Abfahrt in Marrakesch um 9:00 Uhr in einem komfortablen Geländewagen mit Ihrem erfahrenen Guide. Zuerst geht es zum Takerkoust-Stausee, dann auf das Kik-Plateau auf rund 1.800 m Höhe. Von hier blicken Sie über den Atlas; im Winter bilden die verschneiten Gipfel eine prachtvolle Kulisse.",
+      "Über die Berge geht es ins Asni-Tal, auf Panoramastraßen vorbei an traditionellen Berberdörfern aus Lehm und Stein. Halt bei einer Berberfamilie, die Sie zu Minztee einlädt.",
+      "Weiter auf einer Höhenpiste (rund 2.000 m) ins Ourika-Tal. Sie besuchen einen bio-aromatischen Garten mit Heilpflanzen, die die Berber traditionell nutzen, und auf Wunsch die Wasserfälle des Tals. Mittagessen am Fluss und optional Besuch einer Handwerkskooperative mit Berberteppichen, Keramik und Schmuck.",
+      "Rückkehr nach Marrakesch gegen 17:00 Uhr, nach einem Tag voller Natur, Kultur und authentischer Berbererlebnisse."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakesch – Takerkoust-See – Kik-Plateau – Asni – Ourika-Tal – Marrakesch",
+     "stats": {
+      "duration": "Ca. 9:00 – 17:00 Uhr",
+      "driving_distance": "Rund 160 km hin und zurück",
+      "meals": "Mittagessen"
+     },
+     "accommodation": "",
+     "body": [
+      "Abfahrt in Marrakesch gegen 9:00 Uhr in einem komfortablen Privatfahrzeug, begleitet von Ihrem erfahrenen einheimischen Guide. Zuerst geht es zum Takerkoust-See, einem schönen Stausee inmitten von Bergen, ideal zum Fotografieren.",
+      "Weiter zum atemberaubenden Kik-Plateau auf rund 1.800 m Höhe. Genießen Sie den Panoramablick auf den Hohen Atlas und seine traditionellen Berberdörfer und im Winter auf die prächtigen schneebedeckten Gipfel.",
+      "Dann führt die Fahrt durch das malerische Asni-Tal mit seinen traditionellen Amazigh-Dörfern aus Stein und Lehm. Unterwegs erwartet Sie eine authentische Begegnung mit einer Berberfamilie: Sie werden herzlich bei ihr zu Hause empfangen, trinken ein Glas marokkanischen Minztee und erfahren mehr über die Bräuche und den Alltag im Dorf.",
+      "Auf aussichtsreichen Bergstraßen in rund 2.000 m Höhe geht es weiter, bevor Sie ins schöne Ourika-Tal hinabfahren, eines der beliebtesten Täler des Hohen Atlas. Je nach Wunsch und verfügbarer Zeit können Sie auch die berühmten Ourika-Wasserfälle besuchen.",
+      "Genießen Sie ein traditionelles marokkanisches Mittagessen in einem Restaurant am Fluss, in der friedlichen Atmosphäre des Tals. Am Nachmittag können Sie eine örtliche Handwerkskooperative besuchen und traditionelles Berberhandwerk entdecken: handgeknüpfte Teppiche, Keramik und Schmuck.",
+      "Nach einem wunderbaren Tag voller Berglandschaften, Traditionen, Begegnungen und Natur treten Sie die Rückfahrt nach Marrakesch an, wo Sie gegen 17:00 Uhr ankommen."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "highlights",
+   "before": [
+    "Panoramablicke auf Berge und Hochebenen",
+    "Besuch traditioneller Berberdörfer und -häuser",
+    "Ein bio-aromatischer Garten und seine Heilpflanzen",
+    "Traditionelles Mittagessen am Fluss",
+    "Optionaler Besuch einer lokalen Handwerkskooperative",
+    "Mittelschwere Wanderung in herrlicher Natur"
+   ],
+   "after": [
+    "Der Takerkoust-See und seine Berglandschaft",
+    "Panoramablick vom Kik-Plateau (rund 1.800 m)",
+    "Minztee bei einer Berberfamilie im Asni-Tal",
+    "Das Ourika-Tal und auf Wunsch seine Wasserfälle",
+    "Traditionelles marokkanisches Mittagessen am Fluss",
+    "Optionaler Besuch einer Berber-Handwerkskooperative"
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "included",
+   "before": [
+    "-",
+    "Privater Transport in einem komfortablen Geländewagen",
+    "Lizenzierter, englischsprachiger lokaler Guide",
+    "Traditionelles Mittagessen bei einer Berberfamilie"
+   ],
+   "after": [
+    "Privatfahrzeug mit Fahrer",
+    "Erfahrener einheimischer Guide",
+    "Traditionelles marokkanisches Mittagessen",
+    "Geführte Spaziergänge und kulturelle Besuche"
+   ],
+   "note": "owner text 2026-10-31"
   }
  ]
 }

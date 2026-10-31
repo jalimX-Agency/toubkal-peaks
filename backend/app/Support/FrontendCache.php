@@ -16,7 +16,7 @@ use Throwable;
 class FrontendCache
 {
     /** Every tag the website caches API data under (see frontend/src/lib/api.ts). */
-    public const ALL = ['tours', 'categories', 'reviews'];
+    public const ALL = ['tours', 'categories', 'reviews', 'team', 'settings', 'redirects'];
 
     /** @var array<string, true> */
     private array $pending = [];

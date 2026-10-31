@@ -12,7 +12,8 @@
 # it would put back online any trip the team has set to draft in the admin.
 # Also run since: the corrections and translations of the Ait Bougmez and M'Goun programmes, toubkal:sync-images
 # (trip photos) and toubkal:import-team (About page team).
-# Atlas Mountains & Imlil day trip: the full programme (the import kept only two paragraphs), in the four languages.
+# Atlas Mountains & Imlil day trip: the full programme (the import kept only two paragraphs); Atlas Mountains 3 Valleys
+# day trip: the owner's new text. Both in the four languages.
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es

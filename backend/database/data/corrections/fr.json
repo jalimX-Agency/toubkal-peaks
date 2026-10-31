@@ -61,6 +61,105 @@
     "difficulty": "Facile à modéré ; adapté à la plupart des niveaux",
     "departure_time": "9 h, depuis votre hôtel ou riad à Marrakech"
    }
+  },
+  {
+   "id": 1070,
+   "field": "summary",
+   "before": "Quittez les rues animées de Marrakech pour les paysages grandioses du Haut Atlas lors de cette excursion d'une journée. Vallées verdoyantes, villages berbères traditionnels, rivières et lacs paisibles : un parfait mélange de nature, de culture et d'aventure. Idéale pour s'offrir une pause loin de la ville, cette journée vous plonge dans la vie authentique des montagnes marocaines.",
+   "after": "Une journée complète dans l'Atlas, entre montagnes et culture berbère : découvrez les paysages spectaculaires et la culture berbère authentique du Haut Atlas lors de cette excursion privée au départ de Marrakech.",
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "facts",
+   "before": null,
+   "after": {
+    "duration": "Journée complète (environ 9 h – 17 h)",
+    "departure_time": "Marrakech à 9 h",
+    "type": "Excursion privée"
+   },
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "itinerary",
+   "before": [
+    {
+     "day": 1,
+     "title": "Marrakech – Takerkoust – plateau du Kik – Asni – vallée de l'Ourika – Marrakech : excursion d'une journée",
+     "stats": [],
+     "accommodation": "",
+     "body": [
+      "Durée : journée complète (environ 9 h – 17 h)",
+      "Départ : Marrakech, 9 h",
+      "Comprend : transport privé (environ 3 h), guide parlant anglais, déjeuner traditionnel, randonnée",
+      "Le programme",
+      "Départ de Marrakech à 9 h dans un 4x4 confortable avec votre guide expérimenté. Direction d'abord le lac de Takerkoust, puis le plateau du Kik, à environ 1 800 m d'altitude. De là, vue panoramique sur l'Atlas ; en hiver, les sommets enneigés forment un décor saisissant.",
+      "Vous traversez la montagne jusqu'à la vallée d'Asni, par des routes panoramiques qui longent des villages berbères traditionnels en pisé et en pierre. Halte authentique dans une maison berbère, où la famille vous offre le thé à la menthe.",
+      "Vous continuez par une piste d'altitude (environ 2 000 m) jusqu'à la vallée de l'Ourika. Découvrez un jardin bio-aromatique où poussent les plantes médicinales traditionnellement utilisées par les Berbères et, si vous le souhaitez, les cascades de la vallée. Déjeuner au bord de la rivière, puis visite possible d'une coopérative d'artisanat : tapis, poteries et bijoux berbères.",
+      "Retour à Marrakech vers 17 h, au terme d'une journée riche en nature, en culture et en rencontres berbères authentiques."
+     ]
+    }
+   ],
+   "after": [
+    {
+     "day": 1,
+     "title": "Marrakech – lac de Takerkoust – plateau du Kik – Asni – vallée de l'Ourika – Marrakech",
+     "stats": {
+      "duration": "Environ 9 h – 17 h",
+      "driving_distance": "Environ 160 km aller-retour",
+      "meals": "Déjeuner"
+     },
+     "accommodation": "",
+     "body": [
+      "Départ de Marrakech vers 9 h dans un véhicule privé confortable, avec votre guide local expérimenté. La route mène d'abord au lac de Takerkoust, un beau lac de barrage entouré de montagnes, idéal pour les photos.",
+      "Vous continuez vers le splendide plateau du Kik, à environ 1 800 m d'altitude. Panorama sur le Haut Atlas et ses villages berbères traditionnels et, en hiver, sur les magnifiques sommets enneigés.",
+      "La route traverse ensuite la pittoresque vallée d'Asni et ses villages amazighs traditionnels en pierre et en terre. En chemin, une rencontre authentique avec une famille berbère : vous êtes chaleureusement accueillis chez eux autour d'un verre de thé à la menthe, l'occasion de découvrir les coutumes locales et la vie quotidienne du village.",
+      "Vous poursuivez par des routes de montagne panoramiques, vers 2 000 m d'altitude, avant de descendre vers la belle vallée de l'Ourika, l'une des plus prisées du Haut Atlas. Selon vos envies et le temps disponible, vous pouvez aussi découvrir les célèbres cascades de l'Ourika.",
+      "Déjeuner marocain traditionnel dans un restaurant au bord de la rivière, dans l'atmosphère paisible de la vallée. L'après-midi, vous pouvez visiter une coopérative d'artisanat local pour découvrir le savoir-faire berbère : tapis faits main, poteries et bijoux.",
+      "Après une belle journée entre paysages de montagne, traditions, rencontres et nature, retour vers Marrakech, où vous arrivez vers 17 h."
+     ]
+    }
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "highlights",
+   "before": [
+    "Panoramas sur les montagnes et les plateaux",
+    "Visite de villages et de maisons berbères traditionnels",
+    "Découverte d'un jardin bio-aromatique et des plantes médicinales",
+    "Déjeuner traditionnel au bord de la rivière",
+    "Visite possible d'une coopérative d'artisanat local",
+    "Randonnée modérée dans un cadre naturel magnifique"
+   ],
+   "after": [
+    "Le lac de Takerkoust et son décor de montagnes",
+    "Le panorama du plateau du Kik (environ 1 800 m)",
+    "Le thé à la menthe chez une famille berbère, dans la vallée d'Asni",
+    "La vallée de l'Ourika et, si vous le souhaitez, ses cascades",
+    "Déjeuner marocain traditionnel au bord de la rivière",
+    "Visite possible d'une coopérative d'artisanat berbère"
+   ],
+   "note": "owner text 2026-10-31"
+  },
+  {
+   "id": 1070,
+   "field": "included",
+   "before": [
+    "-",
+    "Transport privé en 4x4 confortable",
+    "Guide local agréé parlant anglais",
+    "Déjeuner traditionnel chez une famille berbère"
+   ],
+   "after": [
+    "Véhicule privé avec chauffeur",
+    "Guide local expérimenté",
+    "Déjeuner marocain traditionnel",
+    "Marches guidées et visites culturelles"
+   ],
+   "note": "owner text 2026-10-31"
   }
  ]
 }

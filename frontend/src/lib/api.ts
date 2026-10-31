@@ -149,6 +149,16 @@ export async function getSettings(): Promise<SiteSettings> {
   return { copy_protection: res.data?.copy_protection ?? true };
 }
 
+/**
+ * Old addresses and their new ones (the old WordPress site, slugs renamed in the admin), keyed by
+ * the normalized old path ("/fr/treks/old-slug/"). Read only when an address matches no page.
+ */
+export async function getRedirects(): Promise<Record<string, string>> {
+  "use cache";
+  const res = await cachedRead<{ data?: { from: string; to: string }[] }>("redirects", "/redirects", {});
+  return Object.fromEntries((res.data ?? []).map((r) => [r.from, r.to]));
+}
+
 /** The people on the About page, in the order set in the admin. */
 export async function getTeam(locale: string): Promise<TeamMember[]> {
   "use cache";
