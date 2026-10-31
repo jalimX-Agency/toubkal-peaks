@@ -19,6 +19,8 @@ export const explore: Record<Locale, {
   guide: string;
   guideLink: string;
   plan: string;
+  navGuide: string;
+  seeAll: string;
 }> = {
   en: {
     eyebrow: "Explore Morocco",
@@ -38,6 +40,8 @@ export const explore: Record<Locale, {
     guide: "Guide",
     guideLink: "Mount Toubkal climbing guide",
     plan: "Plan your trip",
+    navGuide: "Toubkal guide",
+    seeAll: "See all",
   },
   fr: {
     eyebrow: "Explorer le Maroc",
@@ -57,6 +61,8 @@ export const explore: Record<Locale, {
     guide: "Guide",
     guideLink: "Guide de l'ascension du Toubkal",
     plan: "Préparer votre voyage",
+    navGuide: "Guide du Toubkal",
+    seeAll: "Tout voir",
   },
   es: {
     eyebrow: "Explora Marruecos",
@@ -76,6 +82,8 @@ export const explore: Record<Locale, {
     guide: "Guía",
     guideLink: "Guía para subir al Toubkal",
     plan: "Planifica tu viaje",
+    navGuide: "Guía del Toubkal",
+    seeAll: "Ver todo",
   },
   de: {
     eyebrow: "Marokko entdecken",
@@ -95,5 +103,7 @@ export const explore: Record<Locale, {
     guide: "Ratgeber",
     guideLink: "Ratgeber zur Toubkal-Besteigung",
     plan: "Reise planen",
+    navGuide: "Toubkal-Ratgeber",
+    seeAll: "Alle ansehen",
   },
 };
