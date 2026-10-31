@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { connection } from "next/server";
 import { Suspense } from "react";
-import { Ago } from "@/components/admin/Ago";
-import { Empty, FilterTabs, PageHeader, Pagination, StatusBadge, day, money } from "@/components/admin/ui";
+import { Empty, FilterTabs, PageHeader, Pagination, StatusBadge, day } from "@/components/admin/ui";
 import { BookingDetailView } from "@/components/admin/BookingDetailView";
+import { BookingsTable } from "@/components/admin/BookingsTable";
 import { LiveSearch } from "@/components/admin/LiveSearch";
 import { PanelSkeleton, SidePanel } from "@/components/admin/SidePanel";
 import { AdminApiError, adminApi } from "@/lib/admin/api";
@@ -23,89 +23,74 @@ const STATUSES: { value: BookingStatus | ""; label: string }[] = [
   { value: "cancelled", label: "Cancelled" },
 ];
 
+const WHEN = [
+  { value: "", label: "Any departure" },
+  { value: "next30", label: "Next 30 days" },
+  { value: "month", label: "This month" },
+  { value: "nextmonth", label: "Next month" },
+  { value: "past", label: "Already left" },
+  { value: "none", label: "No date yet" },
+];
+
+/** The departure filter as dates for the API (only called after connection(): a per-request value). */
+function departureRange(when: string | undefined): Record<string, string> {
+  const today = new Date();
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const y = today.getUTCFullYear();
+  const m = today.getUTCMonth();
+  switch (when) {
+    case "next30": return { from: iso(today), to: iso(new Date(today.getTime() + 30 * 86_400_000)) };
+    case "month": return { from: iso(new Date(Date.UTC(y, m, 1))), to: iso(new Date(Date.UTC(y, m + 1, 0))) };
+    case "nextmonth": return { from: iso(new Date(Date.UTC(y, m + 1, 1))), to: iso(new Date(Date.UTC(y, m + 2, 0))) };
+    case "past": return { to: iso(new Date(today.getTime() - 86_400_000)) };
+    case "none": return { no_date: "1" };
+    default: return {};
+  }
+}
+
 export default async function BookingsPage({ searchParams }: PageProps<"/admin/bookings">) {
   const raw = await searchParams;
+  const str = (k: string) => (typeof raw[k] === "string" ? (raw[k] as string) : undefined);
   const params = {
-    status: typeof raw.status === "string" ? raw.status : undefined,
-    q: typeof raw.q === "string" ? raw.q : undefined,
+    status: str("status"),
+    q: str("q"),
     sort: raw.sort === "departure" ? "departure" : undefined,
-    page: typeof raw.page === "string" ? raw.page : undefined,
+    when: WHEN.some((w) => w.value && w.value === raw.when) ? str("when") : undefined,
+    per_page: ["50", "100"].includes(str("per_page") ?? "") ? str("per_page") : undefined,
+    page: str("page"),
   };
   const query = new URLSearchParams(Object.entries(params).filter(([, v]) => v) as [string, string][]);
   const open = typeof raw.open === "string" && /^[A-Za-z0-9-]{1,40}$/.test(raw.open) ? raw.open : null;
   // the list as it is (filters, page), without the panel: where closing the panel goes back to
   const listHref = `/admin/bookings${query.size ? `?${query}` : ""}`;
-  const openHref = (reference: string) => `/admin/bookings?${new URLSearchParams([...query, ["open", reference]])}`;
-  const res = await adminApi<Paged<BookingSummary, BookingStatus>>(`/bookings?${query}`);
+  const api = new URLSearchParams([...query].filter(([k]) => k !== "when"));
+  if (params.when) {
+    await connection(); // today's date is read per request, never while prerendering
+    for (const [k, v] of Object.entries(departureRange(params.when))) api.set(k, v);
+  }
+  const res = await adminApi<Paged<BookingSummary, BookingStatus>>(`/bookings?${api}`);
   const all = Object.values(res.counts).reduce((a, b) => a + b, 0);
+  const filtered = Boolean(params.q || params.when);
 
   return (
     <>
-      <PageHeader title="Bookings" subtitle={`${res.meta.total} ${res.meta.total === 1 ? "request" : "requests"}`} />
+      <PageHeader title="Bookings" subtitle={`${res.meta.total} ${res.meta.total === 1 ? "request" : "requests"}${filtered ? " match" : ""}`} />
       <div className="space-y-4 p-4 md:p-8">
-        <LiveSearch placeholder="Name, email, phone, reference or trip" sorts={[{ value: "", label: "Newest" }, { value: "departure", label: "Departure date" }]} />
+        <LiveSearch placeholder="Search name, email, phone, reference, trip"
+          menus={[
+            { param: "when", label: "Departure", options: WHEN },
+            { param: "per_page", label: "Per page", options: [{ value: "", label: "25 per page" }, { value: "50", label: "50 per page" }, { value: "100", label: "100 per page" }] },
+          ]}
+          sorts={[{ value: "", label: "Newest first" }, { value: "departure", label: "By departure" }]} />
         <FilterTabs base="/admin/bookings" current={params.status ?? ""} params={params}
           options={STATUSES.map((s) => ({ ...s, count: s.value ? res.counts[s.value as BookingStatus] : all }))} />
 
         {res.data.length === 0 ? (
-          <Empty>{params.q ? "No booking matches your search." : "No bookings here yet."}</Empty>
+          <Empty>{filtered ? "No booking matches these filters." : "No bookings here yet."}</Empty>
         ) : (
           <>
-            {/* phones: cards */}
-            <ul className="space-y-2.5 md:hidden">
-              {res.data.map((b) => (
-                <li key={b.reference}>
-                  <Link href={openHref(b.reference)} scroll={false} className="block rounded-lg border border-line bg-white p-4 active:bg-cream">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <p className="truncate font-semibold text-navy">{b.name}</p>
-                        <p className="truncate text-sm text-muted">{b.tour_title ?? "Tailor-made trip"}</p>
-                      </div>
-                      <StatusBadge status={b.status} />
-                    </div>
-                    <div className="mono mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[0.72rem] text-muted">
-                      <span>{day(b.start_date)}</span>
-                      <span>{b.adults + b.children} pax</span>
-                      <span>{money(b.total_price, b.currency)}</span>
-                      <span className="ml-auto"><Ago iso={b.created_at} /></span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* tablet and desktop: table */}
-            <div className="hidden overflow-hidden rounded-lg border border-line bg-white md:block">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-cream text-xs uppercase tracking-wider text-muted">
-                  <tr>
-                    <th className="px-4 py-3 font-semibold">Customer</th>
-                    <th className="px-4 py-3 font-semibold">Trip</th>
-                    <th className="px-4 py-3 font-semibold">Departure</th>
-                    <th className="px-4 py-3 font-semibold">Pax</th>
-                    <th className="px-4 py-3 text-right font-semibold">Estimate</th>
-                    <th className="px-4 py-3 font-semibold">Status</th>
-                    <th className="px-4 py-3 font-semibold">Received</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-line">
-                  {res.data.map((b) => (
-                    <tr key={b.reference} className="relative hover:bg-cream">
-                      <td className="px-4 py-3">
-                        <Link href={openHref(b.reference)} scroll={false} className="font-semibold text-navy after:absolute after:inset-0">{b.name}</Link>
-                        <p className="mono text-[0.7rem] text-muted">{b.reference} · {b.locale.toUpperCase()}</p>
-                      </td>
-                      <td className="max-w-64 truncate px-4 py-3 text-ink">{b.tour_title ?? <span className="text-muted">Tailor-made</span>}</td>
-                      <td className="whitespace-nowrap px-4 py-3">{day(b.start_date)}</td>
-                      <td className="px-4 py-3">{b.adults + b.children}</td>
-                      <td className="whitespace-nowrap px-4 py-3 text-right">{money(b.total_price, b.currency)}</td>
-                      <td className="px-4 py-3"><StatusBadge status={b.status} /></td>
-                      <td className="whitespace-nowrap px-4 py-3 text-muted"><Ago iso={b.created_at} /></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            {/* new rows (another page or filter) start with nothing selected */}
+            <BookingsTable key={listHref} rows={res.data} query={query.toString()} />
             <Pagination base="/admin/bookings" page={res.meta.current_page} last={res.meta.last_page} params={params} />
           </>
         )}

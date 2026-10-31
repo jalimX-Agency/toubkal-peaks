@@ -50,6 +50,30 @@ class AdminImprovementsTest extends TestCase
         $this->assertStringContainsString('Deleted by Omar', Booking::withTrashed()->find($booking->id)->admin_notes);
     }
 
+    public function test_bookings_can_be_handled_in_bulk_within_their_workflow(): void
+    {
+        Sanctum::actingAs(User::factory()->create(['role' => 'staff', 'name' => 'Omar']));
+        $make = fn (string $status) => Booking::create(['locale' => 'en', 'first_name' => 'A', 'last_name' => 'B', 'email' => 'a@example.com', 'adults' => 1, 'children' => 0, 'currency' => 'EUR', 'status' => $status]);
+        $pending = $make('pending');
+        $paid = $make('paid');
+        $spam = $make('pending');
+
+        // completing: a paid trip can be completed, a pending request cannot (skipped, not failed)
+        $this->postJson('/api/v1/admin/bookings/bulk', ['action' => 'complete', 'references' => [$pending->reference, $paid->reference]])
+            ->assertOk()->assertJsonPath('done', [$paid->reference])->assertJsonPath('skipped', [$pending->reference]);
+        $this->assertSame('completed', $paid->fresh()->status->value);
+        $this->assertSame('pending', $pending->fresh()->status->value);
+
+        $this->postJson('/api/v1/admin/bookings/bulk', ['action' => 'cancel', 'references' => [$pending->reference]])->assertOk();
+        $this->assertSame('cancelled', $pending->fresh()->status->value);
+
+        $this->postJson('/api/v1/admin/bookings/bulk', ['action' => 'delete', 'references' => [$spam->reference]])->assertOk()->assertJsonPath('done', [$spam->reference]);
+        $this->assertSoftDeleted($spam);
+
+        // confirming needs a deposit per customer: not a bulk action
+        $this->postJson('/api/v1/admin/bookings/bulk', ['action' => 'confirm', 'references' => [$paid->reference]])->assertUnprocessable();
+    }
+
     public function test_the_trip_list_gives_what_the_filters_need(): void
     {
         $this->importRealTours();

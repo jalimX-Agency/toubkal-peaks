@@ -22,6 +22,7 @@ class BookingController extends Controller
             'q' => ['nullable', 'string', 'max:100'],
             'from' => ['nullable', 'date'],
             'to' => ['nullable', 'date'],
+            'no_date' => ['nullable', 'boolean'],
             'sort' => ['nullable', Rule::in(['newest', 'departure'])],
             'per_page' => ['nullable', 'integer', 'min:5', 'max:100'],
         ]);
@@ -30,6 +31,7 @@ class BookingController extends Controller
             ->when($data['status'] ?? null, fn ($q, $s) => $q->where('status', $s))
             ->when($data['from'] ?? null, fn ($q, $d) => $q->whereDate('start_date', '>=', $d))
             ->when($data['to'] ?? null, fn ($q, $d) => $q->whereDate('start_date', '<=', $d))
+            ->when($data['no_date'] ?? false, fn ($q) => $q->whereNull('start_date'))
             ->when($data['q'] ?? null, function ($q, $term) {
                 $like = '%'.str_replace(['%', '_'], ['\%', '\_'], $term).'%';
                 $q->where(fn ($w) => $w->where('reference', 'like', $like)->orWhere('email', 'like', $like)
@@ -121,6 +123,43 @@ class BookingController extends Controller
         $booking->delete();
 
         return response()->json(['message' => 'Booking deleted.']);
+    }
+
+    /**
+     * One action on several bookings at once. Each booking still follows its workflow: one that cannot
+     * make the move (e.g. completing a pending request) is skipped and reported. Confirming is not
+     * offered here: the deposit is set per customer.
+     */
+    public function bulk(Request $request): JsonResponse
+    {
+        $data = $request->validate([
+            'action' => ['required', Rule::in(['complete', 'cancel', 'delete'])],
+            'references' => ['required', 'array', 'min:1', 'max:100'],
+            'references.*' => ['required', 'string', 'max:40', 'distinct'],
+        ]);
+
+        $user = $request->user();
+        $done = [];
+        $skipped = [];
+        foreach (Booking::whereIn('reference', $data['references'])->get() as $booking) {
+            if ($data['action'] === 'delete') {
+                $booking->forceFill(['admin_notes' => trim(($booking->admin_notes ?? '')."\n[Deleted by {$user->name} on ".now()->toDateString().']')])->save();
+                $booking->delete();
+                $done[] = $booking->reference;
+
+                continue;
+            }
+            $to = $data['action'] === 'complete' ? BookingStatus::Completed : BookingStatus::Cancelled;
+            if (! $booking->status->canTransitionTo($to)) {
+                $skipped[] = $booking->reference;
+
+                continue;
+            }
+            $booking->transitionTo($to, $user->id, 'Bulk action');
+            $done[] = $booking->reference;
+        }
+
+        return response()->json(['done' => $done, 'skipped' => $skipped]);
     }
 
     private function find(string $reference): Booking

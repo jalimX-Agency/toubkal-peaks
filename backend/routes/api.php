@@ -44,6 +44,7 @@ Route::prefix('v1')->group(function () {
             Route::get('/dashboard', Admin\DashboardController::class);
 
             Route::get('/bookings', [Admin\BookingController::class, 'index']);
+            Route::post('/bookings/bulk', [Admin\BookingController::class, 'bulk']);
             Route::get('/bookings/{reference}', [Admin\BookingController::class, 'show']);
             Route::patch('/bookings/{reference}', [Admin\BookingController::class, 'update']);
             Route::post('/bookings/{reference}/status', [Admin\BookingController::class, 'status']);

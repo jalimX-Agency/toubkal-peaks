@@ -277,6 +277,29 @@ export async function searchPhotoLibrary(q: string, page = 1): Promise<{ data: T
   return adminApi(`/media?${query}`);
 }
 
+/** One action on the bookings ticked in the list; those that cannot make the move are reported. */
+export async function bulkBookings(action: "complete" | "cancel" | "delete", references: string[]): Promise<ActionState> {
+  if (!["complete", "cancel", "delete"].includes(action) || references.length === 0 || references.length > 100) {
+    return { status: "error", message: "Select between 1 and 100 bookings." };
+  }
+  try {
+    const { done, skipped } = await adminApi<{ done: string[]; skipped: string[] }>("/bookings/bulk", {
+      method: "POST",
+      body: JSON.stringify({ action, references: references.map(String) }),
+    });
+    revalidatePath("/admin/bookings");
+    revalidatePath("/admin");
+    const verb = action === "complete" ? "completed" : action === "cancel" ? "cancelled" : "deleted";
+    const message = `${done.length} ${done.length === 1 ? "booking" : "bookings"} ${verb}`;
+    return skipped.length
+      ? { status: "error", message: `${message}; ${skipped.length} skipped (this step is not possible from their status): ${skipped.join(", ")}` }
+      : { status: "ok", message };
+  } catch (error) {
+    if (error instanceof AdminApiError) return { status: "error", message: error.message };
+    throw error;
+  }
+}
+
 export async function deleteBooking(reference: string): Promise<ActionState> {
   const result = await attempt(() => adminApi(`/bookings/${encodeURIComponent(reference)}`, { method: "DELETE" }), "Deleted");
   if (result.status === "ok") {
