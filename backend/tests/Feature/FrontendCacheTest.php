@@ -58,6 +58,6 @@ class FrontendCacheTest extends TestCase
 
         $this->artisan('toubkal:revalidate')->assertExitCode(1);
 
-        Http::assertSentCount(3);
+        Http::assertSentCount(count(FrontendCache::ALL)); // tours, categories, reviews, team, settings, redirects
     }
 }

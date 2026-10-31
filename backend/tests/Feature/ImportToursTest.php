@@ -153,7 +153,7 @@ class ImportToursTest extends TestCase
         $this->assertSame(11, Tour::where('price_mode', 'on_request')->count());
         $this->assertSame(59, \App\Models\TourTranslation::count());
         $this->assertSame(7, Category::count());
-        $this->assertSame(72, Redirect::count());
+        $this->assertSame(74, Redirect::count()); // 72 trips and pages + 2 old posts without a new page
         // every redirect target is a tour, hub or other known path (no dangling "/UNCLASSIFIED/" etc.)
         $this->assertSame(0, Redirect::where('to_path', 'like', '%UNCLASSIFIED%')->count());
     }

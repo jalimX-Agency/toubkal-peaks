@@ -139,7 +139,7 @@ class PublicApiTest extends TestCase
 
         $data = $this->getJson('/api/v1/redirects')->assertOk()->json('data');
 
-        $this->assertCount(72, $data);
+        $this->assertCount(74, $data);
         $this->assertContains(
             ['from' => '/3-days-mount-toubkal/', 'to' => '/treks/toubkal/3-days-mount-toubkal-trek/', 'status' => 301],
             $data,
