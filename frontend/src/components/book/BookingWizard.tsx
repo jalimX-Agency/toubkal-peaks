@@ -50,7 +50,7 @@ const TRIPS_PER_PAGE = 8;
 const fold = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const FIELD_STEP: Record<string, Step> = {
   tour_id: "trip", start_date: "dates", adults: "group", children: "group", special_requests: "prefs",
-  first_name: "details", last_name: "details", email: "details", phone: "details", country: "details", consent: "review", conditions: "review",
+  first_name: "details", last_name: "details", email: "details", phone: "details", country: "details", consent: "review", conditions: "review", conditions_accepted: "review",
 };
 // What the team reads in the request (in English, whatever the visitor's language).
 const FLEX_EN = { "3": "± 3 days", "7": "± 1 week", month: "any time that month" } as const;
@@ -211,6 +211,8 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
     form.set("children", String(draft.children));
     form.set("special_requests", lines.join("\n").slice(0, 2000));
     form.set("consent", "on");
+    // only asked, and only sent, for the trips with trekking conditions; the API checks it again
+    if (conditionsOk && trip?.category.key === TOUBKAL_CATEGORY) form.set("conditions_accepted", "on");
     form.set("website", honeypot.current?.value ?? "");
 
     startTransition(async () => {
@@ -226,7 +228,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
       }
       if (res.status === "invalid") {
         const fieldErrors: Record<string, string> = {};
-        const map: Record<string, string> = { first_name: "firstName", last_name: "lastName", start_date: "date", tour_id: "tripId", special_requests: "notes" };
+        const map: Record<string, string> = { first_name: "firstName", last_name: "lastName", start_date: "date", tour_id: "tripId", special_requests: "notes", conditions_accepted: "conditions" };
         for (const [field, messages] of Object.entries(res.errors)) {
           fieldErrors[map[field] ?? field] = lang === "en" ? messages[0] : t.invalid;
         }

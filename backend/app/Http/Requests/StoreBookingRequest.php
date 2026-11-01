@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Tour;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 
 class StoreBookingRequest extends FormRequest
 {
@@ -29,6 +31,22 @@ class StoreBookingRequest extends FormRequest
             'children' => ['nullable', 'integer', 'min:0', 'max:30'],
             'special_requests' => ['nullable', 'string', 'max:2000'],
             'consent' => ['accepted'],
+            'conditions_accepted' => ['sometimes', 'boolean'],
         ];
+    }
+
+    /** A Mount Toubkal trip needs the trekking conditions accepted: checked here too, not only in the browser. */
+    public function after(): array
+    {
+        return [function (Validator $validator) {
+            $tourId = $this->input('tour_id');
+            if (! $tourId || $validator->errors()->has('tour_id')) {
+                return;
+            }
+            $tour = Tour::with('category')->find($tourId);
+            if ($tour?->requiresTrekkingConditions() && ! $this->boolean('conditions_accepted')) {
+                $validator->errors()->add('conditions_accepted', 'Please accept the trekking conditions of this trip.');
+            }
+        }];
     }
 }

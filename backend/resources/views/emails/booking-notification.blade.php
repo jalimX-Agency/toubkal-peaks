@@ -15,6 +15,7 @@
         'Travellers' => $booking->adults.' adult(s)'.($booking->children ? ', '.$booking->children.' child(ren)' : ''),
         'Estimate' => $estimate,
         'Language' => strtoupper($booking->locale),
+        'Trekking conditions' => $booking->conditions_accepted_at ? 'Accepted on '.$booking->conditions_accepted_at->format('j M Y, H:i').' (version '.$booking->conditions_version.')' : null,
     ]" />
 
     @if ($booking->special_requests)

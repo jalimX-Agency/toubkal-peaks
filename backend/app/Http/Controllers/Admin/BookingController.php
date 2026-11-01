@@ -203,6 +203,8 @@ class BookingController extends Controller
             'paid_amount' => (float) $b->paid_amount,
             'balance_due' => $b->balanceDue(),
             'special_requests' => $b->special_requests,
+            'conditions_accepted_at' => $b->conditions_accepted_at?->toIso8601String(),
+            'conditions_version' => $b->conditions_version,
             'admin_notes' => $b->admin_notes,
             'next_statuses' => array_map(fn ($s) => $s->value, $b->status->next()),
             'history' => $b->statusLogs->map(fn (BookingStatusLog $log) => [

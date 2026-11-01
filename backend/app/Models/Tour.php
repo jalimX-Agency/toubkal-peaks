@@ -29,6 +29,17 @@ class Tour extends Model
         ];
     }
 
+    /** Category of the Mount Toubkal treks, whose trekking conditions the customer must accept. */
+    public const TOUBKAL_CATEGORY = 'treks.toubkal';
+
+    /** Version of the conditions text on the website (frontend/src/content/trekking-conditions.ts); change it when the text changes. */
+    public const CONDITIONS_VERSION = 'toubkal-2026-11';
+
+    public function requiresTrekkingConditions(): bool
+    {
+        return $this->category?->key === self::TOUBKAL_CATEGORY;
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

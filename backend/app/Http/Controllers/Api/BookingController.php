@@ -51,6 +51,9 @@ class BookingController extends Controller
             'special_requests' => $data['special_requests'] ?? null,
             'source' => 'website',
             'consent_at' => now(),
+            // proof of acceptance, only for the trips whose conditions the customer had to accept
+            'conditions_accepted_at' => $tour?->requiresTrekkingConditions() ? now() : null,
+            'conditions_version' => $tour?->requiresTrekkingConditions() ? Tour::CONDITIONS_VERSION : null,
         ]);
 
         $this->notify($booking);

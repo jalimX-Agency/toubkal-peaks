@@ -14,7 +14,11 @@ export interface TrekkingConditions {
   read: string;
 }
 
-/** The owner's conditions for Mount Toubkal treks, shown on those trips and accepted when requesting one. */
+/**
+ * The owner's conditions for Mount Toubkal treks, shown on those trips and accepted when requesting one.
+ * The API stores which version the customer accepted (Tour::CONDITIONS_VERSION in the backend): change
+ * that constant whenever the text below changes.
+ */
 export const trekkingConditions: Record<Locale, TrekkingConditions> = {
   en: {
     title: "Important information: Mount Toubkal trekking conditions",

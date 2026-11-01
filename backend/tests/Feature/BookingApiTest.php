@@ -30,6 +30,7 @@ class BookingApiTest extends TestCase
             'children' => 1,
             'special_requests' => 'Vegetarian meals',
             'consent' => true,
+            'conditions_accepted' => true,
             'locale' => 'es',
         ], $override);
     }
@@ -161,5 +162,34 @@ class BookingApiTest extends TestCase
         }
         $this->postJson('/api/v1/bookings', $this->payload())->assertStatus(429);
         $this->assertSame(3, Booking::count());
+    }
+
+    public function test_a_toubkal_trip_needs_the_trekking_conditions_and_the_acceptance_is_kept(): void
+    {
+        Mail::fake();
+
+        $this->postJson('/api/v1/bookings', $this->payload(['conditions_accepted' => false]))
+            ->assertUnprocessable()->assertJsonValidationErrors(['conditions_accepted']);
+        $without = $this->payload();
+        unset($without['conditions_accepted']);
+        $this->postJson('/api/v1/bookings', $without)->assertUnprocessable()->assertJsonValidationErrors(['conditions_accepted']);
+        $this->assertDatabaseCount('bookings', 0);
+
+        $this->postJson('/api/v1/bookings', $this->payload())->assertCreated();
+        $booking = Booking::firstOrFail();
+        $this->assertNotNull($booking->conditions_accepted_at);
+        $this->assertSame(Tour::CONDITIONS_VERSION, $booking->conditions_version);
+        Mail::assertSent(NewBookingNotification::class, fn ($mail) => str_contains($mail->render(), 'Accepted on'));
+    }
+
+    public function test_other_trips_and_tailor_made_requests_do_not_need_the_conditions(): void
+    {
+        Mail::fake();
+        $other = Tour::with('category')->get()->first(fn (Tour $t) => ! $t->requiresTrekkingConditions());
+        $this->assertNotNull($other);
+
+        $this->postJson('/api/v1/bookings', $this->payload(['tour_id' => $other->id, 'conditions_accepted' => false]))->assertCreated();
+        $this->postJson('/api/v1/bookings', $this->payload(['tour_id' => null]))->assertCreated();
+        $this->assertSame(0, Booking::whereNotNull('conditions_accepted_at')->count());
     }
 }

@@ -37,6 +37,7 @@ export async function submitBooking(_prev: BookingState, form: FormData): Promis
     children: values.children ? Number(values.children) : 0,
     start_date: values.start_date || null,
     consent: form.get("consent") === "on",
+    conditions_accepted: form.get("conditions_accepted") === "on",
   };
 
   try {

@@ -27,6 +27,7 @@ class Booking extends Model
             'deposit_amount' => 'decimal:2',
             'paid_amount' => 'decimal:2',
             'consent_at' => 'datetime',
+            'conditions_accepted_at' => 'datetime',
             'confirmed_at' => 'datetime',
             'completed_at' => 'datetime',
             'cancelled_at' => 'datetime',

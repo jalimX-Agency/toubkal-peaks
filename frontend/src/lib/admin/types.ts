@@ -46,6 +46,8 @@ export interface BookingDetail extends BookingSummary {
   paid_amount: number;
   balance_due: number | null;
   special_requests: string | null;
+  conditions_accepted_at: string | null;
+  conditions_version: string | null;
   admin_notes: string | null;
   next_statuses: BookingStatus[];
   history: { from: string | null; to: string; note: string | null; user: string | null; at: string | null }[];

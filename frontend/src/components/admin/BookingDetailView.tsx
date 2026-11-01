@@ -109,6 +109,7 @@ function Overview({ b, travellers }: { b: BookingDetail; travellers: string }) {
         <Row label="Dates" value={b.start_date ? `${day(b.start_date)}${b.end_date ? ` → ${day(b.end_date)}` : ""}` : "Not decided"} />
         <Row label="Travellers" value={travellers} />
         <Row label="Received" value={`${day(b.created_at)} · ${b.source}`} />
+        {b.conditions_accepted_at && <Row label="Trekking conditions" value={`Accepted on ${day(b.conditions_accepted_at)}, ${new Date(b.conditions_accepted_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })} (version ${b.conditions_version})`} />}
       </Panel>
       <Panel title="Payment" className="md:col-span-2">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
