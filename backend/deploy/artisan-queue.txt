@@ -2,7 +2,7 @@
 # The cron job runs every line below ONCE after a successful migration, writes the result to
 # storage/logs/deploy.log ("queue [ok|failed|rejected] ...") and removes the line from this file.
 # This file is deployed with the code and is only re-uploaded when its content changes in Git.
-# Allowed: toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish, toubkal:revalidate, toubkal:create-admin,
+# Allowed: toubkal:import-blog, toubkal:import-reviews, toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish, toubkal:revalidate, toubkal:create-admin,
 # db:seed, cache:clear (plain --options only).
 # Anything else is rejected. Lines starting with # are comments.
 #
@@ -15,6 +15,8 @@
 # Atlas Mountains & Imlil day trip: the full programme (the import kept only two paragraphs); Atlas Mountains 3 Valleys
 # day trip, Essaouira day trip and Atlas mountain biking day trip: the owner's new texts. All in the four languages.
 # Then: Toubkal National Park day trip (Imlil - Sidi Chamharouch), the owner's new programme, in the four languages.
+# Then: the first blog article (best time to climb Mount Toubkal), in the four languages.
+toubkal:import-blog
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es

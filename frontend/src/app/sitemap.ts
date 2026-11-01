@@ -62,15 +62,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // articles, like trips, only in the languages they are written in
   const articlePaths = new Map<string, Partial<Record<Locale, string>>>();
+  const published = new Map<string, string>();
   locales.forEach((lang, i) => {
     for (const post of blogs[i]) {
       if (post.locale === lang) articlePaths.set(post.slug, { ...articlePaths.get(post.slug), [lang]: `/blog/${post.slug}` });
+      published.set(post.slug, post.published_at);
     }
   });
-  const articles = [...articlePaths.values()].flatMap((paths) => {
+  const articles = [...articlePaths.entries()].flatMap(([slug, paths]) => {
     const languages = Object.fromEntries(Object.entries(paths).map(([l, p]) => [l, url(l as Locale, p!)]));
     return Object.entries(paths).map(([lang, path]) => ({
       url: url(lang as Locale, path!),
+      lastModified: published.get(slug),
       changeFrequency: "monthly" as const,
       priority: 0.6,
       alternates: { languages },

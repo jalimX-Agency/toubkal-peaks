@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]">): Promis
       canonical: localePath(lang, "/"),
       languages: { ...Object.fromEntries(locales.map((l) => [l, localePath(l, "/")])), "x-default": "/" },
     },
-    openGraph: { title: dict.meta.homeTitle, description: dict.meta.homeDescription, locale: lang, url: localePath(lang, "/") },
+    openGraph: { title: dict.meta.homeTitle, description: dict.meta.homeDescription, locale: lang, url: localePath(lang, "/"), images: [{ url: media.ogImage, width: 1200, height: 630, alt: site.name }] },
   };
 }
 

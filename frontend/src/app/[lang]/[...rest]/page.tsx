@@ -6,6 +6,7 @@ import { hasLocale, localePath, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { getRedirects, getTour, getTours } from "@/lib/api";
 import { HUBS, hubByPath } from "@/lib/hubs";
+import { media, pageHeroes } from "@/lib/site";
 
 // Hubs are prerendered; each trip renders on its first request, then stays cached.
 export const instant = false;
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[...rest]"
         canonical: localePath(lang, page.hub.path),
         languages: { ...Object.fromEntries(locales.map((l) => [l, localePath(l, page.hub.path)])), "x-default": localePath("en", page.hub.path) },
       },
-      openGraph: { title, description: intro, url: localePath(lang, page.hub.path) },
+      openGraph: { title, description: intro, url: localePath(lang, page.hub.path), images: [pageHeroes[page.hub.key] ?? media.ogImage] },
     };
   }
 

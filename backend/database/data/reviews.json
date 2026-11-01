@@ -1,0 +1,17 @@
+{
+  "_how_to": "Real reviews only, copied as written by the traveller. Put each one in \"reviews\", then run: php artisan toubkal:import-reviews (or add the line to deploy/artisan-queue.txt). A review already imported is skipped.",
+  "_example": {
+    "source": "tripadvisor",
+    "external_id": "optional id on the platform, avoids duplicates",
+    "author_name": "First name and initial as shown on the platform",
+    "author_country": "Country, if shown",
+    "rating": 5,
+    "title": "Title of the review, if any",
+    "body": "The full text of the review (at least 20 characters).",
+    "language": "en",
+    "reviewed_at": "2026-10-15",
+    "url": "https://www.tripadvisor.co.uk/ShowUserReviews-...",
+    "is_featured": false
+  },
+  "reviews": []
+}

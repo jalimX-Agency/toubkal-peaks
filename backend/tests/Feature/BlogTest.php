@@ -132,4 +132,38 @@ class BlogTest extends TestCase
         $this->postJson('/api/blog-posts', $this->body(['slug' => 'a-draft', 'published' => false]), $auth)->assertCreated();
         $this->assertNull(BlogPost::firstWhere('slug', 'a-draft')->published_at);
     }
+
+    public function test_the_import_adds_the_first_article_once_and_keeps_admin_edits(): void
+    {
+        $this->artisan('toubkal:import-blog')->assertSuccessful();
+        $post = BlogPost::firstWhere('slug', 'best-time-to-climb-mount-toubkal');
+        $this->assertNotNull($post);
+        $this->assertSame(['en', 'fr', 'es', 'de'], $post->locales());
+        $this->assertStringContainsString('class="gx-months"', $post->content['fr']);
+        $this->assertSame(12, substr_count($post->content['de'], '<li class="is-'));
+        $this->assertSame('toubkal', $post->category);
+        $this->getJson('/api/v1/blog-posts/best-time-to-climb-mount-toubkal?locale=es')->assertOk()->assertJsonPath('data.locale', 'es');
+
+        $post->update(['title' => ['en' => 'Edited in the admin'] + $post->title]);
+        $this->artisan('toubkal:import-blog')->assertSuccessful();
+        $this->assertSame('Edited in the admin', $post->fresh()->title['en']);
+        $this->assertDatabaseCount('blog_posts', 1);
+    }
+
+    public function test_the_review_import_validates_dedupes_and_publishes(): void
+    {
+        $file = tempnam(sys_get_temp_dir(), 'rev');
+        $review = ['source' => 'tripadvisor', 'external_id' => 'r1', 'author_name' => 'Anna K', 'rating' => 5, 'body' => 'A long enough review text for the test.', 'language' => 'en', 'reviewed_at' => '2026-10-01'];
+        file_put_contents($file, json_encode(['reviews' => [$review, ['source' => 'google', 'author_name' => 'Luc', 'rating' => 4, 'body' => 'Another honest review of the trip.']]]));
+
+        $this->artisan('toubkal:import-reviews', ['--file' => $file])->assertSuccessful();
+        $this->artisan('toubkal:import-reviews', ['--file' => $file])->assertSuccessful(); // same file again: nothing added
+        $this->assertDatabaseCount('reviews', 2);
+        $this->assertSame(2, count($this->getJson('/api/v1/reviews')->json('data')));
+
+        file_put_contents($file, json_encode(['reviews' => [['source' => 'tripadvisor', 'author_name' => 'X', 'rating' => 9, 'body' => 'too short']]]));
+        $this->artisan('toubkal:import-reviews', ['--file' => $file])->assertFailed();
+        $this->assertDatabaseCount('reviews', 2);
+        unlink($file);
+    }
 }
