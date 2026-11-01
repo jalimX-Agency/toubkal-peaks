@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useState, useTransition } from "react";
+import { useActionState, useState } from "react";
 import { deletePerson, orderPeople, savePerson, setPersonVisible, uploadPersonPhoto } from "@/app/admin/actions";
+import { useFeedback } from "@/components/admin/Feedback";
 import { Field, FormMessage, Submit, TextArea } from "@/components/admin/form";
 import type { ActionState, AdminLocale, AdminTeamMember } from "@/lib/admin/types";
 
@@ -13,20 +14,61 @@ const LOCALES: { code: AdminLocale; label: string }[] = [
   { code: "de", label: "Deutsch" },
 ];
 
+/** The people of the page, in their order. Moving, hiding and deleting show at once; the server follows. */
+export function PeopleList({ people }: { people: AdminTeamMember[] }) {
+  const { optimistic } = useFeedback();
+  const [local, setLocal] = useState<{ for: AdminTeamMember[]; ids: number[] } | null>(null);
+  const ids = local && local.for === people ? local.ids : people.map((p) => p.id);
+  const byId = new Map(people.map((p) => [p.id, p]));
+
+  const order = (next: number[]) =>
+    optimistic({
+      apply: () => setLocal({ for: people, ids: next }),
+      undo: () => setLocal(null),
+      send: () => orderPeople(next),
+    });
+
+  return (
+    <ul className="grid gap-3 lg:grid-cols-2">
+      {ids.map((id, i) => {
+        const person = byId.get(id);
+        return person ? <PersonCard key={id} person={person} index={i} ids={ids} onOrder={order} /> : null;
+      })}
+    </ul>
+  );
+}
+
 /** One card per person: photo, name, role, visibility, order buttons; "Edit" opens the full form. */
-export function PersonCard({ person, index, ids }: { person: AdminTeamMember; index: number; ids: number[] }) {
-  const [state, setState] = useState<ActionState>({ status: "idle" });
+function PersonCard({ person, index, ids, onOrder }: { person: AdminTeamMember; index: number; ids: number[]; onOrder: (next: number[]) => void }) {
+  const { confirm, optimistic } = useFeedback();
   const [editing, setEditing] = useState(false);
-  const [pending, start] = useTransition();
-  const run = (fn: () => Promise<ActionState>) => start(async () => setState(await fn()));
+  const [shown, setShown] = useState<boolean | null>(null);
+  const [gone, setGone] = useState(false);
+  const active = shown ?? person.is_active;
   const move = (by: number) => {
     const next = [...ids];
     [next[index], next[index + by]] = [next[index + by], next[index]];
-    run(() => orderPeople(next));
+    onOrder(next);
+  };
+  const toggle = async () => {
+    const to = !active;
+    await optimistic({
+      apply: () => setShown(to),
+      undo: () => setShown(null),
+      send: () => setPersonVisible(person.id, to),
+      success: to ? `${person.name} is shown on the website.` : `${person.name} is hidden.`,
+    });
+    setShown(null);
+  };
+  const remove = async () => {
+    if (!(await confirm({ title: `Remove ${person.name} from the team page?`, message: "This cannot be undone.", confirmLabel: "Remove", danger: true }))) return;
+    await optimistic({ apply: () => setGone(true), undo: () => setGone(false), send: () => deletePerson(person.id), success: `${person.name} removed.` });
   };
 
+  if (gone) return null;
+
   return (
-    <li className={`rounded-lg border border-line bg-white p-4 ${person.is_active ? "" : "opacity-70"}`}>
+    <li className={`rounded-lg border border-line bg-white p-4 ${active ? "" : "opacity-70"}`}>
       <div className="flex gap-4">
         <div className="relative h-24 w-20 shrink-0 overflow-hidden rounded-md bg-sand">
           {person.photo && <Image src={person.photo.url} alt="" fill sizes="80px" className="object-cover" />}
@@ -34,7 +76,7 @@ export function PersonCard({ person, index, ids }: { person: AdminTeamMember; in
         <div className="min-w-0 flex-1">
           <p className="font-semibold text-navy">
             {person.name}
-            {!person.is_active && <span className="ml-2 rounded-full bg-muted/15 px-2 py-0.5 text-xs font-semibold text-muted">Hidden</span>}
+            {!active && <span className="ml-2 rounded-full bg-muted/15 px-2 py-0.5 text-xs font-semibold text-muted">Hidden</span>}
           </p>
           <p className="text-sm text-muted">{person.role.en}</p>
           <p className="mono mt-1 text-[0.7rem] text-muted">
@@ -43,15 +85,13 @@ export function PersonCard({ person, index, ids }: { person: AdminTeamMember; in
         </div>
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-line pt-3 text-sm">
-        <button disabled={pending || index === 0} onClick={() => move(-1)} aria-label={`Move ${person.name} up`} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy disabled:opacity-40">↑</button>
-        <button disabled={pending || index === ids.length - 1} onClick={() => move(1)} aria-label={`Move ${person.name} down`} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy disabled:opacity-40">↓</button>
-        <button disabled={pending} onClick={() => run(() => setPersonVisible(person.id, !person.is_active))} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy disabled:opacity-60">
-          {person.is_active ? "Hide" : "Show"}
+        <button disabled={index === 0} onClick={() => move(-1)} aria-label={`Move ${person.name} up`} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy disabled:opacity-40">↑</button>
+        <button disabled={index === ids.length - 1} onClick={() => move(1)} aria-label={`Move ${person.name} down`} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy disabled:opacity-40">↓</button>
+        <button onClick={toggle} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy">
+          {active ? "Hide" : "Show"}
         </button>
         <button onClick={() => setEditing((e) => !e)} className="px-2 py-1.5 font-semibold text-navy">{editing ? "Close" : "Edit"}</button>
-        <button disabled={pending} onClick={() => confirm(`Remove ${person.name} from the team page? This cannot be undone.`) && run(() => deletePerson(person.id))}
-          className="ml-auto px-2 py-1.5 font-semibold text-sahara disabled:opacity-60">Delete</button>
-        <FormMessage state={state} />
+        <button onClick={remove} className="ml-auto px-2 py-1.5 font-semibold text-sahara">Delete</button>
       </div>
       {editing && (
         <div className="mt-4 space-y-6 border-t border-line pt-4">

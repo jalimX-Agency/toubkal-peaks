@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logout } from "@/app/admin/actions";
+import { AdminFeedbackProvider } from "@/components/admin/Feedback";
 import type { AdminUser } from "@/lib/admin/types";
 import { media } from "@/lib/site";
 
@@ -96,7 +97,9 @@ export function AdminShell({ user, children }: { user: AdminUser; children: Reac
         </div>
       </header>
 
-      <main className="pb-24 md:pb-10">{children}</main>
+      <AdminFeedbackProvider>
+        <main className="pb-24 md:pb-10">{children}</main>
+      </AdminFeedbackProvider>
 
       {/* bottom tabs (phones) */}
       <nav aria-label="Admin" className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-line bg-white pb-[env(safe-area-inset-bottom)] md:hidden">

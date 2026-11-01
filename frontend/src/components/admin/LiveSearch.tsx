@@ -35,6 +35,8 @@ export function LiveSearch({ placeholder, sorts, menus = [] }: { placeholder: st
       first.current = false;
       return;
     }
+    // nothing typed since the address was set: do not navigate (it would close an open side panel)
+    if (q.trim() === (params.get("q") ?? "")) return;
     const timer = setTimeout(() => go({ q: q.trim() }), 300);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- typing only

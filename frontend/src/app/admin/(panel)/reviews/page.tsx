@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ReviewActions, ReviewForm } from "@/components/admin/ReviewForms";
-import { Empty, FilterTabs, PageHeader, Pagination, StatusBadge, day } from "@/components/admin/ui";
+import { ReviewForm, ReviewItem } from "@/components/admin/ReviewForms";
+import { Empty, FilterTabs, PageHeader, Pagination } from "@/components/admin/ui";
 import { LiveSearch } from "@/components/admin/LiveSearch";
 import { adminApi } from "@/lib/admin/api";
 import type { AdminReview, Paged, ReviewStatus, TourRow } from "@/lib/admin/types";
@@ -43,26 +43,7 @@ export default async function ReviewsPage({ searchParams }: PageProps<"/admin/re
 
         {res.data.length === 0 ? <Empty>No reviews here.</Empty> : (
           <ul className="space-y-3">
-            {res.data.map((r) => (
-              <li key={r.id} className="rounded-lg border border-line bg-white p-4">
-                <div className="flex flex-wrap items-start justify-between gap-2">
-                  <div>
-                    <p className="font-semibold text-navy">{r.author_name}{r.author_country && <span className="font-normal text-muted"> · {r.author_country}</span>}</p>
-                    <p className="mono text-[0.7rem] text-muted">
-                      <span className="text-gold" aria-label={`${r.rating} out of 5`}>{"★".repeat(r.rating)}{"☆".repeat(5 - r.rating)}</span> · {r.source} · {day(r.reviewed_at ?? r.created_at)}
-                      {r.tour_title && <> · {r.tour_title}</>}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {r.is_featured && <span className="rounded-full bg-gold px-2 py-0.5 text-xs font-semibold text-white">Featured</span>}
-                    <StatusBadge status={r.status} kind="review" />
-                  </div>
-                </div>
-                {r.title && <p className="mt-2 font-semibold text-ink">{r.title}</p>}
-                <p className="mt-1 line-clamp-4 whitespace-pre-line text-sm text-ink">{r.body}</p>
-                <ReviewActions review={r} tours={tourOptions} />
-              </li>
-            ))}
+            {res.data.map((r) => <ReviewItem key={r.id} review={r} tours={tourOptions} />)}
           </ul>
         )}
         <Pagination base="/admin/reviews" page={res.meta.current_page} last={res.meta.last_page} params={params} />

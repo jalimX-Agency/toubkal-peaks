@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PersonCard, PersonForm } from "@/components/admin/PeopleForms";
+import { PeopleList, PersonForm } from "@/components/admin/PeopleForms";
 import { Empty, PageHeader } from "@/components/admin/ui";
 import { adminApi } from "@/lib/admin/api";
 import type { AdminTeamMember } from "@/lib/admin/types";
@@ -11,7 +11,6 @@ export const metadata: Metadata = { title: "Team page" };
 
 export default async function PeoplePage() {
   const { data: people } = await adminApi<{ data: AdminTeamMember[] }>("/team-members");
-  const ids = people.map((p) => p.id);
 
   return (
     <>
@@ -25,9 +24,7 @@ export default async function PeoplePage() {
           </div>
         </details>
         {people.length === 0 ? <Empty>Nobody on the team page yet.</Empty> : (
-          <ul className="grid gap-3 lg:grid-cols-2">
-            {people.map((p, i) => <PersonCard key={p.id} person={p} index={i} ids={ids} />)}
-          </ul>
+          <PeopleList people={people} />
         )}
       </div>
     </>

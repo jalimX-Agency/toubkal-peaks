@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useRef, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { useActionState, useRef, useState } from "react";
 import { deleteBlogPost, saveBlogPost, uploadBlogCover } from "@/app/admin/actions";
+import { useFeedback } from "@/components/admin/Feedback";
 import { Field, FormMessage, Select, Submit, TextArea } from "@/components/admin/form";
 import type { ActionState, AdminBlogPost, AdminLocale } from "@/lib/admin/types";
 
@@ -170,15 +172,21 @@ export function BlogCoverForm({ post }: { post: AdminBlogPost }) {
 }
 
 export function DeleteBlogPost({ post }: { post: AdminBlogPost }) {
-  const [pending, start] = useTransition();
-  const [state, setState] = useState<ActionState>({ status: "idle" });
+  const router = useRouter();
+  const { confirm, optimistic } = useFeedback();
+  const remove = async () => {
+    if (!(await confirm({ title: `Delete “${post.title.en}”?`, message: "It is deleted in every language and cannot be undone.", confirmLabel: "Delete article", danger: true }))) return;
+    await optimistic({
+      // back to the list at once; if the server refuses, the article is shown again with a message
+      apply: () => router.replace("/admin/blog"),
+      undo: () => router.replace(`/admin/blog/${post.id}`),
+      send: () => deleteBlogPost(post.id),
+      success: "Article deleted.",
+    });
+  };
   return (
-    <span className="flex items-center gap-2">
-      <button type="button" disabled={pending} className="text-sm font-semibold text-sahara disabled:opacity-60"
-        onClick={() => confirm(`Delete “${post.title.en}” in every language? This cannot be undone.`) && start(async () => setState(await deleteBlogPost(post.id)))}>
-        Delete article
-      </button>
-      <FormMessage state={state} />
-    </span>
+    <button type="button" className="text-sm font-semibold text-sahara" onClick={remove}>
+      Delete article
+    </button>
   );
 }

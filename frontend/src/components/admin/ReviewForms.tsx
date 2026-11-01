@@ -1,34 +1,73 @@
 "use client";
 
-import { useActionState, useState, useTransition } from "react";
+import { useActionState, useState } from "react";
 import { deleteReview, saveReview, setReviewStatus } from "@/app/admin/actions";
+import { useFeedback } from "@/components/admin/Feedback";
 import { Field, FormMessage, Select, Submit, TextArea } from "@/components/admin/form";
+import { StatusBadge, day } from "@/components/admin/ui";
 import type { ActionState, AdminReview } from "@/lib/admin/types";
 
 const SOURCES = ["tripadvisor", "google", "viator", "getyourguide", "facebook", "trustpilot", "website", "other"];
 
-export function ReviewActions({ review, tours }: { review: AdminReview; tours: { id: number; title: string }[] }) {
-  const [state, setState] = useState<ActionState>({ status: "idle" });
+function Stars({ rating }: { rating: number }) {
+  return <span className="text-gold" aria-label={`${rating} out of 5`}>{"★".repeat(rating)}{"☆".repeat(5 - rating)}</span>;
+}
+
+/**
+ * One review of the list. Publishing, hiding and deleting show their result at once; the server
+ * works in the background and, if it refuses, the review goes back with a message.
+ */
+export function ReviewItem({ review, tours }: { review: AdminReview; tours: { id: number; title: string }[] }) {
+  const { confirm, optimistic } = useFeedback();
   const [editing, setEditing] = useState(false);
-  const [pending, start] = useTransition();
-  const run = (fn: () => Promise<ActionState>) => start(async () => setState(await fn()));
+  const [override, setOverride] = useState<AdminReview["status"] | null>(null);
+  const [gone, setGone] = useState(false);
+  const status = override ?? review.status;
+
+  if (gone) return null;
+
+  const change = async (to: "published" | "hidden") => {
+    await optimistic({
+      apply: () => setOverride(to),
+      undo: () => setOverride(null),
+      send: () => setReviewStatus(review.id, to),
+      success: to === "published" ? "Review published." : "Review hidden.",
+    });
+    setOverride(null);
+  };
+
+  const remove = async () => {
+    if (!(await confirm({ title: `Delete the review by ${review.author_name}?`, message: "This cannot be undone.", confirmLabel: "Delete review", danger: true }))) return;
+    await optimistic({ apply: () => setGone(true), undo: () => setGone(false), send: () => deleteReview(review.id), success: "Review deleted." });
+  };
 
   return (
-    <div className="mt-3 border-t border-line pt-3">
-      <div className="flex flex-wrap items-center gap-2 text-sm">
-        {review.status !== "published" && (
-          <button disabled={pending} onClick={() => run(() => setReviewStatus(review.id, "published"))} className="rounded-md bg-atlas px-3 py-1.5 font-semibold text-white disabled:opacity-60">Publish</button>
-        )}
-        {review.status !== "hidden" && (
-          <button disabled={pending} onClick={() => run(() => setReviewStatus(review.id, "hidden"))} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy disabled:opacity-60">Hide</button>
-        )}
-        <button onClick={() => setEditing((e) => !e)} className="px-2 py-1.5 font-semibold text-navy">{editing ? "Close" : "Edit"}</button>
-        <button disabled={pending} onClick={() => confirm(`Delete the review by ${review.author_name}? This cannot be undone.`) && run(() => deleteReview(review.id))}
-          className="ml-auto px-2 py-1.5 font-semibold text-sahara disabled:opacity-60">Delete</button>
-        <FormMessage state={state} />
+    <li className="rounded-lg border border-line bg-white p-4">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <p className="font-semibold text-navy">{review.author_name}{review.author_country && <span className="font-normal text-muted"> · {review.author_country}</span>}</p>
+          <p className="mono text-[0.7rem] text-muted">
+            <Stars rating={review.rating} /> · {review.source} · {day(review.reviewed_at ?? review.created_at)}
+            {review.tour_title && <> · {review.tour_title}</>}
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          {review.is_featured && <span className="rounded-full bg-gold px-2 py-0.5 text-xs font-semibold text-white">Featured</span>}
+          <StatusBadge status={status} kind="review" />
+        </div>
       </div>
-      {editing && <div className="mt-3"><ReviewForm review={review} tours={tours} onSaved={() => setEditing(false)} /></div>}
-    </div>
+      {review.title && <p className="mt-2 font-semibold text-ink">{review.title}</p>}
+      <p className="mt-1 line-clamp-4 whitespace-pre-line text-sm text-ink">{review.body}</p>
+      <div className="mt-3 border-t border-line pt-3">
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          {status !== "published" && <button onClick={() => change("published")} className="rounded-md bg-atlas px-3 py-1.5 font-semibold text-white">Publish</button>}
+          {status !== "hidden" && <button onClick={() => change("hidden")} className="rounded-md border border-line px-3 py-1.5 font-semibold text-navy">Hide</button>}
+          <button onClick={() => setEditing((e) => !e)} className="px-2 py-1.5 font-semibold text-navy">{editing ? "Close" : "Edit"}</button>
+          <button onClick={remove} className="ml-auto px-2 py-1.5 font-semibold text-sahara">Delete</button>
+        </div>
+        {editing && <div className="mt-3"><ReviewForm review={review} tours={tours} onSaved={() => setEditing(false)} /></div>}
+      </div>
+    </li>
   );
 }
 

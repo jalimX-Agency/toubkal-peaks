@@ -1,22 +1,34 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { createContext, useContext, useEffect, useRef, useState, useTransition } from "react";
+
+const CloseContext = createContext<(() => void) | null>(null);
+
+/** Closes the side panel the component is in, at once (null outside a panel, e.g. on a full page). */
+export const useClosePanel = () => useContext(CloseContext);
 
 /**
  * A panel sliding in from the right over the current list (full screen on phones). The list page
  * opens it with ?open=…; closing goes to `closeHref` (the list with its filters, without the panel)
- * and keeps the scroll. Escape and the backdrop close it.
+ * and keeps the scroll. Escape and the backdrop close it. It disappears at once: the address changes
+ * in the background (the server would otherwise make the person wait for the page to render again).
  */
 export function SidePanel({ title, subtitle, badge, fullHref, closeHref, wide = false, children }: {
   title: string; subtitle?: string; badge?: React.ReactNode; fullHref?: string; closeHref: string; wide?: boolean; children: React.ReactNode;
 }) {
   const router = useRouter();
   const panel = useRef<HTMLDivElement>(null);
+  const [closed, setClosed] = useState(false);
+  const [, startTransition] = useTransition();
+  const close = () => {
+    setClosed(true);
+    startTransition(() => router.replace(closeHref, { scroll: false }));
+  };
 
   useEffect(() => {
-    const close = () => router.replace(closeHref, { scroll: false });
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    if (closed) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && !document.querySelector("[role=alertdialog]") && close();
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     panel.current?.focus();
@@ -24,11 +36,14 @@ export function SidePanel({ title, subtitle, badge, fullHref, closeHref, wide = 
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [router, closeHref]);
+    // close only reads stable values (router, closeHref)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [closed, router, closeHref]);
 
-  const close = () => router.replace(closeHref, { scroll: false });
+  if (closed) return null;
 
   return (
+    <CloseContext.Provider value={close}>
     <div className="fixed inset-0 z-50 flex justify-end" role="dialog" aria-modal="true" aria-label={title}>
       <button type="button" aria-label="Close" onClick={close} className="absolute inset-0 cursor-default bg-navy-deep/40 backdrop-blur-[1px]" />
       <div ref={panel} tabIndex={-1} className={`relative flex h-full w-full ${wide ? "max-w-5xl" : "max-w-2xl"} flex-col overflow-hidden bg-cream shadow-2xl outline-none md:rounded-l-xl`}>
@@ -46,6 +61,7 @@ export function SidePanel({ title, subtitle, badge, fullHref, closeHref, wide = 
         <div className="flex-1 overflow-y-auto">{children}</div>
       </div>
     </div>
+    </CloseContext.Provider>
   );
 }
 

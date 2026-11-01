@@ -1,17 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import { bulkBookings } from "@/app/admin/actions";
 import { Ago } from "@/components/admin/Ago";
-import { FormMessage } from "@/components/admin/form";
+import { onBookingChange, useFeedback } from "@/components/admin/Feedback";
 import { StatusBadge, day, money } from "@/components/admin/ui";
-import type { ActionState, BookingSummary } from "@/lib/admin/types";
+import type { BookingStatus, BookingSummary } from "@/lib/admin/types";
 
 const ACTIONS = {
-  complete: { label: "Mark completed", confirm: "Mark {n} as completed (the trip has taken place)?" },
-  cancel: { label: "Cancel", confirm: "Cancel {n}?" },
-  delete: { label: "Delete", confirm: "Delete {n}? They disappear from the lists." },
+  complete: { label: "Mark completed", title: "Mark {n} as completed?", message: "The trip has taken place.", ok: "Mark completed", danger: false },
+  cancel: { label: "Cancel", title: "Cancel {n}?", message: "The bookings are set to cancelled.", ok: "Cancel bookings", danger: true },
+  delete: { label: "Delete", title: "Delete {n}?", message: "They disappear from the lists.", ok: "Delete", danger: true },
 } as const;
 type Action = keyof typeof ACTIONS;
 
@@ -19,10 +19,25 @@ type Action = keyof typeof ACTIONS;
  * The bookings of the current page: tick some (or all) to act on them together; a row opens the
  * booking in the side panel. `query` is the list's current filters, kept when a booking is opened.
  */
-export function BookingsTable({ rows, query }: { rows: BookingSummary[]; query: string }) {
+export function BookingsTable({ rows: loaded, query }: { rows: BookingSummary[]; query: string }) {
+  const { confirm, optimistic } = useFeedback();
   const [selected, setSelected] = useState<string[]>([]);
-  const [state, setState] = useState<ActionState>({ status: "idle" });
-  const [pending, start] = useTransition();
+  // changes shown before the server has answered; they are dropped when the list arrives again (or the change fails)
+  const [changes, setChanges] = useState<{ for: BookingSummary[]; map: Record<string, BookingStatus | "deleted"> }>({ for: loaded, map: {} });
+  const map = changes.for === loaded ? changes.map : {};
+  // a booking changed in its panel shows here at once as well
+  useEffect(
+    () =>
+      onBookingChange(({ reference, status }) =>
+        setChanges((prev) => {
+          const current = prev.for === loaded ? prev.map : {};
+          const rest = Object.fromEntries(Object.entries(current).filter(([key]) => key !== reference));
+          return { for: loaded, map: status === "reset" ? rest : { ...rest, [reference]: status } };
+        }),
+      ),
+    [loaded],
+  );
+  const rows = loaded.filter((b) => map[b.reference] !== "deleted").map((b) => (map[b.reference] && map[b.reference] !== "deleted" ? { ...b, status: map[b.reference] as BookingStatus } : b));
   // a row that left the list (filtered out, deleted) is no longer selected
   const ticked = selected.filter((r) => rows.some((b) => b.reference === r));
   const all = rows.length > 0 && ticked.length === rows.length;
@@ -31,13 +46,18 @@ export function BookingsTable({ rows, query }: { rows: BookingSummary[]; query: 
   const toggle = (reference: string) => setSelected((s) => (s.includes(reference) ? s.filter((r) => r !== reference) : [...s, reference]));
   const toggleAll = () => setSelected(all ? [] : rows.map((b) => b.reference));
 
-  const run = (action: Action) => {
+  const run = async (action: Action) => {
     const n = `${ticked.length} ${ticked.length === 1 ? "booking" : "bookings"}`;
-    if (!confirm(ACTIONS[action].confirm.replace("{n}", n))) return;
-    start(async () => {
-      const result = await bulkBookings(action, ticked);
-      setState(result);
-      setSelected([]);
+    const text = ACTIONS[action];
+    if (!(await confirm({ title: text.title.replace("{n}", n), message: text.message, confirmLabel: text.ok, danger: text.danger }))) return;
+    const refs = ticked;
+    const status: BookingStatus | "deleted" = action === "complete" ? "completed" : action === "cancel" ? "cancelled" : "deleted";
+    const set = (value: Record<string, BookingStatus | "deleted">) => setChanges({ for: loaded, map: value });
+    setSelected([]);
+    await optimistic({
+      apply: () => set({ ...map, ...Object.fromEntries(refs.map((r) => [r, status])) }),
+      undo: () => set(map),
+      send: () => bulkBookings(action, refs),
     });
   };
 
@@ -45,8 +65,6 @@ export function BookingsTable({ rows, query }: { rows: BookingSummary[]; query: 
 
   return (
     <>
-      {state.status !== "idle" && <div className="rounded-md border border-line bg-white px-4 py-2.5"><FormMessage state={state} /></div>}
-
       {/* phones: cards */}
       <ul className="space-y-2.5 md:hidden">
         {rows.map((b) => (
@@ -122,9 +140,9 @@ export function BookingsTable({ rows, query }: { rows: BookingSummary[]; query: 
           <label className="mr-1 flex items-center gap-2 text-white/80 md:hidden">
             <input type="checkbox" checked={all} onChange={toggleAll} className={box} /> All
           </label>
-          <button type="button" disabled={pending} onClick={() => run("complete")} className="rounded-md bg-white/10 px-3 py-2 font-semibold hover:bg-white/20 disabled:opacity-50">{ACTIONS.complete.label}</button>
-          <button type="button" disabled={pending} onClick={() => run("cancel")} className="rounded-md bg-white/10 px-3 py-2 font-semibold hover:bg-white/20 disabled:opacity-50">{ACTIONS.cancel.label}</button>
-          <button type="button" disabled={pending} onClick={() => run("delete")} className="rounded-md bg-sahara px-3 py-2 font-semibold hover:opacity-90 disabled:opacity-50">{pending ? "Working…" : ACTIONS.delete.label}</button>
+          <button type="button" onClick={() => run("complete")} className="rounded-md bg-white/10 px-3 py-2 font-semibold hover:bg-white/20">{ACTIONS.complete.label}</button>
+          <button type="button" onClick={() => run("cancel")} className="rounded-md bg-white/10 px-3 py-2 font-semibold hover:bg-white/20">{ACTIONS.cancel.label}</button>
+          <button type="button" onClick={() => run("delete")} className="rounded-md bg-sahara px-3 py-2 font-semibold hover:opacity-90">{ACTIONS.delete.label}</button>
           <button type="button" onClick={() => setSelected([])} aria-label="Clear the selection" className="rounded-md px-2 py-2 text-white/70 hover:text-white">✕</button>
         </div>
       )}

@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useEffect, useRef, useState, useTransition } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { describeTripPhoto, searchPhotoLibrary, setTripPhotos, uploadTripPhoto } from "@/app/admin/actions";
+import { useFeedback } from "@/components/admin/Feedback";
 import { Field, FormMessage, Submit, inputClass } from "@/components/admin/form";
 import type { ActionState, AdminLocale, TourDetail, TripImage } from "@/lib/admin/types";
 
@@ -17,17 +18,25 @@ const RECOMMENDED = 6;
 
 /**
  * A trip's photos: the first is the main photo (cards, page top, sharing), the others form the gallery.
- * Every change is saved at once. New photos upload one by one; photos of other trips can be reused
+ * Every change shows at once and is saved in the background (it goes back, with a message, if the server
+ * refuses). New photos upload one by one; photos of other trips can be reused
  * from the library.
  */
 export function TripPhotos({ tour }: { tour: TourDetail }) {
-  const images = tour.images;
-  const ids = images.map((i) => i.id);
-  const [state, setState] = useState<ActionState>({ status: "idle" });
-  const [pending, start] = useTransition();
+  const { confirm, optimistic } = useFeedback();
+  // the order shown before the server has answered; dropped when the trip arrives again
+  const [local, setLocal] = useState<{ for: TripImage[]; ids: number[] } | null>(null);
+  const ids = local && local.for === tour.images ? local.ids : tour.images.map((i) => i.id);
+  const known = new Map(tour.images.map((i) => [i.id, i]));
+  const images = ids.map((id) => known.get(id)).filter((i): i is TripImage => Boolean(i));
   const [describing, setDescribing] = useState<number | null>(null);
   const [library, setLibrary] = useState(false);
-  const run = (next: number[]) => start(async () => setState(await setTripPhotos(tour.id, next)));
+  const run = (next: number[], success?: string) =>
+    optimistic({ apply: () => setLocal({ for: tour.images, ids: next }), undo: () => setLocal(null), send: () => setTripPhotos(tour.id, next), success });
+  const remove = async (id: number) => {
+    if (!(await confirm({ title: "Remove this photo from the trip?", message: "It stays in the library.", confirmLabel: "Remove" }))) return;
+    run(ids.filter((x) => x !== id), "Photo removed.");
+  };
   const move = (index: number, to: number) => {
     const next = [...ids];
     const [id] = next.splice(index, 1);
@@ -45,13 +54,12 @@ export function TripPhotos({ tour }: { tour: TourDetail }) {
               The first photo is the main one (trip cards, top of the page). At least {RECOMMENDED} photos are recommended.
             </p>
           </div>
-          <FormMessage state={state} />
         </div>
         {images.length < RECOMMENDED && (
           <p className="mt-3 rounded-md bg-gold/10 px-3 py-2 text-sm text-gold">This trip has fewer than {RECOMMENDED} photos.</p>
         )}
 
-        <ul className={`mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 ${pending ? "opacity-60" : ""}`}>
+        <ul className={`mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 `}>
           {images.map((img, i) => (
             <li key={img.id} className={`overflow-hidden rounded-md border bg-white ${i === 0 ? "border-gold ring-1 ring-gold" : "border-line"}`}>
               <div className="relative aspect-[4/3] bg-sand">
@@ -61,12 +69,12 @@ export function TripPhotos({ tour }: { tour: TourDetail }) {
               <div className="p-2">
                 <p className="line-clamp-2 min-h-[2.5em] text-xs text-ink">{img.alt.en || <span className="text-sahara">No description</span>}</p>
                 <div className="mt-2 flex flex-wrap gap-1 text-xs">
-                  <button disabled={pending || i === 0} onClick={() => move(i, i - 1)} aria-label="Move earlier" className="rounded border border-line px-2 py-1 font-semibold text-navy disabled:opacity-40">←</button>
-                  <button disabled={pending || i === images.length - 1} onClick={() => move(i, i + 1)} aria-label="Move later" className="rounded border border-line px-2 py-1 font-semibold text-navy disabled:opacity-40">→</button>
-                  {i !== 0 && <button disabled={pending} onClick={() => move(i, 0)} className="rounded border border-line px-2 py-1 font-semibold text-navy disabled:opacity-40">Make main</button>}
+                  <button disabled={i === 0} onClick={() => move(i, i - 1)} aria-label="Move earlier" className="rounded border border-line px-2 py-1 font-semibold text-navy disabled:opacity-40">←</button>
+                  <button disabled={i === images.length - 1} onClick={() => move(i, i + 1)} aria-label="Move later" className="rounded border border-line px-2 py-1 font-semibold text-navy disabled:opacity-40">→</button>
+                  {i !== 0 && <button onClick={() => move(i, 0)} className="rounded border border-line px-2 py-1 font-semibold text-navy disabled:opacity-40">Make main</button>}
                   <button onClick={() => setDescribing(describing === img.id ? null : img.id)} className="rounded border border-line px-2 py-1 font-semibold text-navy">Describe</button>
-                  <button disabled={pending} onClick={() => confirm("Remove this photo from the trip? It stays in the library.") && run(ids.filter((id) => id !== img.id))}
-                    className="ml-auto rounded px-2 py-1 font-semibold text-sahara disabled:opacity-40">Remove</button>
+                  <button onClick={() => remove(img.id)}
+                    className="ml-auto rounded px-2 py-1 font-semibold text-sahara">Remove</button>
                 </div>
               </div>
             </li>
@@ -83,7 +91,7 @@ export function TripPhotos({ tour }: { tour: TourDetail }) {
         <button onClick={() => setLibrary((l) => !l)} className="w-full px-4 py-3 text-left text-sm font-semibold text-gold">
           {library ? "− Close the photo library" : "+ Add photos from the library (photos of other trips)"}
         </button>
-        {library && <Library current={ids} onAdd={(id) => run([...ids, id])} pending={pending} />}
+        {library && <Library current={ids} onAdd={(id) => run([...ids, id], "Photo added.")} />}
       </div>
     </div>
   );
@@ -156,7 +164,7 @@ function Uploader({ tourId }: { tourId: number }) {
   );
 }
 
-function Library({ current, onAdd, pending }: { current: number[]; onAdd: (id: number) => void; pending: boolean }) {
+function Library({ current, onAdd }: { current: number[]; onAdd: (id: number) => void }) {
   const [q, setQ] = useState("");
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
@@ -184,7 +192,7 @@ function Library({ current, onAdd, pending }: { current: number[]; onAdd: (id: n
               const added = current.includes(img.id);
               return (
                 <li key={img.id}>
-                  <button disabled={added || pending} onClick={() => onAdd(img.id)} title={img.alt.en} className="group relative block aspect-[4/3] w-full overflow-hidden rounded bg-sand disabled:cursor-default">
+                  <button disabled={added} onClick={() => onAdd(img.id)} title={img.alt.en} className="group relative block aspect-[4/3] w-full overflow-hidden rounded bg-sand disabled:cursor-default">
                     <Image src={img.url} alt={img.alt.en ?? ""} fill sizes="160px" className={`object-cover ${added ? "opacity-40" : "group-hover:opacity-80"}`} />
                     <span className={`absolute bottom-1 right-1 rounded-full px-2 py-0.5 text-[0.65rem] font-semibold ${added ? "bg-atlas text-white" : "bg-white/90 text-navy"}`}>{added ? "Added" : "+ Add"}</span>
                   </button>

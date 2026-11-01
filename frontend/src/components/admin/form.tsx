@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { useEffect, useTransition } from "react";
 import { useFormStatus } from "react-dom";
 import type { ActionState } from "@/lib/admin/types";
 
@@ -17,7 +19,16 @@ export function Submit({ children, className = "", pendingLabel = "Saving…" }:
   );
 }
 
+/**
+ * The result of a save. When it succeeded, the page refreshes itself in the background (the server action
+ * itself does not wait for the page to render again, which made every save slow).
+ */
 export function FormMessage({ state }: { state: ActionState }) {
+  const router = useRouter();
+  const [, refresh] = useTransition();
+  useEffect(() => {
+    if (state.status === "ok") refresh(() => router.refresh());
+  }, [state, router]);
   if (state.status === "ok") return <p role="status" className="text-sm font-medium text-atlas">✓ {state.message ?? "Saved"}</p>;
   if (state.status === "error") return <p role="alert" className="text-sm font-medium text-sahara">{state.message}</p>;
   return null;
