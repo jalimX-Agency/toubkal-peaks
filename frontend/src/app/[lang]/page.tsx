@@ -8,6 +8,7 @@ import { Guides } from "@/components/home/Guides";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { Pillars, type PillarKey } from "@/components/home/Pillars";
 import { Seasons } from "@/components/home/Seasons";
+import { ClimbVideo } from "@/components/home/ClimbVideo";
 import { RiadBand } from "@/components/home/RiadBand";
 import { ToubkalFeature } from "@/components/home/ToubkalFeature";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -96,6 +97,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       )}
       <HowItWorks dict={dict.steps} />
       <ToubkalFeature lang={lang} dict={dict.toubkal} count={toubkal.length} fromPrice={toubkalFrom} guideLabel={explore[lang].guideLink} />
+      <ClimbVideo lang={lang} dict={dict.climbVideo} />
       <RiadBand dict={dict.riad} />
       <Seasons dict={dict.seasons} />
       <Guides lang={lang} dict={dict.guides} members={team} />

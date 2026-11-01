@@ -99,6 +99,7 @@ function mainMenu(lang: Locale, dict: Dictionary): MenuEntry[] {
       all: { label: words.seeAll, path: "/destinations#activities" },
     },
     { label: words.navGuide, path: "/toubkal-guide" },
+    { label: dict.blog.nav, path: "/blog" },
     { label: dict.nav.about, path: "/about" },
     { label: dict.nav.contact, path: "/contact" },
   ];

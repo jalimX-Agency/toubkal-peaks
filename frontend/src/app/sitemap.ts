@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { localePath, locales, type Locale } from "@/i18n/config";
 import { activities } from "@/content/activities";
 import { destinations } from "@/content/destinations";
-import { getTours } from "@/lib/api";
+import { getBlogPosts, getTours } from "@/lib/api";
 import { HUBS } from "@/lib/hubs";
 import { site } from "@/lib/site";
 
@@ -15,6 +15,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/contact", priority: 0.5 },
   { path: "/destinations", priority: 0.7 },
   { path: "/toubkal-guide", priority: 0.8 },
+  { path: "/blog", priority: 0.7 },
   ...destinations.map((d) => ({ path: `/destinations/${d.slug}`, priority: 0.7 })),
   ...activities.map((a) => ({ path: `/activities/${a.slug}`, priority: 0.6 })),
 ];
@@ -28,7 +29,10 @@ const everyLanguage = (path: (lang: Locale) => string) => Object.fromEntries(loc
  * and points search engines to the English page.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lists = await Promise.all(locales.map((lang) => getTours({ locale: lang, perPage: 100 })));
+  const [lists, blogs] = await Promise.all([
+    Promise.all(locales.map((lang) => getTours({ locale: lang, perPage: 100 }))),
+    Promise.all(locales.map((lang) => getBlogPosts(lang))),
+  ]);
   const tripPaths = new Map<number, Partial<Record<Locale, string>>>();
   locales.forEach((lang, i) => {
     for (const tour of lists[i].data) {
@@ -56,5 +60,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   });
 
-  return [...fixed, ...trips];
+  // articles, like trips, only in the languages they are written in
+  const articlePaths = new Map<string, Partial<Record<Locale, string>>>();
+  locales.forEach((lang, i) => {
+    for (const post of blogs[i]) {
+      if (post.locale === lang) articlePaths.set(post.slug, { ...articlePaths.get(post.slug), [lang]: `/blog/${post.slug}` });
+    }
+  });
+  const articles = [...articlePaths.values()].flatMap((paths) => {
+    const languages = Object.fromEntries(Object.entries(paths).map(([l, p]) => [l, url(l as Locale, p!)]));
+    return Object.entries(paths).map(([lang, path]) => ({
+      url: url(lang as Locale, path!),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: { languages },
+    }));
+  });
+
+  return [...fixed, ...trips, ...articles];
 }

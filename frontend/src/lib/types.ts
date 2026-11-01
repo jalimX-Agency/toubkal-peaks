@@ -38,6 +38,29 @@ export interface TeamMember {
   photo: ApiImage | null;
 }
 
+/** A blog article as listed (cards, sitemap). `locale` is the language the texts are in (English when not translated). */
+export interface BlogCard {
+  id: number;
+  slug: string;
+  locale: string;
+  title: string;
+  excerpt: string;
+  image: { url: string; alt: string } | null;
+  category: string | null;
+  is_featured: boolean;
+  published_at: string;
+  reading_minutes: number;
+}
+
+/** A full blog article; `content` is HTML filtered by the API to the blog vocabulary (blog-content.css). */
+export interface BlogPost extends BlogCard {
+  content: string;
+  author: string;
+  updated_at: string | null;
+  /** Languages the article is written in. */
+  locales: string[];
+}
+
 export interface Category {
   key: string;
   slug: string | null;

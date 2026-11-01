@@ -34,6 +34,11 @@ return [
         'revalidate_secret' => env('REVALIDATE_SECRET'),
     ],
 
+    // Publishing API for blog articles (POST /api/blog-posts): off until a key of 32+ characters is set.
+    'blog' => [
+        'key' => env('BLOG_API_KEY'),
+    ],
+
     // Deposits are paid by PayPal; the amount is set per booking by the team when it confirms.
     'payments' => [
         'paypal_url' => env('PAYPAL_URL', 'https://paypal.me/OmarAitlmouden'),

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\BlogApiKey;
 use App\Http\Middleware\EnsureAdminAccess;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -13,7 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->alias(['admin.access' => EnsureAdminAccess::class]);
+        $middleware->alias(['admin.access' => EnsureAdminAccess::class, 'blog.key' => BlogApiKey::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

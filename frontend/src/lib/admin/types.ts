@@ -195,6 +195,23 @@ export interface AdminTeamMember {
   updated_at: string | null;
 }
 
+/** A blog article in the admin: every language, draft when published_at is null. */
+export interface AdminBlogPost {
+  id: number;
+  slug: string;
+  title: Partial<Record<AdminLocale, string>>;
+  excerpt: Partial<Record<AdminLocale, string>>;
+  content?: Partial<Record<AdminLocale, string>>;
+  image_url: string | null;
+  image_alt: Partial<Record<AdminLocale, string>>;
+  category: string | null;
+  author: string | null;
+  is_featured: boolean;
+  published_at: string | null;
+  locales: AdminLocale[];
+  updated_at: string | null;
+}
+
 /** Result of a form's server action. */
 export type ActionState =
   | { status: "idle" }

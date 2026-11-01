@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\BlogPost;
 use App\Models\Category;
 use App\Models\CategoryTranslation;
 use App\Models\Media;
@@ -55,6 +56,7 @@ class AppServiceProvider extends ServiceProvider
             TeamMember::class => ['team'],
             Setting::class => ['settings'],
             Redirect::class => ['redirects'],
+            BlogPost::class => ['blog'],
         ];
         foreach ($affects as $model => $tags) {
             $refresh = fn () => app(FrontendCache::class)->revalidate(...$tags);

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\Api\BlogPostController;
 use App\Http\Controllers\Api\BookingController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\RedirectController;
+use App\Http\Controllers\Api\PublishBlogPostController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SettingController;
 use App\Http\Controllers\Api\TeamController;
@@ -12,6 +14,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/health', fn () => response()->json(['ok' => true]));
+
+// Blog publishing for scripts and scheduled writing sessions (bearer BLOG_API_KEY; 404 while unset).
+Route::post('/blog-posts', [PublishBlogPostController::class, 'store'])->middleware('blog.key');
 
 Route::prefix('v1')->group(function () {
     Route::get('/health', fn () => response()->json(['status' => 'ok', 'time' => now()->toIso8601String()]));
@@ -25,6 +30,8 @@ Route::prefix('v1')->group(function () {
         Route::get('/team', [TeamController::class, 'index']);
         Route::get('/settings', [SettingController::class, 'index']);
         Route::get('/redirects', [RedirectController::class, 'index']);
+        Route::get('/blog-posts', [BlogPostController::class, 'index']);
+        Route::get('/blog-posts/{slug}', [BlogPostController::class, 'show']);
     });
 
     // Reservation requests from the website (rate limited, never cached).
@@ -64,6 +71,13 @@ Route::prefix('v1')->group(function () {
             Route::post('/reviews', [Admin\ReviewController::class, 'store']);
             Route::patch('/reviews/{review}', [Admin\ReviewController::class, 'update']);
             Route::delete('/reviews/{review}', [Admin\ReviewController::class, 'destroy']);
+
+            Route::get('/blog-posts', [Admin\BlogPostController::class, 'index']);
+            Route::post('/blog-posts', [Admin\BlogPostController::class, 'store']);
+            Route::get('/blog-posts/{post}', [Admin\BlogPostController::class, 'show']);
+            Route::patch('/blog-posts/{post}', [Admin\BlogPostController::class, 'update']);
+            Route::delete('/blog-posts/{post}', [Admin\BlogPostController::class, 'destroy']);
+            Route::post('/blog-posts/{post}/cover', [Admin\BlogPostController::class, 'cover']);
 
             Route::get('/settings', [Admin\SettingController::class, 'index']);
             Route::put('/settings', [Admin\SettingController::class, 'update']);

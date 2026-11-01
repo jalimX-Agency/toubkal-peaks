@@ -4,7 +4,6 @@ export const site = {
   shortName: "Toubkal Peaks",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   email: "info@toubkal-peaks.com",
-  contactEmail: "contact@toubkal-peaks.com",
   reservationsEmail: "reservations@toubkal-peaks.com",
   /** PayPal page for deposits; the amount differs per customer and is sent with the team's confirmation. */
   paypal: "https://paypal.me/OmarAitlmouden",
@@ -49,7 +48,16 @@ export const media = {
   heroVideo: `${CDN}/site/video/hero-toubkal.mp4`,
   heroPoster: `${CDN}/site/video/hero-toubkal-poster.jpg`,
   topo: `${CDN}/site/textures/topo.svg`,
+  /** A guest's phone footage of a two-day Toubkal climb (vertical, 1 min 56 s, with sound). */
+  climbVideo: `${CDN}/site/video/toubkal-climb.mp4`,
+  climbPoster: `${CDN}/site/video/toubkal-climb-poster.jpg`,
 };
+
+/** Riad Berber Towers, from the riad's own website, in the order of the riad dictionary's gallery. */
+export const riadPhotos = [
+  photos.terrace.src,
+  ...["riad-outside-day", "riad-courtyard", "riad-tea", "riad-room", "riad-dinner", "riad-night"].map((name) => `${CDN}/site/riad/${name}.jpg`),
+];
 
 /** Background photos of the page heroes (category hubs and pages without a photo of their own), on R2 (site/trips/). */
 export const TRIPS = `${CDN}/site/trips`;

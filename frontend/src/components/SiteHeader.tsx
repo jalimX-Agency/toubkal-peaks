@@ -61,7 +61,7 @@ export function SiteHeader({ lang, dict, menu }: { lang: Locale; dict: Dictionar
           clear ? "bg-gradient-to-b from-navy-deep/55 to-transparent" : "bg-cream"
         } ${scrolled || open ? "shadow-[0_1px_0_var(--line),0_6px_20px_rgba(2,46,85,0.06)]" : ""}`}
       >
-        <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-6 px-4 md:h-20 md:px-8">
+        <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-4 px-4 md:h-20 md:px-8 2xl:gap-6">
           <Link href={href("/")} className="shrink-0" onClick={() => setOpen(false)}>
             <Image
               src={clear ? media.logoOnDark.src : media.logo.src}
@@ -73,7 +73,7 @@ export function SiteHeader({ lang, dict, menu }: { lang: Locale; dict: Dictionar
             />
           </Link>
 
-          <nav aria-label="Main" className="hidden items-center gap-5 xl:flex 2xl:gap-7">
+          <nav aria-label="Main" className="hidden items-center gap-3.5 xl:flex 2xl:gap-7">
             {menu.map((entry) => {
               const tone = clear ? "text-white hover:text-gold-light" : "text-navy hover:text-gold";
               if (!("items" in entry)) {
@@ -120,9 +120,9 @@ export function SiteHeader({ lang, dict, menu }: { lang: Locale; dict: Dictionar
             })}
           </nav>
 
-          <div className="hidden items-center gap-5 xl:flex">
+          <div className="hidden shrink-0 items-center gap-4 xl:flex 2xl:gap-5">
             <LocaleSwitcher current={lang} label={dict.language} tone={clear ? "light" : "dark"} />
-            <Link href={href("/book")} className="btn-gold !px-5 !py-3">
+            <Link href={href("/book")} className="btn-gold whitespace-nowrap !px-4 !py-3 2xl:!px-5">
               {dict.plan}
             </Link>
           </div>

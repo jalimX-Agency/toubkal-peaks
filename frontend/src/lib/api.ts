@@ -1,5 +1,5 @@
 import { cacheLife, cacheTag } from "next/cache";
-import type { Category, Paginated, Review, ReviewSummary, TeamMember, TourCard, TourDetail } from "@/lib/types";
+import type { BlogCard, BlogPost, Category, Paginated, Review, ReviewSummary, TeamMember, TourCard, TourDetail } from "@/lib/types";
 import { ORIGIN_HEADERS } from "@/lib/origin";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
@@ -190,6 +190,31 @@ export async function getTour(slug: string, locale: string): Promise<TourDetail 
       return null;
     }
     console.error(`[api] /tours/${slug} failed:`, describe(error));
+    throw error;
+  }
+}
+
+/** Every published article, newest first (the blog index filters by topic in the page). */
+export async function getBlogPosts(locale: string): Promise<BlogCard[]> {
+  "use cache";
+  const res = await cachedRead<{ data: BlogCard[] }>("blog", `/blog-posts?locale=${locale}&per_page=100`, { data: [] });
+  return res.data;
+}
+
+/** One article, or null when it does not exist (or is not published); other failures throw, as for tours. */
+export async function getBlogPost(slug: string, locale: string): Promise<BlogPost | null> {
+  "use cache";
+  cacheTag("blog", `blog:${slug}`);
+  try {
+    const res = await request<{ data?: BlogPost }>(`/blog-posts/${encodeURIComponent(slug)}?locale=${locale}`);
+    cacheLife(KEEP);
+    return res.data ?? null;
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404) {
+      cacheLife("minutes");
+      return null;
+    }
+    console.error(`[api] /blog-posts/${slug} failed:`, describe(error));
     throw error;
   }
 }

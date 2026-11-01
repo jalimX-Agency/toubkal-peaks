@@ -32,6 +32,7 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
   const places = [
     { label: words.destinations, path: "/destinations" },
     { label: words.guideLink, path: "/toubkal-guide" },
+    { label: dict.blog.nav, path: "/blog" },
     ...["marrakech", "imlil", "merzouga", "essaouira", "fes"].map((slug) => ({ label: destinationBySlug(slug)!.text[lang].name, path: `/destinations/${slug}` })),
     { label: words.activities, path: "/destinations#activities" },
   ];
@@ -86,11 +87,9 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
             </li>
             <li>
               <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.email}</span>
-              {[site.email, site.contactEmail].map((email) => (
-                <a key={email} href={`mailto:${email}`} className={`${linkClass} block`}>
-                  {email}
-                </a>
-              ))}
+              <a href={`mailto:${site.email}`} className={linkClass}>
+                {site.email}
+              </a>
             </li>
             <li>
               <span className="block text-xs uppercase tracking-wider text-white/45">{dict.footer.reservations}</span>

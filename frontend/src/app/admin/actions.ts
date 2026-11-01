@@ -245,6 +245,51 @@ export async function deletePerson(id: number): Promise<ActionState> {
   return result;
 }
 
+// --- blog ---------------------------------------------------------------------------
+
+/** Article form: settings, publication, and per language title, summary, text (HTML) and photo description. */
+export async function saveBlogPost(id: number | null, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const status = text(form, "status");
+  const payload = {
+    slug: text(form, "slug"),
+    category: nullable(form, "category"),
+    author: nullable(form, "author"),
+    is_featured: form.get("is_featured") === "on",
+    image_url: nullable(form, "image_url"),
+    // the date field is in the browser's time; it is sent with the offset the browser added
+    published_at: status === "draft" ? null : nullable(form, "published_at_iso") ?? new Date().toISOString(),
+    title: Object.fromEntries(LOCALES.map((l) => [l, text(form, `title_${l}`)])),
+    excerpt: Object.fromEntries(LOCALES.map((l) => [l, text(form, `excerpt_${l}`)])),
+    content: Object.fromEntries(LOCALES.map((l) => [l, text(form, `content_${l}`)])),
+    image_alt: Object.fromEntries(LOCALES.map((l) => [l, text(form, `alt_${l}`)])),
+  };
+  let created: number | null = null;
+  const result = await attempt(async () => {
+    const res = await adminApi<{ data: { id: number } }>(id ? `/blog-posts/${id}` : "/blog-posts", { method: id ? "PATCH" : "POST", body: JSON.stringify(payload) });
+    created = id ? null : res.data.id;
+  }, id ? "Saved" : "Created");
+  revalidatePath("/admin/blog", "layout");
+  if (created) redirect(`/admin/blog/${created}?created=1`);
+  return result;
+}
+
+export async function uploadBlogCover(id: number, _prev: ActionState, form: FormData): Promise<ActionState> {
+  const file = form.get("photo");
+  if (!(file instanceof File) || file.size === 0) return { status: "error", message: "Choose a photo first." };
+  const body = new FormData();
+  body.append("photo", file);
+  const result = await attempt(() => adminApi(`/blog-posts/${id}/cover`, { method: "POST", body }), "Cover photo updated");
+  revalidatePath(`/admin/blog/${id}`);
+  return result;
+}
+
+export async function deleteBlogPost(id: number): Promise<ActionState> {
+  const result = await attempt(() => adminApi(`/blog-posts/${id}`, { method: "DELETE" }), "Deleted");
+  revalidatePath("/admin/blog", "layout");
+  if (result.status === "ok") redirect("/admin/blog");
+  return result;
+}
+
 // --- trip photos ------------------------------------------------------------------
 
 /** One photo per call: the website's server limits the size of a request. */
