@@ -12,9 +12,9 @@ export const site = {
   phones: ["+212 661 283 086", "+212 670 414 623"],
   /** Office address, as given by the owner. */
   address: { street: "Dr Aremd, Commune Asni", region: "El Haouz", postalCode: "42150", city: "Marrakech" },
-  /** Company profiles. A profile with an empty address is not shown (Tripadvisor: paste the company's page address). */
+  /** Company profiles. A profile with an empty address is not shown (Tripadvisor: the company page). */
   social: {
-    tripadvisor: "",
+    tripadvisor: "https://www.tripadvisor.co.uk/Attraction_Review-g293734-d6425612-Reviews-Toubkal_Peaks_Travel-Marrakech_Marrakech_Safi.html",
     facebook: "https://www.facebook.com/toubkalpeakstravel",
     instagram: "https://www.instagram.com/toubkalpeakstravel",
   },
