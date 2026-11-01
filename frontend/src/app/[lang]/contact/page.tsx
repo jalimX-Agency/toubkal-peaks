@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { SocialLinks } from "@/components/SocialLinks";
 import { BookingForm } from "@/components/trip/BookingForm";
 import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { hasLocale, localePath, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { site, whatsappLink, pageHeroes } from "@/lib/site";
+
+const FOLLOW = { en: "Follow us", fr: "Suivez-nous", es: "Síguenos", de: "Folgen Sie uns" } as const;
 
 const PATH = "/contact";
 
@@ -78,6 +81,10 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
                 </a>
               </li>
             ))}
+            <li className="py-4">
+              <p className="mono text-gold">{FOLLOW[lang]}</p>
+              <SocialLinks tone="light" className="mt-2" />
+            </li>
             <li className="py-4">
               <p className="mono text-gold">{contact.based}</p>
               <p className="mt-1 text-ink">{contact.basedValue}</p>

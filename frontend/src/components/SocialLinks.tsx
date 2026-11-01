@@ -8,8 +8,8 @@ const ICONS = {
 
 const LABELS = { tripadvisor: "Tripadvisor", facebook: "Facebook", instagram: "Instagram" } as const;
 
-/** Round icon links to the company's profiles; a profile whose address is not set yet is left out. */
-export function SocialLinks({ className = "" }: { className?: string }) {
+/** Round icon links to the company's profiles ("dark": on the navy footer, "light": on a light page); a profile whose address is not set yet is left out. */
+export function SocialLinks({ className = "", tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
   const links = (Object.keys(ICONS) as (keyof typeof ICONS)[]).filter((key) => site.social[key]);
   return (
     <ul className={`flex items-center gap-3 ${className}`}>
@@ -21,7 +21,9 @@ export function SocialLinks({ className = "" }: { className?: string }) {
             rel="noopener noreferrer me"
             aria-label={LABELS[key]}
             title={LABELS[key]}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-gold-light hover:text-gold-light"
+            className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors ${
+              tone === "dark" ? "border-white/25 text-white/80 hover:border-gold-light hover:text-gold-light" : "border-line text-navy hover:border-gold hover:text-gold"
+            }`}
           >
             <svg viewBox="0 0 24 24" className="h-[1.15rem] w-[1.15rem]" fill="currentColor" aria-hidden="true">
               <path d={ICONS[key]} />
