@@ -121,7 +121,7 @@ export function SiteHeader({ lang, dict, menu }: { lang: Locale; dict: Dictionar
           </nav>
 
           <div className="hidden shrink-0 items-center gap-4 xl:flex 2xl:gap-5">
-            <LocaleSwitcher current={lang} label={dict.language} tone={clear ? "light" : "dark"} />
+            <LocaleSwitcher current={lang} label={dict.language} tone={clear ? "light" : "dark"} variant="select" />
             <Link href={href("/book")} className="btn-gold whitespace-nowrap !px-4 !py-3 2xl:!px-5">
               {dict.plan}
             </Link>
