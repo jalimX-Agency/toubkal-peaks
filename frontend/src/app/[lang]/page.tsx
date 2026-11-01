@@ -9,6 +9,7 @@ import { HowItWorks } from "@/components/home/HowItWorks";
 import { Pillars, type PillarKey } from "@/components/home/Pillars";
 import { Seasons } from "@/components/home/Seasons";
 import { ClimbVideo } from "@/components/home/ClimbVideo";
+import { TripadvisorBand } from "@/components/home/TripadvisorBand";
 import { RiadBand } from "@/components/home/RiadBand";
 import { ToubkalFeature } from "@/components/home/ToubkalFeature";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -103,6 +104,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <Seasons dict={dict.seasons} />
       <Guides lang={lang} dict={dict.guides} members={team} />
       <Testimonials dict={dict.reviews} reviews={reviews.data} summary={reviews.summary} />
+      <TripadvisorBand lang={lang} dict={dict.reviews.tripadvisor} />
       <Faq dict={dict.faq} />
       <CtaBand lang={lang} dict={dict.cta} message={dict.whatsapp.message} />
     </>

@@ -220,6 +220,7 @@ const en = {
     eyebrow: "Reviews",
     title: "What our travellers say",
     based: "average rating from {count} reviews",
+    tripadvisor: { title: "Rated {score} out of 5 on Tripadvisor", text: "{count} traveller reviews, as shown on our Tripadvisor page.", cta: "Read the reviews on Tripadvisor" },
   },
   cta: {
     title: "Tell us your dates. We design your trip.",

@@ -222,6 +222,7 @@ const es: Dictionary = {
     eyebrow: "Opiniones",
     title: "Lo que dicen nuestros viajeros",
     based: "valoración media de {count} opiniones",
+    tripadvisor: { title: "Valorado con {score} sobre 5 en Tripadvisor", text: "{count} opiniones de viajeros, tal como figuran en nuestra página de Tripadvisor.", cta: "Leer las opiniones en Tripadvisor" },
   },
   cta: {
     title: "Dinos tus fechas. Diseñamos tu viaje.",
