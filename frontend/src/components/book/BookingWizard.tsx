@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { getTripPricing, submitBooking } from "@/app/actions/booking";
+import { ConditionsText } from "@/components/trip/TrekkingConditionsBlock";
+import { TOUBKAL_CATEGORY, trekkingConditions } from "@/content/trekking-conditions";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { formatDuration, formatPrice } from "@/lib/format";
@@ -48,7 +50,7 @@ const TRIPS_PER_PAGE = 8;
 const fold = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const FIELD_STEP: Record<string, Step> = {
   tour_id: "trip", start_date: "dates", adults: "group", children: "group", special_requests: "prefs",
-  first_name: "details", last_name: "details", email: "details", phone: "details", country: "details", consent: "review",
+  first_name: "details", last_name: "details", email: "details", phone: "details", country: "details", consent: "review", conditions: "review",
 };
 // What the team reads in the request (in English, whatever the visitor's language).
 const FLEX_EN = { "3": "± 3 days", "7": "± 1 week", month: "any time that month" } as const;
@@ -107,6 +109,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
   const [reached, setReached] = useState(presetTour ? Math.max(1, saved) : saved);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [consent, setConsent] = useState(false);
+  const [conditionsOk, setConditionsOk] = useState(false);
   const [banner, setBanner] = useState<string | null>(null);
   const [done, setDone] = useState<{ reference: string; name: string } | null>(null);
   const [fetched, setFetched] = useState<{ slug: string; pricing: TourDetail["pricing"] | null } | null>(null);
@@ -161,6 +164,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
       if (draft.contactBy !== "email" && !draft.phone.trim()) e.phone = t.details.phoneRequired;
     }
     if (s === "review" && !consent) e.consent = t.review.consentRequired;
+    if (s === "review" && trip?.category.key === TOUBKAL_CATEGORY && !conditionsOk) e.conditions = trekkingConditions[lang].acceptRequired;
     return e;
   }
 
@@ -432,6 +436,21 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
                   </label>
                   <FieldError id="e-consent" message={errors.consent} />
                 </div>
+                {trip?.category.key === TOUBKAL_CATEGORY && (
+                  <div className="rounded-sm border border-line bg-sand/50 p-4">
+                    <details>
+                      <summary className="cursor-pointer text-sm font-semibold text-navy">{trekkingConditions[lang].read}</summary>
+                      <div className="mt-4 max-h-80 overflow-y-auto pr-2"><ConditionsText lang={lang} /></div>
+                    </details>
+                    <label className="mt-4 flex items-start gap-3 text-sm leading-relaxed text-ink">
+                      <input id="f-conditions" type="checkbox" checked={conditionsOk} onChange={(e) => { setConditionsOk(e.target.checked); setErrors({}); }}
+                        aria-invalid={Boolean(errors.conditions)} aria-describedby={errors.conditions ? "e-conditions" : undefined}
+                        className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--navy)]" />
+                      <span>{trekkingConditions[lang].accept}</span>
+                    </label>
+                    <FieldError id="e-conditions" message={errors.conditions} />
+                  </div>
+                )}
                 <ul className="grid gap-2 text-sm text-muted sm:grid-cols-3">
                   {[t.review.noPayment, t.review.reply, t.review.local].map((x) => (
                     <li key={x} className="flex items-center gap-2"><Check />{x}</li>

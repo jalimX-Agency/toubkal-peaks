@@ -14,7 +14,9 @@ import {
   TripHero,
   Upgrades,
 } from "@/components/trip/TripParts";
+import { TrekkingConditionsBlock } from "@/components/trip/TrekkingConditionsBlock";
 import { Arrow } from "@/components/ui/Arrow";
+import { TOUBKAL_CATEGORY } from "@/content/trekking-conditions";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { hubTitle } from "@/lib/hubs";
@@ -78,6 +80,8 @@ export function TripPage({ tour, lang, dict }: { tour: TourDetail; lang: Locale;
           </div>
         </aside>
       </div>
+
+      {tour.category.key === TOUBKAL_CATEGORY && <TrekkingConditionsBlock lang={lang} />}
 
       <section id="book" className="scroll-mt-24 bg-sand/60">
         <div className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-14 md:flex-row md:items-end md:justify-between md:px-8 md:py-16">
