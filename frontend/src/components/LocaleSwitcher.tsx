@@ -1,40 +1,73 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
-import { Suspense } from "react";
+import { usePathname } from "next/navigation";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { localeNames, locales, localePath, stripLocale, type Locale } from "@/i18n/config";
 
 type Props = { current: Locale; label: string; className?: string; tone?: "dark" | "light"; variant?: "links" | "select" };
 
-/** A compact dropdown (globe, language code, chevron) for the navigation bar, where four links take too much room. */
+/**
+ * A compact menu for the navigation bar, where four links take too much room: a button (globe, current
+ * language code, chevron) opening the list of languages in the style of the other menus. The entries are
+ * ordinary links, so they work as such for crawlers and before the page is interactive.
+ */
 function Dropdown({ current, label, className = "", tone = "dark", pathname }: Props & { pathname: string }) {
-  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const box = useRef<HTMLDivElement>(null);
   const color = tone === "dark" ? "text-navy hover:text-gold" : "text-white hover:text-gold-light";
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const onClick = (e: MouseEvent) => !box.current?.contains(e.target as Node) && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("mousedown", onClick);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("mousedown", onClick);
+    };
+  }, [open]);
+
   return (
-    <label className={`relative flex items-center ${color} ${className}`}>
-      <span className="sr-only">{label}</span>
-      <svg viewBox="0 0 24 24" className="pointer-events-none absolute left-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" />
-      </svg>
-      <select
-        value={current}
-        onChange={(e) => router.push(localePath(e.target.value as Locale, pathname))}
-        className="w-[5.25rem] cursor-pointer appearance-none rounded-sm border border-current/30 bg-transparent py-1.5 pl-8 pr-6 text-[0.8rem] font-semibold tracking-wider text-transparent transition-colors focus-visible:outline-2 focus-visible:outline-gold"
+    <div ref={box} className={`relative ${className}`}>
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label={`${label}: ${localeNames[current]}`}
+        onClick={() => setOpen((v) => !v)}
+        className={`flex items-center gap-1.5 rounded-sm border border-current/30 px-2.5 py-1.5 text-[0.8rem] font-semibold tracking-wider transition-colors ${color}`}
       >
-        {locales.map((locale) => (
-          <option key={locale} value={locale} lang={locale} className="bg-white text-navy">
-            {locale.toUpperCase()} · {localeNames[locale]}
-          </option>
-        ))}
-      </select>
-      {/* the closed select is as narrow as the code: its own text is hidden and the code drawn over it */}
-      <span aria-hidden="true" className="pointer-events-none absolute left-8 text-[0.8rem] font-semibold tracking-wider">{current.toUpperCase()}</span>
-      <svg viewBox="0 0 12 12" className="pointer-events-none absolute right-2.5 h-3 w-3" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M2.5 4.5 6 8l3.5-3.5" />
-      </svg>
-    </label>
+        <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" />
+        </svg>
+        {current.toUpperCase()}
+        <svg viewBox="0 0 12 12" className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <path d="M2.5 4.5 6 8l3.5-3.5" />
+        </svg>
+      </button>
+      {open && (
+        <ul className="absolute right-0 top-full z-10 mt-2 min-w-40 rounded-sm border border-line bg-cream py-2 shadow-[0_12px_32px_rgba(2,46,85,0.14)]">
+          {locales.map((locale) => (
+            <li key={locale}>
+              <Link
+                href={localePath(locale, pathname)}
+                hrefLang={locale}
+                lang={locale}
+                aria-current={locale === current ? "true" : undefined}
+                onClick={() => setOpen(false)}
+                className={`flex items-center justify-between gap-4 whitespace-nowrap px-4 py-2 text-[0.92rem] tracking-normal transition-colors hover:bg-sand hover:text-gold ${locale === current ? "font-semibold text-navy" : "text-navy"}`}
+              >
+                {localeNames[locale]}
+                {locale === current && <span aria-hidden="true" className="text-gold">✓</span>}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
