@@ -2,6 +2,7 @@ import { cacheLife } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import { SocialLinks } from "@/components/SocialLinks";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { destinationBySlug } from "@/content/destinations";
@@ -115,6 +116,9 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
                 <br />
                 {site.address.postalCode} {dict.footer.basedIn}
               </address>
+            </li>
+            <li>
+              <SocialLinks />
             </li>
           </ul>
         </div>

@@ -74,6 +74,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     description: dict.meta.homeDescription,
     address: { "@type": "PostalAddress", streetAddress: site.address.street, addressLocality: site.city, addressRegion: site.address.region, postalCode: site.address.postalCode, addressCountry: site.country },
     areaServed: "Morocco",
+    sameAs: Object.values(site.social).filter(Boolean),
     knowsLanguage: locales,
     ...(reviews.summary.count > 0 && reviews.summary.average
       ? { aggregateRating: { "@type": "AggregateRating", ratingValue: reviews.summary.average, reviewCount: reviews.summary.count } }

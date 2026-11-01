@@ -12,6 +12,12 @@ export const site = {
   phones: ["+212 661 283 086", "+212 670 414 623"],
   /** Office address, as given by the owner. */
   address: { street: "Dr Aremd, Commune Asni", region: "El Haouz", postalCode: "42150", city: "Marrakech" },
+  /** Company profiles. A profile with an empty address is not shown (Tripadvisor: paste the company's page address). */
+  social: {
+    tripadvisor: "",
+    facebook: "https://www.facebook.com/toubkalpeakstravel",
+    instagram: "https://www.instagram.com/toubkalpeakstravel",
+  },
   city: "Marrakech",
   country: "MA",
   riadUrl: "https://www.riad-berber-towers.com/en",
