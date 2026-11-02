@@ -22,7 +22,7 @@ export const site = {
   },
   city: "Marrakech",
   country: "MA",
-  riadUrl: "https://www.riad-berber-towers.com/en",
+  riadUrl: "https://riad-berber-towers.com/",
   /** Moroccan company registration, as given by the owner. */
   registration: [
     { label: "RC", value: "52029" },
