@@ -22,6 +22,8 @@ export const site = {
   },
   city: "Marrakech",
   country: "MA",
+  /** Google Analytics 4 measurement ID (a public identifier, visible in every page that uses it). */
+  analyticsId: "G-ZX1EVLC8C0",
   riadUrl: "https://riad-berber-towers.com/",
   /** Moroccan company registration, as given by the owner. */
   registration: [

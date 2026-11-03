@@ -143,6 +143,7 @@ const en = {
     more: "More articles",
     back: "All articles",
   },
+  cookies: { title: "Cookies and measurement", text: "We would like to use Google Analytics and Google Ads measurement to see how the site is used and whether our ads bring booking requests. Nothing is set or sent to Google unless you accept.", accept: "Accept", decline: "Decline", settings: "Cookie settings", privacy: "Privacy policy" },
   toubkal: {
     eyebrow: "Our home mountain",
     title: "Climb Mount Toubkal, the roof of North Africa",

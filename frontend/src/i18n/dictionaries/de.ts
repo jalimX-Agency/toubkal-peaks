@@ -145,6 +145,7 @@ const de: Dictionary = {
     more: "Weitere Artikel",
     back: "Alle Artikel",
   },
+  cookies: { title: "Cookies und Reichweitenmessung", text: "Wir möchten Google Analytics und die Messung von Google Ads nutzen, um zu sehen, wie die Website genutzt wird und ob unsere Anzeigen Buchungsanfragen bringen. Ohne Ihre Zustimmung wird nichts gesetzt oder an Google gesendet.", accept: "Akzeptieren", decline: "Ablehnen", settings: "Cookie-Einstellungen", privacy: "Datenschutzerklärung" },
   toubkal: {
     eyebrow: "Unser Hausberg",
     title: "Besteigen Sie den Toubkal, das Dach Nordafrikas",

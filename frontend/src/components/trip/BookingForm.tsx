@@ -1,9 +1,10 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { submitBooking, type BookingState } from "@/app/actions/booking";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import { track } from "@/lib/analytics";
 import { formatPrice } from "@/lib/format";
 import type { PriceTier } from "@/lib/types";
 
@@ -36,6 +37,12 @@ export function BookingForm({
   const [children, setChildren] = useState(Number(values.children ?? 0) || 0);
   const people = adults + children;
   const perPerson = pricePerPerson(tiers, people);
+
+  // a booking request was sent (only counted when the visitor accepted analytics)
+  useEffect(() => {
+    if (state.status === "success") track("generate_lead", { form: "request", currency, ...(perPerson ? { value: perPerson * people } : {}) });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.status]);
 
   if (state.status === "success") {
     return (

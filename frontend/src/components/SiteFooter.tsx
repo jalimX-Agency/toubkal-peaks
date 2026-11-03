@@ -1,6 +1,7 @@
 import { cacheLife } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/Analytics";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { SocialLinks } from "@/components/SocialLinks";
 import { localePath, type Locale } from "@/i18n/config";
@@ -142,6 +143,7 @@ export async function SiteFooter({ lang, dict }: { lang: Locale; dict: Dictionar
             <Link href={href("/privacy-policy")} className="transition-colors hover:text-white">
               {dict.footer.privacy}
             </Link>
+            <CookieSettingsButton label={dict.cookies.settings} className="transition-colors hover:text-white" />
           </span>
         </div>
       </div>

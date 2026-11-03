@@ -9,6 +9,7 @@ import { ConditionsText } from "@/components/trip/TrekkingConditionsBlock";
 import { TOUBKAL_CATEGORY, trekkingConditions } from "@/content/trekking-conditions";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import { track } from "@/lib/analytics";
 import { formatDuration, formatPrice } from "@/lib/format";
 import { HUBS } from "@/lib/hubs";
 import { whatsappLink } from "@/lib/site";
@@ -222,6 +223,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
           sessionStorage.removeItem(STORAGE_KEY);
           sessionStorage.removeItem(STEP_KEY);
         } catch {}
+        track("generate_lead", { form: "wizard", currency: "EUR", ...(trip ? { trip: trip.slug } : {}) });
         setDone({ reference: res.reference, name: draft.firstName.trim() });
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;

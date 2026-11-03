@@ -145,6 +145,7 @@ const fr: Dictionary = {
     more: "Autres articles",
     back: "Tous les articles",
   },
+  cookies: { title: "Cookies et mesure d’audience", text: "Nous aimerions utiliser Google Analytics et la mesure de Google Ads pour voir comment le site est utilisé et si nos publicités apportent des demandes de réservation. Rien n’est déposé ni envoyé à Google sans votre accord.", accept: "Accepter", decline: "Refuser", settings: "Paramètres des cookies", privacy: "Politique de confidentialité" },
   toubkal: {
     eyebrow: "Notre montagne",
     title: "Gravir le Toubkal, le toit de l'Afrique du Nord",
