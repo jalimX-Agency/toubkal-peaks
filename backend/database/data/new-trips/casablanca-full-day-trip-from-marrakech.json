@@ -1,0 +1,108 @@
+{
+ "trips": [
+  {
+   "key": "casablanca-full-day-trip-from-marrakech",
+   "category": "day-trips-from-marrakech",
+   "duration_days": 1,
+   "duration_nights": null,
+   "difficulty": null,
+   "max_altitude_m": null,
+   "price": {
+    "mode": "tiers",
+    "currency": "EUR",
+    "tiers": [
+     {
+      "min_pax": 1,
+      "max_pax": 1,
+      "price_per_person": 229
+     },
+     {
+      "min_pax": 2,
+      "max_pax": 3,
+      "price_per_person": 129
+     },
+     {
+      "min_pax": 4,
+      "max_pax": 7,
+      "price_per_person": 89
+     },
+     {
+      "min_pax": 8,
+      "max_pax": 12,
+      "price_per_person": 59
+     }
+    ]
+   },
+   "images": [
+    "rc4",
+    "rc3",
+    "rc6",
+    "cf4",
+    "mk8"
+   ],
+   "translations": {
+    "en": {
+     "slug": "casablanca-full-day-trip-from-marrakech",
+     "title": "Casablanca Full-Day Trip from Marrakech",
+     "seo_title": "Casablanca Full-Day Trip from Marrakech",
+     "seo_description": "Private full-day trip from Marrakech to Casablanca: the Hassan II Mosque, the Ain Diab Corniche, the Habous Quarter and Mohammed V Square, with hotel pick-up and a private driver.",
+     "summary": "Discover Casablanca, Morocco's largest city and economic capital, on a full-day excursion from Marrakech.\n\nThis journey takes you north across the Moroccan plains to explore a fascinating city where modern architecture, historic neighbourhoods and traditional Moroccan culture come together.\n\nThe highlight of the excursion is the spectacular Hassan II Mosque, one of the largest mosques in the world, beautifully situated overlooking the Atlantic Ocean.\n\nEnjoy the city's impressive landmarks, explore its traditional quarters and discover the cosmopolitan atmosphere of Casablanca.\n\nGood to know: visitors entering the Hassan II Mosque must follow the official dress code, covering shoulders, chest and knees. Interior visits are conducted at scheduled times with an official guide, and entrance fees are paid separately. The trip is available daily, subject to confirmation. The itinerary and timings may be adjusted depending on traffic, mosque visiting schedules and local conditions.",
+     "highlights": [
+      "Discover Casablanca, Morocco's economic capital.",
+      "Visit the spectacular Hassan II Mosque.",
+      "Enjoy panoramic views of the Atlantic Ocean.",
+      "Explore the famous Ain Diab Corniche.",
+      "Discover the traditional Habous Quarter.",
+      "Admire Mohammed V Square and Art Deco architecture.",
+      "Enjoy a full-day private excursion from Marrakech."
+     ],
+     "facts": {
+      "duration": "Approximately 12 hours",
+      "type": "Private excursion",
+      "departure_time": "Around 07:00 (return around 19:00)",
+      "departs_from": "Your hotel or riad in Marrakech",
+      "ends_in": "Marrakech"
+     },
+     "itinerary": [
+      {
+       "day": 1,
+       "title": "Marrakech – Casablanca – Marrakech",
+       "stats": {
+        "driving_distance": "Approximately 240 km each way",
+        "driving_time": "Approximately 2.5–3 hours each way",
+        "duration": "Approximately 12 hours"
+       },
+       "accommodation": "",
+       "body": [
+        "07:00 | Departure from Marrakech: your driver will collect you from your hotel or riad in Marrakech. Travel in a comfortable, air-conditioned private vehicle towards Casablanca via the A7 motorway. The journey takes approximately 2.5–3 hours, covering around 240 km.",
+        "10:00 | Arrival in Casablanca, Hassan II Mosque: begin your visit with the magnificent Hassan II Mosque, one of Morocco's most impressive architectural landmarks. Built partly over the Atlantic Ocean, this extraordinary monument is famous for its impressive minaret, intricate Moroccan craftsmanship and spectacular oceanfront location. You will have time to admire the exterior and explore the impressive esplanade. You can also join an official guided tour of the mosque's interior, subject to visiting hours and availability.",
+        "11:30 | The Corniche of Ain Diab: continue towards the Ain Diab Corniche, Casablanca's famous Atlantic coastline. Enjoy beautiful ocean views, discover the seaside atmosphere and stop for photographs along the waterfront.",
+        "12:30 | Lunch break: enjoy free time for lunch at one of Casablanca's local restaurants or seaside cafés. You can discover traditional Moroccan cuisine or choose from the city's international dining options.",
+        "14:00 | Habous Quarter, the New Medina: explore the charming Habous Quarter, also known as the New Medina. Discover its traditional architecture, narrow streets, artisan shops, local bakeries and colourful markets. This neighbourhood offers a wonderful opportunity to experience Moroccan culture and shop for traditional handicrafts.",
+        "15:00 | Mohammed V Square and the Art Deco city centre: continue to Mohammed V Square, one of Casablanca's most famous public spaces. Admire the surrounding French-colonial and Art Deco architecture, beautiful fountains and impressive administrative buildings.",
+        "16:00 | Departure for Marrakech: after discovering Casablanca, begin your return journey towards Marrakech, with a short comfort stop along the motorway if needed.",
+        "19:00 | Arrival in Marrakech: arrive back at your hotel or riad, bringing your Casablanca adventure to a memorable end."
+       ]
+      }
+     ],
+     "included": [
+      "Hotel or riad pick-up and drop-off in Marrakech",
+      "Private air-conditioned transportation",
+      "Professional driver",
+      "Fuel and motorway tolls",
+      "Free time at the main attractions",
+      "Flexible stops for photographs and refreshments"
+     ],
+     "excluded": [
+      "Hassan II Mosque entrance ticket and official guided tour",
+      "Lunch and drinks",
+      "Local guide in Casablanca",
+      "Personal expenses and gratuities"
+     ],
+     "packing": [],
+     "upgrades": []
+    }
+   }
+  }
+ ]
+}

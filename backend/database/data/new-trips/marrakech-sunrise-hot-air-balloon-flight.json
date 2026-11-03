@@ -1,0 +1,90 @@
+{
+ "trips": [
+  {
+   "key": "marrakech-sunrise-hot-air-balloon-flight",
+   "category": "day-trips-from-marrakech",
+   "duration_days": 1,
+   "duration_nights": null,
+   "difficulty": null,
+   "max_altitude_m": null,
+   "price": {
+    "mode": "tiers",
+    "currency": "EUR",
+    "tiers": [
+     {
+      "min_pax": 1,
+      "max_pax": null,
+      "price_per_person": 199
+     }
+    ]
+   },
+   "images": [
+    "ag1",
+    "ag6",
+    "cf8",
+    "cf5",
+    "av7",
+    "mk3",
+    "mk8"
+   ],
+   "translations": {
+    "en": {
+     "slug": "marrakech-sunrise-hot-air-balloon-flight",
+     "title": "Marrakech Sunrise Hot Air Balloon Flight",
+     "seo_title": "Marrakech Sunrise Hot Air Balloon Flight",
+     "seo_description": "Fly over Marrakech at sunrise in a hot-air balloon: Atlas Mountains, Berber villages and palm groves, a Moroccan breakfast and a flight certificate. Classic, Private and Royal packages with hotel pick-up.",
+     "summary": "Experience the magic of Marrakech from a completely different perspective with an unforgettable hot-air balloon flight over the beautiful landscapes of Morocco.\n\nAs the first rays of sunlight illuminate the Atlas Mountains and the surrounding countryside, enjoy breathtaking panoramic views from high above the ground.\n\nThis exceptional morning adventure combines the excitement of flying, spectacular scenery and traditional Moroccan hospitality.\n\nGood to know: availability is subject to weather conditions and operational approval, and all flights depend on suitable weather and the pilot's final safety decision. Comfortable clothing and closed shoes are recommended. Children are accepted subject to the balloon operator's age, height and safety requirements.",
+     "highlights": [
+      "Experience a spectacular sunrise hot-air balloon flight.",
+      "Discover panoramic views of the Atlas Mountains.",
+      "Admire traditional Berber villages and rural landscapes.",
+      "Enjoy the peaceful beauty of the Marrakech countryside.",
+      "Choose between Classic, Private and Royal experiences.",
+      "Enjoy traditional Moroccan hospitality and breakfast.",
+      "Capture unforgettable photographs from the sky."
+     ],
+     "facts": {
+      "duration": "Approximately 4–5 hours",
+      "type": "Hot-air balloon flight (Classic, Private or Royal)",
+      "departure_time": "Early morning, before sunrise (pick-up from 04:30)",
+      "departs_from": "Your hotel or riad in Marrakech",
+      "ends_in": "Marrakech"
+     },
+     "itinerary": [
+      {
+       "day": 1,
+       "title": "Sunrise flight over the Marrakech countryside",
+       "stats": {
+        "duration": "Approximately 4–5 hours"
+       },
+       "accommodation": "",
+       "body": [
+        "04:30 – 05:30 | Hotel pick-up and transfer: your adventure begins with an early-morning pick-up from your hotel or riad in Marrakech. Travel in a comfortable, air-conditioned vehicle towards the balloon launch site, located in the countryside outside the city.",
+        "05:30 – 06:00 | Arrival and welcome: upon arrival, enjoy a warm Moroccan welcome with traditional mint tea and coffee while watching the balloon crew prepare the hot-air balloons for take-off.",
+        "06:00 – 06:30 | Balloon inflation and take-off: watch the impressive process of inflating the balloons before climbing aboard your basket. Once everything is ready, gently rise into the sky and begin your unforgettable sunrise flight.",
+        "06:30 – 07:30 | Sunrise hot-air balloon flight: enjoy approximately one hour in the air, admiring the spectacular scenery of the Marrakech countryside, traditional Berber villages, palm groves and the majestic Atlas Mountains in the distance. Take incredible photographs and enjoy the peaceful atmosphere as the landscape comes to life beneath you.",
+        "07:30 – 08:00 | Landing and traditional Moroccan breakfast: after landing, celebrate your flight with the crew and enjoy a delicious traditional Moroccan breakfast, served in a Berber-style setting.",
+        "08:00 – 08:30 | Flight certificate and return transfer: receive your flight certificate as a special souvenir of this memorable experience before travelling comfortably back to Marrakech.",
+        "09:00 – 09:30 | Arrival in Marrakech: return to your hotel or riad, with the rest of the day free to explore the city."
+       ]
+      }
+     ],
+     "included": [
+      "Hot-air balloon flight (approximately 1 hour) with a professional pilot and crew",
+      "Round-trip transportation from your hotel or riad in Marrakech",
+      "Welcome Moroccan tea and coffee",
+      "Traditional Moroccan breakfast after landing",
+      "Flight certificate"
+     ],
+     "excluded": [],
+     "packing": [],
+     "upgrades": [
+      "Classic Hot-Air Balloon Flight, €199 per person: a shared flight, with transportation from your hotel or riad, breakfast after landing, welcome tea and coffee, and a flight certificate.",
+      "Private Hot-Air Balloon Flight, €499: an exclusive private flight, ideal for couples, families or special celebrations, with private transportation to and from your hotel or riad and a private breakfast experience.",
+      "Royal Hot-Air Balloon Experience, €599: the exclusive VIP experience, with a private balloon flight followed by a special private breakfast in a beautiful setting, and private transportation."
+     ]
+    }
+   }
+  }
+ ]
+}

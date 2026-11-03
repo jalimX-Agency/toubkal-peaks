@@ -1,0 +1,278 @@
+{
+ "trips": [
+  {
+   "key": "13-day-morocco-4x4-hiking-adventure",
+   "category": "morocco-tours",
+   "duration_days": 13,
+   "duration_nights": 12,
+   "difficulty": null,
+   "max_altitude_m": null,
+   "price": {
+    "mode": "on_request",
+    "currency": "EUR",
+    "tiers": []
+   },
+   "images": [
+    "ch5",
+    "im1",
+    "oa11",
+    "oa1",
+    "dr1",
+    "ch3",
+    "ch4",
+    "co6",
+    "co8",
+    "co5",
+    "mk3"
+   ],
+   "translations": {
+    "en": {
+     "slug": "13-days-morocco-4x4-hiking-adventure",
+     "title": "13-Day Morocco 4x4 & Hiking Adventure",
+     "seo_title": "13-Day Morocco 4x4 & Hiking Adventure",
+     "seo_description": "A 13-day private 4x4 and hiking tour from the High Atlas to the Sahara and the Atlantic coast: Imlil, Aït Ben Haddou, Erg Chegaga, Lake Iriki, Tafraoute, Mirleft and Paradise Valley.",
+     "summary": "Discover the incredible diversity of Morocco on this unforgettable 13-day private adventure. Combining scenic mountain drives, guided hikes, authentic Berber villages, ancient kasbahs, spectacular Sahara dunes and beautiful Atlantic beaches, this journey offers a wonderful opportunity to explore Morocco beyond the usual tourist routes.\n\nTravel through the breathtaking High Atlas Mountains, discover the traditional villages of southern Morocco, experience the magic of Erg Chegaga and meet local nomadic families. Continue across the wild desert landscapes towards the Anti-Atlas Mountains before reaching the beautiful Atlantic coastline.\n\nThis adventure is designed for travellers who love nature, culture, outdoor activities and authentic experiences.\n\nGood to know: this is a private tour, exclusively organised for your group. Driving distances and times are approximate and may vary depending on road conditions, weather and sightseeing stops. Desert tracks around Erg Chegaga and Lake Iriki require an experienced 4x4 driver. Hiking routes can be adapted to your fitness level and preferences. Accommodation is subject to availability and can be upgraded on request. Optional activities are arranged locally and paid separately.",
+     "highlights": [
+      "High Atlas Mountains: guided hikes, mountain scenery and Berber hospitality.",
+      "Ancient kasbahs: discover Morocco's history and traditional architecture.",
+      "Sahara Desert: 4x4 adventures, nomadic families and camel rides.",
+      "Anti-Atlas Mountains: remote villages and spectacular mountain landscapes.",
+      "Atlantic Coast: beaches, surfing and coastal relaxation.",
+      "Paradise Valley: natural pools, palm groves and mountain walks."
+     ],
+     "facts": {
+      "duration": "13 days / 12 nights",
+      "type": "Private 4x4 tour: hiking, culture, desert and ocean",
+      "departs_from": "Marrakech",
+      "ends_in": "Marrakech",
+      "trip_level": "Easy to moderate, adjustable"
+     },
+     "itinerary": [
+      {
+       "day": 1,
+       "title": "Arrival in Marrakech",
+       "stats": {
+        "driving_distance": "Approximately 5–10 km (airport transfer)",
+        "driving_time": "15–30 minutes"
+       },
+       "accommodation": "Traditional Moroccan riad in Marrakech",
+       "body": [
+        "Welcome to Morocco! Upon arrival at Marrakech Airport, meet your driver and transfer to a beautiful traditional Moroccan riad located in the heart of the historic Medina.",
+        "Enjoy your first evening discovering the charming atmosphere of Marrakech, its narrow streets, traditional architecture and lively squares."
+       ]
+      },
+      {
+       "day": 2,
+       "title": "Guided walking tour of Marrakech",
+       "stats": {
+        "walking_distance": "Approximately 3–5 km",
+        "duration": "Guided tour of 3–4 hours"
+       },
+       "accommodation": "Traditional riad in Marrakech",
+       "body": [
+        "Discover the fascinating history and culture of Marrakech with a local professional guide.",
+        "Explore the historic Medina, traditional souks, beautiful palaces and impressive architecture. Visit some of the city's most famous landmarks and experience the atmosphere of Jemaa el-Fna Square."
+       ]
+      },
+      {
+       "day": 3,
+       "title": "Marrakech – Imlil: High Atlas mountain hiking",
+       "stats": {
+        "driving_distance": "Approximately 65 km",
+        "driving_time": "1.5–2 hours",
+        "hiking_duration": "2–5 hours",
+        "hike_distance": "Approximately 5–10 km"
+       },
+       "accommodation": "Riad Berber Towers or similar in Imlil",
+       "body": [
+        "After breakfast, leave Marrakech and travel towards the spectacular High Atlas Mountains.",
+        "Arrive in Imlil, a traditional Berber village surrounded by beautiful mountain scenery and terraced fields.",
+        "Enjoy a guided hike through traditional villages, walnut groves and mountain trails. Discover the local Berber lifestyle and enjoy spectacular views of the surrounding mountains.",
+        "Stop for a picnic lunch in nature or enjoy a traditional homemade meal with a local Berber family."
+       ]
+      },
+      {
+       "day": 4,
+       "title": "Imlil – Tizi n'Tichka – Telouet – Ounila Valley – Aït Ben Haddou – Ouarzazate",
+       "stats": {
+        "driving_distance": "Approximately 200–230 km",
+        "driving_time": "5–6 hours, excluding sightseeing stops"
+       },
+       "accommodation": "Traditional riad in Ouarzazate",
+       "body": [
+        "Today, enjoy one of Morocco's most spectacular scenic drives.",
+        "Cross the High Atlas Mountains via the famous Tizi n'Tichka Pass, enjoying breathtaking views of the mountain landscapes.",
+        "Visit the historic Kasbah of Telouet before continuing through the beautiful Ounila Valley, famous for its traditional Berber villages and impressive red-earth landscapes.",
+        "Continue to Aït Ben Haddou, a magnificent fortified village and UNESCO World Heritage Site. Explore its ancient architecture before driving to Ouarzazate, often called the gateway to the Sahara Desert."
+       ]
+      },
+      {
+       "day": 5,
+       "title": "Ouarzazate – Fint Oasis – Agdz – Tamnougalt – Zagora",
+       "stats": {
+        "driving_distance": "Approximately 180–200 km",
+        "driving_time": "3.5–4.5 hours, excluding visits",
+        "hiking_duration": "Approximately 1 hour in Fint Oasis"
+       },
+       "accommodation": "Traditional riad in Zagora",
+       "body": [
+        "After breakfast, discover the beautiful Fint Oasis, a hidden green paradise surrounded by rocky desert landscapes.",
+        "Enjoy a relaxing one-hour walk through the palm groves and traditional village.",
+        "Continue south towards Agdz, where you will visit the historic Tamnougalt Kasbah and its traditional village.",
+        "Follow the beautiful Draa Valley, famous for its extensive palm groves, ancient kasbahs and traditional villages, before reaching Zagora."
+       ]
+      },
+      {
+       "day": 6,
+       "title": "Zagora – Tamegroute – Tagounite – M'Hamid – Erg Chegaga",
+       "stats": {
+        "driving_distance": "Approximately 155–175 km",
+        "driving_time": "4–5 hours, including desert tracks and visits"
+       },
+       "accommodation": "Desert camp in Erg Chegaga",
+       "body": [
+        "Today, your Sahara Desert adventure begins!",
+        "First, visit Tamegroute, a fascinating traditional village famous for its ancient Quranic library, historical manuscripts and beautiful green pottery workshops.",
+        "Continue south through Tagounite towards M'Hamid, the gateway to the Sahara Desert.",
+        "From here, leave the paved roads behind and enjoy an exciting 4x4 journey across the wild desert landscapes towards the spectacular dunes of Erg Chegaga.",
+        "Arrive at your desert camp and enjoy a traditional Moroccan dinner beneath a beautiful star-filled sky."
+       ]
+      },
+      {
+       "day": 7,
+       "title": "Full day Sahara Desert experience",
+       "stats": {
+        "walking_distance": "Optional, 2–5 km",
+        "camel_ride": "Optional, approximately 1 hour"
+       },
+       "accommodation": "Same desert camp in Erg Chegaga",
+       "body": [
+        "Spend an unforgettable day discovering the magic of the Sahara Desert and its traditional way of life.",
+        "Explore the surrounding desert landscapes and visit local nomadic families to learn about their traditions, culture and daily activities.",
+        "Enjoy a special picnic lunch in the desert, sharing an authentic moment with a local nomadic family.",
+        "In the afternoon, relax around the camp or explore the spectacular sand dunes.",
+        "As the sun begins to set, enjoy an optional camel ride towards one of the highest dunes to admire the magical colours of the Sahara sunset."
+       ]
+      },
+      {
+       "day": 8,
+       "title": "Erg Chegaga – Lake Iriki – Foum Zguid – Tata",
+       "stats": {
+        "driving_distance": "Approximately 220 km in total",
+        "driving_time": "5–6 hours, depending on desert conditions"
+       },
+       "accommodation": "Traditional Berber guesthouse in Tata",
+       "body": [
+        "Today is one of the most adventurous days of your journey!",
+        "Leave Erg Chegaga by 4x4 and cross the spectacular desert landscapes of the Sahara, travelling through the vast dry lakebed of Lake Iriki.",
+        "Experience the incredible wilderness of this remote region, with its open desert plains, rocky landscapes and beautiful natural scenery.",
+        "Continue towards Foum Zguid before travelling through the Anti-Atlas region to reach Tata, a charming town in southern Morocco. The desert section is approximately 90 km."
+       ]
+      },
+      {
+       "day": 9,
+       "title": "Tata – Tafraoute – Mirleft",
+       "stats": {
+        "driving_distance": "Approximately 310 km in total",
+        "driving_time": "5–6 hours, excluding sightseeing stops"
+       },
+       "accommodation": "Hotel or guesthouse in Mirleft",
+       "body": [
+        "After breakfast, continue your adventure towards the beautiful Anti-Atlas Mountains.",
+        "Travel through spectacular mountain landscapes and traditional Berber villages before reaching Tafraoute, a charming town famous for its pink granite mountains, almond trees and colourful painted rocks.",
+        "Enjoy some time exploring the area before continuing towards the Atlantic coastline and the peaceful seaside village of Mirleft. Tata to Tafraoute is approximately 160 km, and Tafraoute to Mirleft approximately 149 km."
+       ]
+      },
+      {
+       "day": 10,
+       "title": "Discover the Atlantic coast around Mirleft",
+       "stats": {
+        "driving_distance": "Approximately 20–60 km (local)",
+        "driving_time": "Approximately 30 minutes to 1.5 hours"
+       },
+       "accommodation": "Hotel or guesthouse in Mirleft",
+       "body": [
+        "Enjoy a relaxing day discovering the beautiful beaches and coastal landscapes around Mirleft.",
+        "Explore hidden coves, sandy beaches and dramatic ocean cliffs. Depending on your interests, you can enjoy a selection of optional activities.",
+        "Possible activities include: surfing lessons and surf experiences; quad biking along selected routes; swimming and beach relaxation; coastal walks and photography; discovering nearby fishing villages and beaches."
+       ]
+      },
+      {
+       "day": 11,
+       "title": "Mirleft – Agadir – Paradise Valley",
+       "stats": {
+        "driving_distance": "Approximately 160–180 km in total",
+        "driving_time": "Approximately 3 hours"
+       },
+       "accommodation": "Guesthouse or hotel near Paradise Valley",
+       "body": [
+        "Leave Mirleft and travel north along the beautiful Atlantic coastline towards Agadir.",
+        "Continue inland to the spectacular Paradise Valley, surrounded by palm trees, rocky mountains and natural pools.",
+        "Enjoy a relaxing walk through this beautiful natural setting and discover the peaceful atmosphere of the region. Mirleft to Agadir is approximately 125–136 km, and Agadir to Paradise Valley approximately 33–45 km."
+       ]
+      },
+      {
+       "day": 12,
+       "title": "Paradise Valley – Marrakech",
+       "stats": {
+        "driving_distance": "Approximately 247 km",
+        "driving_time": "3.5–4.5 hours, depending on the route and traffic"
+       },
+       "accommodation": "Traditional riad in Marrakech",
+       "body": [
+        "After breakfast, begin your return journey to Marrakech.",
+        "Enjoy the changing landscapes as you travel between the mountains and the plains of central Morocco.",
+        "Arrive in Marrakech in the afternoon or early evening. Enjoy your final evening exploring the Medina, shopping for souvenirs or relaxing at your riad."
+       ]
+      },
+      {
+       "day": 13,
+       "title": "Departure from Marrakech",
+       "stats": {
+        "driving_distance": "Approximately 5–10 km (airport transfer)",
+        "driving_time": "15–30 minutes"
+       },
+       "accommodation": "",
+       "body": [
+        "After breakfast, enjoy your final moments in Morocco before your private transfer to Marrakech Airport according to your flight departure time.",
+        "End of your wonderful Moroccan adventure with Toubkal Peaks Travel."
+       ]
+      }
+     ],
+     "included": [
+      "Private 4x4 vehicle throughout the tour",
+      "Professional English-speaking driver",
+      "Fuel and vehicle-related expenses",
+      "Airport transfers in Marrakech",
+      "Accommodation for 12 nights",
+      "Breakfast throughout the tour",
+      "Dinner at the Erg Chegaga desert camp",
+      "Guided hiking experience in Imlil",
+      "Guided walk in Fint Oasis",
+      "Desert 4x4 excursion through Lake Iriki",
+      "Visit to a local nomadic family",
+      "Picnic lunch with the nomads",
+      "Organisation and assistance by Toubkal Peaks Travel"
+     ],
+     "excluded": [
+      "International flights",
+      "Lunches and dinners except where specified",
+      "Entrance fees to monuments, kasbahs and historical sites",
+      "Local specialist guides for optional visits",
+      "Optional camel ride",
+      "Surfing lessons and quad biking",
+      "Drinks and personal expenses",
+      "Tips for drivers, guides and local staff",
+      "Travel insurance"
+     ],
+     "packing": [],
+     "upgrades": [
+      "Optional camel ride towards the dunes of Erg Chegaga at sunset (about 1 hour).",
+      "Surfing lessons and quad biking around Mirleft, arranged locally and paid separately.",
+      "Upgraded accommodation on request, subject to availability."
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -127,7 +127,8 @@ export function PriceCard({ tour, lang, trip }: { tour: TourDetail; lang: Locale
           </tbody>
         </table>
       )}
-      <p className="mt-4 text-xs leading-relaxed text-muted">{trip.priceNote}</p>
+      {/* "the price goes down as the group grows" only says something when there are several group sizes */}
+      {tiers.length > 1 && <p className="mt-4 text-xs leading-relaxed text-muted">{trip.priceNote}</p>}
       <Link href={bookHref(tour, lang)} className="btn-gold mt-5 w-full">
         {trip.request}
       </Link>
