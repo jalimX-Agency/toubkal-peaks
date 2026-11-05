@@ -2,7 +2,7 @@
 # The cron job runs every line below ONCE after a successful migration, writes the result to
 # storage/logs/deploy.log ("queue [ok|failed|rejected] ...") and removes the line from this file.
 # This file is deployed with the code and is only re-uploaded when its content changes in Git.
-# Allowed: toubkal:import-new-trips, toubkal:import-blog, toubkal:import-reviews, toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish, toubkal:revalidate, toubkal:create-admin,
+# Allowed: toubkal:order-day-trips, toubkal:import-new-trips, toubkal:import-blog, toubkal:import-reviews, toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish, toubkal:revalidate, toubkal:create-admin,
 # db:seed, cache:clear (plain --options only).
 # Anything else is rejected. Lines starting with # are comments.
 #
@@ -19,6 +19,8 @@
 toubkal:import-blog
 # Then: three new trips from the owner (sunrise balloon flight, Casablanca day trip, 13-day 4x4 and hiking tour), in English.
 toubkal:import-new-trips
+# Then: the owner's four day trips first on the Day trips page (Toubkal National Park, Ouirgane, Imlil, 3 Valleys).
+toubkal:order-day-trips
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es
