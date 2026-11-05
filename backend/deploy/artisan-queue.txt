@@ -21,6 +21,8 @@ toubkal:import-blog
 toubkal:import-new-trips
 # Then: the owner's four day trips first on the Day trips page (Toubkal National Park, Ouirgane, Imlil, 3 Valleys).
 toubkal:order-day-trips
+# Then: refresh the website's cached data (the order command changed the database directly, so the site was not told).
+toubkal:revalidate
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es
