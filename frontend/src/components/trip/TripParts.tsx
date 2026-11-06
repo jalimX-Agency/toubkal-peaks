@@ -202,7 +202,7 @@ const TOUBKAL_STOPS = [
 ] as const;
 
 export function AltitudeProfile({ tour, trip, camps }: { tour: TourDetail; trip: TripDict; camps: Dictionary["ruler"]["camps"] }) {
-  if (!tour.max_altitude_m || !tour.category.key.startsWith("treks")) return null;
+  if (!tour.max_altitude_m || !tour.categories.some((k) => k.startsWith("treks"))) return null;
   const toubkal = tour.max_altitude_m >= 4100;
   const stops = toubkal
     ? TOUBKAL_STOPS.map((s) => ({ label: camps[s.key], alt: s.alt }))

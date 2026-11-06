@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Concerns\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
@@ -36,6 +37,12 @@ class Category extends Model
     public function tours(): HasMany
     {
         return $this->hasMany(Tour::class);
+    }
+
+    /** Trips that list this category as an extra one. */
+    public function extraTours(): BelongsToMany
+    {
+        return $this->belongsToMany(Tour::class, 'category_tour');
     }
 
     /** URL path of the category in a locale, e.g. "treks/toubkal" (parent slugs first). */

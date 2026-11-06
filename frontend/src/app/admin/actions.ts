@@ -140,6 +140,8 @@ export async function updateTourSettings(id: number, _prev: ActionState, form: F
         currency: text(form, "currency"),
         is_featured: form.get("is_featured") === "on",
         sort_order: number(form, "sort_order") ?? 0,
+        category: text(form, "category"),
+        extra_categories: form.getAll("extra_categories").map(String),
       }),
     }),
   );

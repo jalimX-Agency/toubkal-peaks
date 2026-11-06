@@ -136,7 +136,10 @@ async function getAllTours(locale: string): Promise<Paginated<TourCard>> {
 export async function getTours(params: { locale: string; category?: string; perPage?: number }): Promise<Paginated<TourCard>> {
   const all = await getAllTours(params.locale);
   const { category } = params;
-  const data = category ? all.data.filter((t) => t.category.key === category || t.category.key.startsWith(`${category}.`)) : all.data;
+  // a trip is listed in its main category and in the extra ones; the list is kept as the API sends it
+  // (an older API without the field: the main category only)
+  const tours = all.data.map((t) => ({ ...t, categories: t.categories ?? [t.category.key] }));
+  const data = category ? tours.filter((t) => t.categories.some((k) => k === category || k.startsWith(`${category}.`))) : tours;
   return { data: data.slice(0, params.perPage ?? 24) };
 }
 
@@ -183,7 +186,7 @@ export async function getTour(slug: string, locale: string): Promise<TourDetail 
   try {
     const res = await request<{ data?: TourDetail }>(`/tours/${encodeURIComponent(slug)}?locale=${locale}`);
     cacheLife(KEEP);
-    return res.data ? withoutFillers(res.data) : null;
+    return res.data ? withoutFillers({ ...res.data, categories: res.data.categories ?? [res.data.category.key] }) : null;
   } catch (error) {
     if (error instanceof ApiError && error.status === 404) {
       cacheLife("minutes");

@@ -53,7 +53,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const [dict, tours, reviews, team] = await Promise.all([getDictionary(lang), getTours({ locale: lang, perPage: 100 }), getReviews(6), getTeam(lang)]);
 
   // the Toubkal section: how many climbs, and the lowest "from" price among them
-  const toubkal = tours.data.filter((t) => t.category.key === "treks.toubkal");
+  const toubkal = tours.data.filter((t) => t.categories.includes("treks.toubkal"));
   const priced = toubkal.filter((t) => t.price_mode === "tiers" && t.from_price !== null).sort((a, b) => a.from_price! - b.from_price!);
   const toubkalFrom = priced[0] ? { amount: priced[0].from_price!, currency: priced[0].currency } : null;
 
@@ -93,7 +93,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         <TourExplorer
           lang={lang}
           dict={dict.tours}
-          tours={tours.data.map(({ id, category, is_featured }) => ({ id, category, is_featured }))}
+          tours={tours.data.map(({ id, category, categories, is_featured }) => ({ id, category, categories, is_featured }))}
           cards={cards}
         />
       )}

@@ -32,7 +32,7 @@ function structuredData(tour: TourDetail, lang: Locale, dict: Dictionary, catego
     description: tour.seo.description,
     url,
     image: tour.images.hero?.url,
-    touristType: tour.category.key.startsWith("treks") ? "Trekking" : undefined,
+    touristType: tour.categories.some((k) => k.startsWith("treks")) ? "Trekking" : undefined,
     itinerary: tour.itinerary.length
       ? { "@type": "ItemList", itemListElement: tour.itinerary.map((d, i) => ({ "@type": "ListItem", position: i + 1, name: `${dict.trip.day} ${d.day}: ${d.title}` })) }
       : undefined,
@@ -81,7 +81,7 @@ export function TripPage({ tour, lang, dict }: { tour: TourDetail; lang: Locale;
         </aside>
       </div>
 
-      {tour.category.key === TOUBKAL_CATEGORY && <TrekkingConditionsBlock lang={lang} />}
+      {tour.categories.includes(TOUBKAL_CATEGORY) && <TrekkingConditionsBlock lang={lang} />}
 
       <section id="book" className="scroll-mt-24 bg-sand/60">
         <div className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-14 md:flex-row md:items-end md:justify-between md:px-8 md:py-16">

@@ -64,6 +64,8 @@ export interface TourRow {
   id: number;
   title: string | null;
   category: string | null;
+  /** main category first, then the extra ones */
+  categories: string[];
   status: TourStatus;
   duration_days: number | null;
   difficulty: string | null;
@@ -107,6 +109,8 @@ export interface TourContent {
 export interface TourDetail {
   id: number;
   category: string | null;
+  extra_categories: string[];
+  category_options: { key: string; name: string }[];
   status: TourStatus;
   duration_days: number | null;
   duration_nights: number | null;

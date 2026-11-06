@@ -165,7 +165,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
       if (draft.contactBy !== "email" && !draft.phone.trim()) e.phone = t.details.phoneRequired;
     }
     if (s === "review" && !consent) e.consent = t.review.consentRequired;
-    if (s === "review" && trip?.category.key === TOUBKAL_CATEGORY && !conditionsOk) e.conditions = trekkingConditions[lang].acceptRequired;
+    if (s === "review" && trip?.categories.includes(TOUBKAL_CATEGORY) && !conditionsOk) e.conditions = trekkingConditions[lang].acceptRequired;
     return e;
   }
 
@@ -213,7 +213,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
     form.set("special_requests", lines.join("\n").slice(0, 2000));
     form.set("consent", "on");
     // only asked, and only sent, for the trips with trekking conditions; the API checks it again
-    if (conditionsOk && trip?.category.key === TOUBKAL_CATEGORY) form.set("conditions_accepted", "on");
+    if (conditionsOk && trip?.categories.includes(TOUBKAL_CATEGORY)) form.set("conditions_accepted", "on");
     form.set("website", honeypot.current?.value ?? "");
 
     startTransition(async () => {
@@ -440,7 +440,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
                   </label>
                   <FieldError id="e-consent" message={errors.consent} />
                 </div>
-                {trip?.category.key === TOUBKAL_CATEGORY && (
+                {trip?.categories.includes(TOUBKAL_CATEGORY) && (
                   <div className="rounded-sm border border-line bg-sand/50 p-4">
                     <details>
                       <summary className="cursor-pointer text-sm font-semibold text-navy">{trekkingConditions[lang].read}</summary>
@@ -531,10 +531,10 @@ function TripStep({ tours, draft, t, tabs, toursDict, lang, error, onPick, onCus
   const [query, setQuery] = useState("");
   const [tab, setTab] = useState<string>("all");
   const [shown, setShown] = useState(TRIPS_PER_PAGE);
-  const groups = HUBS.filter((h) => h.tab !== "all" && tours.some((x) => x.category.key === h.key));
+  const groups = HUBS.filter((h) => h.tab !== "all" && tours.some((x) => x.categories.includes(h.key)));
   const words = fold(query).split(/\s+/).filter(Boolean);
   const list = tours
-    .filter((x) => tab === "all" || x.category.key === tab)
+    .filter((x) => tab === "all" || x.categories.includes(tab))
     .filter((x) => words.every((w) => fold(`${x.title} ${x.category.name ?? ""}`).includes(w)))
     .sort((a, b) => Number(b.is_featured) - Number(a.is_featured));
   const chosen = !draft.custom ? tours.find((x) => x.id === draft.tripId) : undefined;

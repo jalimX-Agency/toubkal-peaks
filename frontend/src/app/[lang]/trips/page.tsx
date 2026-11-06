@@ -37,8 +37,8 @@ export default async function TripsPage({ params }: PageProps<"/[lang]/trips">) 
   const { trips } = dict;
 
   const cards = Object.fromEntries(tours.map((t) => [t.id, <TourCard key={t.id} tour={t} lang={lang} dict={dict.tours} />]));
-  const finderTours: FinderTour[] = tours.map(({ id, title, summary, category, duration_days, difficulty, from_price, is_featured }) => ({
-    id, title, summary, category, duration_days, difficulty, from_price, is_featured,
+  const finderTours: FinderTour[] = tours.map(({ id, title, summary, category, categories, duration_days, difficulty, from_price, is_featured }) => ({
+    id, title, summary, category, categories, duration_days, difficulty, from_price, is_featured,
   }));
   const hubTitles = Object.fromEntries(HUBS.map((h) => [h.key, dict.hubs[h.key].title]));
 

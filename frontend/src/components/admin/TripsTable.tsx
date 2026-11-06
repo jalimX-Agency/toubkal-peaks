@@ -56,11 +56,11 @@ export function TripsTable({ trips }: { trips: TourRow[] }) {
     const words = fold(q).split(/\s+/).filter(Boolean);
     return trips
       .filter((t) => !status || t.status === status)
-      .filter((t) => !category || t.category === category)
+      .filter((t) => !category || t.categories.includes(category))
       .filter((t) => !duration || (t.duration_days !== null && DURATIONS.find((d) => d.value === duration)!.test(t.duration_days)))
       .filter((t) => !price || (price === "on_request" ? t.price_mode === "on_request" : t.price_mode === "tiers"))
       .filter((t) => !extra || (extra === "featured" ? t.is_featured : extra === "photos" ? t.photos < 6 : extra === "nodifficulty" ? !t.difficulty : true))
-      .filter((t) => words.every((w) => fold(`${t.title ?? ""} ${CATEGORY[t.category ?? ""] ?? t.category ?? ""} #${t.id}`).includes(w)))
+      .filter((t) => words.every((w) => fold(`${t.title ?? ""} ${t.categories.map((k) => CATEGORY[k] ?? k).join(" ")} #${t.id}`).includes(w)))
       .sort(SORTS[sort].fn);
   }, [trips, q, status, category, duration, price, extra, sort]);
 
@@ -132,7 +132,7 @@ export function TripsTable({ trips }: { trips: TourRow[] }) {
                     <StatusBadge status={t.status} kind="tour" />
                   </span>
                   <span className="mono mt-1 block text-[0.7rem] text-muted">
-                    #{t.id} · {CATEGORY[t.category ?? ""] ?? t.category} · {t.duration_days ? `${t.duration_days} d` : "—"} · {t.price_mode === "tiers" ? `from ${money(t.from_price, t.currency)}` : "on request"}
+                    #{t.id} · {t.categories.map((k) => CATEGORY[k] ?? k).join(" + ")} · {t.duration_days ? `${t.duration_days} d` : "—"} · {t.price_mode === "tiers" ? `from ${money(t.from_price, t.currency)}` : "on request"}
                   </span>
                   <span className="mt-2 flex flex-wrap gap-1.5 text-[0.7rem] font-semibold">
                     {t.is_featured && <span className="rounded-full bg-gold/15 px-2 py-0.5 text-gold">Featured</span>}

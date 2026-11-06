@@ -29,6 +29,8 @@ class TourCardResource extends JsonResource
             'summary' => $t->summary ? Str::limit(trim(preg_replace('/\s+/', ' ', $t->summary)), 180) : null,
             'locale' => $t->locale,
             'category' => ['key' => $this->category->key, 'name' => $this->category->translate($locale)?->name],
+            // every category the trip is listed in (the main one first), for the website's filters
+            'categories' => $this->categoryKeys(),
             'duration_days' => $this->duration_days,
             'duration_nights' => $this->duration_nights,
             'difficulty' => $this->difficulty,

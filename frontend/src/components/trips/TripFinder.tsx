@@ -9,7 +9,7 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 import { TYPES, type TripType } from "@/lib/finder-types";
 import type { TourCard as Tour } from "@/lib/types";
 
-export type FinderTour = Pick<Tour, "id" | "title" | "summary" | "category" | "duration_days" | "difficulty" | "from_price" | "is_featured">;
+export type FinderTour = Pick<Tour, "id" | "title" | "summary" | "category" | "categories" | "duration_days" | "difficulty" | "from_price" | "is_featured">;
 
 type TripsDict = Dictionary["trips"];
 type ToursDict = Dictionary["tours"];
@@ -45,7 +45,7 @@ function matches(tour: FinderTour, group: Group, values: string[]): boolean {
   if (values.length === 0) return true;
   switch (group) {
     case "type":
-      return TYPES.some((t) => values.includes(t.key) && tour.category.key === t.category);
+      return TYPES.some((t) => values.includes(t.key) && tour.categories.includes(t.category));
     case "duration":
       return tour.duration_days !== null && DURATIONS.some((d) => values.includes(d.key) && d.test(tour.duration_days!));
     case "price":
@@ -121,7 +121,7 @@ export function TripFinder({
     const words = fold(query).split(/\s+/).filter(Boolean);
     if (words.length === 0) return tours;
     return tours.filter((t) => {
-      const text = fold(`${t.title} ${t.summary ?? ""} ${hubTitles[t.category.key] ?? ""}`);
+      const text = fold(`${t.title} ${t.summary ?? ""} ${t.categories.map((k) => hubTitles[k] ?? "").join(" ")}`);
       return words.every((w) => text.includes(w));
     });
   }, [tours, query, hubTitles]);

@@ -19,12 +19,12 @@ const TABS = [
 
 const VISIBLE = 8;
 
-type Item = Pick<Tour, "id" | "category" | "is_featured">;
+type Item = Pick<Tour, "id" | "category" | "categories" | "is_featured">;
 
 /** "All" tab: featured trips first, then one trip per category in turn, so every kind of trip shows up. */
 function mixed(tours: Item[]): Item[] {
   const featured = tours.filter((t) => t.is_featured);
-  const groups = TABS.flatMap((t) => (t.category ? [tours.filter((tour) => !tour.is_featured && tour.category.key === t.category)] : []));
+  const groups = TABS.flatMap((t) => (t.category ? [tours.filter((tour) => !tour.is_featured && tour.categories.includes(t.category))] : []));
   const rest: Item[] = [];
   for (let i = 0; groups.some((g) => i < g.length); i++) {
     for (const group of groups) if (group[i]) rest.push(group[i]);
@@ -50,9 +50,9 @@ export function TourExplorer({
   const [active, setActive] = useState<(typeof TABS)[number]["key"]>("all");
   const tab = TABS.find((t) => t.key === active)!;
 
-  const total = tab.category ? tours.filter((t) => t.category.key === tab.category).length : tours.length;
-  const tabs = TABS.filter((t) => !t.category || tours.some((tour) => tour.category.key === t.category));
-  const shown = (tab.category ? tours.filter((t) => t.category.key === tab.category) : mixed(tours)).slice(0, VISIBLE);
+  const total = tab.category ? tours.filter((t) => t.categories.includes(tab.category!)).length : tours.length;
+  const tabs = TABS.filter((t) => !t.category || tours.some((tour) => tour.categories.includes(t.category)));
+  const shown = (tab.category ? tours.filter((t) => t.categories.includes(tab.category!)) : mixed(tours)).slice(0, VISIBLE);
 
   return (
     <section className="bg-cream">

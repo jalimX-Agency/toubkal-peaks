@@ -43,7 +43,7 @@ class StoreBookingRequest extends FormRequest
             if (! $tourId || $validator->errors()->has('tour_id')) {
                 return;
             }
-            $tour = Tour::with('category')->find($tourId);
+            $tour = Tour::with(['category', 'extraCategories'])->find($tourId);
             if ($tour?->requiresTrekkingConditions() && ! $this->boolean('conditions_accepted')) {
                 $validator->errors()->add('conditions_accepted', 'Please accept the trekking conditions of this trip.');
             }

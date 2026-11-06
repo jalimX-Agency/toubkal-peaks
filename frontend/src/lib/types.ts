@@ -15,6 +15,8 @@ export interface TourCard {
   summary: string | null;
   locale: string;
   category: { key: string; name: string | null };
+  /** every category the trip is listed in, the main one first */
+  categories: string[];
   duration_days: number | null;
   duration_nights: number | null;
   difficulty: string | null;
@@ -119,6 +121,8 @@ export interface TourDetail {
   /** language of the content actually returned (English until a translation exists) */
   locale: string;
   category: { key: string; name: string | null; path: string };
+  /** every category the trip is listed in, the main one first */
+  categories: string[];
   duration_days: number | null;
   duration_nights: number | null;
   difficulty: string | null;

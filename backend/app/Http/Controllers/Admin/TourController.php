@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Enums\PriceMode;
 use App\Enums\TourStatus;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Redirect;
 use App\Models\Tour;
 use App\Models\TourPrice;
@@ -25,10 +26,10 @@ class TourController extends Controller
             'category' => ['nullable', 'string', 'max:80'],
         ]);
 
-        $tours = Tour::with(['translations:id,tour_id,locale,title,slug,translation_status,updated_at', 'category:id,key', 'prices', 'hero'])
+        $tours = Tour::with(['translations:id,tour_id,locale,title,slug,translation_status,updated_at', 'category:id,key', 'extraCategories:id,key', 'prices', 'hero'])
             ->withCount('media')
             ->when($data['status'] ?? null, fn ($q, $s) => $q->where('status', $s))
-            ->when($data['category'] ?? null, fn ($q, $c) => $q->whereHas('category', fn ($w) => $w->where('key', $c)->orWhere('key', 'like', "{$c}.%")))
+            ->when($data['category'] ?? null, fn ($q, $c) => $q->inCategory($c))
             ->when($data['q'] ?? null, fn ($q, $term) => $q->whereHas('translations', fn ($w) => $w->where('title', 'like', '%'.str_replace(['%', '_'], ['\%', '\_'], $term).'%')))
             ->orderBy('sort_order')->orderBy('id')
             ->get();
@@ -37,6 +38,7 @@ class TourController extends Controller
             'id' => $t->id,
             'title' => $t->translate('en')?->title,
             'category' => $t->category?->key,
+            'categories' => $t->categoryKeys(),
             'status' => $t->status->value,
             'duration_days' => $t->duration_days,
             'difficulty' => $t->difficulty,
@@ -73,12 +75,34 @@ class TourController extends Controller
             'currency' => ['sometimes', Rule::in(['EUR', 'USD', 'GBP', 'MAD'])],
             'is_featured' => ['sometimes', 'boolean'],
             'sort_order' => ['sometimes', 'integer', 'min:0', 'max:65000'],
+            'category' => ['sometimes', 'string', Rule::exists('categories', 'key')],
+            'extra_categories' => ['sometimes', 'array', 'max:10'],
+            'extra_categories.*' => ['string', Rule::exists('categories', 'key')],
         ]);
+        $extraKeys = $data['extra_categories'] ?? null;
+        $mainKey = $data['category'] ?? null;
+        unset($data['category'], $data['extra_categories']);
 
         if (($data['status'] ?? null) === TourStatus::Published->value && $tour->published_at === null) {
             $data['published_at'] = now();
         }
-        $tour->update($data);
+        DB::transaction(function () use ($tour, $data, $mainKey, $extraKeys) {
+            if ($mainKey !== null && $mainKey !== $tour->category?->key) {
+                $new = Category::where('key', $mainKey)->firstOrFail();
+                $this->redirectMovedPaths($tour, $new);
+                $data['category_id'] = $new->id;
+            }
+            $tour->update($data);
+
+            if ($extraKeys !== null || $mainKey !== null) {
+                $tour->load(['category', 'extraCategories']);
+                $keys = $extraKeys ?? $tour->extraCategories->pluck('key')->all();
+                // the main category is never repeated among the extra ones
+                $ids = Category::whereIn('key', $keys)->where('id', '!=', $tour->category_id)->pluck('id');
+                $tour->extraCategories()->sync($ids);
+                $tour->touch(); // tells the website that the trip's categories changed
+            }
+        });
 
         return response()->json(['data' => $this->detail($tour->fresh())]);
     }
@@ -149,6 +173,23 @@ class TourController extends Controller
         return response()->json(['data' => $this->detail($tour->fresh())]);
     }
 
+    /** The trip's address contains its main category: after a change, the old addresses redirect to the new ones. */
+    private function redirectMovedPaths(Tour $tour, Category $new): void
+    {
+        $tour->loadMissing(['translations', 'category']);
+        foreach ($tour->translations as $t) {
+            $prefix = $t->locale === config('locales.fallback') ? '' : "/{$t->locale}";
+            $from = $prefix.'/'.trim((string) $tour->category?->path($t->locale), '/')."/{$t->slug}";
+            $to = $prefix.'/'.trim($new->path($t->locale), '/')."/{$t->slug}";
+            Redirect::updateOrCreate(['from_path' => "{$from}/"], [
+                'to_path' => $to,
+                'status_code' => 301,
+                'is_active' => true,
+                'notes' => 'Main category changed in the admin',
+            ]);
+        }
+    }
+
     /** Old links keep working after a slug change (the website reads the redirects table). */
     private function redirectOldPath(Tour $tour, string $locale, string $old, string $new): void
     {
@@ -165,12 +206,17 @@ class TourController extends Controller
 
     private function detail(Tour $tour): array
     {
-        $tour->loadMissing(['translations', 'prices', 'category', 'hero']);
+        $tour->loadMissing(['translations', 'prices', 'category', 'extraCategories', 'hero']);
         $fields = ['slug', 'title', 'summary', 'highlights', 'facts', 'itinerary', 'included', 'excluded', 'packing', 'upgrades', 'seo_title', 'seo_description', 'translation_status'];
 
         return [
             'id' => $tour->id,
             'category' => $tour->category?->key,
+            'extra_categories' => $tour->extraCategories->pluck('key')->values()->all(),
+            'category_options' => Category::with('translations')->orderBy('sort_order')->get()->map(fn (Category $c) => [
+                'key' => $c->key,
+                'name' => ($c->parent_id ? '— ' : '').($c->translate('en')?->name ?? $c->key),
+            ])->all(),
             'status' => $tour->status->value,
             'duration_days' => $tour->duration_days,
             'duration_nights' => $tour->duration_nights,

@@ -24,7 +24,7 @@ class CategoryResource extends JsonResource
             'name' => $t?->name,
             'intro' => $t?->intro,
             'seo' => ['title' => $t?->seo_title, 'description' => $t?->seo_description],
-            'tours_count' => Tour::published()->whereIn('category_id', $ids)->count(),
+            'tours_count' => Tour::published()->where(fn ($q) => $q->whereIn('category_id', $ids)->orWhereHas('extraCategories', fn ($c) => $c->whereIn('categories.id', $ids)))->count(),
             'children' => CategoryResource::collection($this->whenLoaded('children')),
         ];
     }

@@ -22,8 +22,8 @@ export function HubPage({ hub, lang, dict, tours }: { hub: Hub; lang: Locale; di
 
   // The trek pages come with the filters of the Trips page, starting with the shortest trips.
   const cards = Object.fromEntries(tours.map((t) => [t.id, <TourCard key={t.id} tour={t} lang={lang} dict={dict.tours} />]));
-  const finderTours: FinderTour[] = tours.map(({ id, title, summary, category, duration_days, difficulty, from_price, is_featured }) => ({
-    id, title, summary, category, duration_days, difficulty, from_price, is_featured,
+  const finderTours: FinderTour[] = tours.map(({ id, title, summary, category, categories, duration_days, difficulty, from_price, is_featured }) => ({
+    id, title, summary, category, categories, duration_days, difficulty, from_price, is_featured,
   }));
   const hubTitles = Object.fromEntries(HUBS.map((h) => [h.key, dict.hubs[h.key].title]));
   const trekTypes = hub.key === "treks" ? TREK_TYPES : TREK_TYPES.filter((t) => t.category === hub.key);

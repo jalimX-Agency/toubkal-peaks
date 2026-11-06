@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class TourController extends Controller
 {
-    private const CARD_RELATIONS = ['translations', 'category.translations', 'category.parent.translations', 'hero', 'prices', 'media'];
+    private const CARD_RELATIONS = ['translations', 'category.translations', 'category.parent.translations', 'extraCategories', 'hero', 'prices', 'media'];
 
     /**
      * Published tours as cards.
@@ -24,7 +24,7 @@ class TourController extends Controller
         $query = Tour::published()->with(self::CARD_RELATIONS)->orderBy('sort_order')->orderBy('id');
 
         if ($key = $request->query('category')) {
-            $query->whereHas('category', fn ($c) => $c->where('key', $key)->orWhereHas('parent', fn ($p) => $p->where('key', $key)));
+            $query->inCategory($key);
         }
         if ($request->boolean('featured')) {
             $query->where('is_featured', true);

@@ -35,14 +35,38 @@ class Tour extends Model
     /** Version of the conditions text on the website (frontend/src/content/trekking-conditions.ts); change it when the text changes. */
     public const CONDITIONS_VERSION = 'toubkal-2026-11';
 
+    /** A trip listed in the Mount Toubkal category (as its main or an extra category) needs the conditions accepted. */
     public function requiresTrekkingConditions(): bool
     {
-        return $this->category?->key === self::TOUBKAL_CATEGORY;
+        return in_array(self::TOUBKAL_CATEGORY, $this->categoryKeys(), true);
     }
 
+    /** Main category: the trip's web address and breadcrumbs come from it. */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /** Other categories the trip is also listed in (the category pages and filters show it there too). */
+    public function extraCategories(): BelongsToMany
+    {
+        return $this->belongsToMany(Category::class, 'category_tour');
+    }
+
+    /** Keys of the main category first, then the extra ones. */
+    public function categoryKeys(): array
+    {
+        $this->loadMissing(['category', 'extraCategories']);
+
+        return collect([$this->category?->key])->merge($this->extraCategories->pluck('key'))->filter()->unique()->values()->all();
+    }
+
+    /** Trips listed in a category, as the main or an extra one; a parent category includes its children. */
+    public function scopeInCategory(Builder $query, string $key): Builder
+    {
+        $match = fn ($c) => $c->where('key', $key)->orWhereHas('parent', fn ($p) => $p->where('key', $key));
+
+        return $query->where(fn ($q) => $q->whereHas('category', $match)->orWhereHas('extraCategories', $match));
     }
 
     public function translations(): HasMany
