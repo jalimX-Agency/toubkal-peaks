@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { TourCard } from "@/components/TourCard";
 import { CtaBand } from "@/components/home/CtaBand";
+import { TripFinder, type FinderTour } from "@/components/trips/TripFinder";
 import { PagedGrid } from "@/components/ui/Pager";
 import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import { TREK_TYPES } from "@/lib/finder-types";
 import { HUBS, type Hub } from "@/lib/hubs";
 import { site, pageHeroes } from "@/lib/site";
 import type { TourCard as Tour } from "@/lib/types";
@@ -16,6 +19,14 @@ export function HubPage({ hub, lang, dict, tours }: { hub: Hub; lang: Locale; di
   const isTreks = hub.key === "treks" || hub.parent === "treks";
   const parent = hub.parent ? HUBS.find((h) => h.key === hub.parent) : null;
   const url = `${site.url}${localePath(lang, hub.path)}`;
+
+  // The trek pages come with the filters of the Trips page, starting with the shortest trips.
+  const cards = Object.fromEntries(tours.map((t) => [t.id, <TourCard key={t.id} tour={t} lang={lang} dict={dict.tours} />]));
+  const finderTours: FinderTour[] = tours.map(({ id, title, summary, category, duration_days, difficulty, from_price, is_featured }) => ({
+    id, title, summary, category, duration_days, difficulty, from_price, is_featured,
+  }));
+  const hubTitles = Object.fromEntries(HUBS.map((h) => [h.key, dict.hubs[h.key].title]));
+  const trekTypes = hub.key === "treks" ? TREK_TYPES : TREK_TYPES.filter((t) => t.category === hub.key);
 
   const jsonLd = JSON.stringify([
     {
@@ -86,6 +97,30 @@ export function HubPage({ hub, lang, dict, tours }: { hub: Hub; lang: Locale; di
         </div>
       </section>
 
+      {isTreks && tours.length > 0 ? (
+        <div className="bg-cream">
+          <Suspense
+            fallback={
+              <ul className="mx-auto grid max-w-7xl gap-5 px-4 py-8 sm:grid-cols-2 md:px-8 md:py-12 lg:grid-cols-3">
+                {tours.map((t) => (
+                  <li key={t.id}>{cards[t.id]}</li>
+                ))}
+              </ul>
+            }
+          >
+            <TripFinder
+              lang={lang}
+              dict={dict.trips}
+              toursDict={dict.tours}
+              hubTitles={hubTitles}
+              tours={finderTours}
+              cards={cards}
+              types={trekTypes}
+              defaultSort="durationAsc"
+            />
+          </Suspense>
+        </div>
+      ) : (
       <section className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-16">
         {tours.length > 0 ? (
           <PagedGrid
@@ -102,6 +137,7 @@ export function HubPage({ hub, lang, dict, tours }: { hub: Hub; lang: Locale; di
           <p className="text-muted">{dict.tours.empty}</p>
         )}
       </section>
+      )}
 
       <CtaBand lang={lang} dict={dict.cta} message={dict.whatsapp.message} />
     </>

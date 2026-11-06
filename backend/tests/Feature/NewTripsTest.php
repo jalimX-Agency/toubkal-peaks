@@ -12,13 +12,13 @@ class NewTripsTest extends TestCase
 {
     use ImportsRealTours, RefreshDatabase;
 
-    public function test_the_import_creates_the_three_new_trips_once_with_prices_photos_and_category(): void
+    public function test_the_import_creates_the_new_trips_once_with_prices_photos_and_category(): void
     {
         $this->importRealTours();
         $before = Tour::count();
 
         $this->artisan('toubkal:import-new-trips')->assertSuccessful();
-        $this->assertSame($before + 3, Tour::count());
+        $this->assertSame($before + 4, Tour::count());
 
         $balloon = TourTranslation::firstWhere('slug', 'marrakech-sunrise-hot-air-balloon-flight')->tour->load('category', 'prices', 'media');
         $this->assertSame('day-trips-from-marrakech', $balloon->category->key);
@@ -36,12 +36,19 @@ class NewTripsTest extends TestCase
         $this->assertCount(13, $long->translate('en')->itinerary);
         $this->assertSame(12, $long->duration_nights);
 
+        $nine = TourTranslation::firstWhere('slug', '9-days-morocco-atlas-mountains-trekking-sahara-desert-experience')->tour->load('category', 'media');
+        $this->assertSame('morocco-tours', $nine->category->key);
+        $this->assertSame('on_request', $nine->price_mode->value);
+        $this->assertSame(9, $nine->duration_days);
+        $this->assertCount(9, $nine->translate('en')->itinerary);
+        $this->assertCount(12, $nine->media);
+
         $this->getJson('/api/v1/tours/13-days-morocco-4x4-hiking-adventure?locale=en')->assertOk()->assertJsonPath('data.pricing.mode', 'on_request');
 
         // a second run changes nothing, and an edit made in the admin is kept
         $casa->translate('en')->update(['title' => 'Edited in the admin']);
         $this->artisan('toubkal:import-new-trips')->assertSuccessful();
-        $this->assertSame($before + 3, Tour::count());
+        $this->assertSame($before + 4, Tour::count());
         $this->assertSame('Edited in the admin', $casa->fresh()->translate('en')->title);
     }
 }

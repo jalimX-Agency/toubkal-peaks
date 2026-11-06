@@ -1,0 +1,220 @@
+{
+  "trips": [
+    {
+      "key": "9-day-morocco-atlas-mountains-trekking-sahara-desert-experience",
+      "category": "morocco-tours",
+      "duration_days": 9,
+      "duration_nights": 8,
+      "difficulty": null,
+      "max_altitude_m": null,
+      "price": {
+        "mode": "on_request",
+        "currency": "EUR",
+        "tiers": []
+      },
+      "images": [
+        "sa6",
+        "o192",
+        "im5",
+        "av16",
+        "dt7",
+        "sa1",
+        "sa8",
+        "sa3",
+        "dr1",
+        "oa10",
+        "o68",
+        "dt6"
+      ],
+      "translations": {
+        "en": {
+          "slug": "9-days-morocco-atlas-mountains-trekking-sahara-desert-experience",
+          "title": "9-Day Morocco Atlas Mountains Trekking & Sahara Desert Experience",
+          "seo_title": "9-Day Morocco Atlas Trekking & Sahara Desert Tour",
+          "seo_description": "A 9-day private tour from Marrakech: 3 days of High Atlas trekking through Berber villages, then Dades Valley, Todra Gorge, a camel trek and a night in a luxury camp in the Sahara.",
+          "summary": "Discover the best of Morocco on this unforgettable 9-day journey, combining the vibrant atmosphere of Marrakech, authentic Berber villages, spectacular trekking in the High Atlas Mountains and the magical landscapes of the Sahara Desert. From hiking through remote mountain villages and crossing scenic mountain passes to exploring ancient kasbahs and riding camels across the golden dunes of Erg Chebbi, every day brings a new and memorable experience. This is a private and tailor-made experience: the itinerary can be customised according to your preferences, interests and travel dates.",
+          "highlights": [
+            "Three days of guided trekking in the High Atlas, from Agersioual to Imlil, with a muleteer and mules carrying your luggage.",
+            "Nights in traditional Berber guesthouses, including Tizi Oussem and Armed, the highest permanently inhabited village in the Imlil Valley.",
+            "Sidi Chamharouch shrine, mountain passes and waterfalls along the river trails.",
+            "Tizi n'Tichka Pass, Ouarzazate, the Valley of Roses and Dades Valley.",
+            "Todra Gorge, palm groves and the edge of the Erg Chebbi dunes at Merzouga.",
+            "Sahara discovery: Hassi Labied Oasis, Khamlia and Gnaoua music, Berber pizza lunch, camel trek and a night in a luxury desert camp.",
+            "Draa Valley palm groves and the UNESCO World Heritage Kasbah of Ait Ben Haddou."
+          ],
+          "facts": {
+            "duration": "9 days / 8 nights",
+            "type": "Private tour: High Atlas trekking and Sahara Desert",
+            "departs_from": "Marrakech",
+            "ends_in": "Marrakech",
+            "trip_level": "Easy to moderate, adjustable (5–6 hours of walking per trekking day)"
+          },
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Marrakech – Agersioual – Matat – Tizi Oudid – Tizi Oussem",
+              "stats": {
+                "driving_distance": "Approximately 60–65 km",
+                "walking_distance": "Approximately 10–12 km",
+                "hiking_duration": "5–6 hours"
+              },
+              "accommodation": "Traditional Berber guesthouse in Tizi Oussem (dinner and breakfast included)",
+              "body": [
+                "After breakfast, your private driver will pick you up from your accommodation in Marrakech at approximately 9:00 AM and transfer you to Agersioual village in the beautiful High Atlas Mountains.",
+                "Upon arrival, meet your local mountain guide and muleteer before beginning your trek towards Matat village and the scenic Tizi Oudid Pass. Enjoy magnificent views of the surrounding valleys and traditional Berber settlements.",
+                "Stop at the pass to enjoy a freshly prepared picnic lunch before continuing your hike towards Tizi Oussem, a charming traditional Berber village nestled in the beautiful Azzaden Valley."
+              ]
+            },
+            {
+              "day": 2,
+              "title": "Tizi Oussem – Tizi Mzik – Armed Village",
+              "stats": {
+                "walking_distance": "Approximately 10–12 km",
+                "hiking_duration": "5–6 hours"
+              },
+              "accommodation": "Traditional Berber guesthouse in Armed (dinner and breakfast included)",
+              "body": [
+                "After breakfast, continue your trekking adventure towards Tizi Mzik Pass. Today's walk takes you through beautiful mountain landscapes, offering spectacular panoramic views of the High Atlas Mountains and surrounding valleys.",
+                "Enjoy a picnic lunch along the trail before beginning your descent towards Armed village, the highest permanently inhabited village in the Imlil Valley.",
+                "Upon arrival, settle into your traditional Berber guesthouse and enjoy the peaceful atmosphere of mountain life."
+              ]
+            },
+            {
+              "day": 3,
+              "title": "Armed – Sidi Chamharouch – Imlil",
+              "stats": {
+                "walking_distance": "Approximately 10–13 km",
+                "hiking_duration": "5–6 hours"
+              },
+              "accommodation": "Riad Berber Towers or similar in Imlil (dinner and breakfast included)",
+              "body": [
+                "After breakfast, begin your hike towards the famous Sidi Chamharouch shrine, following beautiful mountain trails alongside the river.",
+                "Along the way, enjoy spectacular natural scenery, traditional mountain settlements and refreshing waterfalls. Take time to appreciate the peaceful surroundings and experience the authentic atmosphere of the High Atlas Mountains.",
+                "Stop beside the river to enjoy a picnic lunch before continuing your walk back towards Imlil.",
+                "Upon arrival, check in at Riad Berber Towers or similar accommodation and enjoy a relaxing evening."
+              ]
+            },
+            {
+              "day": 4,
+              "title": "Imlil – Ouarzazate – Dades Valley",
+              "stats": {
+                "driving_distance": "Approximately 330–350 km",
+                "driving_time": "Approximately 6–7 hours, excluding stops"
+              },
+              "accommodation": "Dades Luxury Riad or similar (dinner and breakfast included)",
+              "body": [
+                "After breakfast, your private driver will pick you up at approximately 8:00 AM for your journey towards Dades Valley.",
+                "Travel through the spectacular High Atlas Mountains, crossing the famous Tizi n'Tichka Pass, with wonderful opportunities to admire the dramatic mountain scenery and traditional Berber villages.",
+                "Continue towards Ouarzazate, often known as the gateway to the Sahara, before driving through the beautiful Valley of Roses and reaching Dades Valley.",
+                "Upon arrival, check in at your accommodation and enjoy dinner and a relaxing evening."
+              ]
+            },
+            {
+              "day": 5,
+              "title": "Dades Valley – Todra Gorge – Tinjdad – Erfoud – Merzouga",
+              "stats": {
+                "driving_distance": "Approximately 220–250 km",
+                "driving_time": "Approximately 4–5 hours, excluding visits and stops"
+              },
+              "accommodation": "Riad Madu or similar (dinner and breakfast included)",
+              "body": [
+                "After breakfast, depart towards the Sahara Desert.",
+                "Your first major stop will be the spectacular Todra Gorge, famous for its impressive limestone cliffs and dramatic canyon scenery. Enjoy some time exploring this remarkable natural attraction and taking photographs.",
+                "Continue your journey through Tinjdad and Erfoud, passing traditional villages, beautiful palm groves and fascinating desert landscapes.",
+                "In the afternoon, arrive in Merzouga, situated at the edge of the magnificent Erg Chebbi sand dunes.",
+                "Check in at Riad Madu or similar accommodation and enjoy the peaceful atmosphere of the desert region."
+              ]
+            },
+            {
+              "day": 6,
+              "title": "Merzouga desert discovery and camel trek to the luxury desert camp",
+              "stats": {
+                "driving_distance": "Approximately 30–50 km locally, depending on visits",
+                "camel_ride": "Approximately 4–6 km"
+              },
+              "accommodation": "Madu Luxury Desert Camp or similar (dinner and breakfast included)",
+              "body": [
+                "After breakfast, enjoy a fascinating discovery tour of the Merzouga desert region.",
+                "Visit the Hassi Labied Oasis and explore the traditional village of Khamlia, where you will discover the fascinating Gnaoua music and cultural traditions of the local community.",
+                "Enjoy a delicious traditional Berber desert pizza for lunch before returning to Merzouga.",
+                "Around 4:00 PM, begin your unforgettable camel trek across the golden sand dunes of Erg Chebbi. Experience the breathtaking beauty of the Sahara as the sun sets over the dunes, creating wonderful opportunities for photographs.",
+                "Upon arrival at your desert camp, settle into your comfortable luxury tent and enjoy a traditional Moroccan dinner, followed by Berber music around the campfire beneath the spectacular starry sky."
+              ]
+            },
+            {
+              "day": 7,
+              "title": "Merzouga – Alnif – Nkob – Agdz – Draa Valley – Tameddakht",
+              "stats": {
+                "driving_distance": "Approximately 390–410 km",
+                "driving_time": "Approximately 6–7 hours, excluding stops",
+                "camel_ride": "Approximately 4–6 km"
+              },
+              "accommodation": "Riad Tameddakht or similar (dinner and breakfast included)",
+              "body": [
+                "Wake up early to admire the beautiful sunrise over the Sahara dunes, one of the most memorable moments of your Moroccan adventure.",
+                "After breakfast, enjoy a camel ride back across the sand dunes to meet your private driver.",
+                "Begin your journey towards Tameddakht, travelling through the fascinating landscapes of southern Morocco.",
+                "Drive through the beautiful Draa Valley, famous for its extensive palm groves, traditional villages and ancient kasbahs. Continue through Alnif, Nkob and Agdz before reaching the Ouarzazate region and Tameddakht village.",
+                "Upon arrival, check in at your accommodation and enjoy a traditional Moroccan dinner."
+              ]
+            },
+            {
+              "day": 8,
+              "title": "Ait Ben Haddou – Marrakech",
+              "stats": {
+                "driving_distance": "Approximately 180–190 km",
+                "driving_time": "Approximately 3.5–4.5 hours, excluding stops"
+              },
+              "accommodation": "Hotel or riad in Marrakech, if included in the accommodation arrangements",
+              "body": [
+                "After breakfast, visit the famous Ait Ben Haddou Kasbah, a UNESCO World Heritage Site and one of Morocco's most impressive examples of traditional southern Moroccan architecture.",
+                "Explore its ancient earthen buildings, narrow streets and beautiful viewpoints while discovering the fascinating history of this remarkable fortified village.",
+                "After your visit, continue your journey back to Marrakech, crossing the spectacular High Atlas Mountains via the Tizi n'Tichka Pass.",
+                "Upon arrival in Marrakech, your driver will drop you off at your accommodation, marking the end of your unforgettable Atlas Mountains and Sahara Desert adventure."
+              ]
+            },
+            {
+              "day": 9,
+              "title": "Departure from Marrakech",
+              "stats": {},
+              "accommodation": "",
+              "body": [
+                "After breakfast, enjoy some free time in Marrakech, depending on your flight schedule.",
+                "At the appropriate time, your private driver will transfer you to Marrakech Menara Airport for your departure flight.",
+                "We hope you leave Morocco with wonderful memories of its spectacular mountains, authentic Berber villages, beautiful desert landscapes and warm hospitality."
+              ]
+            }
+          ],
+          "included": [
+            "All airport transfers in Marrakech",
+            "Private, air-conditioned vehicle with a professional driver throughout the tour",
+            "Accommodation in carefully selected hotels, traditional riads, Berber guesthouses and a luxury desert camp, according to the itinerary",
+            "Daily breakfast",
+            "Dinners during the Atlas Mountains trek and desert journey, as specified in the itinerary",
+            "Professional local mountain guide throughout the Atlas Mountains trek",
+            "Muleteer and mules to transport luggage during the trekking days",
+            "Picnic lunches during the Atlas Mountains trekking days",
+            "Sahara Desert discovery tour around Merzouga",
+            "Traditional Berber pizza lunch in the Merzouga region",
+            "Camel trekking experience in the Sahara Desert",
+            "One night in a luxury desert camp in Merzouga",
+            "All visits and activities mentioned in the itinerary"
+          ],
+          "excluded": [
+            "Lunches and dinners in Marrakech",
+            "Lunches during the desert journey, except the traditional Berber pizza lunch in Merzouga",
+            "Drinks and personal expenses",
+            "Travel insurance",
+            "Tips and gratuities",
+            "Any services not specifically mentioned in the itinerary or inclusions"
+          ],
+          "packing": [],
+          "upgrades": [
+            "Based on two people travelling together on a private tour; the price is on request.",
+            "The itinerary can be customised according to your preferences, interests and travel dates."
+          ]
+        }
+      }
+    }
+  ]
+}

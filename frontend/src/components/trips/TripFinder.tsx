@@ -6,22 +6,13 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Pager } from "@/components/ui/Pager";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import { TYPES, type TripType } from "@/lib/finder-types";
 import type { TourCard as Tour } from "@/lib/types";
 
 export type FinderTour = Pick<Tour, "id" | "title" | "summary" | "category" | "duration_days" | "difficulty" | "from_price" | "is_featured">;
 
 type TripsDict = Dictionary["trips"];
 type ToursDict = Dictionary["tours"];
-
-/** Trip types, in menu order: the trek sub-categories, then the other hubs. */
-const TYPES = [
-  { key: "toubkal", category: "treks.toubkal" },
-  { key: "atlas", category: "treks.atlas-valleys-villages" },
-  { key: "regional", category: "treks.regional-treks" },
-  { key: "sahara", category: "sahara-desert-tours" },
-  { key: "cities", category: "morocco-tours" },
-  { key: "dayTrips", category: "day-trips-from-marrakech" },
-] as const;
 
 const DURATIONS = [
   { key: "1", test: (d: number) => d === 1 },
@@ -40,7 +31,7 @@ const PRICES = [
 
 const DIFFICULTIES = ["easy", "moderate", "difficult"] as const;
 const SORTS = ["recommended", "priceAsc", "priceDesc", "durationAsc", "durationDesc"] as const;
-type Sort = (typeof SORTS)[number];
+export type Sort = (typeof SORTS)[number];
 
 type Group = "type" | "duration" | "price" | "difficulty";
 type Filters = Record<Group, string[]>;
@@ -81,6 +72,8 @@ export function TripFinder({
   hubTitles,
   tours,
   cards,
+  types = TYPES,
+  defaultSort = "recommended",
 }: {
   lang: Locale;
   dict: TripsDict;
@@ -88,6 +81,10 @@ export function TripFinder({
   hubTitles: Record<string, string>;
   tours: FinderTour[];
   cards: Record<number, ReactNode>;
+  /** Trip types offered in the "type" filter (the group is hidden when there is only one). */
+  types?: readonly TripType[];
+  /** Order used until the visitor picks another one (the trek pages start with the shortest trips). */
+  defaultSort?: Sort;
 }) {
   const params = useSearchParams();
   const pathname = usePathname();
@@ -95,22 +92,23 @@ export function TripFinder({
   const [query, setQuery] = useState(() => params.get("q") ?? "");
   const [sort, setSort] = useState<Sort>(() => {
     const s = params.get("sort");
-    return (SORTS as readonly string[]).includes(s ?? "") ? (s as Sort) : "recommended";
+    return (SORTS as readonly string[]).includes(s ?? "") ? (s as Sort) : defaultSort;
   });
   const [sheetOpen, setSheetOpen] = useState(false);
   const [page, setPage] = useState(() => Math.max(1, Number(params.get("page")) || 1));
   const listTop = useRef<HTMLElement>(null);
+  const groups = useMemo(() => (types.length > 1 ? GROUPS : GROUPS.filter((g) => g !== "type")), [types]);
 
   // keep the URL in step with the filters (replaceState: no new history entry per click)
   useEffect(() => {
     const next = new URLSearchParams();
     if (query.trim()) next.set("q", query.trim());
-    for (const g of GROUPS) if (filters[g].length) next.set(g, filters[g].join(","));
-    if (sort !== "recommended") next.set("sort", sort);
+    for (const g of groups) if (filters[g].length) next.set(g, filters[g].join(","));
+    if (sort !== defaultSort) next.set("sort", sort);
     if (page > 1) next.set("page", String(page));
     const qs = next.toString();
     window.history.replaceState(null, "", qs ? `${pathname}?${qs}` : pathname);
-  }, [filters, query, sort, page, pathname]);
+  }, [filters, query, sort, page, pathname, groups, defaultSort]);
 
   useEffect(() => {
     document.body.style.overflow = sheetOpen ? "hidden" : "";
@@ -129,7 +127,7 @@ export function TripFinder({
   }, [tours, query, hubTitles]);
 
   const results = useMemo(() => {
-    const list = searched.filter((t) => GROUPS.every((g) => matches(t, g, filters[g])));
+    const list = searched.filter((t) => groups.every((g) => matches(t, g, filters[g])));
     const price = (t: FinderTour, missing: number) => t.from_price ?? missing;
     const days = (t: FinderTour) => t.duration_days ?? 99;
     const sorted = [...list];
@@ -139,11 +137,11 @@ export function TripFinder({
     if (sort === "durationDesc") sorted.sort((a, b) => days(b) - days(a));
     if (sort === "recommended") sorted.sort((a, b) => Number(b.is_featured) - Number(a.is_featured));
     return sorted;
-  }, [searched, filters, sort]);
+  }, [searched, filters, sort, groups]);
 
   /** How many trips an option would show, given the search and the other groups' filters. */
   const countFor = (group: Group, value: string) =>
-    searched.filter((t) => GROUPS.every((g) => (g === group ? matches(t, g, [value]) : matches(t, g, filters[g])))).length;
+    searched.filter((t) => groups.every((g) => (g === group ? matches(t, g, [value]) : matches(t, g, filters[g])))).length;
 
   // any change to the filters, search or order starts again from the first page
   const toggle = (group: Group, value: string) => {
@@ -157,7 +155,7 @@ export function TripFinder({
     listTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const active = GROUPS.reduce((n, g) => n + filters[g].length, 0);
+  const active = groups.reduce((n, g) => n + filters[g].length, 0);
   const clearAll = () => {
     setFilters({ type: [], duration: [], price: [], difficulty: [] });
     setQuery("");
@@ -166,7 +164,7 @@ export function TripFinder({
   const countLabel = (n: number) => (n === 1 ? dict.result : dict.results.replace("{count}", String(n)));
 
   const options: Record<Group, { key: string; label: string }[]> = {
-    type: TYPES.map((t) => ({ key: t.key, label: toursDict.tabs[t.key] })),
+    type: types.map((t) => ({ key: t.key, label: toursDict.tabs[t.key] })),
     duration: DURATIONS.map((d) => ({ key: d.key, label: dict.durations[d.key] })),
     price: PRICES.map((p) => ({ key: p.key, label: dict.prices[p.key] })),
     difficulty: DIFFICULTIES.map((d) => ({ key: d, label: toursDict.difficulty[d] })),
@@ -174,7 +172,7 @@ export function TripFinder({
 
   const panel = (
     <div className="space-y-8">
-      {GROUPS.map((group) => (
+      {groups.map((group) => (
         <fieldset key={group}>
           <legend className="mono text-gold">{dict[group]}</legend>
           <div className="mt-3 flex flex-wrap gap-2">

@@ -16,12 +16,11 @@
 # day trip, Essaouira day trip and Atlas mountain biking day trip: the owner's new texts. All in the four languages.
 # Then: Toubkal National Park day trip (Imlil - Sidi Chamharouch), the owner's new programme, in the four languages.
 # Then: the first blog article (best time to climb Mount Toubkal), in the four languages.
-toubkal:import-blog
-# Then: three new trips from the owner (sunrise balloon flight, Casablanca day trip, 13-day 4x4 and hiking tour), in English.
+# Run since: toubkal:import-blog, the three new trips (sunrise balloon flight, Casablanca day trip, 13-day 4x4 and hiking tour)
+# and toubkal:order-day-trips (the owner's four day trips first; do not re-add it, it would shift the other trips again).
+# Then: the 9-day Atlas Mountains trekking and Sahara Desert trip, in English (the import only creates trips that do not exist yet).
 toubkal:import-new-trips
-# Then: the owner's four day trips first on the Day trips page (Toubkal National Park, Ouirgane, Imlil, 3 Valleys).
-toubkal:order-day-trips
-# Then: refresh the website's cached data (the order command changed the database directly, so the site was not told).
+# Then: refresh the website's cached data.
 toubkal:revalidate
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
