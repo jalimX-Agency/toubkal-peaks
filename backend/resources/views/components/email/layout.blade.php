@@ -60,7 +60,7 @@
                             <p style="margin:0 0 6px; font-family:Georgia, serif; font-size:15px; color:{{ $c['navy'] }};">Toubkal Peaks Travel</p>
                             <p style="margin:0;">
                                 <a href="mailto:info@toubkal-peaks.com" style="color:{{ $c['navy'] }}; text-decoration:none;">info@toubkal-peaks.com</a>
-                                &nbsp;·&nbsp; <a href="https://wa.me/212661283086" style="color:{{ $c['navy'] }}; text-decoration:none;">WhatsApp +212 661 283 086</a>
+                                &nbsp;·&nbsp; <a href="https://wa.me/212670414623" style="color:{{ $c['navy'] }}; text-decoration:none;">WhatsApp +212 670 414 623</a>
                                 &nbsp;·&nbsp; <a href="{{ $site }}" style="color:{{ $c['navy'] }}; text-decoration:none;">{{ preg_replace('#^https?://#', '', $site) }}</a>
                             </p>
                             <p style="margin:8px 0 0; font-size:11px; color:{{ $c['muted'] }};">Dr Aremd, Commune Asni, El Haouz, 42150 Marrakech, Morocco · RC 52029 · IF 40494420 · ICE 000114960000080</p>

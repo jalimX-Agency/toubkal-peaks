@@ -7,9 +7,9 @@ export const site = {
   reservationsEmail: "reservations@toubkal-peaks.com",
   /** PayPal page for deposits; the amount differs per customer and is sent with the team's confirmation. */
   paypal: "https://paypal.me/OmarAitlmouden",
-  whatsapp: "+212661283086",
-  whatsappDisplay: "+212 661 283 086",
-  phones: ["+212 661 283 086", "+212 670 414 623"],
+  whatsapp: "+212670414623",
+  whatsappDisplay: "+212 670 414 623",
+  phones: ["+212 670 414 623"],
   /** Office address, as given by the owner. */
   address: { street: "Dr Aremd, Commune Asni", region: "El Haouz", postalCode: "42150", city: "Marrakech" },
   /** Rating shown on the Tripadvisor page, as read on 1 November 2026: update when it changes. */
