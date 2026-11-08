@@ -4,6 +4,7 @@ import { useActionState, useEffect, useState } from "react";
 import { submitBooking, type BookingState } from "@/app/actions/booking";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { track } from "@/lib/analytics";
 import { formatPrice } from "@/lib/format";
 import type { PriceTier } from "@/lib/types";
@@ -30,7 +31,14 @@ export function BookingForm({
   tiers: PriceTier[];
   currency: string;
 }) {
-  const [state, action, pending] = useActionState<BookingState, FormData>(submitBooking, { status: "idle" });
+  // a check token works once: after a refused or failed send the check is asked again
+  const [attempts, setAttempts] = useState(0);
+  const send = async (prev: BookingState, form: FormData) => {
+    const result = await submitBooking(prev, form);
+    if (result.status !== "success") setAttempts((n) => n + 1);
+    return result;
+  };
+  const [state, action, pending] = useActionState<BookingState, FormData>(send, { status: "idle" });
   const values = state.status === "invalid" || state.status === "error" ? state.values : {};
   const errors = state.status === "invalid" ? state.errors : {};
   const [adults, setAdults] = useState(Number(values.adults ?? 2) || 2);
@@ -142,7 +150,9 @@ export function BookingForm({
         {err("consent")}
       </div>
       <div className="md:col-span-2">
-        <button type="submit" disabled={pending} className="btn-gold w-full disabled:opacity-60 md:w-auto">
+        <TurnstileWidget lang={lang} resetKey={attempts} />
+        {err("turnstile")}
+        <button type="submit" disabled={pending} className="btn-gold mt-4 w-full disabled:opacity-60 md:w-auto">
           {pending ? dict.sending : dict.submit}
         </button>
       </div>

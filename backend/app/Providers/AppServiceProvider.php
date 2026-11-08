@@ -39,10 +39,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Booking form: a few requests per minute and a daily cap per IP (spam protection).
-        RateLimiter::for('bookings', fn (Request $request) => [
-            Limit::perMinute(3)->by($request->ip()),
-            Limit::perDay(20)->by($request->ip()),
-        ]);
+        // The website sends the form from its own server, so the visitor's address comes in X-Client-IP
+        // (without it, every visitor would share the server's address and the limit would mean nothing).
+        RateLimiter::for('bookings', function (Request $request) {
+            $ip = filter_var($request->header('X-Client-IP'), FILTER_VALIDATE_IP) ?: $request->ip();
+
+            return [Limit::perMinute(3)->by($ip), Limit::perDay(20)->by($ip)];
+        });
 
         // Any change to what the website shows refreshes its cache for that kind of data.
         $affects = [

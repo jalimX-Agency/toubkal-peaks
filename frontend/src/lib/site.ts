@@ -24,6 +24,8 @@ export const site = {
   country: "MA",
   /** Google Analytics 4 measurement ID (a public identifier, visible in every page that uses it). */
   analyticsId: "G-ZX1EVLC8C0",
+  /** Cloudflare Turnstile site key (public by design; the secret key lives only in the API server's .env). */
+  turnstileSiteKey: "0x4AAAAAAF4nTS03oQgVBnTU",
   riadUrl: "https://riad-berber-towers.com/",
   /** Moroccan company registration, as given by the owner. */
   registration: [

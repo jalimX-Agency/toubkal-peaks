@@ -28,6 +28,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // Cloudflare Turnstile (booking forms): off until the secret key is set in .env.
+    'turnstile' => [
+        'secret' => env('TURNSTILE_SECRET'),
+    ],
+
     // Next.js website: its cache is refreshed when content changes (App\Support\FrontendCache).
     'frontend' => [
         'url' => env('FRONTEND_URL'),

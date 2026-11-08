@@ -9,6 +9,7 @@ use App\Mail\NewBookingNotification;
 use App\Models\Booking;
 use App\Models\Tour;
 use App\Support\Locales;
+use App\Support\Turnstile;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
 
@@ -23,6 +24,20 @@ class BookingController extends Controller
         // Honeypot: pretend success without storing anything.
         if (filled($request->input('website'))) {
             return response()->json(['message' => 'Thank you.'], 202);
+        }
+
+        // Links in the message: almost only spam sends them (a customer may paste one, never several).
+        if (preg_match_all('~https?://|www\.~i', (string) $request->input('special_requests')) >= 2) {
+            return response()->json(['message' => 'Thank you.'], 202);
+        }
+
+        // "Are you a person?" (Cloudflare Turnstile): the website's forms carry the token in `turnstile`.
+        $ip = filter_var($request->header('X-Client-IP'), FILTER_VALIDATE_IP) ?: $request->ip();
+        if (! app(Turnstile::class)->passes($request->input('turnstile'), $ip)) {
+            return response()->json([
+                'message' => 'Please confirm you are not a robot and send the form again.',
+                'errors' => ['turnstile' => ['Please confirm you are not a robot and send the form again.']],
+            ], 422);
         }
 
         $data = $request->validated();

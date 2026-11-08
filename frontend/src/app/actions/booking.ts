@@ -1,7 +1,9 @@
 "use server";
 
+import { headers } from "next/headers";
 import { hasLocale } from "@/i18n/config";
 import { getTour } from "@/lib/api";
+import { ORIGIN_HEADERS } from "@/lib/origin";
 import type { TourDetail } from "@/lib/types";
 
 /** Price tiers of one trip for the reservation wizard's estimate (served from the site's cache). */
@@ -36,14 +38,24 @@ export async function submitBooking(_prev: BookingState, form: FormData): Promis
     adults: values.adults ? Number(values.adults) : null,
     children: values.children ? Number(values.children) : 0,
     start_date: values.start_date || null,
+    turnstile: String(form.get("turnstile") ?? "").slice(0, 2048),
     consent: form.get("consent") === "on",
     conditions_accepted: form.get("conditions_accepted") === "on",
   };
 
+  // the visitor's own address, for the API's per-visitor limit and Cloudflare's check (the API only sees this server)
+  const visitorIp = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim();
+
   try {
     const res = await fetch(`${API_URL}/bookings`, {
       method: "POST",
-      headers: { Accept: "application/json", "Content-Type": "application/json", "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)" },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "User-Agent": "ToubkalPeaksWeb/1.0 (+https://toubkal-peaks.com)",
+        ...ORIGIN_HEADERS,
+        ...(visitorIp ? { "X-Client-IP": visitorIp } : {}),
+      },
       body: JSON.stringify(payload),
       cache: "no-store",
     });

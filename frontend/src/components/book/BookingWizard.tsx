@@ -9,6 +9,7 @@ import { ConditionsText } from "@/components/trip/TrekkingConditionsBlock";
 import { TOUBKAL_CATEGORY, trekkingConditions } from "@/content/trekking-conditions";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { track } from "@/lib/analytics";
 import { formatDuration, formatPrice } from "@/lib/format";
 import { HUBS } from "@/lib/hubs";
@@ -117,6 +118,8 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
   const [pending, startTransition] = useTransition();
   const headingRef = useRef<HTMLHeadingElement>(null);
   const honeypot = useRef<HTMLInputElement>(null);
+  const [captcha, setCaptcha] = useState("");
+  const [captchaRound, setCaptchaRound] = useState(0);
   useEffect(() => {
     try {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
@@ -215,6 +218,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
     // only asked, and only sent, for the trips with trekking conditions; the API checks it again
     if (conditionsOk && trip?.categories.includes(TOUBKAL_CATEGORY)) form.set("conditions_accepted", "on");
     form.set("website", honeypot.current?.value ?? "");
+    form.set("turnstile", captcha);
 
     startTransition(async () => {
       const res = await submitBooking({ status: "idle" }, form);
@@ -238,9 +242,11 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
         const first = STEPS.findIndex((s) => Object.keys(res.errors).some((f) => FIELD_STEP[f] === s));
         if (first >= 0 && first !== step) goTo(first);
         setBanner(t.invalid);
+        setCaptchaRound((n) => n + 1);
         return;
       }
       setBanner(t.error);
+      setCaptchaRound((n) => n + 1);
     });
   }
 
@@ -455,6 +461,10 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
                     <FieldError id="e-conditions" message={errors.conditions} />
                   </div>
                 )}
+                <div>
+                  <TurnstileWidget lang={lang} onToken={setCaptcha} resetKey={captchaRound} />
+                  <FieldError id="e-turnstile" message={errors.turnstile} />
+                </div>
                 <ul className="grid gap-2 text-sm text-muted sm:grid-cols-3">
                   {[t.review.noPayment, t.review.reply, t.review.local].map((x) => (
                     <li key={x} className="flex items-center gap-2"><Check />{x}</li>
