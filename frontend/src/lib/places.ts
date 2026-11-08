@@ -13,7 +13,7 @@ export async function toursFor(place: Place, lang: Locale): Promise<TourCard[]> 
   const { words, categories } = place.match;
   const ids = new Set(
     english.data
-      .filter((t) => (categories?.includes(t.category.key) ?? false) || (words?.test(`${t.slug} ${t.title.toLowerCase()}`) ?? false))
+      .filter((t) => (categories ? t.categories.some((k) => categories.includes(k)) : false) || (words?.test(`${t.slug} ${t.title.toLowerCase()}`) ?? false))
       .map((t) => t.id),
   );
   return local.data.filter((t) => ids.has(t.id));

@@ -140,10 +140,17 @@ export async function updateTourSettings(id: number, _prev: ActionState, form: F
         currency: text(form, "currency"),
         is_featured: form.get("is_featured") === "on",
         sort_order: number(form, "sort_order") ?? 0,
-        category: text(form, "category"),
-        extra_categories: form.getAll("extra_categories").map(String),
       }),
     }),
+  );
+  return result;
+}
+
+/** Main category (the trip's address) and the other categories it is also listed in. */
+export async function saveTourCategories(id: number, category: string, extra: string[]): Promise<ActionState> {
+  const result = await attempt(
+    () => adminApi(`/tours/${id}`, { method: "PATCH", body: JSON.stringify({ category, extra_categories: extra }) }),
+    "Categories saved",
   );
   return result;
 }

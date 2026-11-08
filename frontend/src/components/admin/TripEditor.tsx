@@ -3,19 +3,21 @@
 import { useActionState, useEffect, useState, useTransition } from "react";
 import { saveTourContent, saveTourPrices, updateTourSettings } from "@/app/admin/actions";
 import { Field, FormMessage, Select, Submit, inputClass } from "@/components/admin/form";
+import { TripCategories } from "@/components/admin/TripCategories";
 import { TripPhotos } from "@/components/admin/TripPhotos";
 import { TranslationDot } from "@/components/admin/ui";
 import type { ActionState, AdminLocale, ItineraryDayInput, TourContent, TourDetail } from "@/lib/admin/types";
 
 const LOCALES: AdminLocale[] = ["en", "fr", "es", "de"];
 const LANGUAGE: Record<AdminLocale, string> = { en: "English", fr: "Français", es: "Español", de: "Deutsch" };
-type Tab = "settings" | "prices" | "photos" | AdminLocale;
+type Tab = "settings" | "categories" | "prices" | "photos" | AdminLocale;
 
 /** Trip editing: settings, price tiers, photos and the content of each language, one tab at a time. */
 export function TripEditor({ tour }: { tour: TourDetail }) {
   const [tab, setTab] = useState<Tab>("settings");
   const tabs: { value: Tab; label: React.ReactNode }[] = [
     { value: "settings", label: "Settings" },
+    { value: "categories", label: "Categories" },
     { value: "prices", label: "Prices" },
     { value: "photos", label: `Photos (${tour.images.length})` },
     ...LOCALES.map((l) => ({ value: l as Tab, label: <span className="flex items-center gap-1.5"><TranslationDot locale={l} status={tour.translations[l]?.translation_status ?? null} /><span className="hidden sm:inline">{LANGUAGE[l]}</span></span> })),
@@ -33,6 +35,7 @@ export function TripEditor({ tour }: { tour: TourDetail }) {
       </div>
       <div className="mt-5">
         {tab === "settings" && <Settings tour={tour} />}
+        {tab === "categories" && <TripCategories tour={tour} />}
         {tab === "prices" && <Prices tour={tour} />}
         {tab === "photos" && <TripPhotos tour={tour} />}
         {LOCALES.map((l) => tab === l && <ContentEditor key={l} tour={tour} locale={l} />)}
@@ -41,41 +44,10 @@ export function TripEditor({ tour }: { tour: TourDetail }) {
   );
 }
 
-/** Main category (it gives the trip its address) and the other categories the trip is also listed in. */
-function Categories({ tour, state }: { tour: TourDetail; state: ActionState }) {
-  const [main, setMain] = useState(tour.category ?? "");
-  const label = (k: string) => tour.category_options.find((o) => o.key === k)?.name.replace(/^— /, "") ?? k;
-  return (
-    <>
-      <Select label="Main category" name="category" value={main} onChange={(e) => setMain(e.target.value)} state={state}
-        options={tour.category_options.map((o) => ({ value: o.key, label: o.name }))} />
-      <p className="self-end pb-2 text-xs text-muted">
-        The main category sets the trip&apos;s address (changing it redirects the old address). The trip is also shown on the pages of the categories ticked below.
-      </p>
-      <fieldset className="sm:col-span-2">
-        <legend className="text-sm font-medium text-navy">Also listed in</legend>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {tour.category_options.map((o) => {
-            const isMain = o.key === main;
-            return (
-              <label key={o.key} className={`inline-flex min-h-10 items-center gap-2 rounded-full border px-3 py-1.5 text-sm ${isMain ? "cursor-not-allowed border-line bg-sand text-muted" : "cursor-pointer border-line bg-white text-navy"}`}>
-                <input type="checkbox" name="extra_categories" value={o.key} disabled={isMain} defaultChecked={!isMain && tour.extra_categories.includes(o.key)} className="h-4 w-4 accent-[var(--navy)]" />
-                {label(o.key)}
-                {isMain && <span className="mono text-xs">main</span>}
-              </label>
-            );
-          })}
-        </div>
-      </fieldset>
-    </>
-  );
-}
-
 function Settings({ tour }: { tour: TourDetail }) {
   const [state, action] = useActionState<ActionState, FormData>(updateTourSettings.bind(null, tour.id), { status: "idle" });
   return (
     <form action={action} className="grid max-w-3xl gap-4 rounded-lg border border-line bg-white p-4 sm:grid-cols-2 md:p-6">
-      <Categories tour={tour} state={state} />
       <Select label="Visibility" name="status" defaultValue={tour.status} state={state}
         options={[{ value: "published", label: "Online" }, { value: "draft", label: "Draft (hidden)" }, { value: "archived", label: "Archived" }]} />
       <Select label="Difficulty" name="difficulty" defaultValue={tour.difficulty ?? ""} state={state}

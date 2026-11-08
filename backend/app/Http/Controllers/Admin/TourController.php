@@ -213,9 +213,11 @@ class TourController extends Controller
             'id' => $tour->id,
             'category' => $tour->category?->key,
             'extra_categories' => $tour->extraCategories->pluck('key')->values()->all(),
-            'category_options' => Category::with('translations')->orderBy('sort_order')->get()->map(fn (Category $c) => [
+            'category_options' => Category::with(['translations', 'parent'])->orderBy('sort_order')->get()->map(fn (Category $c) => [
                 'key' => $c->key,
-                'name' => ($c->parent_id ? '— ' : '').($c->translate('en')?->name ?? $c->key),
+                'name' => $c->translate('en')?->name ?? $c->key,
+                'parent' => $c->parent?->key,
+                'path' => '/'.$c->path('en'),
             ])->all(),
             'status' => $tour->status->value,
             'duration_days' => $tour->duration_days,

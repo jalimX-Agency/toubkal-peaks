@@ -110,7 +110,8 @@ export interface TourDetail {
   id: number;
   category: string | null;
   extra_categories: string[];
-  category_options: { key: string; name: string }[];
+  /** every category: name, parent key (null for a top-level one) and its page address */
+  category_options: { key: string; name: string; parent: string | null; path: string }[];
   status: TourStatus;
   duration_days: number | null;
   duration_nights: number | null;
