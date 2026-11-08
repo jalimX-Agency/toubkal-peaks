@@ -3,6 +3,7 @@ import { Cinzel, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { Analytics } from "@/components/Analytics";
+import { SiteTracker } from "@/components/SiteTracker";
 import { CopyGuard } from "@/components/CopyGuard";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader, type MenuEntry } from "@/components/SiteHeader";
@@ -69,6 +70,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <SiteFooter lang={lang} dict={dict} />
         <WhatsAppButton dict={dict.whatsapp} />
         <Analytics lang={lang} dict={dict.cookies} />
+        <SiteTracker />
         {settings.copy_protection && <CopyGuard />}
       </body>
     </html>

@@ -4,6 +4,7 @@ import { useActionState, useEffect, useState } from "react";
 import { submitBooking, type BookingState } from "@/app/actions/booking";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import { ChannelField } from "@/components/ChannelField";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { track } from "@/lib/analytics";
 import { formatPrice } from "@/lib/format";
@@ -76,6 +77,7 @@ export function BookingForm({
     <form action={action} className="relative grid gap-5 rounded-sm border border-line bg-white p-6 md:grid-cols-2 md:p-8" noValidate>
       {tourId && <input type="hidden" name="tour_id" value={tourId} />}
       <input type="hidden" name="locale" value={lang} />
+      <ChannelField />
       {/* honeypot: hidden from people, bots fill it and get a silent fake success */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
         <label>

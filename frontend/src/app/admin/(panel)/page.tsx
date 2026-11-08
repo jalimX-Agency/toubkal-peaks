@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Ago } from "@/components/admin/Ago";
+import { EngagementCard } from "@/components/admin/EngagementCard";
 import { Card, Empty, PageHeader, StatusBadge, day, money } from "@/components/admin/ui";
 import { adminApi, currentUser } from "@/lib/admin/api";
-import type { DashboardData, DashboardRow } from "@/lib/admin/types";
+import type { DashboardData, DashboardRow, EngagementData } from "@/lib/admin/types";
 
 // Admin pages read the API for the signed-in member on every visit: no instant (prerendered) navigation.
 export const instant = false;
 
 export const metadata: Metadata = { title: "Dashboard" };
 
-export default async function DashboardPage() {
-  const [user, data] = await Promise.all([currentUser(), adminApi<DashboardData>("/dashboard")]);
+export default async function DashboardPage({ searchParams }: PageProps<"/admin">) {
+  const requested = Number((await searchParams).days);
+  const days = [7, 30, 90].includes(requested) ? requested : 30;
+  const [user, data, engagement] = await Promise.all([
+    currentUser(),
+    adminApi<DashboardData>("/dashboard"),
+    // the activity block is a bonus: if it cannot be read the dashboard still opens
+    adminApi<{ data: EngagementData }>(`/engagement?days=${days}`).then((r) => r.data).catch(() => null),
+  ]);
   const s = data.stats;
   const hour = Number(new Intl.DateTimeFormat("en-GB", { hour: "numeric", hour12: false, timeZone: "Africa/Casablanca" }).format(new Date()));
   const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
@@ -38,6 +46,8 @@ export default async function DashboardPage() {
             </Link>
           ))}
         </div>
+
+        {engagement && <EngagementCard data={engagement} />}
 
         {todo.length > 0 && (
           <Card title="To do">

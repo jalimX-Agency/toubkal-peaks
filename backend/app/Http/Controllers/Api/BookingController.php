@@ -65,6 +65,7 @@ class BookingController extends Controller
             'currency' => $tour?->currency ?? 'EUR',
             'special_requests' => $data['special_requests'] ?? null,
             'source' => 'website',
+            'channel' => $data['channel'] ?? null,
             'consent_at' => now(),
             // proof of acceptance, only for the trips whose conditions the customer had to accept
             'conditions_accepted_at' => $tour?->requiresTrekkingConditions() ? now() : null,

@@ -10,6 +10,7 @@ import { TOUBKAL_CATEGORY, trekkingConditions } from "@/content/trekking-conditi
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
+import { currentChannel } from "@/lib/channel";
 import { track } from "@/lib/analytics";
 import { formatDuration, formatPrice } from "@/lib/format";
 import { HUBS } from "@/lib/hubs";
@@ -219,6 +220,7 @@ export function BookingWizard({ lang, tours, t, tabs, toursDict, whatsappMessage
     if (conditionsOk && trip?.categories.includes(TOUBKAL_CATEGORY)) form.set("conditions_accepted", "on");
     form.set("website", honeypot.current?.value ?? "");
     form.set("turnstile", captcha);
+    form.set("channel", currentChannel());
 
     startTransition(async () => {
       const res = await submitBooking({ status: "idle" }, form);

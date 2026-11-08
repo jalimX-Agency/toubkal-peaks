@@ -47,6 +47,12 @@ class AppServiceProvider extends ServiceProvider
             return [Limit::perMinute(3)->by($ip), Limit::perDay(20)->by($ip)];
         });
 
+        RateLimiter::for('events', function (Request $request) {
+            $ip = filter_var($request->header('X-Client-IP'), FILTER_VALIDATE_IP) ?: $request->ip();
+
+            return Limit::perMinute(40)->by($ip);
+        });
+
         // Any change to what the website shows refreshes its cache for that kind of data.
         $affects = [
             Tour::class => ['tours'],

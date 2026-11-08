@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\SiteEvent;
 use App\Models\Tour;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -30,6 +31,7 @@ class StoreBookingRequest extends FormRequest
             'adults' => ['required', 'integer', 'min:1', 'max:30'],
             'children' => ['nullable', 'integer', 'min:0', 'max:30'],
             'special_requests' => ['nullable', 'string', 'max:2000'],
+            'channel' => ['nullable', Rule::in(SiteEvent::CHANNELS)],
             'consent' => ['accepted'],
             'conditions_accepted' => ['sometimes', 'boolean'],
         ];

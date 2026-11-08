@@ -162,6 +162,18 @@ export interface AdminReview {
   created_at: string | null;
 }
 
+export interface EngagementData {
+  days: number;
+  totals: { visits: number; whatsapp: number; phone: number; email: number; requests: number };
+  daily: { date: string; visits: number; whatsapp: number; phone: number; email: number; requests: number }[];
+  channels: { channel: string; visits: number; whatsapp: number; phone: number; email: number; requests: number }[];
+  pages: { page: string; whatsapp: number; phone: number; email: number; total: number }[];
+  trips: { slug: string; contacts: number }[];
+  devices: { device: string; visits: number }[];
+  countries: { country: string; visits: number; contacts: number }[];
+  tracking_since: string | null;
+}
+
 export interface DashboardData {
   stats: {
     pending_bookings: number;

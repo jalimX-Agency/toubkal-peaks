@@ -24,7 +24,7 @@ export type BookingState =
   | { status: "invalid"; errors: Record<string, string[]>; values: Record<string, string> }
   | { status: "error"; values: Record<string, string> };
 
-const FIELDS = ["tour_id", "locale", "first_name", "last_name", "email", "phone", "country", "start_date", "adults", "children", "special_requests", "website"] as const;
+const FIELDS = ["tour_id", "locale", "first_name", "last_name", "email", "phone", "country", "start_date", "adults", "children", "special_requests", "website", "channel"] as const;
 
 /**
  * Sends a booking request from the site's own server to the Laravel API, so the browser never talks to
@@ -38,6 +38,7 @@ export async function submitBooking(_prev: BookingState, form: FormData): Promis
     adults: values.adults ? Number(values.adults) : null,
     children: values.children ? Number(values.children) : 0,
     start_date: values.start_date || null,
+    channel: values.channel || null,
     turnstile: String(form.get("turnstile") ?? "").slice(0, 2048),
     consent: form.get("consent") === "on",
     conditions_accepted: form.get("conditions_accepted") === "on",

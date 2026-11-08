@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\RedirectController;
 use App\Http\Controllers\Api\PublishBlogPostController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SettingController;
+use App\Http\Controllers\Api\SiteEventController;
 use App\Http\Controllers\Api\TeamController;
 use App\Http\Controllers\Api\TourController;
 use Illuminate\Http\Request;
@@ -37,6 +38,9 @@ Route::prefix('v1')->group(function () {
     // Reservation requests from the website (rate limited, never cached).
     Route::post('/bookings', [BookingController::class, 'store'])->middleware('throttle:bookings');
 
+    // Anonymous visit and contact-click counts (rate limited per visitor).
+    Route::post('/events', [SiteEventController::class, 'store'])->middleware('throttle:events');
+
     Route::middleware('auth:sanctum')->get('/me', fn (Request $request) => $request->user());
 
     // Admin API, called only by the website's server with the team member's token (never cached).
@@ -49,6 +53,7 @@ Route::prefix('v1')->group(function () {
             Route::put('/auth/password', [Admin\AuthController::class, 'password']);
 
             Route::get('/dashboard', Admin\DashboardController::class);
+            Route::get('/engagement', Admin\EngagementController::class);
 
             Route::get('/bookings', [Admin\BookingController::class, 'index']);
             Route::post('/bookings/bulk', [Admin\BookingController::class, 'bulk']);
