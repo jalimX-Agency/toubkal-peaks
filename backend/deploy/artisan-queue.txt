@@ -2,7 +2,7 @@
 # The cron job runs every line below ONCE after a successful migration, writes the result to
 # storage/logs/deploy.log ("queue [ok|failed|rejected] ...") and removes the line from this file.
 # This file is deployed with the code and is only re-uploaded when its content changes in Git.
-# Allowed: toubkal:order-day-trips, toubkal:import-new-trips, toubkal:import-blog, toubkal:import-reviews, toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish, toubkal:revalidate, toubkal:create-admin,
+# Allowed: toubkal:mail-test, toubkal:order-day-trips, toubkal:import-new-trips, toubkal:import-blog, toubkal:import-reviews, toubkal:import, toubkal:import-translations, toubkal:apply-corrections, toubkal:publish, toubkal:revalidate, toubkal:create-admin,
 # db:seed, cache:clear (plain --options only).
 # Anything else is rejected. Lines starting with # are comments.
 #
@@ -22,6 +22,8 @@
 toubkal:import-new-trips
 # Then: refresh the website's cached data.
 toubkal:revalidate
+# Then: a test email to the team inboxes; the result (mailer, sender, recipients, exact error) is written to storage/logs/deploy.log.
+toubkal:mail-test
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es

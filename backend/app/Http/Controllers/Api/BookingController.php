@@ -10,7 +10,9 @@ use App\Models\Booking;
 use App\Models\Tour;
 use App\Support\Locales;
 use App\Support\Turnstile;
+use Closure;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Throwable;
 
 class BookingController extends Controller
@@ -85,14 +87,32 @@ class BookingController extends Controller
         ], 201);
     }
 
-    /** A mail problem must never lose a booking: it is already saved, so only log the failure. */
+    /**
+     * A mail problem must never lose a booking: it is already saved. The team's alert goes first and on its own,
+     * so a wrong customer address cannot keep the team from knowing; a failure is logged and also written in the
+     * booking's history, where the team can see it in the admin.
+     */
     private function notify(Booking $booking): void
     {
+        $this->send($booking, 'The alert email to the team', fn () => Mail::to(static::teamRecipients())->send(new NewBookingNotification($booking)));
+        $this->send($booking, 'The confirmation email to the customer', fn () => Mail::to($booking->email)->send(new BookingReceived($booking)));
+    }
+
+    private function send(Booking $booking, string $what, Closure $mail): void
+    {
         try {
-            Mail::to($booking->email)->send(new BookingReceived($booking));
-            Mail::to(static::teamRecipients())->send(new NewBookingNotification($booking));
+            $mail();
         } catch (Throwable $e) {
             report($e);
+            try {
+                $booking->statusLogs()->create([
+                    'from_status' => $booking->status->value,
+                    'to_status' => $booking->status->value,
+                    'note' => "{$what} could not be sent: ".Str::limit(trim($e->getMessage()), 200),
+                ]);
+            } catch (Throwable) {
+                // the booking itself is saved; nothing more to do
+            }
         }
     }
 

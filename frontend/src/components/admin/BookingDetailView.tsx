@@ -142,7 +142,7 @@ function History({ history }: { history: BookingDetail["history"] }) {
         {[...history].reverse().map((h, i) => (
           <li key={i} className="relative text-sm">
             <span className="absolute -left-[1.4rem] top-1 h-2.5 w-2.5 rounded-full bg-gold" aria-hidden="true" />
-            <p className="font-medium capitalize text-navy">{h.from ? `${h.from} → ${h.to}` : h.to}</p>
+            <p className="font-medium capitalize text-navy">{h.from && h.from !== h.to ? `${h.from} → ${h.to}` : h.to}</p>
             {h.note && <p className="text-ink">{h.note}</p>}
             <p className="mono text-[0.7rem] text-muted">{day(h.at)}{h.user ? ` · ${h.user}` : ""}</p>
           </li>
