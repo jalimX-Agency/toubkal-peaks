@@ -18,7 +18,9 @@
 # Then: the first blog article (best time to climb Mount Toubkal), in the four languages.
 # Run since: toubkal:import-blog, the three new trips (sunrise balloon flight, Casablanca day trip, 13-day 4x4 and hiking tour)
 # and toubkal:order-day-trips (the owner's four day trips first; do not re-add it, it would shift the other trips again).
-# Then: the 9-day Atlas Mountains trekking and Sahara Desert trip, in English (the import only creates trips that do not exist yet).
+# Run since: the 9-day Atlas Mountains trekking and Sahara Desert trip.
+# Then: the 4-day Atlas Mountains trek (three valleys, Berber villages), in English, priced like "4 Days Berber Villages Trek Atlas"
+# (the import only creates trips that do not exist yet).
 toubkal:import-new-trips
 # Then: refresh the website's cached data.
 toubkal:revalidate
