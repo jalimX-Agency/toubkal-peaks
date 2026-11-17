@@ -174,7 +174,395 @@
               ]
             }
           ],
-          "upgrades": []
+          "upgrades": [],
+          "translation_status": "source"
+        },
+        "fr": {
+          "slug": "4-jours-trek-atlas-trois-vallees-villages-berberes",
+          "title": "4 jours de trek dans l'Atlas – Trois vallées et villages berbères traditionnels",
+          "seo_title": "Trek Atlas 4 jours : trois vallées et villages berbères",
+          "seo_description": "Trek guidé de 4 jours dans le Haut Atlas par les vallées d'Azzaden, d'Imlil et d'Imnane : villages berbères, noyeraies, col à 2 270 m et trois nuits en maison d'hôtes.",
+          "summary": "Découvrez la beauté naturelle et la culture authentique du Haut Atlas marocain lors de ce trek de quatre jours à travers trois vallées spectaculaires : Azzaden, Imlil et Imnane. Ce trek pittoresque vous éloigne des circuits touristiques fréquentés et vous plonge au cœur de la vie berbère de montagne. En suivant d'anciens chemins muletiers et des sentiers de montagne, vous découvrirez des villages pittoresques, des terrasses agricoles, des noyeraies, des forêts de genévriers et des paysages à couper le souffle. Tout au long du voyage, vous profiterez de l'accueil chaleureux des communautés berbères locales, de repas marocains traditionnels fraîchement préparés et de trois nuits dans des maisons d'hôtes de montagne. Accompagné d'un guide de montagne local expérimenté, avec un mulet et un muletier qui transportent vos bagages, ce trek réunit aventure, découverte culturelle et paysages de montagne spectaculaires.",
+          "highlights": [
+            "Trois vallées en quatre jours : Azzaden, Imlil et Imnane.",
+            "D'anciens chemins muletiers et des sentiers de montagne, loin des circuits touristiques fréquentés.",
+            "Villages berbères pittoresques, terrasses cultivées, noyeraies et forêts de genévriers.",
+            "Le village d'Armed, l'un des plus grands et des plus pittoresques de la vallée d'Imlil, à environ 1 900 m.",
+            "Le col du Tizi n'Tamatert à environ 2 270 m, avec des vues panoramiques sur les vallées d'Imlil et d'Imnane.",
+            "Trois nuits dans des maisons d'hôtes berbères traditionnelles, avec des repas marocains maison.",
+            "Guide de montagne local, muletier et mulet pour porter vos bagages."
+          ],
+          "facts": {
+            "duration": "4 jours / 3 nuits",
+            "type": "Trek guidé : trois vallées et villages berbères",
+            "departs_from": "Marrakech",
+            "ends_in": "Marrakech",
+            "trip_level": "Modéré à soutenu",
+            "maximum_altitude": "Environ 2 270 m",
+            "guides_speaking": "Anglais"
+          },
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Marrakech – Aguersioual – Tizi Oussem",
+              "stats": {
+                "driving_time": "Environ 1 h 30",
+                "walking_distance": "Environ 12–14 km",
+                "hiking_duration": "6 à 7 heures",
+                "meals": "Déjeuner et dîner"
+              },
+              "accommodation": "Maison d'hôtes berbère traditionnelle à Tizi Oussem",
+              "body": [
+                "Après le petit-déjeuner, nous quittons Marrakech en véhicule privé et roulons environ 1 h 30 vers le village d'Aguersioual, situé au pied du Haut Atlas.",
+                "À notre arrivée, nous retrouvons notre guide de montagne local expérimenté et le muletier, qui nous accompagneront pendant tout le trek. Une fois les bagages et l'équipement préparés, nous commençons l'aventure sur les sentiers de montagne traditionnels.",
+                "La marche du jour traverse de beaux paysages de montagne, au milieu de petits hameaux berbères, de terrasses cultivées et de champs traditionnels. En chemin, nous profitons de magnifiques vues sur les montagnes alentour et pouvons rencontrer les villageois et découvrir leur mode de vie.",
+                "Nous rejoignons peu à peu la spectaculaire vallée d'Azzaden, réputée pour ses villages pittoresques, ses terrasses verdoyantes et ses beaux noyers.",
+                "Notre étape est Tizi Oussem, charmant village berbère niché sous d'impressionnants versants. À l'arrivée, nous nous installons dans notre maison d'hôtes de montagne et savourons un délicieux dîner marocain préparé maison."
+              ]
+            },
+            {
+              "day": 2,
+              "title": "Tizi Oussem – village d'Armed",
+              "stats": {
+                "walking_distance": "Environ 10–13 km",
+                "hiking_duration": "5 à 6 heures",
+                "meals": "Petit-déjeuner, déjeuner et dîner"
+              },
+              "accommodation": "Maison d'hôtes berbère traditionnelle au village d'Armed",
+              "body": [
+                "Après le petit-déjeuner, nous quittons Tizi Oussem et poursuivons dans la belle vallée d'Azzaden en direction de la vallée d'Imlil.",
+                "Le trek d'aujourd'hui est une excellente occasion de ressentir l'atmosphère authentique du Haut Atlas. Nous suivons des chemins traditionnels à travers des villages de montagne, des terrasses cultivées et des noyeraies, et découvrons le quotidien des communautés berbères.",
+                "Au fil de la marche, le paysage change sans cesse : versants impressionnants, vallées profondes et vues spectaculaires sur les sommets voisins.",
+                "Nous atteignons finalement le village d'Armed, l'un des plus grands et des plus pittoresques de la vallée d'Imlil, à environ 1 900 mètres d'altitude.",
+                "Bâti à flanc de montagne, Armed se distingue par ses maisons traditionnelles en pierre et en terre, ses ruelles étroites et ses belles vues sur les montagnes du Haut Atlas.",
+                "À l'arrivée, nous nous installons dans notre maison d'hôtes, où nous pouvons nous détendre et profiter de l'accueil chaleureux de nos hôtes. Dîner et nuit à Armed."
+              ]
+            },
+            {
+              "day": 3,
+              "title": "Armed – Tidli – Tizi n'Tamatert – Tamguist",
+              "stats": {
+                "walking_distance": "Environ 12–15 km",
+                "hiking_duration": "6 à 7 heures",
+                "elevation": "Tizi n'Tamatert, environ 2 270 m",
+                "meals": "Petit-déjeuner, déjeuner et dîner"
+              },
+              "accommodation": "Maison d'hôtes berbère traditionnelle au village de Tamguist",
+              "body": [
+                "Après le petit-déjeuner, nous quittons Armed et commençons notre trek vers Tidli, par de beaux sentiers de montagne à travers des hameaux berbères traditionnels et des paysages agricoles cultivés.",
+                "En chemin, nous profitons de superbes vues sur la vallée d'Imlil et les montagnes alentour, avec des occasions de nous arrêter pour des photos et de découvrir la vie locale en montagne.",
+                "Nous poursuivons la montée vers le Tizi n'Tamatert, un beau col situé à environ 2 270 mètres d'altitude.",
+                "Atteindre le col est l'un des temps forts de notre voyage. De là, nous jouissons de vues panoramiques à couper le souffle sur les vallées d'Imlil et d'Imnane, avec les imposants sommets du Haut Atlas qui s'étendent à l'horizon.",
+                "Après avoir pris le temps d'admirer ce paysage spectaculaire, nous amorçons la descente vers la paisible vallée d'Imnane. Le paysage change peu à peu au fil des villages traditionnels, des noyeraies et des terrasses agricoles verdoyantes.",
+                "Nous continuons vers le village de Tamguist, où nos hôtes nous accueillent dans une maison d'hôtes berbère traditionnelle. Après une belle journée en montagne, nous savourons un dîner marocain fraîchement préparé et une soirée reposante."
+              ]
+            },
+            {
+              "day": 4,
+              "title": "Tamguist – Ikis – Tizi n'Aguersioual – Aguersioual – Marrakech",
+              "stats": {
+                "walking_distance": "Environ 9–12 km",
+                "hiking_duration": "4 à 5 heures",
+                "elevation": "Tizi n'Aguersioual, environ 2 000–2 100 m",
+                "meals": "Petit-déjeuner et déjeuner"
+              },
+              "accommodation": "",
+              "body": [
+                "Après le petit-déjeuner, nous entamons notre dernière journée de trek dans la belle vallée d'Imnane.",
+                "Nous quittons Tamguist et suivons des sentiers de montagne traditionnels vers le village d'Ikis, à travers de pittoresques hameaux berbères, des terrasses cultivées et de belles noyeraies. En chemin, nous découvrons l'ambiance paisible de la vie rurale en montagne et admirons le paysage des vallées environnantes.",
+                "Depuis Ikis, nous montons peu à peu vers le Tizi n'Aguersioual, un col pittoresque qui offre de belles vues sur la vallée d'Imnane et les montagnes du Haut Atlas.",
+                "Une fois au col, nous entamons la dernière descente vers le village d'Aguersioual, où s'achève notre trek de quatre jours.",
+                "À l'arrivée, nous retrouvons notre chauffeur et rentrons à Marrakech en véhicule privé, où nous arrivons dans l'après-midi. Fin du trek et transfert vers Marrakech."
+              ]
+            }
+          ],
+          "included": [
+            "Transferts privés entre Marrakech et Aguersioual",
+            "Guide de montagne local expérimenté, parlant anglais",
+            "Mulet et muletier pour transporter les bagages pendant le trek",
+            "Trois nuits d'hébergement en maisons d'hôtes berbères traditionnelles",
+            "Tous les repas pendant le trek (petit-déjeuner, déjeuner et dîner)",
+            "Eau minérale pendant les jours de marche"
+          ],
+          "excluded": [
+            "Vols internationaux",
+            "Assurance voyage et assurance secours en montagne",
+            "Dépenses personnelles et boissons supplémentaires",
+            "Pourboires pour le guide de montagne et le muletier",
+            "Tout service supplémentaire non mentionné dans les inclusions"
+          ],
+          "packing": [
+            {
+              "group": "Informations importantes sur le trek",
+              "items": [
+                "Les distances et les durées de marche sont approximatives et peuvent varier selon l'itinéraire final, le rythme de marche et la météo.",
+                "Une bonne condition physique et une certaine expérience des longues marches sont recommandées.",
+                "De bonnes chaussures de randonnée, des vêtements adaptés, une protection solaire et un petit sac à dos sont indispensables.",
+                "Vos bagages principaux seront transportés par mulet. Merci d'apporter un sac de voyage souple plutôt qu'une valise rigide.",
+                "L'itinéraire peut être adapté par votre guide de montagne selon la météo et l'état des sentiers."
+              ]
+            }
+          ],
+          "upgrades": [],
+          "translation_status": "machine"
+        },
+        "es": {
+          "slug": "4-dias-trekking-atlas-tres-valles-pueblos-bereberes",
+          "title": "4 días de trekking en el Atlas – Tres valles y pueblos bereberes tradicionales",
+          "seo_title": "Trekking Atlas 4 días: tres valles y pueblos bereberes",
+          "seo_description": "Trekking guiado de 4 días en el Alto Atlas por los valles de Azzaden, Imlil e Imnane: pueblos bereberes, nogales, un paso a 2.270 m y tres noches en casas de huéspedes.",
+          "summary": "Descubre la belleza natural y la cultura auténtica del Alto Atlas marroquí en este trekking de cuatro días por tres valles espectaculares: Azzaden, Imlil e Imnane. Este trekking panorámico te aleja de las rutas turísticas concurridas y te lleva al corazón de la vida bereber de montaña. Caminando por antiguos caminos de mulas y senderos de montaña, descubrirás pueblos pintorescos, campos agrícolas en terrazas, nogales, bosques de enebros y paisajes de montaña impresionantes. Durante todo el viaje disfrutarás de la cálida hospitalidad de las comunidades bereberes locales, de comidas marroquíes tradicionales recién preparadas y de tres noches en acogedoras casas de huéspedes de montaña. Acompañado por un experimentado guía de montaña local, con una mula y un arriero que transportan tu equipaje, este trekking combina aventura, descubrimiento cultural y paisajes de montaña espectaculares.",
+          "highlights": [
+            "Tres valles en cuatro días: Azzaden, Imlil e Imnane.",
+            "Antiguos caminos de mulas y senderos de montaña lejos de las rutas turísticas concurridas.",
+            "Pueblos bereberes pintorescos, campos en terrazas, nogales y bosques de enebros.",
+            "El pueblo de Armed, uno de los más grandes y pintorescos del valle de Imlil, a unos 1.900 m.",
+            "El paso de Tizi n'Tamatert a unos 2.270 m, con vistas panorámicas sobre los valles de Imlil e Imnane.",
+            "Tres noches en casas de huéspedes bereberes tradicionales, con comidas marroquíes caseras.",
+            "Guía de montaña local, arriero y mula que lleva tu equipaje."
+          ],
+          "facts": {
+            "duration": "4 días / 3 noches",
+            "type": "Trekking guiado: tres valles y pueblos bereberes",
+            "departs_from": "Marrakech",
+            "ends_in": "Marrakech",
+            "trip_level": "Moderado a exigente",
+            "maximum_altitude": "Aproximadamente 2.270 m",
+            "guides_speaking": "Inglés"
+          },
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Marrakech – Aguersioual – Tizi Oussem",
+              "stats": {
+                "driving_time": "Aproximadamente 1,5 horas",
+                "walking_distance": "Aproximadamente 12–14 km",
+                "hiking_duration": "6–7 horas",
+                "meals": "Almuerzo y cena"
+              },
+              "accommodation": "Casa de huéspedes bereber tradicional en Tizi Oussem",
+              "body": [
+                "Después del desayuno salimos de Marrakech en vehículo privado y conducimos aproximadamente 1,5 horas hasta el pueblo de Aguersioual, en las estribaciones del Alto Atlas.",
+                "A la llegada conocemos a nuestro experimentado guía de montaña local y al arriero, que nos acompañarán durante todo el trekking. Tras preparar el equipaje y el equipo, comenzamos la aventura por senderos de montaña tradicionales.",
+                "La caminata de hoy atraviesa hermosos paisajes de montaña, entre pequeños asentamientos bereberes, terrazas de cultivo y campos tradicionales. Por el camino disfrutamos de magníficas vistas de las montañas y tenemos ocasión de conocer a los aldeanos y descubrir su forma de vida.",
+                "Poco a poco nos acercamos al espectacular valle de Azzaden, conocido por sus pueblos pintorescos, sus terrazas verdes y sus bonitos nogales.",
+                "Nuestro destino es Tizi Oussem, un encantador pueblo bereber enclavado bajo imponentes laderas. Al llegar nos instalamos en nuestra casa de huéspedes de montaña y disfrutamos de una deliciosa cena marroquí casera."
+              ]
+            },
+            {
+              "day": 2,
+              "title": "Tizi Oussem – pueblo de Armed",
+              "stats": {
+                "walking_distance": "Aproximadamente 10–13 km",
+                "hiking_duration": "5–6 horas",
+                "meals": "Desayuno, almuerzo y cena"
+              },
+              "accommodation": "Casa de huéspedes bereber tradicional en el pueblo de Armed",
+              "body": [
+                "Después del desayuno dejamos Tizi Oussem y continuamos por el hermoso valle de Azzaden hacia el valle de Imlil.",
+                "El trekking de hoy es una excelente ocasión para vivir el ambiente auténtico del Alto Atlas. Seguimos caminos tradicionales por pueblos de montaña, terrazas de cultivo y nogales, y descubrimos la vida diaria de las comunidades bereberes.",
+                "A medida que avanzamos, el paisaje cambia continuamente y revela laderas impresionantes, valles profundos y vistas espectaculares de las cumbres cercanas.",
+                "Finalmente llegamos al pueblo de Armed, uno de los más grandes y pintorescos del valle de Imlil, a unos 1.900 metros sobre el nivel del mar.",
+                "Construido en la ladera, Armed se caracteriza por sus casas tradicionales de piedra y tierra, sus callejuelas estrechas y sus bonitas vistas hacia las montañas del Alto Atlas.",
+                "A la llegada nos alojamos en nuestra casa de huéspedes, donde podemos descansar y disfrutar de la cálida hospitalidad de nuestros anfitriones. Cena y alojamiento en Armed."
+              ]
+            },
+            {
+              "day": 3,
+              "title": "Armed – Tidli – Tizi n'Tamatert – Tamguist",
+              "stats": {
+                "walking_distance": "Aproximadamente 12–15 km",
+                "hiking_duration": "6–7 horas",
+                "elevation": "Tizi n'Tamatert, aproximadamente 2.270 m",
+                "meals": "Desayuno, almuerzo y cena"
+              },
+              "accommodation": "Casa de huéspedes bereber tradicional en el pueblo de Tamguist",
+              "body": [
+                "Después del desayuno dejamos Armed y empezamos el trekking hacia Tidli, por bonitos senderos de montaña a través de asentamientos bereberes tradicionales y paisajes agrícolas cultivados.",
+                "Por el camino disfrutamos de maravillosas vistas del valle de Imlil y de las montañas que lo rodean, con ocasiones para parar a hacer fotos y descubrir la vida local en la montaña.",
+                "Seguimos subiendo hacia el Tizi n'Tamatert, un bonito paso de montaña situado a unos 2.270 metros sobre el nivel del mar.",
+                "Llegar al paso es uno de los momentos culminantes de nuestro viaje. Desde aquí disfrutamos de impresionantes vistas panorámicas sobre los valles de Imlil e Imnane, con las imponentes cumbres del Alto Atlas extendiéndose en el horizonte.",
+                "Después de dedicar un rato a contemplar el espectacular paisaje, empezamos a bajar hacia el tranquilo valle de Imnane. El paisaje va cambiando a medida que pasamos por pueblos tradicionales, nogales y verdes terrazas agrícolas.",
+                "Continuamos hacia el pueblo de Tamguist, donde nuestros anfitriones nos reciben en una casa de huéspedes bereber tradicional. Tras una jornada gratificante en la montaña, disfrutamos de una cena marroquí recién preparada y de una velada tranquila."
+              ]
+            },
+            {
+              "day": 4,
+              "title": "Tamguist – Ikis – Tizi n'Aguersioual – Aguersioual – Marrakech",
+              "stats": {
+                "walking_distance": "Aproximadamente 9–12 km",
+                "hiking_duration": "4–5 horas",
+                "elevation": "Tizi n'Aguersioual, aproximadamente 2.000–2.100 m",
+                "meals": "Desayuno y almuerzo"
+              },
+              "accommodation": "",
+              "body": [
+                "Después del desayuno comenzamos nuestro último día de trekking por el hermoso valle de Imnane.",
+                "Dejamos Tamguist y seguimos senderos de montaña tradicionales hacia el pueblo de Ikis, pasando por pintorescos asentamientos bereberes, terrazas de cultivo y bonitos nogales. Por el camino descubrimos el ambiente tranquilo de la vida rural de montaña y disfrutamos del magnífico paisaje de los valles que nos rodean.",
+                "Desde Ikis subimos poco a poco hacia el Tizi n'Aguersioual, un pintoresco paso de montaña con maravillosas vistas sobre el valle de Imnane y las montañas del Alto Atlas.",
+                "Tras llegar al paso, comenzamos el último descenso hacia el pueblo de Aguersioual, donde termina nuestra aventura de cuatro días.",
+                "A la llegada nos encontramos con nuestro conductor y volvemos a Marrakech en vehículo privado, adonde llegamos por la tarde. Fin del trekking y traslado a Marrakech."
+              ]
+            }
+          ],
+          "included": [
+            "Traslados privados entre Marrakech y Aguersioual",
+            "Guía de montaña local con experiencia, que habla inglés",
+            "Mula y arriero para transportar el equipaje durante el trekking",
+            "Tres noches de alojamiento en casas de huéspedes bereberes tradicionales",
+            "Todas las comidas durante el trekking (desayuno, almuerzo y cena)",
+            "Agua mineral durante los días de caminata"
+          ],
+          "excluded": [
+            "Vuelos internacionales",
+            "Seguro de viaje y de rescate en montaña",
+            "Gastos personales y bebidas adicionales",
+            "Propinas para el guía de montaña y el arriero",
+            "Cualquier servicio adicional no mencionado en lo incluido"
+          ],
+          "packing": [
+            {
+              "group": "Información importante sobre el trekking",
+              "items": [
+                "Las distancias y los tiempos de marcha son aproximados y pueden variar según la ruta final, el ritmo de marcha y el tiempo.",
+                "Se recomienda una condición física razonable y algo de experiencia en caminatas largas.",
+                "Son imprescindibles unas botas de trekking cómodas, ropa adecuada, protección solar y una mochila pequeña.",
+                "Tu equipaje principal lo transportará una mula. Trae una bolsa de viaje blanda en lugar de una maleta rígida.",
+                "Tu guía de montaña puede adaptar el itinerario según el tiempo y el estado de los senderos."
+              ]
+            }
+          ],
+          "upgrades": [],
+          "translation_status": "machine"
+        },
+        "de": {
+          "slug": "4-tage-atlas-trekking-drei-taeler-berberdoerfer",
+          "title": "4 Tage Atlas-Trekking – Drei Täler und traditionelle Berberdörfer",
+          "seo_title": "Atlas-Trekking 4 Tage: drei Täler und Berberdörfer",
+          "seo_description": "Geführtes 4-Tage-Trekking im Hohen Atlas durch das Azzaden-, Imlil- und Imnane-Tal: Berberdörfer, Walnusshaine, ein Pass auf 2.270 m und drei Nächte in Gästehäusern.",
+          "summary": "Entdecken Sie die Naturschönheit und die authentische Kultur des marokkanischen Hohen Atlas auf diesem viertägigen Trekking durch drei eindrucksvolle Täler: Azzaden, Imlil und Imnane. Dieses landschaftlich reizvolle Trekking führt Sie weg von den belebten Touristenrouten mitten hinein in das traditionelle Berberleben der Berge. Auf alten Maultierpfaden und Bergwegen entdecken Sie malerische Dörfer, Terrassenfelder, Walnusshaine, Wacholderwälder und atemberaubende Berglandschaften. Während der gesamten Reise erleben Sie die herzliche Gastfreundschaft der einheimischen Berbergemeinschaften, genießen frisch zubereitete traditionelle marokkanische Mahlzeiten und übernachten dreimal in gastfreundlichen Berg-Gästehäusern. Begleitet von einem erfahrenen einheimischen Bergführer und unterstützt von einem Maultier mit Maultiertreiber, die Ihr Gepäck transportieren, verbindet dieses Trekking Abenteuer, Kulturerlebnis und spektakuläre Berglandschaften.",
+          "highlights": [
+            "Drei Täler in vier Tagen: Azzaden, Imlil und Imnane.",
+            "Alte Maultierpfade und Bergwege abseits der belebten Touristenrouten.",
+            "Malerische Berberdörfer, Terrassenfelder, Walnusshaine und Wacholderwälder.",
+            "Das Dorf Armed, eine der größten und malerischsten Siedlungen im Imlil-Tal, auf etwa 1.900 m.",
+            "Der Pass Tizi n'Tamatert auf etwa 2.270 m mit Panoramablick über das Imlil- und das Imnane-Tal.",
+            "Drei Nächte in traditionellen Berber-Gästehäusern mit hausgemachten marokkanischen Mahlzeiten.",
+            "Einheimischer Bergführer sowie Maultiertreiber und Maultier für Ihr Gepäck."
+          ],
+          "facts": {
+            "duration": "4 Tage / 3 Nächte",
+            "type": "Geführtes Trekking: drei Täler und Berberdörfer",
+            "departs_from": "Marrakesch",
+            "ends_in": "Marrakesch",
+            "trip_level": "Mittel bis anspruchsvoll",
+            "maximum_altitude": "Etwa 2.270 m",
+            "guides_speaking": "Englisch"
+          },
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Marrakesch – Aguersioual – Tizi Oussem",
+              "stats": {
+                "driving_time": "Etwa 1,5 Stunden",
+                "walking_distance": "Etwa 12–14 km",
+                "hiking_duration": "6–7 Stunden",
+                "meals": "Mittagessen und Abendessen"
+              },
+              "accommodation": "Traditionelles Berber-Gästehaus in Tizi Oussem",
+              "body": [
+                "Nach dem Frühstück verlassen wir Marrakesch im Privatfahrzeug und fahren etwa 1,5 Stunden zum Dorf Aguersioual am Fuß des Hohen Atlas.",
+                "Bei der Ankunft treffen wir unseren erfahrenen einheimischen Bergführer und den Maultiertreiber, die uns auf der gesamten Wanderung begleiten. Nachdem Gepäck und Ausrüstung bereit sind, beginnen wir unser Abenteuer auf traditionellen Bergpfaden.",
+                "Die heutige Wanderung führt durch schöne Berglandschaften, vorbei an kleinen Berbersiedlungen, Terrassenfeldern und traditionellen Äckern. Unterwegs genießen wir herrliche Ausblicke auf die umliegenden Berge und können Dorfbewohner kennenlernen und ihre traditionelle Lebensweise entdecken.",
+                "Allmählich nähern wir uns dem eindrucksvollen Azzaden-Tal, bekannt für seine malerischen Dörfer, grünen Terrassen und schönen Walnusshaine.",
+                "Unser Ziel ist Tizi Oussem, ein charmantes traditionelles Berberdorf unterhalb beeindruckender Berghänge. Nach der Ankunft beziehen wir unser Berg-Gästehaus und genießen ein köstliches hausgemachtes marokkanisches Abendessen."
+              ]
+            },
+            {
+              "day": 2,
+              "title": "Tizi Oussem – Dorf Armed",
+              "stats": {
+                "walking_distance": "Etwa 10–13 km",
+                "hiking_duration": "5–6 Stunden",
+                "meals": "Frühstück, Mittagessen und Abendessen"
+              },
+              "accommodation": "Traditionelles Berber-Gästehaus im Dorf Armed",
+              "body": [
+                "Nach dem Frühstück verlassen wir Tizi Oussem und setzen unsere Reise durch das schöne Azzaden-Tal in Richtung Imlil-Tal fort.",
+                "Die heutige Wanderung bietet eine ausgezeichnete Gelegenheit, die authentische Atmosphäre des Hohen Atlas zu erleben. Wir folgen traditionellen Wegen durch Bergdörfer, Terrassenfelder und Walnusshaine und lernen den Alltag der einheimischen Berbergemeinschaften kennen.",
+                "Mit jedem Schritt verändert sich die Landschaft: beeindruckende Berghänge, tiefe Täler und spektakuläre Ausblicke auf die umliegenden Gipfel.",
+                "Schließlich erreichen wir das Dorf Armed, eine der größten und malerischsten Siedlungen im Imlil-Tal, auf etwa 1.900 Metern Höhe.",
+                "Am Berghang erbaut, zeichnet sich Armed durch seine traditionellen Häuser aus Stein und Lehm, enge Gassen und schöne Ausblicke auf die Berge des Hohen Atlas aus.",
+                "Nach der Ankunft beziehen wir unser Gästehaus, wo wir uns entspannen und die herzliche Gastfreundschaft unserer Gastgeber genießen können. Abendessen und Übernachtung in Armed."
+              ]
+            },
+            {
+              "day": 3,
+              "title": "Armed – Tidli – Tizi n'Tamatert – Tamguist",
+              "stats": {
+                "walking_distance": "Etwa 12–15 km",
+                "hiking_duration": "6–7 Stunden",
+                "elevation": "Tizi n'Tamatert, etwa 2.270 m",
+                "meals": "Frühstück, Mittagessen und Abendessen"
+              },
+              "accommodation": "Traditionelles Berber-Gästehaus im Dorf Tamguist",
+              "body": [
+                "Nach dem Frühstück verlassen wir Armed und wandern in Richtung Tidli, auf schönen Bergpfaden durch traditionelle Berbersiedlungen und bewirtschaftete Landschaften.",
+                "Unterwegs genießen wir wunderbare Ausblicke auf das Imlil-Tal und die umliegenden Berge und haben Gelegenheit, für Fotos anzuhalten und das örtliche Leben in den Bergen kennenzulernen.",
+                "Wir steigen weiter zum Tizi n'Tamatert auf, einem schönen Bergpass auf etwa 2.270 Metern Höhe.",
+                "Das Erreichen des Passes ist einer der Höhepunkte unserer Reise. Von hier genießen wir atemberaubende Panoramablicke über das Imlil- und das Imnane-Tal, während sich die eindrucksvollen Gipfel des Hohen Atlas am Horizont erstrecken.",
+                "Nachdem wir uns Zeit genommen haben, die spektakuläre Landschaft zu bewundern, beginnen wir den Abstieg in das ruhige Imnane-Tal. Die Landschaft verändert sich allmählich, während wir an traditionellen Dörfern, Walnusshainen und grünen Terrassenfeldern vorbeikommen.",
+                "Wir wandern weiter zum Dorf Tamguist, wo unsere Gastgeber uns in einem traditionellen Berber-Gästehaus willkommen heißen. Nach einem erfüllten Tag in den Bergen genießen wir ein frisch zubereitetes marokkanisches Abendessen und einen entspannten Abend."
+              ]
+            },
+            {
+              "day": 4,
+              "title": "Tamguist – Ikis – Tizi n'Aguersioual – Aguersioual – Marrakesch",
+              "stats": {
+                "walking_distance": "Etwa 9–12 km",
+                "hiking_duration": "4–5 Stunden",
+                "elevation": "Tizi n'Aguersioual, etwa 2.000–2.100 m",
+                "meals": "Frühstück und Mittagessen"
+              },
+              "accommodation": "",
+              "body": [
+                "Nach dem Frühstück beginnen wir unseren letzten Wandertag durch das schöne Imnane-Tal.",
+                "Wir verlassen Tamguist und folgen traditionellen Bergpfaden zum Dorf Ikis, vorbei an malerischen Berbersiedlungen, Terrassenfeldern und schönen Walnusshainen. Unterwegs erleben wir die ruhige Atmosphäre des ländlichen Berglebens und genießen die herrliche Landschaft der umliegenden Täler.",
+                "Von Ikis steigen wir allmählich zum Tizi n'Aguersioual auf, einem landschaftlich reizvollen Bergpass mit wunderbaren Ausblicken auf das Imnane-Tal und die Berge des Hohen Atlas.",
+                "Nach dem Erreichen des Passes beginnen wir den letzten Abstieg zum Dorf Aguersioual, wo unser viertägiges Wanderabenteuer endet.",
+                "Bei der Ankunft treffen wir unseren Fahrer und fahren im Privatfahrzeug zurück nach Marrakesch, wo wir am Nachmittag ankommen. Ende der Wanderung und Transfer nach Marrakesch."
+              ]
+            }
+          ],
+          "included": [
+            "Private Transfers zwischen Marrakesch und Aguersioual",
+            "Erfahrener, englischsprachiger einheimischer Bergführer",
+            "Maultier und Maultiertreiber für den Gepäcktransport während des Trekkings",
+            "Drei Übernachtungen in traditionellen Berber-Gästehäusern",
+            "Alle Mahlzeiten während des Trekkings (Frühstück, Mittagessen und Abendessen)",
+            "Mineralwasser an den Wandertagen"
+          ],
+          "excluded": [
+            "Internationale Flüge",
+            "Reise- und Bergrettungsversicherung",
+            "Persönliche Ausgaben und zusätzliche Getränke",
+            "Trinkgelder für Bergführer und Maultiertreiber",
+            "Alle weiteren Leistungen, die in den Inklusivleistungen nicht ausdrücklich genannt sind"
+          ],
+          "packing": [
+            {
+              "group": "Wichtige Hinweise zum Trekking",
+              "items": [
+                "Die Gehstrecken und Gehzeiten sind Richtwerte und können je nach endgültiger Route, Gehtempo und Wetter abweichen.",
+                "Eine gute Grundkondition und etwas Erfahrung mit längeren Wanderungen werden empfohlen.",
+                "Bequeme Wanderschuhe, passende Kleidung, Sonnenschutz und ein kleiner Tagesrucksack sind unerlässlich.",
+                "Ihr Hauptgepäck wird von einem Maultier transportiert. Bitte bringen Sie eine weiche Reisetasche statt eines Hartschalenkoffers mit.",
+                "Der Bergführer kann die Route je nach Wetter und Zustand der Wege anpassen."
+              ]
+            }
+          ],
+          "upgrades": [],
+          "translation_status": "machine"
         }
       }
     }

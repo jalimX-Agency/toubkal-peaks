@@ -56,6 +56,17 @@ class NewTripsTest extends TestCase
         $this->assertCount(4, $four->translate('en')->itinerary);
         $this->assertCount(12, $four->media);
 
+        // French, Spanish and German: own addresses, marked "machine" so the team reads them, and served in their language
+        $this->assertEqualsCanonicalizing(['en', 'fr', 'es', 'de'], $four->translations->pluck('locale')->all());
+        foreach (['fr' => '4-jours-trek-atlas-trois-vallees-villages-berberes', 'es' => '4-dias-trekking-atlas-tres-valles-pueblos-bereberes', 'de' => '4-tage-atlas-trekking-drei-taeler-berberdoerfer'] as $locale => $slug) {
+            $row = $four->translations->firstWhere('locale', $locale);
+            $this->assertSame($slug, $row->slug);
+            $this->assertSame('machine', $row->translation_status);
+            $this->assertCount(4, $row->itinerary);
+            $this->getJson("/api/v1/tours/{$slug}?locale={$locale}")->assertOk()->assertJsonPath('data.locale', $locale);
+        }
+        $this->assertSame('source', $four->translations->firstWhere('locale', 'en')->translation_status);
+
         $this->getJson('/api/v1/tours/13-days-morocco-4x4-hiking-adventure?locale=en')->assertOk()->assertJsonPath('data.pricing.mode', 'on_request');
 
         // a second run changes nothing, and an edit made in the admin is kept

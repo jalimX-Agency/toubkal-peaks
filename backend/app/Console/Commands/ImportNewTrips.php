@@ -87,7 +87,8 @@ class ImportNewTrips extends Command
                             'upgrades' => $t['upgrades'] ?? [],
                             'seo_title' => $t['seo_title'] ?? null,
                             'seo_description' => $t['seo_description'] ?? null,
-                            'translation_status' => $locale === config('locales.default') ? 'source' : 'reviewed',
+                            // a translation written for the owner but not yet read by the team is marked "machine": the admin lists it to review
+                            'translation_status' => $locale === config('locales.default') ? 'source' : (in_array($t['translation_status'] ?? null, ['machine', 'reviewed'], true) ? $t['translation_status'] : 'reviewed'),
                         ]);
                     }
 
