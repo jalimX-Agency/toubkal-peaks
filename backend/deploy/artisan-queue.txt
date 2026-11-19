@@ -26,6 +26,8 @@ toubkal:import-new-trips
 toubkal:revalidate
 # Then: a test email to the team inboxes; the result (mailer, sender, recipients, exact error) is written to storage/logs/deploy.log.
 toubkal:mail-test
+# Then: crampons, ice axe and helmet (17 EUR for the three) in the Seasonal Equipment list of the seven Mount Toubkal trips, in the four languages.
+# A list edited in the admin after the import is kept as it is (the log says so).
 toubkal:apply-corrections
 toubkal:apply-corrections --locale=fr
 toubkal:apply-corrections --locale=es

@@ -4359,6 +4359,575 @@
     "max_altitude_m": 2315
    },
    "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 992,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Travel Documents",
+     "items": [
+      "Passport – required for all travelers"
+     ]
+    },
+    {
+     "group": "Footwear & Clothing",
+     "items": [
+      "Hiking shoes/boots – comfortable and broken-in for trekking",
+      "Trainers or comfortable shoes – for use at the refuge",
+      "Socks – bring extra pairs, including warm socks for high altitudes",
+      "Underwear – enough for the trek duration",
+      "Trekking trousers/pants – lightweight and quick-drying",
+      "Long johns / thermal underwear – essential for cooler temperatures",
+      "Base layer shirts or T-shirts – moisture-wicking for comfort",
+      "Fleece jacket – mid-layer for warmth",
+      "Warm jacket (down or insulated) – essential for summit conditions",
+      "Sunhat or cap – protection from strong mountain sun",
+      "Fleece hat – for cold mornings and evenings",
+      "Warm gloves – necessary at higher altitudes"
+     ]
+    },
+    {
+     "group": "Accessories & Safety Gear",
+     "items": [
+      "Sunglasses with UV protection – essential for snow and sun glare",
+      "Basic first aid kit – for minor injuries or blisters",
+      "Sun protection – SPF 20+ lotion and lip balm",
+      "Head torch / headlamp with spare batteries – useful in the refuge or early morning hikes",
+      "Wash bag and toiletries – personal hygiene essentials",
+      "Antibacterial hand wash – for hygiene on the trail",
+      "Small travel towel – quick-drying"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Travel Documents",
+     "items": [
+      "Passport – required for all travelers"
+     ]
+    },
+    {
+     "group": "Footwear & Clothing",
+     "items": [
+      "Hiking shoes/boots – comfortable and broken-in for trekking",
+      "Trainers or comfortable shoes – for use at the refuge",
+      "Socks – bring extra pairs, including warm socks for high altitudes",
+      "Underwear – enough for the trek duration",
+      "Trekking trousers/pants – lightweight and quick-drying",
+      "Long johns / thermal underwear – essential for cooler temperatures",
+      "Base layer shirts or T-shirts – moisture-wicking for comfort",
+      "Fleece jacket – mid-layer for warmth",
+      "Warm jacket (down or insulated) – essential for summit conditions",
+      "Sunhat or cap – protection from strong mountain sun",
+      "Fleece hat – for cold mornings and evenings",
+      "Warm gloves – necessary at higher altitudes"
+     ]
+    },
+    {
+     "group": "Accessories & Safety Gear",
+     "items": [
+      "Sunglasses with UV protection – essential for snow and sun glare",
+      "Basic first aid kit – for minor injuries or blisters",
+      "Sun protection – SPF 20+ lotion and lip balm",
+      "Head torch / headlamp with spare batteries – useful in the refuge or early morning hikes",
+      "Wash bag and toiletries – personal hygiene essentials",
+      "Antibacterial hand wash – for hygiene on the trail",
+      "Small travel towel – quick-drying"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice",
+      "Ice axe – for trekking in snow and ice conditions",
+      "Helmet – for trekking in snow and ice conditions",
+      "Crampons, ice axe and helmet: all three are available through us for €17"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1001,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Travel Documents",
+     "items": [
+      "Passport – required for all travelers"
+     ]
+    },
+    {
+     "group": "Footwear & Clothing",
+     "items": [
+      "Hiking shoes/boots – comfortable and broken-in for trekking",
+      "Trainers or comfortable shoes – for use at the refuge",
+      "Socks – bring extra pairs, including warm socks for high altitudes",
+      "Underwear – enough for the trek duration",
+      "Trekking trousers/pants – lightweight and quick-drying",
+      "Long johns / thermal underwear – essential for cooler temperatures",
+      "Base layer shirts or T-shirts – moisture-wicking for comfort",
+      "Fleece jacket – mid-layer for warmth",
+      "Warm jacket (down or insulated) – essential for summit conditions",
+      "Sunhat or cap – protection from strong mountain sun",
+      "Fleece hat – for cold mornings and evenings",
+      "Warm gloves – necessary at higher altitudes"
+     ]
+    },
+    {
+     "group": "Accessories & Safety Gear",
+     "items": [
+      "Sunglasses with UV protection – essential for snow and sun glare",
+      "Basic first aid kit – for minor injuries or blisters",
+      "Sun protection – SPF 20+ lotion and lip balm",
+      "Head torch / headlamp with spare batteries – useful in the refuge or early morning hikes",
+      "Wash bag and toiletries – personal hygiene essentials",
+      "Antibacterial hand wash – for hygiene on the trail",
+      "Small travel towel – quick-drying"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Travel Documents",
+     "items": [
+      "Passport – required for all travelers"
+     ]
+    },
+    {
+     "group": "Footwear & Clothing",
+     "items": [
+      "Hiking shoes/boots – comfortable and broken-in for trekking",
+      "Trainers or comfortable shoes – for use at the refuge",
+      "Socks – bring extra pairs, including warm socks for high altitudes",
+      "Underwear – enough for the trek duration",
+      "Trekking trousers/pants – lightweight and quick-drying",
+      "Long johns / thermal underwear – essential for cooler temperatures",
+      "Base layer shirts or T-shirts – moisture-wicking for comfort",
+      "Fleece jacket – mid-layer for warmth",
+      "Warm jacket (down or insulated) – essential for summit conditions",
+      "Sunhat or cap – protection from strong mountain sun",
+      "Fleece hat – for cold mornings and evenings",
+      "Warm gloves – necessary at higher altitudes"
+     ]
+    },
+    {
+     "group": "Accessories & Safety Gear",
+     "items": [
+      "Sunglasses with UV protection – essential for snow and sun glare",
+      "Basic first aid kit – for minor injuries or blisters",
+      "Sun protection – SPF 20+ lotion and lip balm",
+      "Head torch / headlamp with spare batteries – useful in the refuge or early morning hikes",
+      "Wash bag and toiletries – personal hygiene essentials",
+      "Antibacterial hand wash – for hygiene on the trail",
+      "Small travel towel – quick-drying"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice",
+      "Ice axe – for trekking in snow and ice conditions",
+      "Helmet – for trekking in snow and ice conditions",
+      "Crampons, ice axe and helmet: all three are available through us for €17"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1007,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Toubkal Trek Packing List",
+      "Essentials",
+      "Passport",
+      "Footwear & Clothing",
+      "Hiking shoes / boots",
+      "Trainers / casual shoes",
+      "Socks (trekking & casual)",
+      "Trekking trousers/pants",
+      "Underwear",
+      "Long johns / thermal underwear",
+      "Base layer shirts / T-shirts",
+      "Fleece jacket",
+      "Warm jacket (down or insulated)",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm gloves",
+      "Accessories & Protection",
+      "Sunglasses",
+      "Sun protection (cream, SPF 20+; lip balm with SPF)",
+      "Health & Safety",
+      "Basic first aid kit",
+      "Antibacterial hand wash",
+      "Toiletries & Personal Items",
+      "Wash bag & toiletries",
+      "Small travel towel",
+      "Gear & Miscellaneous",
+      "Head torch / headlamp with spare batteries"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Toubkal Trek Packing List",
+      "Essentials",
+      "Passport",
+      "Footwear & Clothing",
+      "Hiking shoes / boots",
+      "Trainers / casual shoes",
+      "Socks (trekking & casual)",
+      "Trekking trousers/pants",
+      "Underwear",
+      "Long johns / thermal underwear",
+      "Base layer shirts / T-shirts",
+      "Fleece jacket",
+      "Warm jacket (down or insulated)",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm gloves",
+      "Accessories & Protection",
+      "Sunglasses",
+      "Sun protection (cream, SPF 20+; lip balm with SPF)",
+      "Health & Safety",
+      "Basic first aid kit",
+      "Antibacterial hand wash",
+      "Toiletries & Personal Items",
+      "Wash bag & toiletries",
+      "Small travel towel",
+      "Gear & Miscellaneous",
+      "Head torch / headlamp with spare batteries"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice",
+      "Ice axe – for trekking in snow and ice conditions",
+      "Helmet – for trekking in snow and ice conditions",
+      "Crampons, ice axe and helmet: all three are available through us for €17"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1016,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Clothing",
+      "Hiking boots",
+      "Trainers / sneakers (for evenings & huts)",
+      "Trekking trousers / pants",
+      "Long johns (thermal underwear)",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm down jacket",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm inner gloves or mittens",
+      "Waterproof over-mittens",
+      "Socks & underwear",
+      "Accessories & Protection",
+      "Sunglasses (UV protection)",
+      "Sun protection (SPF 20+ & lip balm)",
+      "Basic First Aid Kit (see trip dossier for details)",
+      "Personal Items",
+      "-",
+      "Wash bag & toiletries",
+      "Small travel towel",
+      "Antibacterial hand gel",
+      "Head torch / headlamp with spare batteries",
+      "Sleeping bag (3-season recommended; available for rent if needed)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Clothing",
+      "Hiking boots",
+      "Trainers / sneakers (for evenings & huts)",
+      "Trekking trousers / pants",
+      "Long johns (thermal underwear)",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm down jacket",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm inner gloves or mittens",
+      "Waterproof over-mittens",
+      "Socks & underwear",
+      "Accessories & Protection",
+      "Sunglasses (UV protection)",
+      "Sun protection (SPF 20+ & lip balm)",
+      "Basic First Aid Kit (see trip dossier for details)",
+      "Personal Items",
+      "-",
+      "Wash bag & toiletries",
+      "Small travel towel",
+      "Antibacterial hand gel",
+      "Head torch / headlamp with spare batteries",
+      "Sleeping bag (3-season recommended; available for rent if needed)"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice",
+      "Ice axe – for trekking in snow and ice conditions",
+      "Helmet – for trekking in snow and ice conditions",
+      "Crampons, ice axe and helmet: all three are available through us for €17"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1017,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Clothing",
+      "Hiking boots",
+      "Trainers / sneakers (for evenings & huts)",
+      "Trekking trousers / pants",
+      "Long johns (thermal underwear)",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm down jacket",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm inner gloves or mittens",
+      "Waterproof over-mittens",
+      "Socks & underwear",
+      "Accessories & Protection",
+      "Sunglasses (UV protection)",
+      "Sun protection (SPF 20+ & lip balm)",
+      "Basic First Aid Kit (see trip dossier for details)",
+      "Personal Items",
+      "Wash bag & toiletries",
+      "Small travel towel",
+      "Antibacterial hand gel",
+      "Head torch / headlamp with spare batteries",
+      "Sleeping bag (3-season recommended; available for rent if needed)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Clothing",
+      "Hiking boots",
+      "Trainers / sneakers (for evenings & huts)",
+      "Trekking trousers / pants",
+      "Long johns (thermal underwear)",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm down jacket",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm inner gloves or mittens",
+      "Waterproof over-mittens",
+      "Socks & underwear",
+      "Accessories & Protection",
+      "Sunglasses (UV protection)",
+      "Sun protection (SPF 20+ & lip balm)",
+      "Basic First Aid Kit (see trip dossier for details)",
+      "Personal Items",
+      "Wash bag & toiletries",
+      "Small travel towel",
+      "Antibacterial hand gel",
+      "Head torch / headlamp with spare batteries",
+      "Sleeping bag (3-season recommended; available for rent if needed)"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice",
+      "Ice axe – for trekking in snow and ice conditions",
+      "Helmet – for trekking in snow and ice conditions",
+      "Crampons, ice axe and helmet: all three are available through us for €17"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1018,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Clothing",
+      "Hiking boots (sturdy and broken-in)",
+      "Trainers / sneakers (for use in the huts/lodges)",
+      "Socks (trekking and casual)",
+      "Underwear",
+      "Trekking trousers / pants",
+      "Long johns / thermal underwear",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm jacket (down or insulated)",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm gloves",
+      "Waterproof over-mittens",
+      "Sleep & Rest",
+      "Sleeping bag (suitable for mountain temperatures)",
+      "Small travel towel",
+      "Accessories & Essentials",
+      "Sunglasses",
+      "Basic first aid kit",
+      "Sun protection (including total block for lips, SPF 20+)",
+      "Antibacterial hand wash",
+      "Wash bag & toiletries",
+      "Head torch / headlamp with spare batteries"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Clothing",
+      "Hiking boots (sturdy and broken-in)",
+      "Trainers / sneakers (for use in the huts/lodges)",
+      "Socks (trekking and casual)",
+      "Underwear",
+      "Trekking trousers / pants",
+      "Long johns / thermal underwear",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm jacket (down or insulated)",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Warm gloves",
+      "Waterproof over-mittens",
+      "Sleep & Rest",
+      "Sleeping bag (suitable for mountain temperatures)",
+      "Small travel towel",
+      "Accessories & Essentials",
+      "Sunglasses",
+      "Basic first aid kit",
+      "Sun protection (including total block for lips, SPF 20+)",
+      "Antibacterial hand wash",
+      "Wash bag & toiletries",
+      "Head torch / headlamp with spare batteries"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice",
+      "Ice axe – for trekking in snow and ice conditions",
+      "Helmet – for trekking in snow and ice conditions",
+      "Crampons, ice axe and helmet: all three are available through us for €17"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1024,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Socks",
+      "Hiking boots",
+      "Trainers / sneakers (for use in the hut)",
+      "Socks",
+      "Clothing",
+      "Underwear",
+      "Trekking trousers/pants",
+      "Long johns (thermal underwear)",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm jacket (down)",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Gloves",
+      "Waterproof over-mittens",
+      "Accessories",
+      "Sunglasses",
+      "Head torch/headlamp with spare batteries",
+      "Sleeping & Hygiene",
+      "Sleeping bag",
+      "Wash bag and toiletries",
+      "Small travel towel",
+      "Antibacterial hand wash",
+      "Health & Safety",
+      "Basic first aid kit",
+      "Sun protection (including total block for lips, SPF 20+)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Footwear & Socks",
+      "Hiking boots",
+      "Trainers / sneakers (for use in the hut)",
+      "Socks",
+      "Clothing",
+      "Underwear",
+      "Trekking trousers/pants",
+      "Long johns (thermal underwear)",
+      "Base layer shirts or T-shirts",
+      "Fleece jacket",
+      "Warm jacket (down)",
+      "Sunhat or cap",
+      "Fleece hat",
+      "Gloves",
+      "Waterproof over-mittens",
+      "Accessories",
+      "Sunglasses",
+      "Head torch/headlamp with spare batteries",
+      "Sleeping & Hygiene",
+      "Sleeping bag",
+      "Wash bag and toiletries",
+      "Small travel towel",
+      "Antibacterial hand wash",
+      "Health & Safety",
+      "Basic first aid kit",
+      "Sun protection (including total block for lips, SPF 20+)"
+     ]
+    },
+    {
+     "group": "Seasonal Equipment",
+     "items": [
+      "Crampons – required if trekking November to April due to snow and ice",
+      "Ice axe – for trekking in snow and ice conditions",
+      "Helmet – for trekking in snow and ice conditions",
+      "Crampons, ice axe and helmet: all three are available through us for €17"
+     ]
+    }
+   ]
   }
  ]
 }

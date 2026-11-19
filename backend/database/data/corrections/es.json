@@ -446,6 +446,575 @@
     "Noche opcional en el Riad Berber Towers, nuestra encantadora casa de huéspedes de montaña en el corazón de Imlil: habitaciones cómodas, vistas a las montañas, hospitalidad marroquí tradicional y desayuno incluido. A la mañana siguiente, regreso a Marrakech o más días por el Alto Atlas. No incluido en el precio de la excursión: coste adicional, sujeto a disponibilidad; la cena y otros servicios se pagan aparte."
    ],
    "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 992,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Documentos de viaje",
+     "items": [
+      "Pasaporte, obligatorio para todos los viajeros"
+     ]
+    },
+    {
+     "group": "Calzado y ropa",
+     "items": [
+      "Botas o zapatillas de senderismo, cómodas y ya usadas",
+      "Zapatillas o calzado cómodo para el refugio",
+      "Calcetines, con pares de repuesto y calcetines de abrigo para la altura",
+      "Ropa interior suficiente para el trekking",
+      "Pantalones de trekking ligeros y de secado rápido",
+      "Ropa interior térmica larga, imprescindible con frío",
+      "Camisetas técnicas o de manga corta que evacúen el sudor",
+      "Chaqueta polar como capa intermedia",
+      "Chaqueta de abrigo (plumas o sintética), imprescindible en la cumbre",
+      "Sombrero o gorra contra el sol de montaña",
+      "Gorro polar para las mañanas y noches frías",
+      "Guantes de abrigo, necesarios en altura"
+     ]
+    },
+    {
+     "group": "Accesorios y seguridad",
+     "items": [
+      "Gafas de sol con protección UV, imprescindibles con nieve y reflejos",
+      "Botiquín básico para pequeñas lesiones o ampollas",
+      "Protección solar: crema factor 20+ y bálsamo labial",
+      "Linterna frontal con pilas de repuesto, útil en el refugio y para la salida temprana",
+      "Neceser con artículos de aseo",
+      "Gel antibacteriano para la higiene en el camino",
+      "Toalla de viaje pequeña de secado rápido"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Documentos de viaje",
+     "items": [
+      "Pasaporte, obligatorio para todos los viajeros"
+     ]
+    },
+    {
+     "group": "Calzado y ropa",
+     "items": [
+      "Botas o zapatillas de senderismo, cómodas y ya usadas",
+      "Zapatillas o calzado cómodo para el refugio",
+      "Calcetines, con pares de repuesto y calcetines de abrigo para la altura",
+      "Ropa interior suficiente para el trekking",
+      "Pantalones de trekking ligeros y de secado rápido",
+      "Ropa interior térmica larga, imprescindible con frío",
+      "Camisetas técnicas o de manga corta que evacúen el sudor",
+      "Chaqueta polar como capa intermedia",
+      "Chaqueta de abrigo (plumas o sintética), imprescindible en la cumbre",
+      "Sombrero o gorra contra el sol de montaña",
+      "Gorro polar para las mañanas y noches frías",
+      "Guantes de abrigo, necesarios en altura"
+     ]
+    },
+    {
+     "group": "Accesorios y seguridad",
+     "items": [
+      "Gafas de sol con protección UV, imprescindibles con nieve y reflejos",
+      "Botiquín básico para pequeñas lesiones o ampollas",
+      "Protección solar: crema factor 20+ y bálsamo labial",
+      "Linterna frontal con pilas de repuesto, útil en el refugio y para la salida temprana",
+      "Neceser con artículos de aseo",
+      "Gel antibacteriano para la higiene en el camino",
+      "Toalla de viaje pequeña de secado rápido"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo",
+      "Piolet, para caminar con nieve y hielo",
+      "Casco, para caminar con nieve y hielo",
+      "Crampones, piolet y casco: los tres están disponibles con nosotros por 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1001,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Documentos de viaje",
+     "items": [
+      "Pasaporte, obligatorio para todos los viajeros"
+     ]
+    },
+    {
+     "group": "Calzado y ropa",
+     "items": [
+      "Botas o zapatillas de senderismo, cómodas y ya usadas",
+      "Zapatillas o calzado cómodo para el refugio",
+      "Calcetines, con pares de repuesto y calcetines de abrigo para la altura",
+      "Ropa interior suficiente para el trekking",
+      "Pantalones de trekking ligeros y de secado rápido",
+      "Ropa interior térmica larga, imprescindible con frío",
+      "Camisetas técnicas o de manga corta que evacúen el sudor",
+      "Chaqueta polar como capa intermedia",
+      "Chaqueta de abrigo (plumas o sintética), imprescindible en la cumbre",
+      "Sombrero o gorra contra el sol de montaña",
+      "Gorro polar para las mañanas y noches frías",
+      "Guantes de abrigo, necesarios en altura"
+     ]
+    },
+    {
+     "group": "Accesorios y seguridad",
+     "items": [
+      "Gafas de sol con protección UV, imprescindibles con nieve y reflejos",
+      "Botiquín básico para pequeñas lesiones o ampollas",
+      "Protección solar: crema factor 20+ y bálsamo labial",
+      "Linterna frontal con pilas de repuesto, útil en el refugio y para la salida temprana",
+      "Neceser con artículos de aseo",
+      "Gel antibacteriano para la higiene en el camino",
+      "Toalla de viaje pequeña de secado rápido"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Documentos de viaje",
+     "items": [
+      "Pasaporte, obligatorio para todos los viajeros"
+     ]
+    },
+    {
+     "group": "Calzado y ropa",
+     "items": [
+      "Botas o zapatillas de senderismo, cómodas y ya usadas",
+      "Zapatillas o calzado cómodo para el refugio",
+      "Calcetines, con pares de repuesto y calcetines de abrigo para la altura",
+      "Ropa interior suficiente para el trekking",
+      "Pantalones de trekking ligeros y de secado rápido",
+      "Ropa interior térmica larga, imprescindible con frío",
+      "Camisetas técnicas o de manga corta que evacúen el sudor",
+      "Chaqueta polar como capa intermedia",
+      "Chaqueta de abrigo (plumas o sintética), imprescindible en la cumbre",
+      "Sombrero o gorra contra el sol de montaña",
+      "Gorro polar para las mañanas y noches frías",
+      "Guantes de abrigo, necesarios en altura"
+     ]
+    },
+    {
+     "group": "Accesorios y seguridad",
+     "items": [
+      "Gafas de sol con protección UV, imprescindibles con nieve y reflejos",
+      "Botiquín básico para pequeñas lesiones o ampollas",
+      "Protección solar: crema factor 20+ y bálsamo labial",
+      "Linterna frontal con pilas de repuesto, útil en el refugio y para la salida temprana",
+      "Neceser con artículos de aseo",
+      "Gel antibacteriano para la higiene en el camino",
+      "Toalla de viaje pequeña de secado rápido"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo",
+      "Piolet, para caminar con nieve y hielo",
+      "Casco, para caminar con nieve y hielo",
+      "Crampones, piolet y casco: los tres están disponibles con nosotros por 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1007,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Lista de equipo para el trekking del Toubkal",
+      "Imprescindibles",
+      "Pasaporte",
+      "Calzado y ropa",
+      "Botas o zapatillas de senderismo",
+      "Zapatillas o calzado cómodo",
+      "Calcetines (de trekking y de calle)",
+      "Pantalones de trekking",
+      "Ropa interior",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de abrigo (plumas o sintética)",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes de abrigo",
+      "Accesorios y protección",
+      "Gafas de sol",
+      "Protección solar (crema factor 20+, bálsamo labial)",
+      "Salud y seguridad",
+      "Botiquín básico",
+      "Gel antibacteriano para manos",
+      "Aseo y artículos personales",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Material y varios",
+      "Linterna frontal con pilas de repuesto"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Lista de equipo para el trekking del Toubkal",
+      "Imprescindibles",
+      "Pasaporte",
+      "Calzado y ropa",
+      "Botas o zapatillas de senderismo",
+      "Zapatillas o calzado cómodo",
+      "Calcetines (de trekking y de calle)",
+      "Pantalones de trekking",
+      "Ropa interior",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de abrigo (plumas o sintética)",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes de abrigo",
+      "Accesorios y protección",
+      "Gafas de sol",
+      "Protección solar (crema factor 20+, bálsamo labial)",
+      "Salud y seguridad",
+      "Botiquín básico",
+      "Gel antibacteriano para manos",
+      "Aseo y artículos personales",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Material y varios",
+      "Linterna frontal con pilas de repuesto"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo",
+      "Piolet, para caminar con nieve y hielo",
+      "Casco, para caminar con nieve y hielo",
+      "Crampones, piolet y casco: los tres están disponibles con nosotros por 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1016,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y ropa",
+      "Botas de senderismo",
+      "Zapatillas deportivas (para la noche y los refugios)",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de plumas",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes o manoplas de abrigo",
+      "Manoplas impermeables",
+      "Calcetines y ropa interior",
+      "Accesorios y protección",
+      "Gafas de sol (protección UV)",
+      "Protección solar (factor 20+ y bálsamo labial)",
+      "Botiquín básico (ver el dossier del viaje)",
+      "Artículos personales",
+      "-",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Gel antibacteriano para manos",
+      "Linterna frontal con pilas de repuesto",
+      "Saco de dormir (recomendado de tres estaciones; se puede alquilar)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y ropa",
+      "Botas de senderismo",
+      "Zapatillas deportivas (para la noche y los refugios)",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de plumas",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes o manoplas de abrigo",
+      "Manoplas impermeables",
+      "Calcetines y ropa interior",
+      "Accesorios y protección",
+      "Gafas de sol (protección UV)",
+      "Protección solar (factor 20+ y bálsamo labial)",
+      "Botiquín básico (ver el dossier del viaje)",
+      "Artículos personales",
+      "-",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Gel antibacteriano para manos",
+      "Linterna frontal con pilas de repuesto",
+      "Saco de dormir (recomendado de tres estaciones; se puede alquilar)"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo",
+      "Piolet, para caminar con nieve y hielo",
+      "Casco, para caminar con nieve y hielo",
+      "Crampones, piolet y casco: los tres están disponibles con nosotros por 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1017,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y ropa",
+      "Botas de senderismo",
+      "Zapatillas (para las tardes y los refugios)",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de plumas",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes interiores cálidos o manoplas",
+      "Manoplas impermeables",
+      "Calcetines y ropa interior",
+      "Accesorios y protección",
+      "Gafas de sol (protección UV)",
+      "Protección solar (FPS 20+ y protector labial)",
+      "Botiquín básico (ver el dossier del viaje)",
+      "Artículos personales",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Gel antibacteriano para manos",
+      "Linterna frontal con pilas de repuesto",
+      "Saco de dormir (se recomienda de 3 estaciones; se puede alquilar)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y ropa",
+      "Botas de senderismo",
+      "Zapatillas (para las tardes y los refugios)",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de plumas",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes interiores cálidos o manoplas",
+      "Manoplas impermeables",
+      "Calcetines y ropa interior",
+      "Accesorios y protección",
+      "Gafas de sol (protección UV)",
+      "Protección solar (FPS 20+ y protector labial)",
+      "Botiquín básico (ver el dossier del viaje)",
+      "Artículos personales",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Gel antibacteriano para manos",
+      "Linterna frontal con pilas de repuesto",
+      "Saco de dormir (se recomienda de 3 estaciones; se puede alquilar)"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo",
+      "Piolet, para caminar con nieve y hielo",
+      "Casco, para caminar con nieve y hielo",
+      "Crampones, piolet y casco: los tres están disponibles con nosotros por 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1018,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y ropa",
+      "Botas de senderismo (resistentes y ya usadas)",
+      "Zapatillas (para los refugios y albergues)",
+      "Calcetines (de trekking y de diario)",
+      "Ropa interior",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de abrigo (plumas o sintética)",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes de abrigo",
+      "Manoplas impermeables",
+      "Descanso",
+      "Saco de dormir (apto para temperaturas de montaña)",
+      "Toalla de viaje pequeña",
+      "Accesorios y básicos",
+      "Gafas de sol",
+      "Botiquín básico",
+      "Protección solar (incluido protector labial de pantalla total, FPS 20+)",
+      "Jabón antibacteriano para manos",
+      "Neceser y artículos de aseo",
+      "Linterna frontal con pilas de repuesto"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y ropa",
+      "Botas de senderismo (resistentes y ya usadas)",
+      "Zapatillas (para los refugios y albergues)",
+      "Calcetines (de trekking y de diario)",
+      "Ropa interior",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de abrigo (plumas o sintética)",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes de abrigo",
+      "Manoplas impermeables",
+      "Descanso",
+      "Saco de dormir (apto para temperaturas de montaña)",
+      "Toalla de viaje pequeña",
+      "Accesorios y básicos",
+      "Gafas de sol",
+      "Botiquín básico",
+      "Protección solar (incluido protector labial de pantalla total, FPS 20+)",
+      "Jabón antibacteriano para manos",
+      "Neceser y artículos de aseo",
+      "Linterna frontal con pilas de repuesto"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo",
+      "Piolet, para caminar con nieve y hielo",
+      "Casco, para caminar con nieve y hielo",
+      "Crampones, piolet y casco: los tres están disponibles con nosotros por 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1024,
+   "field": "packing",
+   "before": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y calcetines",
+      "Botas de senderismo",
+      "Zapatillas deportivas (para el refugio)",
+      "Calcetines",
+      "Ropa",
+      "Ropa interior",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de abrigo (plumas)",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes",
+      "Manoplas impermeables",
+      "Accesorios",
+      "Gafas de sol",
+      "Linterna frontal con pilas de repuesto",
+      "Descanso e higiene",
+      "Saco de dormir",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Gel antibacteriano para manos",
+      "Salud y seguridad",
+      "Botiquín básico",
+      "Protección solar factor 20+ (incluido protector labial)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "General",
+     "items": [
+      "Calzado y calcetines",
+      "Botas de senderismo",
+      "Zapatillas deportivas (para el refugio)",
+      "Calcetines",
+      "Ropa",
+      "Ropa interior",
+      "Pantalones de trekking",
+      "Ropa interior térmica larga",
+      "Camisetas técnicas o de manga corta",
+      "Chaqueta polar",
+      "Chaqueta de abrigo (plumas)",
+      "Sombrero o gorra para el sol",
+      "Gorro polar",
+      "Guantes",
+      "Manoplas impermeables",
+      "Accesorios",
+      "Gafas de sol",
+      "Linterna frontal con pilas de repuesto",
+      "Descanso e higiene",
+      "Saco de dormir",
+      "Neceser y artículos de aseo",
+      "Toalla de viaje pequeña",
+      "Gel antibacteriano para manos",
+      "Salud y seguridad",
+      "Botiquín básico",
+      "Protección solar factor 20+ (incluido protector labial)"
+     ]
+    },
+    {
+     "group": "Equipo de temporada",
+     "items": [
+      "Crampones, obligatorios de noviembre a abril por la nieve y el hielo",
+      "Piolet, para caminar con nieve y hielo",
+      "Casco, para caminar con nieve y hielo",
+      "Crampones, piolet y casco: los tres están disponibles con nosotros por 17 €"
+     ]
+    }
+   ]
   }
  ]
 }

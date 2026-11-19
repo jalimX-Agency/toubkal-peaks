@@ -439,6 +439,575 @@
     "Nuit en option au Riad Berber Towers, notre charmante maison d'hôtes de montagne au cœur d'Imlil : chambres confortables, vue sur les montagnes, hospitalité marocaine traditionnelle et petit-déjeuner inclus. Le lendemain matin, retour à Marrakech ou poursuite de la découverte du Haut Atlas. Non inclus dans le prix de l'excursion : supplément, sous réserve de disponibilité ; dîner et autres services en supplément."
    ],
    "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 992,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Documents de voyage",
+     "items": [
+      "Passeport, obligatoire pour tous les voyageurs"
+     ]
+    },
+    {
+     "group": "Chaussures et vêtements",
+     "items": [
+      "Chaussures de randonnée, confortables et déjà portées",
+      "Baskets ou chaussures confortables pour le refuge",
+      "Chaussettes, avec des paires de rechange et des chaussettes chaudes pour l'altitude",
+      "Sous-vêtements en quantité suffisante pour le trek",
+      "Pantalon de trekking léger et à séchage rapide",
+      "Sous-vêtements thermiques longs, indispensables par temps frais",
+      "T-shirts ou maillots techniques qui évacuent la transpiration",
+      "Veste polaire comme couche intermédiaire",
+      "Veste chaude (duvet ou synthétique), indispensable au sommet",
+      "Chapeau de soleil ou casquette contre le soleil de montagne",
+      "Bonnet polaire pour les matins et soirées froids",
+      "Gants chauds, nécessaires en altitude"
+     ]
+    },
+    {
+     "group": "Accessoires et sécurité",
+     "items": [
+      "Lunettes de soleil anti-UV, indispensables avec la neige et la réverbération",
+      "Trousse de premiers secours pour les petites blessures ou ampoules",
+      "Protection solaire : crème indice 20+ et baume à lèvres",
+      "Lampe frontale avec piles de rechange, utile au refuge et pour le départ matinal",
+      "Trousse de toilette avec vos produits d'hygiène",
+      "Gel antibactérien pour l'hygiène sur le sentier",
+      "Petite serviette de voyage à séchage rapide"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Documents de voyage",
+     "items": [
+      "Passeport, obligatoire pour tous les voyageurs"
+     ]
+    },
+    {
+     "group": "Chaussures et vêtements",
+     "items": [
+      "Chaussures de randonnée, confortables et déjà portées",
+      "Baskets ou chaussures confortables pour le refuge",
+      "Chaussettes, avec des paires de rechange et des chaussettes chaudes pour l'altitude",
+      "Sous-vêtements en quantité suffisante pour le trek",
+      "Pantalon de trekking léger et à séchage rapide",
+      "Sous-vêtements thermiques longs, indispensables par temps frais",
+      "T-shirts ou maillots techniques qui évacuent la transpiration",
+      "Veste polaire comme couche intermédiaire",
+      "Veste chaude (duvet ou synthétique), indispensable au sommet",
+      "Chapeau de soleil ou casquette contre le soleil de montagne",
+      "Bonnet polaire pour les matins et soirées froids",
+      "Gants chauds, nécessaires en altitude"
+     ]
+    },
+    {
+     "group": "Accessoires et sécurité",
+     "items": [
+      "Lunettes de soleil anti-UV, indispensables avec la neige et la réverbération",
+      "Trousse de premiers secours pour les petites blessures ou ampoules",
+      "Protection solaire : crème indice 20+ et baume à lèvres",
+      "Lampe frontale avec piles de rechange, utile au refuge et pour le départ matinal",
+      "Trousse de toilette avec vos produits d'hygiène",
+      "Gel antibactérien pour l'hygiène sur le sentier",
+      "Petite serviette de voyage à séchage rapide"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace",
+      "Piolet, pour marcher sur la neige et la glace",
+      "Casque, pour marcher sur la neige et la glace",
+      "Crampons, piolet et casque : les trois sont disponibles auprès de nous pour 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1001,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Documents de voyage",
+     "items": [
+      "Passeport, obligatoire pour tous les voyageurs"
+     ]
+    },
+    {
+     "group": "Chaussures et vêtements",
+     "items": [
+      "Chaussures de randonnée, confortables et déjà portées",
+      "Baskets ou chaussures confortables pour le refuge",
+      "Chaussettes, avec des paires de rechange et des chaussettes chaudes pour l'altitude",
+      "Sous-vêtements en quantité suffisante pour le trek",
+      "Pantalon de trekking léger et à séchage rapide",
+      "Sous-vêtements thermiques longs, indispensables par temps frais",
+      "T-shirts ou maillots techniques qui évacuent la transpiration",
+      "Veste polaire comme couche intermédiaire",
+      "Veste chaude (duvet ou synthétique), indispensable au sommet",
+      "Chapeau de soleil ou casquette contre le soleil de montagne",
+      "Bonnet polaire pour les matins et soirées froids",
+      "Gants chauds, nécessaires en altitude"
+     ]
+    },
+    {
+     "group": "Accessoires et sécurité",
+     "items": [
+      "Lunettes de soleil anti-UV, indispensables avec la neige et la réverbération",
+      "Trousse de premiers secours pour les petites blessures ou ampoules",
+      "Protection solaire : crème indice 20+ et baume à lèvres",
+      "Lampe frontale avec piles de rechange, utile au refuge et pour le départ matinal",
+      "Trousse de toilette avec vos produits d'hygiène",
+      "Gel antibactérien pour l'hygiène sur le sentier",
+      "Petite serviette de voyage à séchage rapide"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Documents de voyage",
+     "items": [
+      "Passeport, obligatoire pour tous les voyageurs"
+     ]
+    },
+    {
+     "group": "Chaussures et vêtements",
+     "items": [
+      "Chaussures de randonnée, confortables et déjà portées",
+      "Baskets ou chaussures confortables pour le refuge",
+      "Chaussettes, avec des paires de rechange et des chaussettes chaudes pour l'altitude",
+      "Sous-vêtements en quantité suffisante pour le trek",
+      "Pantalon de trekking léger et à séchage rapide",
+      "Sous-vêtements thermiques longs, indispensables par temps frais",
+      "T-shirts ou maillots techniques qui évacuent la transpiration",
+      "Veste polaire comme couche intermédiaire",
+      "Veste chaude (duvet ou synthétique), indispensable au sommet",
+      "Chapeau de soleil ou casquette contre le soleil de montagne",
+      "Bonnet polaire pour les matins et soirées froids",
+      "Gants chauds, nécessaires en altitude"
+     ]
+    },
+    {
+     "group": "Accessoires et sécurité",
+     "items": [
+      "Lunettes de soleil anti-UV, indispensables avec la neige et la réverbération",
+      "Trousse de premiers secours pour les petites blessures ou ampoules",
+      "Protection solaire : crème indice 20+ et baume à lèvres",
+      "Lampe frontale avec piles de rechange, utile au refuge et pour le départ matinal",
+      "Trousse de toilette avec vos produits d'hygiène",
+      "Gel antibactérien pour l'hygiène sur le sentier",
+      "Petite serviette de voyage à séchage rapide"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace",
+      "Piolet, pour marcher sur la neige et la glace",
+      "Casque, pour marcher sur la neige et la glace",
+      "Crampons, piolet et casque : les trois sont disponibles auprès de nous pour 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1007,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Général",
+     "items": [
+      "Liste d'équipement pour le trek du Toubkal",
+      "Indispensables",
+      "Passeport",
+      "Chaussures et vêtements",
+      "Chaussures de randonnée",
+      "Baskets ou chaussures de détente",
+      "Chaussettes (de randonnée et de ville)",
+      "Pantalon de trekking",
+      "Sous-vêtements",
+      "Sous-vêtements thermiques longs",
+      "T-shirts ou maillots techniques",
+      "Veste polaire",
+      "Veste chaude (duvet ou synthétique)",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants chauds",
+      "Accessoires et protection",
+      "Lunettes de soleil",
+      "Protection solaire (crème indice 20+, baume à lèvres)",
+      "Santé et sécurité",
+      "Trousse de premiers secours",
+      "Gel antibactérien pour les mains",
+      "Toilette et effets personnels",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Matériel et divers",
+      "Lampe frontale avec piles de rechange"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Général",
+     "items": [
+      "Liste d'équipement pour le trek du Toubkal",
+      "Indispensables",
+      "Passeport",
+      "Chaussures et vêtements",
+      "Chaussures de randonnée",
+      "Baskets ou chaussures de détente",
+      "Chaussettes (de randonnée et de ville)",
+      "Pantalon de trekking",
+      "Sous-vêtements",
+      "Sous-vêtements thermiques longs",
+      "T-shirts ou maillots techniques",
+      "Veste polaire",
+      "Veste chaude (duvet ou synthétique)",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants chauds",
+      "Accessoires et protection",
+      "Lunettes de soleil",
+      "Protection solaire (crème indice 20+, baume à lèvres)",
+      "Santé et sécurité",
+      "Trousse de premiers secours",
+      "Gel antibactérien pour les mains",
+      "Toilette et effets personnels",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Matériel et divers",
+      "Lampe frontale avec piles de rechange"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace",
+      "Piolet, pour marcher sur la neige et la glace",
+      "Casque, pour marcher sur la neige et la glace",
+      "Crampons, piolet et casque : les trois sont disponibles auprès de nous pour 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1016,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et vêtements",
+      "Chaussures de randonnée",
+      "Baskets (pour le soir et les refuges)",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "T-shirts ou maillots techniques",
+      "Veste polaire",
+      "Doudoune chaude",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants ou moufles chaudes",
+      "Moufles imperméables",
+      "Chaussettes et sous-vêtements",
+      "Accessoires et protection",
+      "Lunettes de soleil (protection UV)",
+      "Protection solaire (indice 20+ et baume à lèvres)",
+      "Trousse de premiers secours (voir le dossier de voyage)",
+      "Effets personnels",
+      "-",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Gel antibactérien pour les mains",
+      "Lampe frontale avec piles de rechange",
+      "Sac de couchage (trois saisons conseillé ; location possible)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et vêtements",
+      "Chaussures de randonnée",
+      "Baskets (pour le soir et les refuges)",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "T-shirts ou maillots techniques",
+      "Veste polaire",
+      "Doudoune chaude",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants ou moufles chaudes",
+      "Moufles imperméables",
+      "Chaussettes et sous-vêtements",
+      "Accessoires et protection",
+      "Lunettes de soleil (protection UV)",
+      "Protection solaire (indice 20+ et baume à lèvres)",
+      "Trousse de premiers secours (voir le dossier de voyage)",
+      "Effets personnels",
+      "-",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Gel antibactérien pour les mains",
+      "Lampe frontale avec piles de rechange",
+      "Sac de couchage (trois saisons conseillé ; location possible)"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace",
+      "Piolet, pour marcher sur la neige et la glace",
+      "Casque, pour marcher sur la neige et la glace",
+      "Crampons, piolet et casque : les trois sont disponibles auprès de nous pour 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1017,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et vêtements",
+      "Chaussures de randonnée",
+      "Baskets (pour le soir et les refuges)",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "Maillots techniques ou T-shirts",
+      "Veste polaire",
+      "Doudoune chaude",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Sous-gants chauds ou moufles",
+      "Moufles imperméables",
+      "Chaussettes et sous-vêtements",
+      "Accessoires et protection",
+      "Lunettes de soleil (protection UV)",
+      "Protection solaire (indice 20+ et stick à lèvres)",
+      "Trousse de premiers secours (voir le dossier de voyage)",
+      "Effets personnels",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Gel antibactérien pour les mains",
+      "Lampe frontale avec piles de rechange",
+      "Sac de couchage (3 saisons conseillé ; location possible)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et vêtements",
+      "Chaussures de randonnée",
+      "Baskets (pour le soir et les refuges)",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "Maillots techniques ou T-shirts",
+      "Veste polaire",
+      "Doudoune chaude",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Sous-gants chauds ou moufles",
+      "Moufles imperméables",
+      "Chaussettes et sous-vêtements",
+      "Accessoires et protection",
+      "Lunettes de soleil (protection UV)",
+      "Protection solaire (indice 20+ et stick à lèvres)",
+      "Trousse de premiers secours (voir le dossier de voyage)",
+      "Effets personnels",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Gel antibactérien pour les mains",
+      "Lampe frontale avec piles de rechange",
+      "Sac de couchage (3 saisons conseillé ; location possible)"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace",
+      "Piolet, pour marcher sur la neige et la glace",
+      "Casque, pour marcher sur la neige et la glace",
+      "Crampons, piolet et casque : les trois sont disponibles auprès de nous pour 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1018,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et vêtements",
+      "Chaussures de randonnée (solides et déjà portées)",
+      "Baskets (pour les refuges et gîtes)",
+      "Chaussettes (de trek et de ville)",
+      "Sous-vêtements",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "Maillots techniques ou T-shirts",
+      "Veste polaire",
+      "Veste chaude (duvet ou synthétique)",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants chauds",
+      "Moufles imperméables",
+      "Couchage et repos",
+      "Sac de couchage (adapté aux températures de montagne)",
+      "Petite serviette de voyage",
+      "Accessoires et essentiels",
+      "Lunettes de soleil",
+      "Trousse de premiers secours",
+      "Protection solaire (dont stick à lèvres écran total, indice 20+)",
+      "Savon antibactérien pour les mains",
+      "Trousse de toilette",
+      "Lampe frontale avec piles de rechange"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et vêtements",
+      "Chaussures de randonnée (solides et déjà portées)",
+      "Baskets (pour les refuges et gîtes)",
+      "Chaussettes (de trek et de ville)",
+      "Sous-vêtements",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "Maillots techniques ou T-shirts",
+      "Veste polaire",
+      "Veste chaude (duvet ou synthétique)",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants chauds",
+      "Moufles imperméables",
+      "Couchage et repos",
+      "Sac de couchage (adapté aux températures de montagne)",
+      "Petite serviette de voyage",
+      "Accessoires et essentiels",
+      "Lunettes de soleil",
+      "Trousse de premiers secours",
+      "Protection solaire (dont stick à lèvres écran total, indice 20+)",
+      "Savon antibactérien pour les mains",
+      "Trousse de toilette",
+      "Lampe frontale avec piles de rechange"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace",
+      "Piolet, pour marcher sur la neige et la glace",
+      "Casque, pour marcher sur la neige et la glace",
+      "Crampons, piolet et casque : les trois sont disponibles auprès de nous pour 17 €"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1024,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et chaussettes",
+      "Chaussures de randonnée",
+      "Baskets (pour le refuge)",
+      "Chaussettes",
+      "Vêtements",
+      "Sous-vêtements",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "T-shirts ou maillots techniques",
+      "Veste polaire",
+      "Veste chaude (doudoune)",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants",
+      "Moufles imperméables",
+      "Accessoires",
+      "Lunettes de soleil",
+      "Lampe frontale avec piles de rechange",
+      "Couchage et hygiène",
+      "Sac de couchage",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Gel antibactérien pour les mains",
+      "Santé et sécurité",
+      "Trousse de premiers secours",
+      "Protection solaire indice 20+ (y compris stick à lèvres)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Général",
+     "items": [
+      "Chaussures et chaussettes",
+      "Chaussures de randonnée",
+      "Baskets (pour le refuge)",
+      "Chaussettes",
+      "Vêtements",
+      "Sous-vêtements",
+      "Pantalon de trekking",
+      "Sous-vêtements thermiques longs",
+      "T-shirts ou maillots techniques",
+      "Veste polaire",
+      "Veste chaude (doudoune)",
+      "Chapeau de soleil ou casquette",
+      "Bonnet polaire",
+      "Gants",
+      "Moufles imperméables",
+      "Accessoires",
+      "Lunettes de soleil",
+      "Lampe frontale avec piles de rechange",
+      "Couchage et hygiène",
+      "Sac de couchage",
+      "Trousse de toilette",
+      "Petite serviette de voyage",
+      "Gel antibactérien pour les mains",
+      "Santé et sécurité",
+      "Trousse de premiers secours",
+      "Protection solaire indice 20+ (y compris stick à lèvres)"
+     ]
+    },
+    {
+     "group": "Équipement saisonnier",
+     "items": [
+      "Crampons, obligatoires de novembre à avril en raison de la neige et de la glace",
+      "Piolet, pour marcher sur la neige et la glace",
+      "Casque, pour marcher sur la neige et la glace",
+      "Crampons, piolet et casque : les trois sont disponibles auprès de nous pour 17 €"
+     ]
+    }
+   ]
   }
  ]
 }

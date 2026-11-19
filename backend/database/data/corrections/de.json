@@ -439,6 +439,575 @@
     "Optionale Übernachtung im Riad Berber Towers, unserem charmanten Berggasthaus im Herzen von Imlil: komfortable Zimmer, Bergblick, traditionelle marokkanische Gastfreundschaft, Frühstück inklusive. Am nächsten Morgen zurück nach Marrakesch oder weiter in den Hohen Atlas. Nicht im Ausflugspreis enthalten: gegen Aufpreis und nach Verfügbarkeit; Abendessen und weitere Leistungen werden separat berechnet."
    ],
    "note": "owner text 2026-10-31 (3)"
+  },
+  {
+   "id": 992,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Reisedokumente",
+     "items": [
+      "Reisepass, für alle Reisenden erforderlich"
+     ]
+    },
+    {
+     "group": "Schuhe und Kleidung",
+     "items": [
+      "Wanderschuhe oder -stiefel, bequem und eingelaufen",
+      "Turnschuhe oder bequeme Schuhe für die Hütte",
+      "Socken, mit Ersatzpaaren und warmen Socken für die Höhe",
+      "Ausreichend Unterwäsche für den Trek",
+      "Leichte, schnell trocknende Trekkinghose",
+      "Lange Thermounterwäsche, wichtig bei kühlen Temperaturen",
+      "Feuchtigkeitsableitende Funktions- oder T-Shirts",
+      "Fleecejacke als mittlere Schicht",
+      "Warme Jacke (Daune oder Kunstfaser), unverzichtbar am Gipfel",
+      "Sonnenhut oder Kappe gegen die starke Bergsonne",
+      "Fleecemütze für kalte Morgen und Abende",
+      "Warme Handschuhe, nötig in der Höhe"
+     ]
+    },
+    {
+     "group": "Zubehör und Sicherheit",
+     "items": [
+      "Sonnenbrille mit UV-Schutz, unverzichtbar bei Schnee und Blendung",
+      "Erste-Hilfe-Set für kleine Verletzungen oder Blasen",
+      "Sonnenschutz: Creme LSF 20+ und Lippenbalsam",
+      "Stirnlampe mit Ersatzbatterien, nützlich in der Hütte und beim frühen Start",
+      "Kulturbeutel mit Toilettenartikeln",
+      "Antibakterielles Handgel für die Hygiene unterwegs",
+      "Kleines, schnell trocknendes Reisehandtuch"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Reisedokumente",
+     "items": [
+      "Reisepass, für alle Reisenden erforderlich"
+     ]
+    },
+    {
+     "group": "Schuhe und Kleidung",
+     "items": [
+      "Wanderschuhe oder -stiefel, bequem und eingelaufen",
+      "Turnschuhe oder bequeme Schuhe für die Hütte",
+      "Socken, mit Ersatzpaaren und warmen Socken für die Höhe",
+      "Ausreichend Unterwäsche für den Trek",
+      "Leichte, schnell trocknende Trekkinghose",
+      "Lange Thermounterwäsche, wichtig bei kühlen Temperaturen",
+      "Feuchtigkeitsableitende Funktions- oder T-Shirts",
+      "Fleecejacke als mittlere Schicht",
+      "Warme Jacke (Daune oder Kunstfaser), unverzichtbar am Gipfel",
+      "Sonnenhut oder Kappe gegen die starke Bergsonne",
+      "Fleecemütze für kalte Morgen und Abende",
+      "Warme Handschuhe, nötig in der Höhe"
+     ]
+    },
+    {
+     "group": "Zubehör und Sicherheit",
+     "items": [
+      "Sonnenbrille mit UV-Schutz, unverzichtbar bei Schnee und Blendung",
+      "Erste-Hilfe-Set für kleine Verletzungen oder Blasen",
+      "Sonnenschutz: Creme LSF 20+ und Lippenbalsam",
+      "Stirnlampe mit Ersatzbatterien, nützlich in der Hütte und beim frühen Start",
+      "Kulturbeutel mit Toilettenartikeln",
+      "Antibakterielles Handgel für die Hygiene unterwegs",
+      "Kleines, schnell trocknendes Reisehandtuch"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich",
+      "Eispickel, für Wanderungen bei Schnee und Eis",
+      "Helm, für Wanderungen bei Schnee und Eis",
+      "Steigeisen, Eispickel und Helm: alle drei sind bei uns für 17 € erhältlich"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1001,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Reisedokumente",
+     "items": [
+      "Reisepass, für alle Reisenden erforderlich"
+     ]
+    },
+    {
+     "group": "Schuhe und Kleidung",
+     "items": [
+      "Wanderschuhe oder -stiefel, bequem und eingelaufen",
+      "Turnschuhe oder bequeme Schuhe für die Hütte",
+      "Socken, mit Ersatzpaaren und warmen Socken für die Höhe",
+      "Ausreichend Unterwäsche für den Trek",
+      "Leichte, schnell trocknende Trekkinghose",
+      "Lange Thermounterwäsche, wichtig bei kühlen Temperaturen",
+      "Feuchtigkeitsableitende Funktions- oder T-Shirts",
+      "Fleecejacke als mittlere Schicht",
+      "Warme Jacke (Daune oder Kunstfaser), unverzichtbar am Gipfel",
+      "Sonnenhut oder Kappe gegen die starke Bergsonne",
+      "Fleecemütze für kalte Morgen und Abende",
+      "Warme Handschuhe, nötig in der Höhe"
+     ]
+    },
+    {
+     "group": "Zubehör und Sicherheit",
+     "items": [
+      "Sonnenbrille mit UV-Schutz, unverzichtbar bei Schnee und Blendung",
+      "Erste-Hilfe-Set für kleine Verletzungen oder Blasen",
+      "Sonnenschutz: Creme LSF 20+ und Lippenbalsam",
+      "Stirnlampe mit Ersatzbatterien, nützlich in der Hütte und beim frühen Start",
+      "Kulturbeutel mit Toilettenartikeln",
+      "Antibakterielles Handgel für die Hygiene unterwegs",
+      "Kleines, schnell trocknendes Reisehandtuch"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Reisedokumente",
+     "items": [
+      "Reisepass, für alle Reisenden erforderlich"
+     ]
+    },
+    {
+     "group": "Schuhe und Kleidung",
+     "items": [
+      "Wanderschuhe oder -stiefel, bequem und eingelaufen",
+      "Turnschuhe oder bequeme Schuhe für die Hütte",
+      "Socken, mit Ersatzpaaren und warmen Socken für die Höhe",
+      "Ausreichend Unterwäsche für den Trek",
+      "Leichte, schnell trocknende Trekkinghose",
+      "Lange Thermounterwäsche, wichtig bei kühlen Temperaturen",
+      "Feuchtigkeitsableitende Funktions- oder T-Shirts",
+      "Fleecejacke als mittlere Schicht",
+      "Warme Jacke (Daune oder Kunstfaser), unverzichtbar am Gipfel",
+      "Sonnenhut oder Kappe gegen die starke Bergsonne",
+      "Fleecemütze für kalte Morgen und Abende",
+      "Warme Handschuhe, nötig in der Höhe"
+     ]
+    },
+    {
+     "group": "Zubehör und Sicherheit",
+     "items": [
+      "Sonnenbrille mit UV-Schutz, unverzichtbar bei Schnee und Blendung",
+      "Erste-Hilfe-Set für kleine Verletzungen oder Blasen",
+      "Sonnenschutz: Creme LSF 20+ und Lippenbalsam",
+      "Stirnlampe mit Ersatzbatterien, nützlich in der Hütte und beim frühen Start",
+      "Kulturbeutel mit Toilettenartikeln",
+      "Antibakterielles Handgel für die Hygiene unterwegs",
+      "Kleines, schnell trocknendes Reisehandtuch"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich",
+      "Eispickel, für Wanderungen bei Schnee und Eis",
+      "Helm, für Wanderungen bei Schnee und Eis",
+      "Steigeisen, Eispickel und Helm: alle drei sind bei uns für 17 € erhältlich"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1007,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Packliste für den Toubkal-Trek",
+      "Unverzichtbares",
+      "Reisepass",
+      "Schuhe und Kleidung",
+      "Wanderschuhe oder -stiefel",
+      "Turnschuhe oder bequeme Schuhe",
+      "Socken (Trekking und Alltag)",
+      "Trekkinghose",
+      "Unterwäsche",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Jacke (Daune oder Kunstfaser)",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Handschuhe",
+      "Zubehör und Schutz",
+      "Sonnenbrille",
+      "Sonnenschutz (Creme LSF 20+, Lippenbalsam)",
+      "Gesundheit und Sicherheit",
+      "Erste-Hilfe-Set",
+      "Antibakterielles Handgel",
+      "Hygiene und Persönliches",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Ausrüstung und Sonstiges",
+      "Stirnlampe mit Ersatzbatterien"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Packliste für den Toubkal-Trek",
+      "Unverzichtbares",
+      "Reisepass",
+      "Schuhe und Kleidung",
+      "Wanderschuhe oder -stiefel",
+      "Turnschuhe oder bequeme Schuhe",
+      "Socken (Trekking und Alltag)",
+      "Trekkinghose",
+      "Unterwäsche",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Jacke (Daune oder Kunstfaser)",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Handschuhe",
+      "Zubehör und Schutz",
+      "Sonnenbrille",
+      "Sonnenschutz (Creme LSF 20+, Lippenbalsam)",
+      "Gesundheit und Sicherheit",
+      "Erste-Hilfe-Set",
+      "Antibakterielles Handgel",
+      "Hygiene und Persönliches",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Ausrüstung und Sonstiges",
+      "Stirnlampe mit Ersatzbatterien"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich",
+      "Eispickel, für Wanderungen bei Schnee und Eis",
+      "Helm, für Wanderungen bei Schnee und Eis",
+      "Steigeisen, Eispickel und Helm: alle drei sind bei uns für 17 € erhältlich"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1016,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Kleidung",
+      "Wanderstiefel",
+      "Turnschuhe (für abends und die Hütten)",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Daunenjacke",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Innenhandschuhe oder Fäustlinge",
+      "Wasserdichte Überhandschuhe",
+      "Socken und Unterwäsche",
+      "Zubehör und Schutz",
+      "Sonnenbrille (UV-Schutz)",
+      "Sonnenschutz (LSF 20+ und Lippenbalsam)",
+      "Erste-Hilfe-Set (siehe Reiseunterlagen)",
+      "Persönliches",
+      "-",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Antibakterielles Handgel",
+      "Stirnlampe mit Ersatzbatterien",
+      "Schlafsack (3-Jahreszeiten empfohlen; ausleihbar)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Kleidung",
+      "Wanderstiefel",
+      "Turnschuhe (für abends und die Hütten)",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Daunenjacke",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Innenhandschuhe oder Fäustlinge",
+      "Wasserdichte Überhandschuhe",
+      "Socken und Unterwäsche",
+      "Zubehör und Schutz",
+      "Sonnenbrille (UV-Schutz)",
+      "Sonnenschutz (LSF 20+ und Lippenbalsam)",
+      "Erste-Hilfe-Set (siehe Reiseunterlagen)",
+      "Persönliches",
+      "-",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Antibakterielles Handgel",
+      "Stirnlampe mit Ersatzbatterien",
+      "Schlafsack (3-Jahreszeiten empfohlen; ausleihbar)"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich",
+      "Eispickel, für Wanderungen bei Schnee und Eis",
+      "Helm, für Wanderungen bei Schnee und Eis",
+      "Steigeisen, Eispickel und Helm: alle drei sind bei uns für 17 € erhältlich"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1017,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Kleidung",
+      "Wanderschuhe",
+      "Turnschuhe (für abends und in den Hütten)",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Daunenjacke",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Innenhandschuhe oder Fäustlinge",
+      "Wasserdichte Überhandschuhe",
+      "Socken und Unterwäsche",
+      "Zubehör und Schutz",
+      "Sonnenbrille (UV-Schutz)",
+      "Sonnenschutz (LSF 20+ und Lippenpflege)",
+      "Erste-Hilfe-Set (Details in den Reiseunterlagen)",
+      "Persönliche Dinge",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Antibakterielles Handgel",
+      "Stirnlampe mit Ersatzbatterien",
+      "Schlafsack (3-Jahreszeiten empfohlen; Verleih möglich)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Kleidung",
+      "Wanderschuhe",
+      "Turnschuhe (für abends und in den Hütten)",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Daunenjacke",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Innenhandschuhe oder Fäustlinge",
+      "Wasserdichte Überhandschuhe",
+      "Socken und Unterwäsche",
+      "Zubehör und Schutz",
+      "Sonnenbrille (UV-Schutz)",
+      "Sonnenschutz (LSF 20+ und Lippenpflege)",
+      "Erste-Hilfe-Set (Details in den Reiseunterlagen)",
+      "Persönliche Dinge",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Antibakterielles Handgel",
+      "Stirnlampe mit Ersatzbatterien",
+      "Schlafsack (3-Jahreszeiten empfohlen; Verleih möglich)"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich",
+      "Eispickel, für Wanderungen bei Schnee und Eis",
+      "Helm, für Wanderungen bei Schnee und Eis",
+      "Steigeisen, Eispickel und Helm: alle drei sind bei uns für 17 € erhältlich"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1018,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Kleidung",
+      "Wanderschuhe (robust und eingelaufen)",
+      "Turnschuhe (für Hütten und Herbergen)",
+      "Socken (Trekking und Alltag)",
+      "Unterwäsche",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Jacke (Daune oder isoliert)",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Handschuhe",
+      "Wasserdichte Überhandschuhe",
+      "Schlafen und Ruhen",
+      "Schlafsack (für Bergtemperaturen geeignet)",
+      "Kleines Reisehandtuch",
+      "Zubehör und Wichtiges",
+      "Sonnenbrille",
+      "Erste-Hilfe-Set",
+      "Sonnenschutz (inkl. Lippenschutz mit vollem Schutz, LSF 20+)",
+      "Antibakterielle Handseife",
+      "Kulturbeutel und Toilettenartikel",
+      "Stirnlampe mit Ersatzbatterien"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Kleidung",
+      "Wanderschuhe (robust und eingelaufen)",
+      "Turnschuhe (für Hütten und Herbergen)",
+      "Socken (Trekking und Alltag)",
+      "Unterwäsche",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Jacke (Daune oder isoliert)",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Warme Handschuhe",
+      "Wasserdichte Überhandschuhe",
+      "Schlafen und Ruhen",
+      "Schlafsack (für Bergtemperaturen geeignet)",
+      "Kleines Reisehandtuch",
+      "Zubehör und Wichtiges",
+      "Sonnenbrille",
+      "Erste-Hilfe-Set",
+      "Sonnenschutz (inkl. Lippenschutz mit vollem Schutz, LSF 20+)",
+      "Antibakterielle Handseife",
+      "Kulturbeutel und Toilettenartikel",
+      "Stirnlampe mit Ersatzbatterien"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich",
+      "Eispickel, für Wanderungen bei Schnee und Eis",
+      "Helm, für Wanderungen bei Schnee und Eis",
+      "Steigeisen, Eispickel und Helm: alle drei sind bei uns für 17 € erhältlich"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1024,
+   "field": "packing",
+   "before": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Socken",
+      "Wanderstiefel",
+      "Turnschuhe (für die Hütte)",
+      "Socken",
+      "Kleidung",
+      "Unterwäsche",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Jacke (Daune)",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Handschuhe",
+      "Wasserdichte Überhandschuhe",
+      "Zubehör",
+      "Sonnenbrille",
+      "Stirnlampe mit Ersatzbatterien",
+      "Schlafen und Hygiene",
+      "Schlafsack",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Antibakterielles Handgel",
+      "Gesundheit und Sicherheit",
+      "Erste-Hilfe-Set",
+      "Sonnenschutz LSF 20+ (inklusive Lippenschutz)"
+     ]
+    }
+   ],
+   "after": [
+    {
+     "group": "Allgemein",
+     "items": [
+      "Schuhe und Socken",
+      "Wanderstiefel",
+      "Turnschuhe (für die Hütte)",
+      "Socken",
+      "Kleidung",
+      "Unterwäsche",
+      "Trekkinghose",
+      "Lange Thermounterwäsche",
+      "Funktions- oder T-Shirts",
+      "Fleecejacke",
+      "Warme Jacke (Daune)",
+      "Sonnenhut oder Kappe",
+      "Fleecemütze",
+      "Handschuhe",
+      "Wasserdichte Überhandschuhe",
+      "Zubehör",
+      "Sonnenbrille",
+      "Stirnlampe mit Ersatzbatterien",
+      "Schlafen und Hygiene",
+      "Schlafsack",
+      "Kulturbeutel und Toilettenartikel",
+      "Kleines Reisehandtuch",
+      "Antibakterielles Handgel",
+      "Gesundheit und Sicherheit",
+      "Erste-Hilfe-Set",
+      "Sonnenschutz LSF 20+ (inklusive Lippenschutz)"
+     ]
+    },
+    {
+     "group": "Saisonale Ausrüstung",
+     "items": [
+      "Steigeisen, von November bis April wegen Schnee und Eis erforderlich",
+      "Eispickel, für Wanderungen bei Schnee und Eis",
+      "Helm, für Wanderungen bei Schnee und Eis",
+      "Steigeisen, Eispickel und Helm: alle drei sind bei uns für 17 € erhältlich"
+     ]
+    }
+   ]
   }
  ]
 }
