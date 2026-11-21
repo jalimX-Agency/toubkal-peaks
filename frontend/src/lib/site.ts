@@ -55,8 +55,9 @@ export const media = {
   logo: { src: `${CDN}/site/brand/logo-horizontal.png`, width: 595, height: 128 },
   logoOnDark: { src: `${CDN}/site/brand/logo-horizontal-on-dark.png`, width: 595, height: 128 },
   ogImage: `${CDN}/site/brand/og-default.jpg`,
-  icon: (size: 192 | 512) => `${CDN}/site/brand/icon-${size}.png`,
-  iconMaskable: `${CDN}/site/brand/icon-maskable-512.png`,
+  // the logo's illustration as an app icon; served by the website itself (public/brand)
+  icon: (size: 192 | 512) => `/brand/icon-${size}.png`,
+  iconMaskable: "/brand/icon-maskable-512.png",
   heroVideo: `${CDN}/site/video/hero-toubkal.mp4`,
   heroPoster: `${CDN}/site/video/hero-toubkal-poster.jpg`,
   topo: `${CDN}/site/textures/topo.svg`,

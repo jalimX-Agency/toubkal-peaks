@@ -68,7 +68,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     name: site.name,
     alternateName: site.shortName,
     url: site.url,
-    logo: media.icon(512),
+    logo: `${site.url}${media.icon(512)}`,
     image: media.ogImage,
     email: site.email,
     telephone: site.phones[0],
